@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/NavTraining">
+
+    <fragment
+        android:id="@+id/NavTraining"
+        android:name="com.out.workout.ui.fragment.TrainingFragment"
+        android:label="@string/str_training"
+        tools:layout="@layout/fragment_training" />
+
+    <fragment
+        android:id="@+id/NavRoutines"
+        android:name="com.out.workout.ui.fragment.RoutinesFragment"
+        android:label="@string/str_routines"
+        tools:layout="@layout/fragment_routines" />
+
+    <fragment
+        android:id="@+id/NavCalculator"
+        android:name="com.out.workout.ui.fragment.CalculatorFragment"
+        android:label="@string/str_calculator"
+        tools:layout="@layout/fragment_calculator" />
+
+    <fragment
+        android:id="@+id/NavDietTips"
+        android:name="com.out.workout.ui.fragment.DietTipsFragment"
+        android:label="@string/str_diet_tips"
+        tools:layout="@layout/fragment_diet_tips" />
+
+    <fragment
+        android:id="@+id/NavProfile"
+        android:name="com.out.workout.ui.fragment.ProfileFragment"
+        android:label="@string/str_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>
