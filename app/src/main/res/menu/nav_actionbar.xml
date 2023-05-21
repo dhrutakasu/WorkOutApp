@@ -14,6 +14,7 @@
         <item
             android:id="@+id/NavCalculator"
             android:icon="@drawable/calculator"
+            android:iconTint="#B8B8B8"
             android:title="@string/str_calculator" />
         <item
             android:id="@+id/NavDietTips"

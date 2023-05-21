@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_10sdp">
+    android:layout_margin="@dimen/_5sdp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_5sdp">
 
@@ -30,10 +31,10 @@
                 android:id="@+id/TvCalculatorName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_margin="@dimen/_10sdp"
                 android:text="@string/str_diet_tips"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp"
+                android:textSize="@dimen/_16sdp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,9 +44,9 @@
                 android:id="@+id/TvCalculatorDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:text="@string/str_diet_tips"
-                android:textSize="@dimen/_14sdp"
+                android:layout_margin="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TvCalculatorName"  />

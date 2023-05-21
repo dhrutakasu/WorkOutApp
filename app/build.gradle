@@ -44,4 +44,7 @@ dependencies {
     //todo nav fragment dependency
     implementation 'androidx.navigation:navigation-fragment:2.2.2'
     implementation 'androidx.navigation:navigation-ui:2.2.2'
+
+    //todo zoom imageview dependency
+    implementation 'com.jsibbold:zoomage:1.3.1'
 }
