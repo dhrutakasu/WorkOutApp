@@ -47,4 +47,7 @@ dependencies {
 
     //todo zoom imageview dependency
     implementation 'com.jsibbold:zoomage:1.3.1'
+
+    //todo Animate Image dependency
+    implementation 'com.getkeepsafe.android.multistateanimation:library:1.1.1'
 }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.out.workout.R;
 
-public class BreathCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class BMIUnderstandResultActivity extends AppCompatActivity {
 
     private Context context;
     private ImageView IvBack;
@@ -19,10 +19,9 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_breath_calculator);
+        setContentView(R.layout.activity_bmiunderstand_result);
         initViews();
         initListeners();
-        initActions();
     }
 
     private void initViews() {
@@ -32,19 +31,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     }
 
     private void initListeners() {
-        IvBack.setOnClickListener(this);
-    }
-
-    private void initActions() {
-        TvTitle.setText(getString(R.string.breath_count));
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.IvBack:
-                onBackPressed();
-                break;
-        }
+        IvBack.setOnClickListener(v -> onBackPressed());
+        TvTitle.setText(getString(R.string.bmi_title));
     }
 }

@@ -35,12 +35,12 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeBMI;
-    private RadioGroup RgGender, RgWeight,RgWeightBMI;
-    private RadioButton RbMale, RbFemale, RbCm, RbInch,RbKg,RbPounds;
-    private EditText EdtHeightBMI, EdtInchBMI,EdtWeightBMI;
+    private RadioGroup RgGender, RgWeight, RgWeightBMI;
+    private RadioButton RbMale, RbFemale, RbCm, RbInch, RbKg, RbPounds;
+    private EditText EdtHeightBMI, EdtInchBMI, EdtWeightBMI;
     private LinearLayout LLHeightBMI;
     private Button BtnWeightBMI, BtnResetBMI, BtnChartBMI;
-    private double DoubleHeight,DoubleWeight, DoubleAge, DoubleInch;
+    private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch;
     private boolean check;
     private double calculate;
     private String calculate_Kg, calculate_BMI;
@@ -66,13 +66,18 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
         RbCm = (RadioButton) findViewById(R.id.RbCm);
         RbInch = (RadioButton) findViewById(R.id.RbInch);
+        RgWeightBMI = (RadioGroup) findViewById(R.id.RgWeightBMI);
+        RbKg = (RadioButton) findViewById(R.id.RbKg);
+        RbPounds = (RadioButton) findViewById(R.id.RbPounds);
         EdtHeightBMI = (EditText) findViewById(R.id.EdtHeightBMI);
         LLHeightBMI = (LinearLayout) findViewById(R.id.LLHeightBMI);
         EdtInchBMI = (EditText) findViewById(R.id.EdtInchBMI);
+        EdtWeightBMI = (EditText) findViewById(R.id.EdtWeightBMI);
         BtnWeightBMI = (Button) findViewById(R.id.BtnWeightBMI);
         BtnResetBMI = (Button) findViewById(R.id.BtnResetBMI);
         BtnChartBMI = (Button) findViewById(R.id.BtnChartBMI);
     }
+
     private void initListeners() {
         IvBack.setOnClickListener(this);
         BtnWeightBMI.setOnClickListener(this);
@@ -156,6 +161,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
 
             calculate = DoubleWeight / (DoubleHeight * DoubleHeight);
             calculate_BMI = NumberFormat.getInstance().format(calculate);
+            System.out.println("-------- BMI : " + calculate + " - - - " + calculate_BMI);
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
@@ -173,52 +179,60 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
             ImageView IvWeightWomen = dialog.findViewById(R.id.IvWeightWomen);
             TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
             TextView TvDialogWeightBMIValue = dialog.findViewById(R.id.TvDialogWeightBMIValue);
+            Button BtnDialogResult = dialog.findViewById(R.id.BtnDialogResult);
             ProgressBar PbBMI = dialog.findViewById(R.id.PbBMI);
             PbBMI.setVisibility(View.VISIBLE);
             IvWeightWomen.setVisibility(View.VISIBLE);
             TvDialogWeightBMIValue.setVisibility(View.VISIBLE);
+            BtnDialogResult.setVisibility(View.VISIBLE);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
-            TvDialogWeightSubTitle.setText(getString(R.string.uridealweight));
-            TvDialogWeightBMIValue.setText(calculate_BMI);
+            TvDialogWeightSubTitle.setText(getString(R.string.bmiis));
 
+            TvDialogWeightBMIValue.setText(calculate_BMI);
             try {
-                int BMI_Int = (int) calculate;
-                this.calculate_BMI_Int = BMI_Int;
+                int BMI_Int = (int) Double.valueOf(calculate_BMI).doubleValue();
+                calculate_BMI_Int = BMI_Int;
                 if (BMI_Int < 16) {
-                    this.calculate_BMI_Int = 1;
-                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.exunder));
+                    calculate_BMI_Int = 1;
+                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.exunder));
                 } else if (BMI_Int > 40) {
-                    this.calculate_BMI_Int = 100;
-                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.morbid));
+                    calculate_BMI_Int = 100;
+                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
                 } else {
                     if (calculate >= 16.0d && calculate <= 18.5d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.underweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.underweight));
                     } else if (calculate > 18.5d && calculate <= 25.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.normalweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.normalweight));
                     } else if (calculate > 25.0d && calculate <= 30.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.overweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.overweight));
                     } else if (calculate > 30.0d && calculate <= 35.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.obeseone));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.obeseone));
                     } else if (calculate > 35.0d && calculate <= 40.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.obesetwo));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.obesetwo));
                     } else if (calculate < 16.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.exunder));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.exunder));
                     } else if (calculate > 40.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.morbid));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
                     }
-                    this.calculate_BMI_Int = (this.calculate_BMI_Int - 15) * 4;
+                    calculate_BMI_Int = (calculate_BMI_Int - 15) * 4;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Could not parse " + e);
-                this.calculate_BMI_Int = 100;
-                TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin)+" "+getResources().getString(R.string.morbid));
+                calculate_BMI_Int = 100;
+                TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
             }
             PbBMI.setProgress(calculate_BMI_Int);
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dialog.dismiss();
+                }
+            });
+            BtnDialogResult.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(context, BMIUnderstandResultActivity.class));
                 }
             });
 
@@ -233,6 +247,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         EdtHeightBMI.setText("");
         EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
         EdtInchBMI.setText("");
+        EdtWeightBMI.setText("");
         EdtAgeBMI.requestFocus();
 
         RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);

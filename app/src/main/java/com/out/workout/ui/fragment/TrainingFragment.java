@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class TrainingFragment extends Fragment {
 
-    private View MainView;
+    private View TraningView;
     private RecyclerView RvTraining;
 
     @Override
@@ -32,18 +32,18 @@ public class TrainingFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        MainView = inflater.inflate(R.layout.fragment_training, container, false);
+        TraningView = inflater.inflate(R.layout.fragment_training, container, false);
 
         initViews();
         initListeners();
         initActions();
-        return MainView;
+        return TraningView;
     }
 
 
     private void initViews() {
-        if (MainView != null) {
-            RvTraining = MainView.findViewById(R.id.RvTraining);
+        if (TraningView != null) {
+            RvTraining = TraningView.findViewById(R.id.RvTraining);
         }
     }
 
@@ -54,13 +54,13 @@ public class TrainingFragment extends Fragment {
     private void initActions() {
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel("Arm Workout", R.drawable.arm_workout_banner);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.buttocks_title), R.drawable.arm_workout_banner);
         workOutModels.add(workOutModel);
         workOutModel = new WorkOutTypeModel("Weight Loss Workout", R.drawable.arm_workout_banner);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel("Abs Workout", R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel(getString(R.string.abs_title), R.drawable.arm_workout_banner);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel("Chest Workout", R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel(getString(R.string.fatburn_title), R.drawable.arm_workout_banner);
         workOutModels.add(workOutModel);
         RvTraining.setLayoutManager(new LinearLayoutManager(getContext()));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {

@@ -24,6 +24,7 @@
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarBMI">
 
         <androidx.cardview.widget.CardView
@@ -459,7 +460,7 @@
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:gravity="center"
                     android:includeFontPadding="false"
-                    android:text="@string/bmi_chart"
+                    android:text="@string/chart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/white" />
 
