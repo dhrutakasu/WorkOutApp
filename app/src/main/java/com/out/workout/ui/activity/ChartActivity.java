@@ -50,6 +50,22 @@ public class ChartActivity extends AppCompatActivity implements View.OnClickList
             TvTitle.setText(getString(R.string.bmi_title));
             TvChartTitle.setText(getString(R.string.bmi_chart));
             ZoomIvChart.setImageResource(R.drawable.chart_new);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.heartrate))) {
+            TvTitle.setText(getString(R.string.heart_chart));
+            TvChartTitle.setText(getString(R.string.heart_chart_desc));
+            ZoomIvChart.setImageResource(R.drawable.heart_chart);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.canidonate))) {
+            TvTitle.setText(getString(R.string.canidonate));
+            TvChartTitle.setText(getString(R.string.bac_header));
+            ZoomIvChart.setImageResource(R.drawable.giving_blood);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.caloriesval))) {
+            TvTitle.setText(getString(R.string.chart_calorie));
+            TvChartTitle.setText(getString(R.string.calorie_chart_header));
+            ZoomIvChart.setImageResource(R.drawable.calorie_chart);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.waterintake))) {
+            TvTitle.setText(getString(R.string.chart_water));
+            TvChartTitle.setText(getString(R.string.water_intake_chart));
+            ZoomIvChart.setImageResource(R.drawable.water_chart);
         }
     }
 

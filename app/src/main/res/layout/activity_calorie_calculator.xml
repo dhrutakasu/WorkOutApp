@@ -119,13 +119,6 @@
                             android:buttonTint="@color/purple_500"
                             android:text="@string/female" />
                     </RadioGroup>
-
-                    <!--            <Spinner
-                                    android:id="@+id/SpinnerGenderCalorie"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginStart="5dp"/>-->
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -175,13 +168,6 @@
                                 android:text="@string/in"
                                 android:textAllCaps="true" />
                         </RadioGroup>
-                        <!--   <Spinner
-                               android:id="@+id/SpinnerHeightCalorie"
-                               android:layout_width="match_parent"
-                               android:layout_height="match_parent"
-                               android:layout_gravity="center_vertical"
-                               android:layout_marginStart="10dp"
-                               android:gravity="start" />-->
                     </LinearLayout>
                 </LinearLayout>
 
@@ -219,29 +205,6 @@
                             android:textDirection="locale"
                             android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
-                    <!--
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="@dimen/_40sdp"
-                                            android:background="@drawable/ic_border"
-                                            android:layout_marginTop="5dp"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_weight="1.1">
-
-                                            <TextView
-                                                android:id="@+id/EdtCmCalorie"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-                                                android:layout_gravity="bottom"
-                                                android:layout_marginStart="5dp"
-                                                android:layout_marginEnd="5dp"
-                                                android:gravity="center"
-                                                android:text="@string/cm"
-                                                android:textAllCaps="true"
-                                                android:textSize="@dimen/_15sdp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                                android:textColor="@color/black" />
-                                        </LinearLayout>-->
                 </LinearLayout>
 
                 <LinearLayout
@@ -281,28 +244,6 @@
                             android:textSize="@dimen/_15sdp"    />
                     </LinearLayout>
 
-                    <!-- <LinearLayout
-                         android:layout_width="match_parent"
-                         android:layout_height="@dimen/_40sdp"
-                         android:background="@drawable/ic_border"
-                         android:layout_marginStart="5dp"
-                         android:layout_marginTop="5dp"
-                         android:layout_gravity="center_vertical"
-                         android:layout_weight="1.1">
-
-                         <TextView
-                             android:id="@+id/TvInch"
-                             android:layout_width="match_parent"
-                             android:layout_height="match_parent"
-                             android:layout_gravity="bottom"
-                             android:layout_marginStart="5dp"
-                             android:layout_marginEnd="5dp"
-                             android:gravity="center"
-                             android:text="@string/in"
-                             android:textAllCaps="true"
-                             android:textColor="@color/black"
-                             android:textSize="@dimen/_15sdp" />
-                     </LinearLayout>-->
                 </LinearLayout>
 
                 <LinearLayout
@@ -395,30 +336,23 @@
                             android:textDirection="locale"
                             android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
-                    <!--
-                                        <LinearLayout
-                                            android:layout_width="match_parent"
-                                            android:layout_height="@dimen/_40sdp"
-                                            android:background="@drawable/ic_border"
-                                            android:layout_marginTop="5dp"
-                                            android:layout_gravity="center_vertical"
-                                            android:layout_weight="1.1">
-
-                                            <TextView
-                                                android:id="@+id/EdtCmCalorie"
-                                                android:layout_width="match_parent"
-                                                android:layout_height="match_parent"
-                                                android:layout_gravity="bottom"
-                                                android:layout_marginStart="5dp"
-                                                android:layout_marginEnd="5dp"
-                                                android:gravity="center"
-                                                android:text="@string/cm"
-                                                android:textAllCaps="true"
-                                                android:textSize="@dimen/_15sdp"
-                                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                                android:textColor="@color/black" />
-                                        </LinearLayout>-->
                 </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:background="@drawable/ic_border"
+                android:layout_marginTop="5dp">
+
+                <Spinner
+                    android:id="@+id/SpinnerCalorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="start" />
+            </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -452,6 +386,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:textColor="@color/white" />
                 </LinearLayout>
+
                 <Button
                     android:id="@+id/BtnChartCalorie"
                     android:layout_width="match_parent"
@@ -463,6 +398,7 @@
                     android:text="@string/chart_calorie"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/white" />
+
                 <Button
                     android:id="@+id/BtnFoodChartCalorie"
                     android:layout_width="match_parent"

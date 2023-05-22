@@ -189,6 +189,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TvDialogWeightValue.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.uridealweight));
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
                 @Override

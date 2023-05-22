@@ -181,6 +181,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
             TextView TvDialogWeightBMIValue = dialog.findViewById(R.id.TvDialogWeightBMIValue);
             Button BtnDialogResult = dialog.findViewById(R.id.BtnDialogResult);
             ProgressBar PbBMI = dialog.findViewById(R.id.PbBMI);
+            TvDialogWeightValue.setVisibility(View.VISIBLE);
             PbBMI.setVisibility(View.VISIBLE);
             IvWeightWomen.setVisibility(View.VISIBLE);
             TvDialogWeightBMIValue.setVisibility(View.VISIBLE);
@@ -276,15 +277,6 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                     EdtHeightBMI.setText("");
                     EdtInchBMI.setText("");
                     LLHeightBMI.setVisibility(View.VISIBLE);
-                }
-                break;
-            case R.id.RgWeightBMI:
-                RadioButton radioBMIWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weightBMI = (String) radioBMIWeightButton.getText();
-                if (weightBMI.equalsIgnoreCase(getString(R.string.kilograms))) {
-
-                } else {
-
                 }
                 break;
         }
