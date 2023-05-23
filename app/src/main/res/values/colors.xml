@@ -12,4 +12,5 @@
     <color name="transparent">#00000000</color>
     <color name="text_color">#80000000</color>
     <color name="box_gray">#ececec</color>
+    <color name="text_gray">#767575</color>
 </resources>

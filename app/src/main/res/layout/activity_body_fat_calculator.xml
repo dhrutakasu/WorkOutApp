@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.BodyFatCalculatorActivity">
+
     <RelativeLayout
         android:id="@+id/RlActionBarBodyFat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <include layout="@layout/layout_header" />
     </RelativeLayout>
@@ -27,5 +28,801 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarBodyFat">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvAgeBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_age" />
+
+                        <EditText
+                            android:id="@+id/EdtAgeBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_age"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_border">
+
+                    <ImageView
+                        android:id="@+id/IvGenderBodyFate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:src="@drawable/ic_gender" />
+
+                    <RadioGroup
+                        android:id="@+id/RgGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/RbMale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:buttonTint="@color/purple_500"
+                            android:checked="true"
+                            android:text="@string/male" />
+
+                        <RadioButton
+                            android:id="@+id/RbFemale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:buttonTint="@color/purple_500"
+                            android:text="@string/female" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvHeightBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvCentimeterBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtHeightBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LLHeightBodyFate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvInchBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_inch" />
+
+                        <EditText
+                            android:id="@+id/EdtInchBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWeightBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_weight" />
+
+                        <RadioGroup
+                            android:id="@+id/RgWeightBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbKg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/kilograms" />
+
+                            <RadioButton
+                                android:id="@+id/RbPounds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/pounds" />
+                        </RadioGroup>
+                        <!--   <Spinner
+                               android:id="@+id/SpinnerHeightBodyFate"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_gravity="center_vertical"
+                               android:layout_marginStart="10dp"
+                               android:gravity="start" />-->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvBodyFateWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_kg" />
+
+                        <EditText
+                            android:id="@+id/EdtWeightBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWaistBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgWaistBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbWaistCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbWaistInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWaistBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtWaistBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvNeckBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgNeckBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbNeckCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbNeckInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvNeckBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtNeckBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlArmRg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvArmBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgArmBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbArmCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbArmInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlArmEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvArmBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtArmBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlWristRg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWristBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgWristBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbWristCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbWristInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlWristEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWristBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtWristBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlHipRg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvHipBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgHipBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbHipCm"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/cm" />
+
+                            <RadioButton
+                                android:id="@+id/RbHipInch"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/in" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/LlHipEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvHipBodyFate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtHipBodyFate"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/BtnWeightBodyFate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/calculate"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/BtnResetBodyFate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/reset"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/BtnChartBodyFate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/fat_chart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

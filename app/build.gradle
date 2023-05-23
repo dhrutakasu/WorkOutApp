@@ -50,4 +50,7 @@ dependencies {
 
     //todo Animate Image dependency
     implementation 'com.getkeepsafe.android.multistateanimation:library:1.1.1'
+
+    //todo Number picker dependency
+    implementation  'com.github.travijuu:numberpicker:1.0.7'
 }

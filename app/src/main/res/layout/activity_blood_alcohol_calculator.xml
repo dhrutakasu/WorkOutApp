@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.activity.BloodAlcoholCalculatorActivity">
+
     <RelativeLayout
         android:id="@+id/RlActionBarBloodAlcohol"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <include layout="@layout/layout_header" />
     </RelativeLayout>
@@ -27,5 +28,426 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarBloodAlcohol">
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvAgeBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_age" />
+
+                        <EditText
+                            android:id="@+id/EdtAgeBloodAlcohol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_age"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/ic_border">
+
+                    <ImageView
+                        android:id="@+id/IvGenderBloodAlcohol"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:src="@drawable/ic_gender" />
+
+                    <RadioGroup
+                        android:id="@+id/RgGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/RbMale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:buttonTint="@color/purple_500"
+                            android:checked="true"
+                            android:text="@string/male" />
+
+                        <RadioButton
+                            android:id="@+id/RbFemale"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:buttonTint="@color/purple_500"
+                            android:text="@string/female" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvDrinkBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgDrink"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbOunces"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/ounces" />
+
+                            <RadioButton
+                                android:id="@+id/RbMl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/ml" />
+
+                            <RadioButton
+                                android:id="@+id/RbCup"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/cup" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvDrinkGlassBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtDrinkBloodAlcohol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvTimeBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_height" />
+
+                        <RadioGroup
+                            android:id="@+id/RgTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbHour"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/hour" />
+
+                            <RadioButton
+                                android:id="@+id/RbMinutes"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/minute" />
+
+                            <RadioButton
+                                android:id="@+id/RbDay"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/day" />
+                        </RadioGroup>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvTimeGlassBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_cm" />
+
+                        <EditText
+                            android:id="@+id/EdtTimeBloodAlcohol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0.7"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvWeightBloodAlcohol"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_weight" />
+
+                        <RadioGroup
+                            android:id="@+id/RgWeightBloodAlcohol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/RbKg"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:checked="true"
+                                android:text="@string/kilograms" />
+
+                            <RadioButton
+                                android:id="@+id/RbPounds"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.5"
+                                android:buttonTint="@color/purple_500"
+                                android:text="@string/pounds" />
+                        </RadioGroup>
+                        <!--   <Spinner
+                               android:id="@+id/SpinnerHeightBloodAlcohol"
+                               android:layout_width="match_parent"
+                               android:layout_height="match_parent"
+                               android:layout_gravity="center_vertical"
+                               android:layout_marginStart="10dp"
+                               android:gravity="start" />-->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/ic_border">
+
+                        <ImageView
+                            android:id="@+id/IvBloodAlcoholWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_kg" />
+
+                        <EditText
+                            android:id="@+id/EdtWeightBloodAlcohol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_value"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="0dp"
+                    android:weightSum="2">
+
+                    <Button
+                        android:id="@+id/BtnWeightBloodAlcohol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/calculate"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/BtnResetBloodAlcohol"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:text="@string/reset"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/BtnChartBloodAlcohol"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:text="@string/alcohol_chart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

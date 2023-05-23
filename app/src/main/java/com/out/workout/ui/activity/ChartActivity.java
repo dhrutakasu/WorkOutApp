@@ -66,6 +66,14 @@ public class ChartActivity extends AppCompatActivity implements View.OnClickList
             TvTitle.setText(getString(R.string.chart_water));
             TvChartTitle.setText(getString(R.string.water_intake_chart));
             ZoomIvChart.setImageResource(R.drawable.water_chart);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.bodyfat))) {
+            TvTitle.setText(getString(R.string.fat_chart));
+            TvChartTitle.setText(getString(R.string.fat_header));
+            ZoomIvChart.setImageResource(R.drawable.body_fat_chart);
+        }else if (StrChart.equalsIgnoreCase(getString(R.string.bloodalcohol))) {
+            TvTitle.setText(getString(R.string.alcohol_chart));
+            TvChartTitle.setText(getString(R.string.bac_header));
+            ZoomIvChart.setImageResource(R.drawable.bac);
         }
     }
 

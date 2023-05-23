@@ -163,8 +163,7 @@
                                 android:layout_weight="0.5"
                                 android:buttonTint="@color/purple_500"
                                 android:checked="true"
-                                android:text="@string/cm"
-                                android:textAllCaps="true" />
+                                android:text="@string/cm" />
 
                             <RadioButton
                                 android:id="@+id/RbInch"
@@ -172,8 +171,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.5"
                                 android:buttonTint="@color/purple_500"
-                                android:text="@string/in"
-                                android:textAllCaps="true" />
+                                android:text="@string/in" />
                         </RadioGroup>
                     </LinearLayout>
                 </LinearLayout>

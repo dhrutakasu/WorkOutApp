@@ -1,5 +1,6 @@
 package com.out.workout.ui.activity;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
 import com.out.workout.ui.adapter.WorkoutListAdapter;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 
 public class WorkoutListActivity extends AppCompatActivity implements View.OnClickListener {
 
+    public static final int ExerciseCode = 111;
     private Context context;
     private ImageView IvBack;
     private TextView TvTitle;
@@ -27,6 +30,8 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     private String WorkoutType;
     private ArrayList<WorkoutExerciseModel> workoutExerciseModels;
     private String CountDays;
+    private ExerciseHelper helper;
+    private WorkoutListAdapter workoutListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +60,11 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initActions() {
+        helper = new ExerciseHelper(context);
         TvTitle.setText(WorkoutType);
         workoutExerciseModels = new ArrayList<>();
         RvWorkoutList.setLayoutManager(new LinearLayoutManager(context));
-        WorkoutListAdapter workoutListAdapter = new WorkoutListAdapter(context, CountDays, getAllWorkoutDatas(), new WorkoutListAdapter.WorkoutListInterface() {
+        workoutListAdapter = new WorkoutListAdapter(context, CountDays, getAllWorkoutDatas(), WorkoutType, new WorkoutListAdapter.WorkoutListInterface() {
             @Override
             public void setWorkoutList(WorkoutExerciseModel exerciseModel, int position, String countDays) {
                 int[] getInts = new int[exerciseModel.getExerciseImg().length()];
@@ -74,7 +80,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
                 bundle.putInt(Constants.ExercisePos, position);
                 bundle.putIntArray(Constants.ExerciseRotate, exerciseModel.getExerciseType());
                 ExerciseIntent.putExtras(bundle);
-                context.startActivity(ExerciseIntent);
+                startActivityForResult(ExerciseIntent, ExerciseCode);
             }
         });
         RvWorkoutList.setAdapter(workoutListAdapter);
@@ -142,6 +148,27 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.arm24), getResources().getString(R.string.desc_plank_alternate_reach), getResources().obtainTypedArray(R.array.plank_alternate_reach), getResources().getIntArray(R.array.buttock_cycles));
             workoutExerciseModels.add(exerciseModel);
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
         } else if (WorkoutType.contains("Weight Loss")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.lose), getResources().getString(R.string.desc_vertical_leg_crunches), getResources().obtainTypedArray(R.array.vertical_leg_crunches), getResources().getIntArray(R.array.weightloss_cycles));
@@ -177,6 +204,29 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.lose15), getResources().getString(R.string.desc_leg_raise), getResources().obtainTypedArray(R.array.leg_raise), getResources().getIntArray(R.array.weightloss_cycles));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 2";
+
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
         } else if (WorkoutType.contains("Abs")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs), getResources().getString(R.string.v_crunch_desc), getResources().obtainTypedArray(R.array.abs_v_crunch), getResources().getIntArray(R.array.abs_cycles));
@@ -219,7 +269,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs19), getResources().getString(R.string.dumbbell_toe_touch_crunch_left_desc), getResources().obtainTypedArray(R.array.abs_dumbbell_bicycle_passes), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
-            exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs20), getResources().getString(R.string.v_hold_desc), getResources().obtainTypedArray(R.array.pushups), getResources().getIntArray(R.array.abs_dumbbell_torture_tucks));
+            exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs20), getResources().getString(R.string.v_hold_desc), getResources().obtainTypedArray(R.array.pushups), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs21), getResources().getString(R.string.dumbbell_bicycle_passes_desc), getResources().obtainTypedArray(R.array.abs_seated_abs_counterclockwise), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
@@ -267,6 +317,28 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 3";
 
+            System.out.println("------- cococo L " + getResources().getIntArray(R.array.abs_cycles).length);
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
         } else if (WorkoutType.contains("Chest")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.chest), getResources().getString(R.string.atomic_desc), getResources().obtainTypedArray(R.array.atomic), getResources().getIntArray(R.array.fatburn_cycles));
@@ -300,6 +372,28 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.chest14), getResources().getString(R.string.with_jump_desc), getResources().obtainTypedArray(R.array.with_jump), getResources().getIntArray(R.array.fatburn_cycles));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 4";
+
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
         } else if (WorkoutType.contains("Morning")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.jumping_jacks), getResources().getString(R.string.desc_jumping_jacks), getResources().obtainTypedArray(R.array.jumping_jacks), getResources().getIntArray(R.array.morning_cycle));
@@ -311,6 +405,28 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.basic_crunches), getResources().getString(R.string.desc_basic_crunches), getResources().obtainTypedArray(R.array.basic_crunches), getResources().getIntArray(R.array.morning_cycle));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 5";
+
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
         } else if (WorkoutType.contains("Evening")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.jumping_jacks), getResources().getString(R.string.desc_jumping_jacks), getResources().obtainTypedArray(R.array.jumping_jacks), getResources().getIntArray(R.array.morning_cycle));
@@ -322,7 +438,83 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.basic_crunches), getResources().getString(R.string.desc_basic_crunches), getResources().obtainTypedArray(R.array.basic_crunches), getResources().getIntArray(R.array.morning_cycle));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 6";
+
+            System.out.println("------- cococo L " + helper.getExerciseCount());
+            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
+            if (helper.getExerciseCount() > 0) {
+                if (!helper.IsExistType(WorkoutType)) {
+                    for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                        int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                        for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                            getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                        }
+                        helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                    }
+                }
+            } else {
+                for (int i = 0; i < workoutExerciseModels.size(); i++) {
+                    int[] getInts = new int[workoutExerciseModels.get(i).getExerciseImg().length()];
+                    for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
+                        getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
+                    }
+                    helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
+                }
+            }
+        }
+        if (helper.IsExistType(WorkoutType)) {
+            helper.getExerciseRecords(WorkoutType);
+
+            int[] IntCycles = new int[helper.getExerciseRecords(WorkoutType).size()];
+            for (int i = 0; i < helper.getExerciseRecords(WorkoutType).size(); i++) {
+                try {
+                    IntCycles[i] = Integer.parseInt(String.valueOf(helper.getExerciseRecords(WorkoutType).get(i).getExerciseType()[0]));
+                } catch (NumberFormatException nfe) {
+                }
+            }
+            for (int i = 0; i < helper.getExerciseRecords(WorkoutType).size(); i++) {
+                WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel();
+                exerciseModel.setExerciseName(helper.getExerciseRecords(WorkoutType).get(i).getExerciseName());
+                exerciseModel.setExerciseDesc(helper.getExerciseRecords(WorkoutType).get(i).getExerciseDesc());
+                exerciseModel.setExerciseImg(workoutExerciseModels.get(i).getExerciseImg());
+                exerciseModel.setExerciseType(IntCycles);
+                workoutExerciseModels.set(i, exerciseModel);
+            }
         }
         return workoutExerciseModels;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ExerciseCode:
+                switch (resultCode) {
+                    case RESULT_OK:
+                        int pos = data.getIntExtra(Constants.ExercisePos, 0);
+                        if (helper.IsExistType(WorkoutType)) {
+                            helper.getExerciseRecords(WorkoutType);
+
+                            int[] IntCycles = new int[helper.getExerciseRecords(WorkoutType).size()];
+                            for (int i = 0; i < helper.getExerciseRecords(WorkoutType).size(); i++) {
+                                try {
+                                    IntCycles[i] = Integer.parseInt(String.valueOf(helper.getExerciseRecords(WorkoutType).get(i).getExerciseType()[0]));
+                                } catch (NumberFormatException nfe) {
+                                }
+                            }
+                            for (int i = 0; i < helper.getExerciseRecords(WorkoutType).size(); i++) {
+                                WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel();
+                                exerciseModel.setExerciseName(helper.getExerciseRecords(WorkoutType).get(i).getExerciseName());
+                                exerciseModel.setExerciseDesc(helper.getExerciseRecords(WorkoutType).get(i).getExerciseDesc());
+                                exerciseModel.setExerciseImg(workoutExerciseModels.get(i).getExerciseImg());
+                                exerciseModel.setExerciseType(IntCycles);
+                                workoutExerciseModels.set(i, exerciseModel);
+                            }
+                        }
+                        workoutListAdapter.notifyItemChanged(pos);
+
+                        break;
+                }
+                break;
+        }
     }
 }

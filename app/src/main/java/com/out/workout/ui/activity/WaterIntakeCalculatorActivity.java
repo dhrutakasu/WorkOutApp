@@ -33,8 +33,8 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     private EditText EdtAgeWater, EdtWeightWater;
     private RadioGroup RgWeightWater;
     private Button BtnWeightWater, BtnResetWater, BtnChartWater;
-    private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch, DoubleWater, DoubleBMR;
-    private boolean check;
+    private double  DoubleWeight, DoubleAge,  DoubleWater;
+    private boolean BoolCheck;
     private int calculate_water;
     private String calculate_glass;
 
@@ -97,19 +97,19 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
             try {
                 DoubleWeight = Double.parseDouble(EdtWeightWater.getText().toString());
             } catch (NumberFormatException unused) {
-                check = true;
+                BoolCheck = true;
             }
             try {
                 DoubleAge = Double.parseDouble(EdtAgeWater.getText().toString());
             } catch (NumberFormatException unused2) {
-                check = true;
+                BoolCheck = true;
             }
-            if (check) {
+            if (BoolCheck) {
                 Toast.makeText(context, getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
-                check = false;
+                BoolCheck = false;
                 return;
             }
-            if (!WaterWeight.equalsIgnoreCase(getString(R.string.kg))) {
+            if (!WaterWeight.equalsIgnoreCase(getString(R.string.kilograms))) {
                 DoubleWeight /= 2.2d;
             }
             if (DoubleAge <= 30.0d) {

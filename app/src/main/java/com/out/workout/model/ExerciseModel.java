@@ -4,21 +4,27 @@ import android.content.res.TypedArray;
 
 import java.util.Arrays;
 
-public class WorkoutExerciseModel {
-    String ExerciseName,ExerciseDesc;
-    TypedArray ExerciseImg;
+public class ExerciseModel {
+    int id;
+    String ExerciseName,ExerciseDesc,WorkoutType;
+    int[] ExerciseImg;
     int[] ExerciseType;
 
-    public WorkoutExerciseModel(String exerciseName, String exerciseDesc, TypedArray exerciseImg, int[] exerciseType) {
+    public ExerciseModel(int id, String exerciseName, String exerciseDesc, String workoutType, int[] exerciseImg, int[] exerciseType) {
+        this.id = id;
         ExerciseName = exerciseName;
         ExerciseDesc = exerciseDesc;
+        WorkoutType = workoutType;
         ExerciseImg = exerciseImg;
         ExerciseType = exerciseType;
     }
 
-    public WorkoutExerciseModel() {
+    public int getId() {
+        return id;
+    }
 
-
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getExerciseName() {
@@ -37,11 +43,19 @@ public class WorkoutExerciseModel {
         ExerciseDesc = exerciseDesc;
     }
 
-    public TypedArray getExerciseImg() {
+    public String getWorkoutType() {
+        return WorkoutType;
+    }
+
+    public void setWorkoutType(String workoutType) {
+        WorkoutType = workoutType;
+    }
+
+    public int[] getExerciseImg() {
         return ExerciseImg;
     }
 
-    public void setExerciseImg(TypedArray exerciseImg) {
+    public void setExerciseImg(int[] exerciseImg) {
         ExerciseImg = exerciseImg;
     }
 
@@ -55,10 +69,11 @@ public class WorkoutExerciseModel {
 
     @Override
     public String toString() {
-        return "WorkoutExerciseModel{" +
+        return "ExerciseModel{" +
                 "ExerciseName='" + ExerciseName + '\'' +
                 ", ExerciseDesc='" + ExerciseDesc + '\'' +
-                ", ExerciseImg=" + ExerciseImg +
+                ", WorkoutType='" + WorkoutType + '\'' +
+                ", ExerciseImg=" + Arrays.toString(ExerciseImg) +
                 ", ExerciseType=" + Arrays.toString(ExerciseType) +
                 '}';
     }

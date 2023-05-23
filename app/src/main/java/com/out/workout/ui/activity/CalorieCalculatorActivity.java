@@ -153,7 +153,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 DoubleHeight += DoubleInch;
                 DoubleHeight *= 2.54d;
             }
-            if (!CalorieWeight.equalsIgnoreCase(getString(R.string.kg))) {
+            if (!CalorieWeight.equalsIgnoreCase(getString(R.string.kilograms))) {
                 DoubleWeight *= 0.453592d;
             }
             if (gender.equalsIgnoreCase(getString(R.string.male))) {

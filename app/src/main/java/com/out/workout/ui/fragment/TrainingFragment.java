@@ -39,8 +39,6 @@ public class TrainingFragment extends Fragment {
         initActions();
         return TraningView;
     }
-
-
     private void initViews() {
         if (TraningView != null) {
             RvTraining = TraningView.findViewById(R.id.RvTraining);

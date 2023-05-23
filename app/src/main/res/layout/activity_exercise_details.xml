@@ -6,4 +6,124 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.ExerciseDetailsActivity">
 
+    <RelativeLayout
+        android:id="@+id/RlActionBarExerciseDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/layout_header" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialog_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RlActionBarExerciseDetails">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rere"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/box_gray">
+
+                <ImageView
+                    android:id="@+id/IvAnimatedExercise"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_6sdp"
+                    android:layout_marginTop="@dimen/_6sdp"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:background="@drawable/bent_leg_twist_a" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/TvCycles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_13sdp"
+                    android:layout_marginBottom="@dimen/_6sdp"
+                    android:gravity="center"
+                    android:text="@string/cycles_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:typeface="serif" />
+
+                <ImageView
+                    android:id="@+id/IvExerciseDetailsMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/TvCycles"
+                    android:layout_toStartOf="@+id/TvExerciseDetailsValue"
+                    android:background="@drawable/ic_border_color"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_remove"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/TvExerciseDetailsValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/TvCycles"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/ic_border"
+                    android:fontFamily="@font/main"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_6sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:text="16"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/IvExerciseDetailsPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_below="@+id/TvCycles"
+                    android:layout_toEndOf="@+id/TvExerciseDetailsValue"
+                    android:background="@drawable/ic_border_color"
+                    android:padding="@dimen/_6sdp"
+                    android:src="@drawable/ic_plus"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/TvExerciseDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/desc_alternater_heeltouch"
+                android:textColor="@color/text_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
