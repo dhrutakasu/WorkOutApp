@@ -143,7 +143,7 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
     private void GotoChooseDate() {
         BoolChooseDate=true;
         calendar.set(Fab, dateLong, date);
-        new DatePickerDialog(context, onDateSetListener, calendar.get(1), calendar.get(2), calendar.get(5)).show();
+        new DatePickerDialog(context, onDateSetListener,  calendar.get(Calendar.FEBRUARY), calendar.get(Calendar.LONG_FORMAT), calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
     private void GotoCalculateBloodDonation() {

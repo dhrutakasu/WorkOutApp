@@ -27,7 +27,7 @@ import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
+public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
     private Context context;
     private ImageView IvBack;
@@ -37,7 +37,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
     private RadioButton RbMale, RbFemale, RbOunces, RbMl, RbCup,RbHour,RbMinutes, RbDay;
     private EditText EdtWeightBloodAlcohol, EdtDrinkBloodAlcohol, EdtTimeBloodAlcohol;
     private Button BtnWeightBloodAlcohol, BtnResetBloodAlcohol,BtnChartBloodAlcohol;
-    private double DoubleWeight, DoubleAge, DoubleTime, DoubleAlcohol,DoubleBloodAlcohol, DoubleNewAlcohol,calculateAlcohol;
+    private double DoubleWeight, DoubleAge, DoubleTime, DoubleAlcohol,DoubleBloodAlcohol = 0, DoubleNewAlcohol = 0,calculateAlcohol;
     private boolean BoolCheckBloodAlcohol;
     private String calculate_BloodAlcohol;
     
@@ -80,6 +80,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         BtnWeightBloodAlcohol.setOnClickListener(this);
         BtnResetBloodAlcohol.setOnClickListener(this);
         BtnChartBloodAlcohol.setOnClickListener(this);
+        RgDrink.setOnCheckedChangeListener(this);
     }
 
     private void initActions() {
@@ -110,10 +111,24 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         String gender = (String) radioGenderButton.getText();
         RadioButton radioBloodAlcoholWeightButton = (RadioButton) findViewById(RgWeightBloodAlcohol.getCheckedRadioButtonId());
         String BloodAlcoholWeight = (String) radioBloodAlcoholWeightButton.getText();
-        RadioButton radioBloodAlcoholDrinkButton = (RadioButton) findViewById(RgDrink.getCheckedRadioButtonId());
-        String BloodAlcoholDrink = (String) radioBloodAlcoholDrinkButton.getText();
-        RadioButton radioBloodAlcoholTimeButton = (RadioButton) findViewById(RgTime.getCheckedRadioButtonId());
-        String BloodAlcoholTime = (String) radioBloodAlcoholTimeButton.getText();
+        RadioButton radioWeightButton = (RadioButton) findViewById(RgDrink.getCheckedRadioButtonId());
+        String weight = (String) radioWeightButton.getText();
+        if (weight.equals(getResources().getString(R.string.ounces))) {
+            DoubleBloodAlcohol = 1;
+        } else if (weight.equals(getResources().getString(R.string.ml))) {
+            DoubleBloodAlcohol = 2;
+        } else {
+            DoubleBloodAlcohol = 3;
+        }
+        RadioButton radioTimeButton = (RadioButton) findViewById(RgTime.getCheckedRadioButtonId());
+        String time = (String) radioTimeButton.getText();
+        if (time.equals(getResources().getString(R.string.hour))) {
+            DoubleNewAlcohol = 1;
+        } else if (time.equals(getResources().getString(R.string.minute))) {
+            DoubleNewAlcohol = 2;
+        } else {
+            DoubleNewAlcohol = 3;
+        }
         System.out.println("-- --- --- come : ");
         try {
             try {
@@ -223,4 +238,31 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.bloodalcohol)));
     }
 
+    @Override
+    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+        switch (radioGroup.getId()){
+            case R.id.RgDrink:
+                RadioButton radioWeightButton = (RadioButton) findViewById(RgDrink.getCheckedRadioButtonId());
+                String weight = (String) radioWeightButton.getText();
+                if (weight.equals(getResources().getString(R.string.ounces))) {
+                    DoubleBloodAlcohol = 1;
+                } else if (weight.equals(getResources().getString(R.string.ml))) {
+                    DoubleBloodAlcohol = 2;
+                } else {
+                    DoubleBloodAlcohol = 3;
+                }
+                break;
+            case R.id.RgTime:
+                RadioButton radioTimeButton = (RadioButton) findViewById(RgTime.getCheckedRadioButtonId());
+                String time = (String) radioTimeButton.getText();
+                if (time.equals(getResources().getString(R.string.hour))) {
+                    DoubleNewAlcohol = 1;
+                } else if (time.equals(getResources().getString(R.string.minute))) {
+                    DoubleNewAlcohol = 2;
+                } else {
+                    DoubleNewAlcohol = 3;
+                }
+                break;
+        }
+    }
 }

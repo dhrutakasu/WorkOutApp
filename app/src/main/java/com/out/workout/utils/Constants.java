@@ -9,4 +9,6 @@ public class Constants {
     public static String ExercisePos="ExercisePos";
     public static String ExerciseDays="ExerciseDays";
     public static String ExerciseRotate="ExerciseRotate";
+    public static String WorkList="WorkList";
+    public static String Count="Count";
 }

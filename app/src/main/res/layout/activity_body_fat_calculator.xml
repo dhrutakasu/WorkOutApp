@@ -359,7 +359,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
+                            android:src="@drawable/ic_waist" />
 
                         <RadioGroup
                             android:id="@+id/RgWaistBodyFate"
@@ -406,7 +406,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                            android:src="@drawable/ic_waist" />
 
                         <EditText
                             android:id="@+id/EdtWaistBodyFate"
@@ -444,7 +444,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
+                            android:src="@drawable/ic_neck" />
 
                         <RadioGroup
                             android:id="@+id/RgNeckBodyFate"
@@ -491,7 +491,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                            android:src="@drawable/ic_neck" />
 
                         <EditText
                             android:id="@+id/EdtNeckBodyFate"
@@ -531,7 +531,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
+                            android:src="@drawable/ic_arm" />
 
                         <RadioGroup
                             android:id="@+id/RgArmBodyFate"
@@ -580,7 +580,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                            android:src="@drawable/ic_arm" />
 
                         <EditText
                             android:id="@+id/EdtArmBodyFate"
@@ -620,7 +620,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
+                            android:src="@drawable/ic_wrist" />
 
                         <RadioGroup
                             android:id="@+id/RgWristBodyFate"
@@ -669,7 +669,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                            android:src="@drawable/ic_wrist" />
 
                         <EditText
                             android:id="@+id/EdtWristBodyFate"
@@ -709,7 +709,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
+                            android:src="@drawable/ic_hip" />
 
                         <RadioGroup
                             android:id="@+id/RgHipBodyFate"
@@ -758,7 +758,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                            android:src="@drawable/ic_hip" />
 
                         <EditText
                             android:id="@+id/EdtHipBodyFate"

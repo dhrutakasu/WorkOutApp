@@ -1,14 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:padding="@dimen/_8sdp">
+
+        <RelativeLayout
+            android:id="@+id/RlReminders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvReminders"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TvExerciseReminders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:gravity="center_vertical"
+                android:text="@string/exercise_time"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/TvDayReminders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/VReminders"
+                android:layout_marginStart="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:layout_marginBottom="@dimen/_8ssp"
+                android:gravity="center_vertical"
+                android:text="@string/Day_Planner_Reminder"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+            <View
+                android:id="@+id/VReminders"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@id/TvExerciseReminders"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:background="@color/box_gray" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RlSounds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvSounds"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/ic_border"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/CbSound"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:id="@+id/TvExerciseSounds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:layout_marginBottom="@dimen/_8ssp"
+                android:layout_toStartOf="@+id/CbSound"
+                android:gravity="center_vertical"
+                android:text="@string/beep_timer"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RlCountDown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvCountDown"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/IvCountDownMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_toStartOf="@+id/TvCountDownTime"
+                android:background="@drawable/ic_border_color"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_remove"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/IvCountDownPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_toEndOf="@+id/TvCountDownTime"
+                android:background="@drawable/ic_border_color"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_plus"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/TvCountDownTime"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/ic_border"
+                android:fontFamily="@font/main"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:text="16"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RlRest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvRest"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/IvRestMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_toStartOf="@+id/TvRestTime"
+                android:background="@drawable/ic_border_color"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_remove"
+                app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/IvRestPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_toEndOf="@+id/TvRestTime"
+                android:background="@drawable/ic_border_color"
+                android:padding="@dimen/_6sdp"
+                android:src="@drawable/ic_plus"
+                app:tint="@color/white" />
+
+            <TextView
+                android:id="@+id/TvRestTime"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/ic_border"
+                android:fontFamily="@font/main"
+                android:gravity="center"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_6sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_6sdp"
+                android:text="16"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/TvSounds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RlReminders"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/sound"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TvCountDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RlSounds"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/countdown_time"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TvRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RlCountDown"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/rest_time_str"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TvReminders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:text="@string/reminder_str"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold" />
+    </RelativeLayout>
 
 </FrameLayout>

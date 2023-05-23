@@ -51,6 +51,10 @@ dependencies {
     //todo Animate Image dependency
     implementation 'com.getkeepsafe.android.multistateanimation:library:1.1.1'
 
-    //todo Number picker dependency
-    implementation  'com.github.travijuu:numberpicker:1.0.7'
+    //todo ArcProgress dependency
+    implementation 'com.github.Triggertrap:SeekArc:v1.1'
+
+    //todo ArcProgress dependency
+    implementation 'com.github.shinelw.colorarcprogressbar:library:1.0.3'
+
 }

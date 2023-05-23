@@ -454,7 +454,7 @@
     <string name="error_icon_content_description">Error</string>
     <string name="essential">Essential % of fat</string>
     <string name="evening_title">Evening stretches</string>
-    <string name="exercise_time">Exercise Time</string>
+    <string name="exercise_time">Exercise reminder</string>
     <string name="exercises">Exercises</string>
     <string name="exit_app_msg">Would you like to exit ?</string>
     <string name="exo_controls_cc_disabled_description">Enable subtitles</string>
@@ -962,5 +962,6 @@
     <string name="x_man_crunch_desc">Lying down on floor.Spread your legs and hands.Now push your back upwards with folding your legs and hands together.</string>
     <string name="your_bp">Your blood pressure is</string>
     <string name="exercise_cycles_are_updated">Exercise cycles are updated.</string>
+    <string name="beep_timer">Beep Timer</string>
 
 </resources>

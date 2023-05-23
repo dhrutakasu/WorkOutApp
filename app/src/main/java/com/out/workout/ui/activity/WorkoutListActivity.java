@@ -25,7 +25,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     public static final int ExerciseCode = 111;
     private Context context;
     private ImageView IvBack;
-    private TextView TvTitle;
+    private TextView TvTitle, TvWorkoutStart;
     private RecyclerView RvWorkoutList;
     private String WorkoutType;
     private ArrayList<WorkoutExerciseModel> workoutExerciseModels;
@@ -48,6 +48,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
+        TvWorkoutStart = (TextView) findViewById(R.id.TvWorkoutStart);
         RvWorkoutList = (RecyclerView) findViewById(R.id.RvWorkoutList);
     }
 
@@ -57,6 +58,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
 
     private void initListeners() {
         IvBack.setOnClickListener(this);
+        TvWorkoutStart.setOnClickListener(this);
     }
 
     private void initActions() {
@@ -92,7 +94,19 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             case R.id.IvBack:
                 onBackPressed();
                 break;
+            case R.id.TvWorkoutStart:
+                GotoStart();
+                break;
         }
+    }
+
+    private void GotoStart() {
+        Intent intentStart = new Intent(context, WorkOutExerciseActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(Constants.WorkList, workoutExerciseModels);
+        intentStart.putExtras(bundle);
+        intentStart.putExtra(Constants.WorkoutType, WorkoutType);
+        startActivity(intentStart);
     }
 
     private ArrayList<WorkoutExerciseModel> getAllWorkoutDatas() {

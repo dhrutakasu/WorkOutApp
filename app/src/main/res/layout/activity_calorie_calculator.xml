@@ -404,6 +404,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="@dimen/_15sdp"
                     android:gravity="center"
+                    android:visibility="gone"
                     android:includeFontPadding="false"
                     android:text="@string/pdf_calorie"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
