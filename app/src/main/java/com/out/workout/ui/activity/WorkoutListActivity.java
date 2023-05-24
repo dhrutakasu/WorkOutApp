@@ -162,8 +162,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.arm24), getResources().getString(R.string.desc_plank_alternate_reach), getResources().obtainTypedArray(R.array.plank_alternate_reach), getResources().getIntArray(R.array.buttock_cycles));
             workoutExerciseModels.add(exerciseModel);
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -219,8 +217,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 2";
 
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -330,10 +326,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs42), getResources().getString(R.string.heel_touch_desc), getResources().obtainTypedArray(R.array.abs_heel_touch), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 3";
-
-            System.out.println("------- cococo L " + getResources().getIntArray(R.array.abs_cycles).length);
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -387,8 +379,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 4";
 
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -420,8 +410,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 5";
 
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -453,8 +441,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 6";
 
-            System.out.println("------- cococo L " + helper.getExerciseCount());
-            System.out.println("------- cococo WORK " + !helper.IsExistType(WorkoutType));
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {

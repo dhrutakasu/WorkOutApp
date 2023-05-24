@@ -1,0 +1,169 @@
+[
+  {
+    "icon": "Apricot.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Apricot",
+    "slug": "Apricot"
+  },
+  {
+    "icon": "Avocado.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Avocado",
+    "properties": [
+      "Avocados are rich in vitamin E, an antioxidant that may promote hair growth. They are a great source of essential fatty acids, which appear to be crucial for hair growth."
+    ],
+    "slug": "Avocado"
+  },
+  {
+    "icon": "omega3_blueberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Blueberries",
+    "slug": "Blueberries"
+  },
+  {
+    "icon": "Broccoli.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Broccoli",
+    "slug": "Broccoli"
+  },
+  {
+    "icon": "Bell_Pepper.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Bell Pepper",
+    "slug": "Bell_Pepper"
+  },
+  {
+    "icon": "Carrots.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Carrots",
+    "slug": "Carrots"
+  },
+  {
+    "icon": "cheese.jpeg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cheese",
+    "slug": "Cheese"
+  },
+  {
+    "icon": "eggs.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Eggs",
+    "properties": [
+      "Eggs are a great source of protein and biotin, which are important for hair health and growth. A deficiency in either of these nutrients has been linked to hair loss."
+    ],
+    "slug": "Eggs"
+  },
+  {
+    "icon": "fish.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Fish",
+    "slug": "Fish"
+  },
+  {
+    "icon": "omega3_UradDal.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Black Gram Lentils(Urad Dal)",
+    "slug": "Black_Gram_Lentils"
+  },
+  {
+    "icon": "Cantaloupe.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cantaloupe",
+    "slug": "Cantaloupe"
+  },
+  {
+    "icon": "Papaya.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Papaya",
+    "slug": "Papaya"
+  },
+  {
+    "icon": "salmon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Salmon",
+    "properties": [
+      "Fish boasts high supplies of iron and vitamin B12, both of which are essential to skin and hair health."
+    ],
+    "slug": "Salmon"
+  },
+  {
+    "icon": "Spinach.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Spinach",
+    "properties": [
+      "Spinach is loaded with folate, iron, and vitamins A and C, which may promote hair growth. A deficiency in these nutrients may result in hair loss."
+    ],
+    "slug": "Spinach"
+  },
+  {
+    "icon": "SweetPotato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sweet Potato",
+    "properties": [
+      "Sweet potatoes are loaded with vitamin A, which helps aid sebum production. Other factors in this may help speed up the rate of hair growth."
+    ],
+    "slug": "SweetPotato"
+  },
+  {
+    "icon": "Walnut.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Walnut",
+    "slug": "Walnut"
+  },
+  {
+    "icon": "Pumpkin_Seeds.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pumpkin Seeds",
+    "properties": [
+      "Zinc found in pumpkin seeds helps with cellular turnover, cell division and in growth that help to form keratin, a protein that makes up hair. "
+    ],
+    "slug": "Pumpkin_Seeds"
+  },
+  {
+    "icon": "Straw_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Strawberry",
+    "properties": [
+      "Strawberries are rich in vitamin C, which aids collagen production and iron absorption, other factors may promote hair growth."
+    ],
+    "slug": "Straw_Berry"
+  },
+  {
+    "icon": "Sunflower.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sunflower Seeds",
+    "properties": [
+      "Rich in vitamin E and other nutrients that may promote hair growth. Some seeds also contain omega-3s, which have been linked to hair growth. Biotin found in sunflower seeds is essential for the production of a hair protein called keratin."
+    ],
+    "slug": "Sunflower"
+  },
+  {
+    "icon": "Oyster.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Oyster",
+    "properties": [
+      "Oysters are one of the best sources of zinc in the diet. This mineral helps to support the hair growth and repair cycle."
+    ],
+    "slug": "Oyster"
+  }
+]

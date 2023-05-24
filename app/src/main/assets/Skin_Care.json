@@ -1,0 +1,169 @@
+[
+  {
+    "icon": "Almonds.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Almonds",
+    "properties": [
+      "Rich in vitamin E, a powerful antioxidant, prevents signs of aging caused by free radicals."
+    ],
+    "slug": "Almonds"
+  },
+  {
+    "icon": "Apple.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Apple",
+    "slug": "Apple"
+  },
+  {
+    "icon": "Avocado.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Avocado",
+    "slug": "Avocado"
+  },
+  {
+    "icon": "Beets.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Beetroot",
+    "slug": "Beets"
+  },
+  {
+    "icon": "Black_Berries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Black Berries",
+    "slug": "Black_Berries"
+  },
+  {
+    "icon": "omega3_blueberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Blueberries",
+    "slug": "Blueberries"
+  },
+  {
+    "icon": "Carrots.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Carrots",
+    "slug": "Carrots"
+  },
+  {
+    "icon": "Figs.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Figs",
+    "slug": "Figs"
+  },
+  {
+    "icon": "green_tea.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Green Tea",
+    "properties": [
+      "Since green tea contains polyphenols, making it an antioxidant and an anti-inflammatory. It’s great for healing blemishes and scars, flushes out toxins, and also keeps skin supple. The vitamin K in green tea helps lighten dark circles under the eyes."
+    ],
+    "slug": "Green_Tea"
+  },
+  {
+    "icon": "Pumpkin_Seeds.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pumpkin Seeds",
+    "slug": "Pumpkin_Seeds"
+  },
+  {
+    "icon": "Spinach.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Spinach",
+    "slug": "Spinach"
+  },
+  {
+    "icon": "SwissChard.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Swiss Chard",
+    "slug": "SwissChard"
+  },
+  {
+    "icon": "omega3_wintersquash.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Winter Squash",
+    "slug": "Winter_Squash"
+  },
+  {
+    "icon": "kale_alkaline.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Kale",
+    "properties": [
+      "Rich in vitamin A, which is an antioxidant and promotes healthy skin cell. Applying kale topically helps diminish the visibility of bruises, scars, stretch marks."
+    ],
+    "slug": "Kale"
+  },
+  {
+    "icon": "Walnut.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Walnut",
+    "properties": [
+      "Walnuts help in collagen production because they are high in omega-3 fatty acids. Collagen, it’s a protein that helps improve the skin’s elasticity, preventing sagging and ultimately leaving your skin plump and youthful."
+    ],
+    "slug": "Walnut"
+  },
+  {
+    "icon": "Tomato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Tomato",
+    "properties": [
+      "Tomatoes are rich in lycopene, a potent antioxidant to protect skin from UV damage. "
+    ],
+    "slug": "Tomato"
+  },
+  {
+    "icon": "Watermelon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Watermelon",
+    "properties": [
+      "High concentration of water in watermelon can actually reduce the water retention that leads to puffiness around the eyes."
+    ],
+    "slug": "Watermelon"
+  },
+  {
+    "icon": "salmon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Salmon",
+    "properties": [
+      "Salmon is rich in antioxidants that calm inflammation. The free fatty acids serve as building blocks for healthy skin cells."
+    ],
+    "slug": "Salmon"
+  },
+  {
+    "icon": "Sunflower.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sunflower Seeds",
+    "properties": [
+      "Sunflower seeds are an excellent source of nutrients, including vitamin E, which is an important antioxidant for the skin."
+    ],
+    "slug": "Sunflower"
+  },
+  {
+    "icon": "SweetPotato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sweet Potato",
+    "properties": [
+      "Sweet potatoes are an excellent source of beta-carotene, which acts as a natural sunblock and may protect your skin from sun damage."
+    ],
+    "slug": "SweetPotato"
+  }
+]

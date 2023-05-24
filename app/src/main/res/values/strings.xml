@@ -963,5 +963,7 @@
     <string name="your_bp">Your blood pressure is</string>
     <string name="exercise_cycles_are_updated">Exercise cycles are updated.</string>
     <string name="beep_timer">Beep Timer</string>
+    <string name="pause">Pause</string>
+    <string name="play">Play</string>
 
 </resources>

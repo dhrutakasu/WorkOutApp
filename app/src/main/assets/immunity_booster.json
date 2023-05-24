@@ -1,0 +1,182 @@
+[
+  {
+    "icon": "Ginger.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Ginger",
+    "slug": "Ginger"
+  },
+  {
+    "icon": "Orange.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Orange",
+    "slug": "Orange"
+  },
+  {
+    "icon": "Tangerine.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Tangerine",
+    "slug": "Tangerine"
+  },
+  {
+    "icon": "Lime_alkaline.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lime",
+    "slug": "Lime"
+  },
+  {
+    "icon": "omega3_blueberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Blueberries",
+    "slug": "Blueberries"
+  },
+  {
+    "icon": "Almonds.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Almonds",
+    "properties": [
+      "Almonds a good source of protein, loaded with magnesium(anti-stress mineral), which helps maintain healthy hair and nails."
+    ],
+    "slug": "Almonds"
+  },
+  {
+    "icon": "Walnut.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Walnut",
+    "slug": "Walnut"
+  },
+  {
+    "icon": "BrazilNuts.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Brazil Nuts",
+    "slug": "BrazilNuts"
+  },
+  {
+    "icon": "Lemon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lemon",
+    "slug": "Lemon"
+  },
+  {
+    "icon": "Turmeric.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Turmeric",
+    "slug": "Turmeric"
+  },
+  {
+    "icon": "green_tea.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Green Tea",
+    "properties": [
+      "It contains an amino acid called theanine. Theanine has anti-anxiety and calming effects and may increase the production of serotonin and dopamine."
+    ],
+    "slug": "Green_Tea"
+  },
+  {
+    "icon": "Papaya.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Papaya",
+    "slug": "Papaya"
+  },
+  {
+    "icon": "Kiwi.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Kiwi",
+    "slug": "Kiwi"
+  },
+  {
+    "icon": "Sunflower.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sunflower Seeds",
+    "properties": [
+      "Rich in vitamin E and other nutrients that may promote hair growth. Some seeds also contain omega-3s, which have been linked to hair growth. Biotin found in sunflower seeds is essential for the production of a hair protein called keratin."
+    ],
+    "slug": "Sunflower"
+  },
+  {
+    "icon": "Acai_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Acai Berry",
+    "slug": "Acai_Berry"
+  },
+  {
+    "icon": "Oyster.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Oyster",
+    "properties": [
+      "Oysters are one of the best sources of zinc in the diet. This mineral helps to support the hair growth and repair cycle."
+    ],
+    "slug": "Oyster"
+  },
+  {
+    "icon": "Garlic.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Garlic",
+    "slug": "Garlic"
+  },
+  {
+    "icon": "Broccoli.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Broccoli",
+    "slug": "Broccoli"
+  },
+  {
+    "icon": "SweetPotato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sweet Potato",
+    "slug": "SweetPotato"
+  },
+  {
+    "icon": "Pomegranate.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pomegranate",
+    "slug": "Pomegranate"
+  },
+  {
+    "icon": "Elder_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Elder Berry",
+    "slug": "Elder_Berry"
+  },
+  {
+    "icon": "Spinach.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Spinach",
+    "slug": "Spinach"
+  },
+  {
+    "icon": "Button.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Button",
+    "slug": "Button"
+  },
+  {
+    "icon": "Watermelon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Watermelon",
+    "slug": "Watermelon"
+  }
+]

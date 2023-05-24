@@ -1,0 +1,100 @@
+[
+  {
+    "icon": "Chicken.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Chicken",
+    "slug": "Chicken"
+  },
+  {
+    "icon": "eggs.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Eggs",
+    "properties": [
+      "Eggs also contain B12, vitamins A and E, iron, and biotin (also known as Vitamin B7 or Vitamin H, and a part of the B-complex vitamins). Biotin has been scientifically shown to increase fingernail thickness and reduce brittleness and splitting."
+    ],
+    "slug": "Eggs"
+  },
+  {
+    "icon": "GreenPeas.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Green Peas",
+    "slug": "GreenPeas"
+  },
+  {
+    "icon": "omega3_UradDal.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Black Gram Lentils(Urad Dal)",
+    "slug": "Black_Gram_Lentils"
+  },
+  {
+    "icon": "Walnut.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Walnut",
+    "slug": "Walnut"
+  },
+  {
+    "icon": "kale_alkaline.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Kale",
+    "properties": [
+      "Leafy greens contain iron, folate, and calcium. They help make your nails, well, tough as nails."
+    ],
+    "slug": "Kale"
+  },
+  {
+    "icon": "Carrots.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Carrots",
+    "properties": [
+      "Carrots are high in Vitamin A, which provides necessary antioxidants to keep nails protected and strong."
+    ],
+    "slug": "Carrots"
+  },
+  {
+    "icon": "Oyster.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Oyster",
+    "properties": [
+      "Zinc is needed for many biological processes, including making proteins like those in your hair and nails."
+    ],
+    "slug": "Oyster"
+  },
+  {
+    "icon": "Almonds.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Almonds",
+    "properties": [
+      "Almonds a good source of protein, loaded with magnesium(anti-stress mineral), which helps maintain healthy hair and nails."
+    ],
+    "slug": "Almonds"
+  },
+  {
+    "icon": "omega3_blueberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Blueberries",
+    "properties": [
+      "Antioxidants help protect your body's cells against free radical damage. Blueberries are one of the highest antioxidant properties of all fruits."
+    ],
+    "slug": "Blueberries"
+  },
+  {
+    "icon": "salmon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Salmon",
+    "properties": [
+      "salmon, a fatty fish rich in protein and also in biotin and omega-3 fatty acids, three essential nutrients for lush nails. Salmon is chock full of healthy fats and vitamins B6 and B12, which will keep nails from splitting, breaking, peeling, or otherwise falling apart."
+    ],
+    "slug": "Salmon"
+  }
+]

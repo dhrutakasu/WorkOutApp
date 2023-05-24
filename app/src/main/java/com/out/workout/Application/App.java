@@ -1,11 +1,26 @@
 package com.out.workout.Application;
 
 import android.app.Application;
+import android.os.Build;
+import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 
+import com.out.workout.BuildConfig;
+import com.out.workout.R;
+
+import java.util.HashMap;
 import java.util.Locale;
 
+//sub_cat
+//https://khnknocklock.firebaseio.com/Sunflower.json
+
+//Utils
+
+//imge
+//https://d250cpfim6cf4j.cloudfront.net/cat_vegeterian.jpg
+
 public class App extends Application {
+
     static App App = null;
     public static TextToSpeech textToSpeech;
 
@@ -29,7 +44,7 @@ public class App extends Application {
         }).start();
     }
 
-    public void speak(String str) {
+    public void TextSpeak(String str) {
         try {
             if (textToSpeech != null) {
                 textToSpeech.setSpeechRate(1.0f);
@@ -40,10 +55,37 @@ public class App extends Application {
         }
     }
 
-    public void stop() {
+    public void TextStop() {
         try {
             if (textToSpeech != null) {
                 textToSpeech.stop();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addSpeaker() {
+        try {
+            if (textToSpeech != null) {
+                textToSpeech.addEarcon("Done", BuildConfig.APPLICATION_ID, R.raw.clocktick_trim);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playSpeaker() {
+        try {
+            if (textToSpeech == null) {
+                return;
+            }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Bundle bundle = null;
+                textToSpeech.playEarcon("Done", TextToSpeech.QUEUE_FLUSH, null, BuildConfig.APPLICATION_ID);
+            } else {
+                HashMap hashMap = null;
+                textToSpeech.playEarcon("Done", TextToSpeech.QUEUE_FLUSH, null);
             }
         } catch (Exception e) {
             e.printStackTrace();

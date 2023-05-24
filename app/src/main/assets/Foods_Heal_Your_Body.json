@@ -1,0 +1,142 @@
+[
+  {
+    "icon": "d_healthyhair.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Longer Thicker Hair",
+    "slug": "Longer_Thicker_Hair"
+  },
+  {
+    "icon": "d_nail.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Nails",
+    "slug": "Nails"
+  },
+  {
+    "icon": "d_skin.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Skin Care",
+    "slug": "Skin_Care"
+  },
+  {
+    "icon": "d_arthiritis.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Arthritis",
+    "slug": "Arthritis"
+  },
+  {
+    "icon": "d_asthma.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Asthma",
+    "slug": "Asthma"
+  },
+  {
+    "icon": "d_cold.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Cold",
+    "slug": "Cold"
+  },
+  {
+    "icon": "d_constipation1.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Constipation",
+    "slug": "Constipation"
+  },
+  {
+    "icon": "d_depression.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Depression",
+    "slug": "Depression"
+  },
+  {
+    "icon": "d_diabetes.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Diabetes",
+    "slug": "Diabetes"
+  },
+  {
+    "icon": "d_fatigue.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Fatigue",
+    "slug": "Fatigue"
+  },
+  {
+    "icon": "d_hangover.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Hangover",
+    "slug": "Hangover"
+  },
+  {
+    "icon": "d_headache.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Headache",
+    "slug": "Headache"
+  },
+  {
+    "icon": "d_highbloodpressure.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "High B.P.",
+    "slug": "High_B_P"
+  },
+  {
+    "icon": "d_indigestion.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Indigestion",
+    "slug": "Indigestion"
+  },
+  {
+    "icon": "d_kidney_detox.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Kidney Detox",
+    "slug": "Kidney_Detox"
+  },
+  {
+    "icon": "d_kidney_stones.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Kidney Stone",
+    "slug": "Kidney_Stone"
+  },
+  {
+    "icon": "d_MEMORYLOSS.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Memory Loss",
+    "slug": "Memory_Loss"
+  },
+  {
+    "icon": "d_nervousness.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Nervousness",
+    "slug": "Nervousness"
+  },
+  {
+    "icon": "d_stress.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Stress",
+    "slug": "Stress"
+  },
+  {
+    "icon": "d_ulcer.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Ulcer",
+    "slug": "Ulcer"
+  }
+]

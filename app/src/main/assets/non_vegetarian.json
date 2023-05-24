@@ -1,0 +1,72 @@
+[
+  {
+    "icon": "chicken.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Chicken",
+    "slug": "Chicken"
+  },
+  {
+    "icon": "eggs.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Eggs",
+    "slug": "Eggs"
+  },
+  {
+    "icon": "fish.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Fish",
+    "slug": "Fish"
+  },
+  {
+    "icon": "mutton.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Mutton",
+    "slug": "Mutton"
+  },
+  {
+    "icon": "duck.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Duck",
+    "slug": "Duck"
+  },
+  {
+    "icon": "pork.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pork",
+    "slug": "Pork"
+  },
+  {
+    "icon": "prawns.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Prawns",
+    "slug": "Prawns"
+  },
+  {
+    "icon": "beef.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Beef",
+    "slug": "Beef"
+  },
+  {
+    "icon": "octopus.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Octopus",
+    "slug": "Octopus"
+  },
+  {
+    "icon": "rabbit.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Rabbit",
+    "slug": "Rabbit"
+  }
+]

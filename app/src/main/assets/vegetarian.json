@@ -1,0 +1,58 @@
+[
+  {
+    "icon": "Vegetables.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Vegetables",
+    "slug": "Vegetables"
+  },
+  {
+    "icon": "Fruits.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Fruits",
+    "slug": "Fruits"
+  },
+  {
+    "icon": "Nuts_And_Seeds.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Nuts And Seeds",
+    "slug": "Nuts_And_Seeds"
+  },
+  {
+    "icon": "Spices.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Spices",
+    "slug": "Spices"
+  },
+  {
+    "icon": "Herbs.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Herbs",
+    "slug": "Herbs"
+  },
+  {
+    "icon": "Herbal_Tea.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Herbal Tea",
+    "slug": "Herbal_Tea"
+  },
+  {
+    "icon": "Mushrooms.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Mushrooms",
+    "slug": "Mushrooms"
+  },
+  {
+    "icon": "Coconut_Water.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Coconut Water",
+    "slug": "Coconut_Water"
+  }
+]

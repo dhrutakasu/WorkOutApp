@@ -54,4 +54,6 @@ dependencies {
     //todo ArcProgress dependency
     implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
 
+    //todo gson dependency
+    implementation 'com.google.code.gson:gson:2.10.1'
 }

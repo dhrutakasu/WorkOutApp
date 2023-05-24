@@ -1,0 +1,77 @@
+[
+  {
+    "icon": "rb_green.jpeg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Green",
+    "properties": [
+      "It contains vitamins A, C, and K, iron, antioxidants such as carotenoids and flavonoids, chlorophyll, lutein, zeaxanthin, and folate.",
+      "It helps with lowering the risk of cancer, lowering blood pressure, and LDL cholesterol levels, maintaining retinal (eye) health and boosting immunity.",
+      "Green fruits and veggies contain lots of fiber to help digestion.",
+      "They are rich in lutein, isothiocyanates, isoflavones, and vitamin K  and calcium which is essential for blood and bone health.",
+      "Rich in folate, important for pregnant women to consume to help prevent congenital disabilities."
+    ],
+    "slug": "Green"
+  },
+  {
+    "icon": "rb_orangeand_yellow.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Orange/Yellow",
+    "properties": [
+      "Orange contains antioxidants including beta-cryptoxanthin and beta-carotene which converts to vitamin A.",
+      "It is helpful in eye and skin health, maintain respiratory health, help arthritis, and lower the risk of certain cancers, and immune systems.",
+      "Citrus fruits contain a phytonutrient called hesperidin, which helps to increase blood flow.",
+      "Eating an orange a day may help keep your hands and feet warm.",
+      "Consuming citrus may also reduce your risk of stroke.",
+      "Yellow contain antioxidants such as carotenoids and bioflavonoids.",
+      "Carotenoids protect us from diseases such as cancer, retinal disease, and heart disease.",
+      "Bioflavonoids strengthen the collagen of our skin, tendons, ligaments, and cartilages.",
+      "Yellow foods have lots of vitamin C which acts as an anti-inflammatory agent."
+    ],
+    "slug": "Orange_Inflammation"
+  },
+  {
+    "icon": "rb_purpleandblue.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Purple/Blue",
+    "properties": [
+      "It contains phytochemicals known as anthocyanins and resveratrol.",
+      "Anthocyanins are anti-inflammatory and anti-carcinogenic and lower the risk of diabetes, obesity, and cardiovascular disease.",
+      "Resveratrol has disease preventing and anti-aging properties and reduce inflammation, cholesterol, and risk of cancer and Alzheimer’s disease.",
+      "It also contains lutein, vitamin C, quercetin and benefits our immune system, overall health, and longevity."
+    ],
+    "slug": "Purple_Antioxidant"
+  },
+  {
+    "icon": "rb_red.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Red",
+    "properties": [
+      "Red foods contain beta-carotene (vitamin A), fiber, and the antioxidants quercetin, vitamin C, and lycopene.",
+      "Protect the body from free radicals, cancer, and heart disease and aid gastrointestinal health.",
+      "Phytochemicals, including lycopene and ellagic acid having cancer-fighting effects.",
+      "Watermelon is even higher in lycopene than tomatoes.",
+      "Citrulline in watermelon, helpful in treating mild to moderate erectile dysfunction.",
+      "Strawberries prevent and even reverse esophageal cancer."
+    ],
+    "slug": "Red_Heart"
+  },
+  {
+    "icon": "rb_white.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "White/Brown",
+    "properties": [
+      "It contains anthoxanthins which help lower cholesterol and blood pressure, sulfur which detoxifies our liver and helps with protein structure and skin health, allicin which has anti-tumor properties, and quercetin which has anti-inflammatory properties.",
+      "Broccoli, Cauliflower is a cruciferous vegetable rich in an anti-cancer compound called sulforaphane.",
+      "Garlic and onions contain the powerful cancer-fighting compounds allicin and quercetin.",
+      "Phytonutrients in white button mushrooms found to inhibit aromatase activity and breast cancer cell proliferation.",
+      "White foods also boost our immunity and help us avoid weight gain.",
+      "You should avoid white processed and refined food."
+    ],
+    "slug": "White_Immunity"
+  }
+]

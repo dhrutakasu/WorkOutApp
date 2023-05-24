@@ -17,6 +17,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
+    <ImageView
+        android:id="@+id/IvHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="@dimen/_8ssp"
+        android:src="@drawable/ic_help"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
     <TextView
         android:id="@+id/TvTitle"
         android:layout_width="0dp"
@@ -31,6 +44,6 @@
         android:text="@string/ideal_chart"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/IvHelp"
         app:layout_constraintStart_toEndOf="@id/IvBack" />
 </androidx.constraintlayout.widget.ConstraintLayout>

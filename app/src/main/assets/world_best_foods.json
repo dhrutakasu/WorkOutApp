@@ -1,0 +1,93 @@
+[
+  {
+    "icon": "wb_alkalinefood.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Alkaline Foods",
+    "slug": "Alkaline_Foods"
+  },
+  {
+    "icon": "wb_antiageingfood.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Anti Aging Foods",
+    "slug": "Anti_Aging_Foods"
+  },
+  {
+    "icon": "wb_bettersexfood.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Better Sex Drive Foods",
+    "slug": "Better_Sex_Drive_Food"
+  },
+  {
+    "icon": "wb_highfiberfoof.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "High Fiber Foods",
+    "slug": "High_Fiber_Foods"
+  },
+  {
+    "icon": "wb_superfoodhair.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Super Foods for Hair & Nails",
+    "slug": "Super_Food_for_Hair_Nails"
+  },
+  {
+    "icon": "wb_plantomega_3.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Plant Based Omega 3 Foods",
+    "slug": "Plant_Based_Omega_3"
+  },
+  {
+    "icon": "wb_superfoodhealth.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Super Foods for Your Health",
+    "slug": "Super_Food_for_Your_Health"
+  },
+  {
+    "icon": "wb_proteinrich.jpeg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Protein Rich Foods",
+    "slug": "Protein_Rich_Foods"
+  },
+  {
+    "icon": "wb_potassiumrich.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Potassium Rich Foods",
+    "slug": "Potassium_Rich_Foods"
+  },
+  {
+    "icon": "wb_calcium.jpeg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Calcium Rich Foods",
+    "slug": "Calcium_Rich_Foods"
+  },
+  {
+    "icon": "wb_iron.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Iron Rich Foods",
+    "slug": "Iron_Rich_Foods"
+  },
+  {
+    "icon": "wb_magnesium.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Magnesium Rich Foods",
+    "slug": "Magnesium_Rich_Foods"
+  },
+  {
+    "icon": "wb_mangenese.jpg",
+    "isSingleItem": false,
+    "layout_type": 1,
+    "name": "Manganese Rich Foods",
+    "slug": "Manganese_Rich_Foods"
+  }
+]

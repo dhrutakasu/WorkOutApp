@@ -61,7 +61,6 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
             MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(holder.IvExerciseAnimation).addSection(sectionBuilder).build(context);
             stateAnimation.transitionNow("pending");
             holder.TvExerciseName.setText(exerciseModels.get(position).getExerciseName().replace("_", " ").toUpperCase());
-            System.out.println("------ size : "+exerciseModel.getExerciseType().length);
             if (exerciseModel.getExerciseImg().length() > 1) {
                 holder.TvExerciseRotate.setText("x" + exerciseModel.getExerciseType()[position]);
             } else {
