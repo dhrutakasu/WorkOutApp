@@ -1,11 +1,14 @@
 package com.out.workout.model;
 
 import android.content.res.TypedArray;
+import android.os.Parcel;
+import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 public class WorkoutExerciseModel {
-    String ExerciseName,ExerciseDesc;
+    String ExerciseName, ExerciseDesc;
     TypedArray ExerciseImg;
     int[] ExerciseType;
 

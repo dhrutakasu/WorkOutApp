@@ -52,9 +52,6 @@ dependencies {
     implementation 'com.getkeepsafe.android.multistateanimation:library:1.1.1'
 
     //todo ArcProgress dependency
-    implementation 'com.github.Triggertrap:SeekArc:v1.1'
-
-    //todo ArcProgress dependency
-    implementation 'com.github.shinelw.colorarcprogressbar:library:1.0.3'
+    implementation 'com.github.jakob-grabner:Circle-Progress-View:1.4'
 
 }

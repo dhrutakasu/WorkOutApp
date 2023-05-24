@@ -51,6 +51,7 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
         if (position < exerciseModels.size()) {
             holder.CvItem.setVisibility(View.VISIBLE);
             WorkoutExerciseModel exerciseModel = exerciseModels.get(position);
+
             MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
             for (int i = 0; i < exerciseModel.getExerciseImg().length(); i++) {
                 sectionBuilder.addFrame(exerciseModel.getExerciseImg().getResourceId(i, 0));

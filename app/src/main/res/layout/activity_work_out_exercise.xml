@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:seekarc="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -42,12 +43,13 @@
                 android:orientation="vertical">
 
                 <RelativeLayout
+                    android:id="@+id/RlReadyExercise"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center">
 
                     <RelativeLayout
-                        android:id="@+id/RlExercise"
+                        android:id="@+id/RlReadyExerciseIv"
                         android:layout_width="match_parent"
                         android:layout_height="180dp"
                         android:layout_alignParentTop="true"
@@ -73,27 +75,90 @@
                         android:id="@+id/TvWorkOutExercise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/RlReadyExerciseIv"
+                        android:layout_centerInParent="true"
                         android:layout_marginEnd="2dp"
                         android:gravity="center"
-                        android:layout_below="@+id/RlExercise"
-                        android:layout_centerInParent="true"
-                        android:text="@string/idealweight"
+                        android:text="@string/ready_to_go"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_18sdp"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/TvWorkOutExerciseName"
+                        android:id="@+id/TvWorkOutExerciseReadyDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_15sdp"
-                        android:gravity="center"
                         android:layout_below="@+id/TvWorkOutExercise"
                         android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:gravity="center"
                         android:text="@string/idealweight"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"/>
+                        android:textSize="@dimen/_14sdp" />
 
+                    <at.grabner.circleprogress.CircleProgressView
+                        android:id="@+id/CVProgressReady"
+                        android:layout_width="@dimen/_150sdp"
+                        android:layout_height="@dimen/_150sdp"
+                        android:layout_below="@+id/TvWorkOutExerciseReadyDesc"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        CircleProgressView:cpv_barColor="@color/purple_500"
+                        CircleProgressView:cpv_barStrokeCap="Round"
+                        CircleProgressView:cpv_barWidth="@dimen/_8sdp"
+                        CircleProgressView:cpv_blockCount="10"
+                        CircleProgressView:cpv_blockScale="0.7"
+                        CircleProgressView:cpv_direction="CCW"
+                        CircleProgressView:cpv_innerContourSize="0dp"
+                        CircleProgressView:cpv_maxValue="100"
+                        CircleProgressView:cpv_outerContourSize="0dp"
+                        CircleProgressView:cpv_rimColor="@color/gray"
+                        CircleProgressView:cpv_rimWidth="@dimen/_8sdp"
+                        CircleProgressView:cpv_seekMode="true"
+                        CircleProgressView:cpv_spinColor="@color/purple_500"
+                        CircleProgressView:cpv_startAngle="270"
+                        CircleProgressView:cpv_textColor="@color/black"
+                        CircleProgressView:cpv_textMode="Value"
+                        CircleProgressView:cpv_textSize="@dimen/_35sdp"
+                        CircleProgressView:cpv_value="100" />
+
+                    <ImageView
+                        android:id="@+id/IvPlayReady"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/CVProgressReady"
+                        android:layout_alignBottom="@id/CVProgressReady"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_20ssp"
+                        android:layout_marginEnd="@dimen/_20sdp"
+                        android:layout_toEndOf="@id/CVProgressReady"
+                        android:src="@drawable/ic_play"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/TvSkipReady"
+                        android:layout_width="@dimen/_105sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/CVProgressReady"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="@dimen/_15sdp"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:gravity="center"
+                        android:padding="@dimen/_6sdp"
+                        android:text="@string/skip"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18sdp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RlExerciseStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
 
                 </RelativeLayout>
             </LinearLayout>

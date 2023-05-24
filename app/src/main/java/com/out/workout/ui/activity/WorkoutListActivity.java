@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import com.out.workout.model.WorkoutExerciseModel;
 import com.out.workout.ui.adapter.WorkoutListAdapter;
 import com.out.workout.utils.Constants;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class WorkoutListActivity extends AppCompatActivity implements View.OnClickListener {
@@ -102,9 +104,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
 
     private void GotoStart() {
         Intent intentStart = new Intent(context, WorkOutExerciseActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(Constants.WorkList, workoutExerciseModels);
-        intentStart.putExtras(bundle);
+        Constants.WorkExerciseList.addAll(workoutExerciseModels);
         intentStart.putExtra(Constants.WorkoutType, WorkoutType);
         startActivity(intentStart);
     }
