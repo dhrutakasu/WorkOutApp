@@ -104,6 +104,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
 
     private void GotoStart() {
         Intent intentStart = new Intent(context, WorkOutExerciseActivity.class);
+        Constants.WorkExerciseList = new ArrayList<>();
         Constants.WorkExerciseList.addAll(workoutExerciseModels);
         intentStart.putExtra(Constants.WorkoutType, WorkoutType);
         startActivity(intentStart);

@@ -965,5 +965,6 @@
     <string name="beep_timer">Beep Timer</string>
     <string name="pause">Pause</string>
     <string name="play">Play</string>
+    <string name="complete_exercise">Complete Exercise</string>
 
 </resources>

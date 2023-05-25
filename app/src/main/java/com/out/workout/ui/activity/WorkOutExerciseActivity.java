@@ -3,6 +3,7 @@ package com.out.workout.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
@@ -29,6 +30,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private ImageView IvBack, IvHelp;
     private TextView TvTitle;
     private ArrayList<WorkoutExerciseModel> WorkoutExerciseList;
+    private String WorkoutType;
     private RelativeLayout RlReadyExercise, RlExerciseStart;
     private ImageView IvAnimatedReadyExercise, IvPlayReady;
     private TextView TvWorkOutExercise, TvWorkOutExerciseReadyDesc, TvSkipReady;
@@ -67,8 +69,8 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private void initViews() {
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
-        IvHelp = (ImageView) findViewById(R.id.IvHelp);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
+        IvHelp = (ImageView) findViewById(R.id.IvHelp);
         RlReadyExercise = (RelativeLayout) findViewById(R.id.RlReadyExercise);
         RlRestExercise = (RelativeLayout) findViewById(R.id.RlRestExercise);
         RlExerciseStart = (RelativeLayout) findViewById(R.id.RlExerciseStart);
@@ -94,6 +96,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
     private void initIntents() {
         WorkoutExerciseList = Constants.WorkExerciseList;
+        WorkoutType = getIntent().getStringExtra(Constants.WorkoutType);
     }
 
     private void initListeners() {
@@ -186,6 +189,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
             public void onFinish() {
                 RlReadyExercise.setVisibility(View.GONE);
+                RlRestExercise.setVisibility(View.GONE);
                 RlExerciseStart.setVisibility(View.VISIBLE);
                 IvHelp.setVisibility(View.VISIBLE);
                 TvWorkOutExerciseCount.setText((ExCount + 1) + " Of " + WorkoutExerciseList.size());
@@ -203,6 +207,8 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                 TvPauseExercise.setText(getString(R.string.pause));
                 TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
                 ExTimer = model.getExerciseType()[ExCount];
+                countDownTimerReady.cancel();
+
                 ExerciseTimer(model, ExCount);
             }
 
@@ -215,7 +221,8 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         System.out.println("----- long ExTimer : " + ExTimer);
         ExerciseDownTimer = new CountDownTimer((ExTimer + 1) * 1000L, 1000) {
             public void onTick(long millisUntilFinished) {
-                NotedExerciseTimer = millisUntilFinished;
+                long shortNum = (millisUntilFinished - 1000) / 1000;
+                NotedExerciseTimer = shortNum;
                 App.getInstance().playSpeaker();
                 System.out.println("----- long : " + millisUntilFinished);
                 TvWorkOutExerciseTimer.setText(hmsTimeFormatter(millisUntilFinished));
@@ -223,52 +230,58 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
             public void onFinish() {
                 TvPauseExercise.setText(getString(R.string.play));
+                System.out.println("----- **** : " + exCount);
                 if (exCount > 0) {
                     IvExercisePrevious.setVisibility(View.VISIBLE);
                 }
-                IvHelp.setVisibility(View.GONE);
-                RlExerciseStart.setVisibility(View.GONE);
-                RlRestExercise.setVisibility(View.VISIBLE);
+                System.out.println("-----*** : " + exCount);
+                if ((exCount + 1) != WorkoutExerciseList.size()) {
+                    IvHelp.setVisibility(View.GONE);
+                    RlExerciseStart.setVisibility(View.GONE);
+                    RlReadyExercise.setVisibility(View.GONE);
+                    RlRestExercise.setVisibility(View.VISIBLE);
+                    WorkoutExerciseModel model = WorkoutExerciseList.get((exCount + 1));
+                    MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+                    for (int i = 0; i < model.getExerciseImg().length(); i++) {
+                        sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+                    }
+                    sectionBuilder.setOneshot(false);
+                    sectionBuilder.setFrameDuration(800);
+                    MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedRestExercise).addSection(sectionBuilder).build(context);
+                    stateAnimation.transitionNow("pending");
 
-                WorkoutExerciseModel model = WorkoutExerciseList.get((exCount + 1));
-                MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
-                for (int i = 0; i < model.getExerciseImg().length(); i++) {
-                    sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
-                }
-                sectionBuilder.setOneshot(false);
-                sectionBuilder.setFrameDuration(800);
-                MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedRestExercise).addSection(sectionBuilder).build(context);
-                stateAnimation.transitionNow("pending");
-
-                System.out.println("----- exCount exer : " + (ExCount + 1));
-                TvTitle.setText(Constants.getCapsSentences("Next " + (ExCount + 1) + "/" + WorkoutExerciseList.size()));
-                TvRestWorkOutExercise.setText(Constants.getCapsSentences(WorkoutExerciseList.get((exCount + 1)).getExerciseName()));
-                if (WorkoutExerciseList.get((exCount + 1)).getExerciseImg().length() > 1) {
-                    TvWorkOutExerciseRestDesc.setText("x" + WorkoutExerciseList.get((exCount + 1)).getExerciseType()[(exCount)]);
-                } else {
-                    TvWorkOutExerciseRestDesc.setText(WorkoutExerciseList.get((exCount + 1)).getExerciseType()[(exCount)] + " Sec");
-                }
-                IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-                if (exCount == WorkoutExerciseList.size()) {
-
-                } else {
+                    System.out.println("----- exCount exer : " + (ExCount + 1));
+                    TvTitle.setText(Constants.getCapsSentences("Next " + (ExCount + 2) + "/" + WorkoutExerciseList.size()));
+                    TvRestWorkOutExercise.setText(Constants.getCapsSentences(WorkoutExerciseList.get((exCount + 1)).getExerciseName()));
+                    if (WorkoutExerciseList.get((exCount + 1)).getExerciseImg().length() > 1) {
+                        TvWorkOutExerciseRestDesc.setText("x" + WorkoutExerciseList.get((exCount + 1)).getExerciseType()[(exCount)]);
+                    } else {
+                        TvWorkOutExerciseRestDesc.setText(WorkoutExerciseList.get((exCount + 1)).getExerciseType()[(exCount)] + " Sec");
+                    }
+                    IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
+                    IntValRest = 0;
                     RestTimer();
+                    ExerciseDownTimer.cancel();
+                } else {
+                    System.out.println("-----*** Welcome Come: " + exCount);
                 }
             }
         }.start();
     }
 
     private void RestTimer() {
-        CVProgressRest.setBlockCount(IsRest);
+        IvPlayRest.setImageResource(R.drawable.ic_pause);
+        System.out.println("----- exCount IsRest : " + IsRest);
+        CVProgressRest.setBlockCount(SharePreference.getInt(context, SharePreference.REST_TIMER, 25));
         CVProgressRest.setBlockScale(0.45f);
-        CVProgressRest.setMaxValue(Float.valueOf(IsRest).floatValue());
+        CVProgressRest.setMaxValue(Float.valueOf(SharePreference.getInt(context, SharePreference.REST_TIMER, 25)).floatValue());
         RestTimer = new CountDownTimer((IsRest + 1) * 1000L, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
-                NotedRestTimer = (int) millisUntilFinished;
                 System.out.println("----millis shortNum : " + millisUntilFinished);
                 long shortNum = (millisUntilFinished - 1000) / 1000;
+                NotedRestTimer = shortNum;
                 System.out.println("----valllrrr shortNum : " + shortNum);
                 CVProgressRest.setValue(Float.valueOf(shortNum).floatValue());
 
@@ -305,9 +318,10 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
             public void onFinish() {
                 ExCount++;
                 RlRestExercise.setVisibility(View.GONE);
+                RlReadyExercise.setVisibility(View.GONE);
                 RlExerciseStart.setVisibility(View.VISIBLE);
                 IvHelp.setVisibility(View.VISIBLE);
-                TvWorkOutExerciseCount.setText((ExCount) + " Of " + WorkoutExerciseList.size());
+                TvWorkOutExerciseCount.setText((ExCount + 1) + " Of " + WorkoutExerciseList.size());
                 WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
                 MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
                 for (int i = 0; i < model.getExerciseImg().length(); i++) {
@@ -321,8 +335,11 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                 TvPauseExercise.setText(getString(R.string.pause));
                 TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
                 System.out.println("----- exCount Rest : " + ExCount);
+
                 ExTimer = model.getExerciseType()[ExCount];
+                IntValExercise = 0;
                 ExerciseTimer(model, ExCount);
+                RestTimer.cancel();
             }
         }.start();
     }
@@ -404,6 +421,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     }
 
     private void GotoPlayPauseExercise() {
+        System.out.println("----- exCount IntValExercise : " + IntValExercise);
         if (IntValExercise % 2 == 0) {
             TvPauseExercise.setText(getString(R.string.play));
             BoolTimer = true;
@@ -415,9 +433,10 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
             if (ExCount > 0) {
                 IvExercisePrevious.setVisibility(View.VISIBLE);
             }
-            IvHelp.setVisibility(View.GONE);
-            RlExerciseStart.setVisibility(View.GONE);
-            RlRestExercise.setVisibility(View.VISIBLE);
+            RlReadyExercise.setVisibility(View.GONE);
+            RlRestExercise.setVisibility(View.GONE);
+            RlExerciseStart.setVisibility(View.VISIBLE);
+            IvHelp.setVisibility(View.VISIBLE);
             WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
             MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
             for (int i = 0; i < model.getExerciseImg().length(); i++) {
@@ -430,7 +449,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
             TvPauseExercise.setText(getString(R.string.pause));
             TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
-            NotedExerciseTimer = ExTimer;
+            ExTimer = (int) NotedExerciseTimer;
             ExerciseTimer(model, ExCount);
         }
         IntValExercise++;
@@ -443,10 +462,11 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                 App.textToSpeech.shutdown();
             }
         }
+        System.out.println("----- InRest : " + IntValRest + " - " + IsRest);
         if (IntValRest % 2 == 0) {
             IvPlayRest.setImageResource(R.drawable.ic_play);
             BoolTimer = true;
-            countDownTimerReady.cancel();
+            RestTimer.cancel();
         } else {
             BoolTimer = false;
             IvPlayRest.setImageResource(R.drawable.ic_pause);
@@ -474,36 +494,11 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         } else {
             IvExercisePrevious.setVisibility(View.GONE);
         }
-        IvHelp.setVisibility(View.GONE);
-        RlExerciseStart.setVisibility(View.GONE);
-        RlRestExercise.setVisibility(View.VISIBLE);
-        WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
-        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
-        for (int i = 0; i < model.getExerciseImg().length(); i++) {
-            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
-        }
-        sectionBuilder.setOneshot(false);
-        sectionBuilder.setFrameDuration(800);
-        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
-        stateAnimation.transitionNow("pending");
-
-        TvPauseExercise.setText(getString(R.string.pause));
-        TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
-        ExTimer = model.getExerciseType()[ExCount];
-        System.out.println("-------- Excount : " + ExCount);
-        ExerciseTimer(model, ExCount);
-    }
-
-    private void GotoNextExercise() {
-        ExCount++;
-        if (ExCount > 0) {
-            IvExercisePrevious.setVisibility(View.VISIBLE);
-        } else {
-            IvExercisePrevious.setVisibility(View.GONE);
-        }
+        RlReadyExercise.setVisibility(View.GONE);
         RlRestExercise.setVisibility(View.GONE);
         RlExerciseStart.setVisibility(View.VISIBLE);
         IvHelp.setVisibility(View.VISIBLE);
+
         TvWorkOutExerciseCount.setText((ExCount + 1) + " Of " + WorkoutExerciseList.size());
         WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
         MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
@@ -518,7 +513,91 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         TvPauseExercise.setText(getString(R.string.pause));
         TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
         System.out.println("----- exCount Rest : " + ExCount);
-        IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-        RestTimer();
+        ExTimer = model.getExerciseType()[ExCount];
+
+        /*WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
+        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+        for (int i = 0; i < model.getExerciseImg().length(); i++) {
+            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+        }
+        sectionBuilder.setOneshot(false);
+        sectionBuilder.setFrameDuration(800);
+        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
+        stateAnimation.transitionNow("pending");
+
+        TvPauseExercise.setText(getString(R.string.pause));
+        TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
+        ExTimer = model.getExerciseType()[ExCount];*/
+        System.out.println("-------- Excount : " + ExCount);
+        ExerciseDownTimer.cancel();
+        IntValExercise = 0;
+//        RestTimer.onFinish();
+        ExerciseTimer(model, ExCount);
+    }
+
+    private void GotoNextExercise() {
+//        ExCount++;
+//        if (ExCount > 0) {
+//            IvExercisePrevious.setVisibility(View.VISIBLE);
+//        } else {
+//            IvExercisePrevious.setVisibility(View.GONE);
+//        }
+//        IvHelp.setVisibility(View.GONE);
+//        RlExerciseStart.setVisibility(View.GONE);
+//        RlReadyExercise.setVisibility(View.GONE);
+//        RlRestExercise.setVisibility(View.VISIBLE);
+        /*TvWorkOutExerciseCount.setText((ExCount + 1) + " Of " + WorkoutExerciseList.size());
+        WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
+        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+        for (int i = 0; i < model.getExerciseImg().length(); i++) {
+            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+        }
+        sectionBuilder.setOneshot(false);
+        sectionBuilder.setFrameDuration(800);
+        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
+        stateAnimation.transitionNow("pending");
+
+        TvPauseExercise.setText(getString(R.string.pause));
+        TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
+        System.out.println("----- exCount Rest : " + ExCount);
+        IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);*/
+
+
+    /*    WorkoutExerciseModel model = WorkoutExerciseList.get((ExCount));
+        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+        for (int i = 0; i < model.getExerciseImg().length(); i++) {
+            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+        }
+        sectionBuilder.setOneshot(false);
+        sectionBuilder.setFrameDuration(800);
+        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedRestExercise).addSection(sectionBuilder).build(context);
+        stateAnimation.transitionNow("pending");
+
+        TvTitle.setText(Constants.getCapsSentences("Next " + (ExCount) + "/" + WorkoutExerciseList.size()));
+        TvRestWorkOutExercise.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
+        if (WorkoutExerciseList.get((ExCount)).getExerciseImg().length() > 1) {
+            TvWorkOutExerciseRestDesc.setText("x" + WorkoutExerciseList.get((ExCount)).getExerciseType()[(ExCount)]);
+        } else {
+            TvWorkOutExerciseRestDesc.setText(WorkoutExerciseList.get((ExCount)).getExerciseType()[(ExCount)] + " Sec");
+        }*/
+        System.out.println("----- exCount InRest : " + (ExCount));
+        if ((WorkoutExerciseList.size() - 1) == ExCount) {
+            int time = 0;
+            for (int i = 0; i < WorkoutExerciseList.size(); i++) {
+                time = time + WorkoutExerciseList.get(i).getExerciseImg().length() + 30;
+            }
+
+            ExerciseDownTimer.cancel();
+            startActivity(new Intent(context,CompleteExerciseActivity.class)
+                    .putExtra(Constants.ExerciseCount,WorkoutExerciseList.size())
+                    .putExtra(Constants.WorkoutType,WorkoutType)
+                    .putExtra(Constants.ExerciseTime,time));
+            finish();
+        } else {
+            ExerciseDownTimer.cancel();
+            ExerciseDownTimer.onFinish();
+            IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
+        }
+//        RestTimer();
     }
 }

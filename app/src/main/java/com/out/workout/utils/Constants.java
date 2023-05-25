@@ -17,6 +17,8 @@ public class Constants {
     public static String WorkList = "WorkList";
     public static String Count = "Count";
     public static ArrayList<WorkoutExerciseModel> WorkExerciseList = new ArrayList<>();
+    public static String ExerciseCount="ExerciseCount";
+    public static String ExerciseTime="ExerciseTime";
 
     public static String getCapsSentences(String tagName) {
         String[] splits = tagName.toLowerCase().split(" ");
