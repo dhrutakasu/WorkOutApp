@@ -5,7 +5,8 @@ import android.content.SharedPreferences;
 
 public class SharePreference {
     public static String CALCULATOR_AGE = "CalculatorAge";
-    public static String COUNT_TIMER = "CountTimer";
+    public static String COUNT_TIMER = "CounterTimer";
+    public static String REST_TIMER = "RestTimer";
     public static String IS_SOUND = "IsSound";
     public static int AGE = 25;
     public static String PREF = "CalculatorPref";
@@ -22,13 +23,13 @@ public class SharePreference {
         return context.getSharedPreferences(PREF, 0).getInt(CALCULATOR_AGE, AGE);
     }
 
-    public static int getInt(Context context, int timer) {
-        return context.getSharedPreferences(PREF, 0).getInt(COUNT_TIMER, timer);
+    public static int getInt(Context context, String countTimer, int timer) {
+        return context.getSharedPreferences(PREF, 0).getInt(countTimer, timer);
     }
 
-    public static void SetInt(Context context, int timer) {
+    public static void SetInt(Context context, String countTimer, int timer) {
         SharedPreferences.Editor edit = context.getSharedPreferences(PREF, 0).edit();
-        edit.putInt(COUNT_TIMER, timer);
+        edit.putInt(countTimer, timer);
         edit.apply();
         edit.commit();
     }

@@ -21,7 +21,7 @@ import java.util.Locale;
 
 public class App extends Application {
 
-    static App App = null;
+    public static App App = null;
     public static TextToSpeech textToSpeech;
 
     public static App getInstance() {
@@ -81,10 +81,8 @@ public class App extends Application {
                 return;
             }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                Bundle bundle = null;
                 textToSpeech.playEarcon("Done", TextToSpeech.QUEUE_FLUSH, null, BuildConfig.APPLICATION_ID);
             } else {
-                HashMap hashMap = null;
                 textToSpeech.playEarcon("Done", TextToSpeech.QUEUE_FLUSH, null);
             }
         } catch (Exception e) {

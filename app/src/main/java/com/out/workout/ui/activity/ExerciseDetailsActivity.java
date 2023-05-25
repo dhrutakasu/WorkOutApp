@@ -71,7 +71,7 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
 
     private void initActions() {
         helper = new ExerciseHelper(context);
-        TvTitle.setText(ExerciseName);
+        TvTitle.setText(Constants.getCapsSentences(ExerciseName));
         MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
         for (int i = 0; i < ExerciseImage.length; i++) {
             sectionBuilder.addFrame(ExerciseImage[i]);
