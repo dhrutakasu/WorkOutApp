@@ -966,5 +966,6 @@
     <string name="pause">Pause</string>
     <string name="play">Play</string>
     <string name="complete_exercise">Complete Exercise</string>
+    <string name="add_reminder">Add Reminder</string>
 
 </resources>

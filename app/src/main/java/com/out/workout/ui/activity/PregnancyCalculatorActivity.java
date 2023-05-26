@@ -68,9 +68,9 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     private void initActions() {
         TvTitle.setText(getString(R.string.pregnancy));
         calendar = Calendar.getInstance();
-        Fab = calendar.get(Calendar.FEBRUARY);
-        dateLong = calendar.get(Calendar.LONG);
-        date = calendar.get(Calendar.DATE);
+        Fab = calendar.get(Calendar.YEAR);
+        dateLong = calendar.get(Calendar.MONTH);
+        date = calendar.get(Calendar.DAY_OF_MONTH);
         simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
         String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
         switch (Integer.parseInt(split[0])) {
@@ -136,7 +136,7 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     private void GotoChooseDate() {
         BoolChooseDate = true;
         calendar.set(Fab, dateLong, date);
-        new DatePickerDialog(context, setListener,  calendar.get(Calendar.FEBRUARY), calendar.get(Calendar.LONG_FORMAT), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(context, setListener,  calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
     private void GotoCalculateBloodDonation() {
@@ -227,8 +227,8 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     final DatePickerDialog.OnDateSetListener setListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-            calendar.set(Calendar.FEBRUARY, i4);
-            calendar.set(Calendar.LONG, i5);
+            calendar.set(Calendar.YEAR, i4);
+            calendar.set(Calendar.MONTH, i5);
             calendar.set(Calendar.DAY_OF_MONTH, i6);
             String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
             switch (Integer.parseInt(split[0])) {

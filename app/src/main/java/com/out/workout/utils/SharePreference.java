@@ -34,14 +34,18 @@ public class SharePreference {
         edit.commit();
     }
 
-    public static boolean getBoolean(Context context, boolean IsSound) {
-        return context.getSharedPreferences(PREF, 0).getBoolean(IS_SOUND, IsSound);
+    public static boolean getBoolean(Context context,String key, boolean IsSound) {
+        return context.getSharedPreferences(PREF, 0).getBoolean(key, IsSound);
     }
 
-    public static void SetBoolean(Context context, boolean IsSound) {
+    public static void SetBoolean(Context context,String key, boolean IsSound) {
         SharedPreferences.Editor edit = context.getSharedPreferences(PREF, 0).edit();
-        edit.putBoolean(IS_SOUND, IsSound);
+        edit.putBoolean(key, IsSound);
         edit.apply();
         edit.commit();
+    }
+
+    public static String getString(Context context, String key, String en) {
+        return context.getSharedPreferences(PREF, 0).getString(key, en);
     }
 }

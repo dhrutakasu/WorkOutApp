@@ -139,7 +139,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         CVProgressReady.setText(String.valueOf((ReadyCountDown - 2000) / 1000));
 
         IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-        IsSound = SharePreference.getBoolean(context, true);
+        IsSound = SharePreference.getBoolean(context,SharePreference.IS_SOUND, true);
 
         if (IsSound) {
             if (App.textToSpeech != null) {

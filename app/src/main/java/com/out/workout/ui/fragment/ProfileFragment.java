@@ -1,5 +1,6 @@
 package com.out.workout.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -12,16 +13,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.out.workout.R;
+import com.out.workout.ui.activity.DayRemindersActivity;
+import com.out.workout.ui.activity.ExerciseRemindersActivity;
+import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
 
 
     private View ProfileView;
-    private TextView TvExerciseReminders, TvDayReminders, TvExerciseSounds, TvCountDownTime, TvRestTime;
+    private TextView TvExerciseReminders, TvDayReminders, TvExerciseSounds, TvCountDownTime, TvRestTime, TvExerciseRemindersTime;
     private CheckBox CbSound;
     private ImageView IvCountDownMinus, IvCountDownPlus, IvRestMinus, IvRestPlus;
     private int IsCounter, IsRest;
+    private boolean IsSound;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +56,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             IvRestMinus = (ImageView) ProfileView.findViewById(R.id.IvRestMinus);
             IvRestPlus = (ImageView) ProfileView.findViewById(R.id.IvRestPlus);
             TvRestTime = (TextView) ProfileView.findViewById(R.id.TvRestTime);
+            TvExerciseRemindersTime = (TextView) ProfileView.findViewById(R.id.TvExerciseRemindersTime);
         }
     }
 
@@ -68,6 +74,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void initActions() {
         IsCounter = SharePreference.getInt(getContext(), SharePreference.COUNT_TIMER, 10);
         IsRest = SharePreference.getInt(getContext(), SharePreference.REST_TIMER, 25);
+        IsSound = SharePreference.getBoolean(getContext(), SharePreference.IS_SOUND, true);
+        CbSound.setChecked(IsSound);
         TvCountDownTime.setText(String.valueOf(IsCounter));
         TvRestTime.setText(String.valueOf(IsRest).toString());
     }
@@ -101,15 +109,21 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void GotoReminders() {
-
+        startActivity(new Intent(getContext(), ExerciseRemindersActivity.class));
     }
 
     private void GotoDayReminders() {
-
+        startActivity(new Intent(getContext(), DayRemindersActivity.class));
     }
 
     private void GotoSound() {
-
+        if (IsSound) {
+            IsSound = false;
+        } else {
+            IsSound = true;
+        }
+        SharePreference.SetBoolean(getContext(), SharePreference.IS_SOUND, IsSound);
+        CbSound.setChecked(IsSound);
     }
 
     private void GotoCountDownMinus() {
@@ -142,5 +156,14 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
             TvRestTime.setText(String.valueOf(IsRest));
             SharePreference.SetInt(getContext(), SharePreference.REST_TIMER, IsRest);
         }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        System.out.println("---- : HR " + SharePreference.getInt(getContext(), Constants.NOTIFICATION_HOUR, 12));
+        System.out.println("---- : MIN " + SharePreference.getInt(getContext(), Constants.NOTIFICATION_MINUTES, 0));
+        TvExerciseRemindersTime.setText(SharePreference.getInt(getContext(), Constants.NOTIFICATION_HOUR, 12) + ":" + SharePreference.getInt(getContext(), Constants.NOTIFICATION_MINUTES, 00));
     }
 }

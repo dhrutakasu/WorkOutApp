@@ -1,0 +1,258 @@
+{
+  "cons": [
+    "A serious side effect is that lysine increases the body’s calcium absorption, and bring free, damage-causing amount of calcium in the body.",
+    "Avoid taking large amounts of calcium and lysine at the same time."
+  ],
+  "description": [
+    "Amaranth leaves contain only traces of fats and no cholesterol.",
+    "Fresh amaranth leaves are one of the richest sources of vitamin-C. 100 g of fresh leaves carry 43.3 mg.",
+    "Vitamin-C is a powerful water-soluble antioxidant which plays a vital role in wound healing and help fight against viral infections.",
+    "Amaranth greens perhaps have the highest concentrations of vitamin-K of all the edible green-leafy vegetables.",
+    "Vitamin-K plays a vital role in strengthening the bone mass by promoting osteoblastic activity in the bone cells.it has higher levels of other minerals than spinach such as calcium, manganese, magnesium, copper and zinc."
+  ],
+  "icon": "AmaranthGreens.jpg",
+  "name": "Amaranthus",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "371 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "7.02 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "13.56 g",
+          "name": "Protein",
+          "subDiv": [
+            {
+              "amount": "0.181 g",
+              "name": "Tryptophan"
+            },
+            {
+              "amount": "0.558 g",
+              "name": "Threonine"
+            },
+            {
+              "amount": "0.582 g",
+              "name": "Isoleucine"
+            },
+            {
+              "amount": "0.879 g",
+              "name": "Leucine"
+            },
+            {
+              "amount": "0.747 g",
+              "name": "Lysine"
+            },
+            {
+              "amount": "0.226 g",
+              "name": "Methionine"
+            },
+            {
+              "amount": "0.191 g",
+              "name": "Cystine"
+            },
+            {
+              "amount": "0.542 g",
+              "name": "Phenylalanine"
+            },
+            {
+              "amount": "0.329 g",
+              "name": "Tyrosine"
+            },
+            {
+              "amount": "0.679 g",
+              "name": "Valine"
+            },
+            {
+              "amount": "1.060 g",
+              "name": "Arginine"
+            },
+            {
+              "amount": "0.389 g",
+              "name": "Histidine"
+            },
+            {
+              "amount": "0.799 g",
+              "name": "Alanine"
+            },
+            {
+              "amount": "1.261 g",
+              "name": "Aspartic acid"
+            },
+            {
+              "amount": "2.259 g",
+              "name": "Glutamic acid"
+            },
+            {
+              "amount": "1.636 g",
+              "name": "Glycine"
+            },
+            {
+              "amount": "0.698 g",
+              "name": "Proline"
+            },
+            {
+              "amount": "1.148 g",
+              "name": "Serine"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "1.19 mg",
+          "daily_value": "8%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "4.2 mg",
+          "daily_value": "5%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.116 mg",
+          "daily_value": "10%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "17%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.923 mg",
+          "daily_value": "6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "1.457 mg",
+          "daily_value": "29%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.591 mg",
+          "daily_value": "45%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "82 mcg",
+          "daily_value": "21%",
+          "name": "Vitamin B9"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "159 mg",
+          "daily_value": "16%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "7.61 mg",
+          "daily_value": "59%",
+          "name": "Iron"
+        },
+        {
+          "amount": "248 mg",
+          "daily_value": "70%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "3.33 mg",
+          "daily_value": "159%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "557 mg",
+          "daily_value": "80%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "508 mg",
+          "daily_value": "11%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "2.87 mg",
+          "daily_value": "30%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "7%"
+    },
+    {
+      "name": "Calcium",
+      "value": "15%"
+    },
+    {
+      "name": "Iron",
+      "value": "42%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "62%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "20%"
+    },
+    {
+      "name": "Protein",
+      "value": "28%"
+    }
+  ],
+  "pros": [
+    "Amaranth leaves contain only traces of fats and no cholesterol.",
+    "Fresh amaranth leaves are one of the richest sources of vitamin-C. 100 g of fresh leaves carry 43.3 mg.",
+    "Vitamin-C is a powerful water-soluble antioxidant which plays a vital role in wound healing and help fight against viral infections.",
+    "Amaranth greens perhaps have the highest concentrations of vitamin-K of all the edible green-leafy vegetables.",
+    "Vitamin-K plays a vital role in strengthening the bone mass by promoting osteoblastic activity in the bone cells.it has higher levels of other minerals than spinach such as calcium, manganese, magnesium, copper and zinc.",
+    "There is not enough reliable information about the safety of taking amaranth if you are pregnant or breast-feeding.",
+    "Amaranth is used for ulcers, diarrhea, and swollen mouth and throat. It is also used to treat high cholesterol."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

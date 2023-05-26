@@ -1,0 +1,345 @@
+[
+  {
+    "icon": "AmaranthGreens.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Amaranthus",
+    "slug": "Amaranthus"
+  },
+  {
+    "icon": "Artichoke.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Artichoke",
+    "slug": "Artichoke"
+  },
+  {
+    "icon": "Arugula.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Arugula",
+    "slug": "Arugula"
+  },
+  {
+    "icon": "Asparagus.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Asparagus",
+    "slug": "Asparagus"
+  },
+  {
+    "icon": "Bamboo_Shoots.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Bamboo Shoots",
+    "slug": "Bamboo_Shoots"
+  },
+  {
+    "icon": "Basella.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Basella",
+    "slug": "Basella"
+  },
+  {
+    "icon": "Beets.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Beetroot",
+    "slug": "Beets"
+  },
+  {
+    "icon": "Bell_Pepper.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Bell Pepper",
+    "slug": "Bell_Pepper"
+  },
+  {
+    "icon": "Bitter_Gourd.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Bitter Gourd",
+    "slug": "Bitter_Gourd"
+  },
+  {
+    "icon": "Bottle_Gourd.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Bottle Gourd",
+    "slug": "Bottle_Gourd"
+  },
+  {
+    "icon": "Brinjal.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Brinjal",
+    "slug": "Brinjal"
+  },
+  {
+    "icon": "Broccoli.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Broccoli",
+    "slug": "Broccoli"
+  },
+  {
+    "icon": "Cabbage.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cabbage",
+    "slug": "Cabbage"
+  },
+  {
+    "icon": "Carrots.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Carrots",
+    "slug": "Carrots"
+  },
+  {
+    "icon": "Cauliflower.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cauliflower",
+    "slug": "Cauliflower"
+  },
+  {
+    "icon": "ChineseWaterChestnuts.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Chinese Water Chestnuts",
+    "slug": "ChineseWaterChestnuts"
+  },
+  {
+    "icon": "Collard_Greens.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Collard Greens",
+    "slug": "Collard_Greens"
+  },
+  {
+    "icon": "Cucumber.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cucumber",
+    "slug": "Cucumber"
+  },
+  {
+    "icon": "Edamame.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Edamame",
+    "slug": "Edamame"
+  },
+  {
+    "icon": "Endive.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Endive",
+    "slug": "Endive"
+  },
+  {
+    "icon": "Fennel.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Fennel",
+    "slug": "Fennel"
+  },
+  {
+    "icon": "GreenPeas.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Green Peas",
+    "slug": "GreenPeas"
+  },
+  {
+    "icon": "LadysFinger.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lady Finger",
+    "slug": "LadysFinger"
+  },
+  {
+    "icon": "Lettuce.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lettuce",
+    "slug": "Lettuce"
+  },
+  {
+    "icon": "Lima_Beans.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lima Beans",
+    "slug": "Lima_Beans"
+  },
+  {
+    "icon": "Lotus_Root.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lotus Root",
+    "slug": "Lotus_Root"
+  },
+  {
+    "icon": "Moringa_Pods.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Moringa Pods",
+    "slug": "Moringa_Pods"
+  },
+  {
+    "icon": "Mustard_Greens.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Mustard Greens",
+    "slug": "Mustard_Greens"
+  },
+  {
+    "icon": "Onion.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Onion",
+    "slug": "Onion"
+  },
+  {
+    "icon": "Parsnips.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Parsnips",
+    "slug": "Parsnips"
+  },
+  {
+    "icon": "Potato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Potato",
+    "slug": "Potato"
+  },
+  {
+    "icon": "Pumpkin.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pumpkin",
+    "slug": "Pumpkin"
+  },
+  {
+    "icon": "Purslane.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Purslane",
+    "slug": "Purslane"
+  },
+  {
+    "icon": "Radicchio.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Radicchio",
+    "slug": "Radicchio"
+  },
+  {
+    "icon": "Radish.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Radish",
+    "slug": "Radish"
+  },
+  {
+    "icon": "Rhubarb.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Rhubarb",
+    "slug": "Rhubarb"
+  },
+  {
+    "icon": "Rutabaga.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Rutabaga",
+    "slug": "Rutabaga"
+  },
+  {
+    "icon": "Salsify.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Salsify",
+    "slug": "Salsify"
+  },
+  {
+    "icon": "Scallions.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Scallions",
+    "slug": "Scallions"
+  },
+  {
+    "icon": "Snap_Peas.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Snap Peas",
+    "slug": "Snap_Peas"
+  },
+  {
+    "icon": "Spinach.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Spinach",
+    "slug": "Spinach"
+  },
+  {
+    "icon": "Sweet_Corn.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sweet Corn",
+    "slug": "Sweet_Corn"
+  },
+  {
+    "icon": "SweetPotato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sweet Potato",
+    "slug": "SweetPotato"
+  },
+  {
+    "icon": "SwissChard.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Swiss Chard",
+    "slug": "SwissChard"
+  },
+  {
+    "icon": "Tomato.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Tomato",
+    "slug": "Tomato"
+  },
+  {
+    "icon": "Turnips.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Turnips",
+    "slug": "Turnips"
+  },
+  {
+    "icon": "WaterCress.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Water Cress",
+    "slug": "WaterCress"
+  },
+  {
+    "icon": "Winged_Bean.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Winged Bean",
+    "slug": "Winged_Bean"
+  },
+  {
+    "icon": "Yardlong_Beans.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Yardlong Beans",
+    "slug": "Yardlong_Beans"
+  }
+]

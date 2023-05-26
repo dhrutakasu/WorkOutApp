@@ -66,9 +66,9 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     private void initActions() {
         TvTitle.setText(getString(R.string.breath_count));
         calendar = Calendar.getInstance();
-        Fab = calendar.get(Calendar.FEBRUARY);
-        dateLong = calendar.get(Calendar.LONG);
-        date = calendar.get(Calendar.DATE);
+        Fab = calendar.get(Calendar.YEAR);
+        dateLong = calendar.get(Calendar.MONTH);
+        date = calendar.get(Calendar.DAY_OF_MONTH);
         simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy", Locale.US);
         String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
         switch (Integer.parseInt(split[0])) {
@@ -130,7 +130,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     private void GotoChooseDate() {
         BoolChooseDate = true;
         calendar.set(Fab, dateLong, date);
-        DatePickerDialog datePickerDialog = new DatePickerDialog(context, setListener, calendar.get(Calendar.FEBRUARY), calendar.get(Calendar.LONG_FORMAT), calendar.get(Calendar.DAY_OF_MONTH));
+        DatePickerDialog datePickerDialog = new DatePickerDialog(context, setListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
         datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
         datePickerDialog.show();
     }
@@ -175,8 +175,8 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     private int getBreathDate(Calendar calendar) {
         TimeUnit.MILLISECONDS.toDays(Calendar.getInstance().getTimeInMillis() - calendar.getTimeInMillis());
         Calendar calendar2 = Calendar.getInstance();
-        int Fab = calendar2.get(1) - calendar.get(Calendar.FEBRUARY);
-        int longs = calendar2.get(2) - calendar.get(Calendar.LONG);
+        int Fab = calendar2.get(Calendar.YEAR) - calendar.get(Calendar.YEAR);
+        int longs = calendar2.get(Calendar.MONTH) - calendar.get(Calendar.MONTH);
         long CalTime = calendar2.getTime().getTime() - calendar.getTime().getTime();
         int breathCal = (int) (((((float) ((CalTime / 1000) / 60)) / 60.0f) / 24.0f) + 0.0f);
         return ((Fab < 1 || Fab > 5) ? Fab > 5 ? breathCal * 11 : longs < 6 ? breathCal * 45 : breathCal * 27 : breathCal * 25) * 1440;
@@ -185,8 +185,8 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     final DatePickerDialog.OnDateSetListener setListener = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker datePicker, int i4, int i5, int i6) {
-            calendar.set(Calendar.FEBRUARY, i4);
-            calendar.set(Calendar.LONG, i5);
+            calendar.set(Calendar.YEAR, i4);
+            calendar.set(Calendar.MONTH, i5);
             calendar.set(Calendar.DAY_OF_MONTH, i6);
             String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
             switch (Integer.parseInt(split[0])) {

@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.out.workout.model.ExerciseModel;
+import com.out.workout.model.ReminderModel;
 
 import java.util.ArrayList;
 
@@ -25,13 +26,25 @@ public class ExerciseHelper extends SQLiteOpenHelper {
     public static final String EXERCISE_IMG = "ExerciseImg";
     public static final String EXERCISE_CYCLES = "ExerciseCycles";
 
+    public static final String REMINDER_TABLE_NAME = "Reminder";
+    public static final String REMINDER_ID = "ReminderId";
+    public static final String REMINDER_TIME = "ReminderTime";
+    public static final String REMINDER_MONDAY = "ReminderMon";
+    public static final String REMINDER_TUESDAY = "ReminderTue";
+    public static final String REMINDER_WEDNESDAY = "ReminderWed";
+    public static final String REMINDER_THURSDAY = "ReminderThu";
+    public static final String REMINDER_FRIDAY = "ReminderFri";
+    public static final String REMINDER_SATURDAY = "ReminderSat";
+    public static final String REMINDER_SUNDAY = "ReminderSun";
+    public static final String REMINDER_ON_OFF = "ReminderOnOff";
+
     public ExerciseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_TAGS_TABLE = "CREATE TABLE " + EXERCISE_TABLE_NAME + "("
+        String CREATE_EXERCISE_TABLE = "CREATE TABLE " + EXERCISE_TABLE_NAME + "("
                 + EXERCISE_ID + " INTEGER PRIMARY KEY,"
                 + EXERCISE_TYPE + " TEXT,"
                 + EXERCISE_NAME + " TEXT,"
@@ -39,12 +52,27 @@ public class ExerciseHelper extends SQLiteOpenHelper {
                 + EXERCISE_IMG + " VARCHAR,"
                 + EXERCISE_CYCLES + " TEXT" + ")";
 
-        db.execSQL(CREATE_TAGS_TABLE);
+        db.execSQL(CREATE_EXERCISE_TABLE);
+
+        String CREATE_REMINDER_TABLE = "CREATE TABLE " + REMINDER_TABLE_NAME + "("
+                + REMINDER_ID + " INTEGER PRIMARY KEY,"
+                + REMINDER_TIME + " TEXT,"
+                + REMINDER_MONDAY + " TEXT,"
+                + REMINDER_TUESDAY + " TEXT,"
+                + REMINDER_WEDNESDAY + " TEXT,"
+                + REMINDER_THURSDAY + " TEXT,"
+                + REMINDER_FRIDAY + " TEXT,"
+                + REMINDER_SATURDAY + " TEXT,"
+                + REMINDER_SUNDAY + " TEXT,"
+                + REMINDER_ON_OFF + " TEXT" + ")";
+
+        db.execSQL(CREATE_REMINDER_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + EXERCISE_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + REMINDER_TABLE_NAME);
         onCreate(db);
     }
 
@@ -58,6 +86,24 @@ public class ExerciseHelper extends SQLiteOpenHelper {
         contentValues.put(EXERCISE_IMG, String.valueOf(ExerciseImg));
         contentValues.put(EXERCISE_CYCLES, ExerciseCycles);
         db.insert(EXERCISE_TABLE_NAME, null, contentValues);
+    }
+
+
+    //todo insert Reminder
+    public void insertReminder(ReminderModel model) {
+        System.out.println("--- REMINDER_ID : "+model.toString());
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(REMINDER_TIME, model.getTime());
+        contentValues.put(REMINDER_MONDAY, model.getMon());
+        contentValues.put(REMINDER_TUESDAY, model.getTue());
+        contentValues.put(REMINDER_WEDNESDAY, model.getWed());
+        contentValues.put(REMINDER_THURSDAY, model.getThu());
+        contentValues.put(REMINDER_FRIDAY, model.getFri());
+        contentValues.put(REMINDER_SATURDAY, model.getSat());
+        contentValues.put(REMINDER_SUNDAY, model.getSun());
+        contentValues.put(REMINDER_ON_OFF, model.getOnOff());
+        db.insert(REMINDER_TABLE_NAME, null, contentValues);
     }
 
     //todo get count Exercise record
@@ -106,6 +152,24 @@ public class ExerciseHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    //todo Reminder update
+    public boolean updateReminder(ReminderModel model) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(REMINDER_ID, model.getId());
+        contentValues.put(REMINDER_TIME, model.getTime());
+        contentValues.put(REMINDER_MONDAY, model.getMon());
+        contentValues.put(REMINDER_TUESDAY, model.getTue());
+        contentValues.put(REMINDER_WEDNESDAY, model.getWed());
+        contentValues.put(REMINDER_THURSDAY, model.getThu());
+        contentValues.put(REMINDER_FRIDAY, model.getFri());
+        contentValues.put(REMINDER_SATURDAY, model.getSat());
+        contentValues.put(REMINDER_SUNDAY, model.getSun());
+        contentValues.put(REMINDER_ON_OFF, model.getOnOff());
+        db.update(REMINDER_TABLE_NAME, contentValues, REMINDER_ID + " = ?", new String[]{String.valueOf(model.getId())});
+        return true;
+    }
+
     //todo get record of Exercise
     @SuppressLint("Range")
     public int getExerciseRecord(String ExerciseName) {
@@ -115,6 +179,7 @@ public class ExerciseHelper extends SQLiteOpenHelper {
         return cursor.getInt(cursor.getColumnIndex(EXERCISE_ID));
     }
 
+    //todo get record of Exercise
     public ArrayList<ExerciseModel> getExerciseRecords(String workoutType) {
         ArrayList<ExerciseModel> tagsArrayList = new ArrayList<>();
         SQLiteDatabase database = this.getWritableDatabase();
@@ -146,10 +211,42 @@ public class ExerciseHelper extends SQLiteOpenHelper {
                         , cursor.getString(cursor.getColumnIndex(EXERCISE_TYPE))
                         , IntImg
                         , IntCycles
-                       );
+                );
                 tagsArrayList.add(user);
             } while (cursor.moveToNext());
         }
         return tagsArrayList;
+    }
+
+    //todo get record of Reminder
+    public ArrayList<ReminderModel> getReminderRecords() {
+        ArrayList<ReminderModel> reminderModels = new ArrayList<>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery("SELECT * FROM " + REMINDER_TABLE_NAME, null);
+        cursor.moveToFirst();
+        if (cursor.moveToFirst()) {
+            do {
+                @SuppressLint("Range") ReminderModel user = new ReminderModel(cursor.getString(cursor.getColumnIndex(REMINDER_ID))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_MONDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_TUESDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_WEDNESDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_THURSDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_FRIDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_SATURDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_SUNDAY))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_TIME))
+                        , cursor.getString(cursor.getColumnIndex(REMINDER_ON_OFF))
+                );
+                reminderModels.add(user);
+            } while (cursor.moveToNext());
+        }
+        return reminderModels;
+    }
+
+    //todo delete reminder
+    public void deleteReminder(String id) {
+        System.out.println("---- delete : "+id);
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(REMINDER_TABLE_NAME, REMINDER_ID + "= ?", new String[]{String.valueOf(id)});
     }
 }

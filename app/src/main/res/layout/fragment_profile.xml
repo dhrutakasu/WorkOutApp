@@ -32,6 +32,18 @@
                 android:textSize="@dimen/_16sdp" />
 
             <TextView
+                android:id="@+id/TvExerciseRemindersTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/TvExerciseReminders"
+                android:layout_marginStart="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:gravity="center_vertical"
+                android:text="@string/exercise_time"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
                 android:id="@+id/TvDayReminders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,7 +60,7 @@
                 android:id="@+id/VReminders"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_1sdp"
-                android:layout_below="@id/TvExerciseReminders"
+                android:layout_below="@id/TvExerciseRemindersTime"
                 android:layout_marginTop="@dimen/_8ssp"
                 android:background="@color/box_gray" />
         </RelativeLayout>
@@ -66,8 +78,8 @@
                 android:id="@+id/CbSound"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:checked="true" />
 
             <TextView
                 android:id="@+id/TvExerciseSounds"
