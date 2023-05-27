@@ -10,10 +10,13 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.out.workout.Alarm.model.Alarm;
+import com.out.workout.Alarm.util.AlarmUtils;
 import com.out.workout.model.ExerciseModel;
 import com.out.workout.model.ReminderModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ExerciseHelper extends SQLiteOpenHelper {
 
@@ -37,6 +40,19 @@ public class ExerciseHelper extends SQLiteOpenHelper {
     public static final String REMINDER_SATURDAY = "ReminderSat";
     public static final String REMINDER_SUNDAY = "ReminderSun";
     public static final String REMINDER_ON_OFF = "ReminderOnOff";
+
+    private static final String TABLE_NAME = "alarms";
+
+    public static final String _ID = "_id";
+    public static final String COL_TIME = "time";
+    public static final String COL_MON = "mon";
+    public static final String COL_TUES = "tues";
+    public static final String COL_WED = "wed";
+    public static final String COL_THURS = "thurs";
+    public static final String COL_FRI = "fri";
+    public static final String COL_SAT = "sat";
+    public static final String COL_SUN = "sun";
+    public static final String COL_IS_ENABLED = "is_enabled";
 
     public ExerciseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -67,12 +83,29 @@ public class ExerciseHelper extends SQLiteOpenHelper {
                 + REMINDER_ON_OFF + " TEXT" + ")";
 
         db.execSQL(CREATE_REMINDER_TABLE);
+
+        final String CREATE_ALARMS_TABLE = "CREATE TABLE " + TABLE_NAME + " (" +
+                _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COL_TIME + " INTEGER NOT NULL, " +
+                COL_MON + " INTEGER NOT NULL, " +
+                COL_TUES + " INTEGER NOT NULL, " +
+                COL_WED + " INTEGER NOT NULL, " +
+                COL_THURS + " INTEGER NOT NULL, " +
+                COL_FRI + " INTEGER NOT NULL, " +
+                COL_SAT + " INTEGER NOT NULL, " +
+                COL_SUN + " INTEGER NOT NULL, " +
+                COL_IS_ENABLED + " INTEGER NOT NULL" +
+                ");";
+
+        db.execSQL(CREATE_ALARMS_TABLE);
+
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS " + EXERCISE_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + REMINDER_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
 
@@ -90,7 +123,7 @@ public class ExerciseHelper extends SQLiteOpenHelper {
 
 
     //todo insert Reminder
-    public void insertReminder(ReminderModel model) {
+    public long insertReminder(ReminderModel model) {
         System.out.println("--- REMINDER_ID : "+model.toString());
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -103,7 +136,7 @@ public class ExerciseHelper extends SQLiteOpenHelper {
         contentValues.put(REMINDER_SATURDAY, model.getSat());
         contentValues.put(REMINDER_SUNDAY, model.getSun());
         contentValues.put(REMINDER_ON_OFF, model.getOnOff());
-        db.insert(REMINDER_TABLE_NAME, null, contentValues);
+        return db.insert(REMINDER_TABLE_NAME, null, contentValues);
     }
 
     //todo get count Exercise record
@@ -248,5 +281,47 @@ public class ExerciseHelper extends SQLiteOpenHelper {
         System.out.println("---- delete : "+id);
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(REMINDER_TABLE_NAME, REMINDER_ID + "= ?", new String[]{String.valueOf(id)});
+    }
+
+
+
+
+
+    public long addAlarm() {
+        return addAlarm(new Alarm());
+    }
+
+    long addAlarm(Alarm alarm) {
+        return getWritableDatabase().insert(TABLE_NAME, null, AlarmUtils.toContentValues(alarm));
+    }
+
+    public int updateAlarm(Alarm alarm) {
+        final String where = _ID + "=?";
+        final String[] whereArgs = new String[] { Long.toString(alarm.getId()) };
+        return getWritableDatabase()
+                .update(TABLE_NAME, AlarmUtils.toContentValues(alarm), where, whereArgs);
+    }
+
+    public int deleteAlarm(Alarm alarm) {
+        return deleteAlarm(alarm.getId());
+    }
+
+    int deleteAlarm(long id) {
+        final String where = _ID + "=?";
+        final String[] whereArgs = new String[] { Long.toString(id) };
+        return getWritableDatabase().delete(TABLE_NAME, where, whereArgs);
+    }
+
+    public List<Alarm> getAlarms() {
+
+        Cursor c = null;
+
+        try{
+            c = getReadableDatabase().query(TABLE_NAME, null, null, null, null, null, null);
+            return AlarmUtils.buildAlarmList(c);
+        } finally {
+            if (c != null && !c.isClosed()) c.close();
+        }
+
     }
 }

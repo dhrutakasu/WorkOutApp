@@ -97,6 +97,7 @@ public class NotificationPublisher extends BroadcastReceiver {
         }
         alarmHelper = new AlarmHelper(context);
         for (int i2 = 0; i2 < models.size(); i2++) {
+            System.out.println("===== models : " + models.get(i2).toString() + " bool : " + i);
             if (models.get(i2).getTime().equals(startTimeFormat().format(calendar.getTime())) &&
                     models.get(i2).getOnOff().equalsIgnoreCase("true")) {
                 if ((models.get(i2).getSun().equalsIgnoreCase("true") && i == 1) ||
@@ -109,7 +110,7 @@ public class NotificationPublisher extends BroadcastReceiver {
                     startNotification(context);
                 }
                 AlarmHelper alarmHelper = new AlarmHelper(context);
-                int IntHr,IntMin,AMPM;
+                int IntHr, IntMin, AMPM;
                 if (startTimeFormat().format(calendar.getTime()).endsWith("AM")) {
                     IntHr = Integer.parseInt(new SimpleDateFormat("hh", Locale.ENGLISH).format(calendar.getTime()));
                     IntMin = Integer.parseInt(new SimpleDateFormat("mm", Locale.ENGLISH).format(calendar.getTime()));

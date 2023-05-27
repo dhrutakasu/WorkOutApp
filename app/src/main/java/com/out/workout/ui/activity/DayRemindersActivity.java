@@ -1,15 +1,22 @@
 package com.out.workout.ui.activity;
 
+import static com.out.workout.Alarm.adapter.AddEditAlarmActivity.ADD_ALARM;
+import static com.out.workout.Alarm.adapter.AddEditAlarmActivity.buildAddEditAlarmActivityIntent;
 import static com.out.workout.utils.Constants.calendar;
+import static java.security.AccessController.getContext;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +24,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.out.workout.Alarm.adapter.AddEditAlarmActivity;
+import com.out.workout.Alarm.adapter.AlarmsAdapter;
+import com.out.workout.Alarm.model.Alarm;
+import com.out.workout.Alarm.service.LoadAlarmsReceiver;
+import com.out.workout.Alarm.service.LoadAlarmsService;
+import com.out.workout.Alarm.util.AlarmUtils;
+import com.out.workout.Alarm.util.DividerItemDecoration;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.Receiver.AlarmHelper;
@@ -28,7 +42,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class DayRemindersActivity extends AppCompatActivity implements View.OnClickListener {
+public class DayRemindersActivity extends AppCompatActivity implements View.OnClickListener, LoadAlarmsReceiver.OnAlarmsLoadedListener {
 
     private Context context;
     private ImageView IvBack;
@@ -38,6 +52,8 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
     private TextView TvNoReminderFound, TvAddReminder;
     private ArrayList<ReminderModel> ReminderRecordsList = new ArrayList<>();
     private AlarmHelper alarmHelper;
+    private LoadAlarmsReceiver mReceiver;
+    private AlarmsAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +67,7 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
 
     private void initViews() {
         context = this;
+        mReceiver = new LoadAlarmsReceiver(this);
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         RvAddReminderList = (RecyclerView) findViewById(R.id.RvAddReminderList);
@@ -68,10 +85,17 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
         helper = new ExerciseHelper(context);
         alarmHelper = new AlarmHelper(context);
         ReminderRecordsList = helper.getReminderRecords();
-        RvAddReminderList.setLayoutManager(new LinearLayoutManager(context));
+//        RvAddReminderList.setLayoutManager(new LinearLayoutManager(context));
 
-        ReminderAdapter reminderAdapter = new ReminderAdapter(context, helper.getReminderRecords(), alarmHelper);
-        RvAddReminderList.setAdapter(reminderAdapter);
+//        ReminderAdapter reminderAdapter = new ReminderAdapter(context, helper.getReminderRecords(), alarmHelper);
+//        RvAddReminderList.setAdapter(reminderAdapter);
+
+
+        mAdapter = new AlarmsAdapter();
+        RvAddReminderList.setAdapter(mAdapter);
+        RvAddReminderList.addItemDecoration(new DividerItemDecoration(context));
+        RvAddReminderList.setLayoutManager(new LinearLayoutManager(context));
+        RvAddReminderList.setItemAnimator(new DefaultItemAnimator());
     }
 
     @Override
@@ -87,13 +111,25 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        final IntentFilter filter = new IntentFilter(LoadAlarmsService.ACTION_COMPLETE);
+        LocalBroadcastManager.getInstance(context).registerReceiver(mReceiver, filter);
+        LoadAlarmsService.launchLoadAlarmsService(context);
+    }
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.IvBack:
                 onBackPressed();
                 break;
+//            case R.id.TvAddReminder:
+//                GotoAddReminder();
+//                break;
             case R.id.TvAddReminder:
-                GotoAddReminder();
+                AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
+                final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
+                startActivity(i);
                 break;
         }
     }
@@ -150,20 +186,20 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
                     reminderModel.setSun("true");
                 }
             }
-            SetAlarmRepeat(alarmHelper, calendar);
             reminderModel.setOnOff("true");
 
-            helper.insertReminder(reminderModel);
+            long id=helper.insertReminder(reminderModel);
             RvAddReminderList.setVisibility(View.VISIBLE);
             ReminderAdapter reminderAdapter = new ReminderAdapter(context, helper.getReminderRecords(), alarmHelper);
             RvAddReminderList.setAdapter(reminderAdapter);
             TvNoReminderFound.setVisibility(View.GONE);
+            SetAlarmRepeat(alarmHelper, calendar,id);
             return;
         }
         Toast.makeText(context, getResources().getString(R.string.please_select_at_least_one_day), Toast.LENGTH_SHORT).show();
     }
 
-    private void SetAlarmRepeat(AlarmHelper alarmHelper, Calendar calendar) {
+    private void SetAlarmRepeat(AlarmHelper alarmHelper, Calendar calendar, long id) {
         int IntHr;
         int IntMin;
         int AM_PM;
@@ -176,10 +212,15 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
             IntMin = Integer.parseInt(new SimpleDateFormat("mm").format(calendar.getTime()));
             AM_PM = 1;
         }
-        alarmHelper.schedulePendingIntent(IntHr, IntMin, AM_PM);
+        alarmHelper.schedulePendingIntent(IntHr, IntMin, AM_PM,id);
     }
 
     public SimpleDateFormat TimeFormat() {
         return new SimpleDateFormat("hh:mm a");
+    }
+
+    @Override
+    public void onAlarmsLoaded(ArrayList<Alarm> alarms) {
+        mAdapter.setAlarms(alarms);
     }
 }

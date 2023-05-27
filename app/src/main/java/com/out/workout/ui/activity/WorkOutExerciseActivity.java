@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
+import com.out.workout.Alarm.service.LoadAlarmsReceiver;
 import com.out.workout.Application.App;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -54,6 +55,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private TextView TvRestWorkOutExercise, TvWorkOutExerciseRestDesc, TvSkipRest;
     private CircleProgressView CVProgressRest;
     private int ExTimer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

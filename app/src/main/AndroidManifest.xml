@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.out.workout">
     <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
@@ -14,6 +15,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".Alarm.adapter.AddEditAlarmActivity"
+            android:exported="false" />
+
+
+        <service android:name=".Alarm.service.LoadAlarmsService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver android:name=".Alarm.service.LoadAlarmsReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver android:name=".Alarm.service.AlarmReceiver"
+            android:enabled="true"
+            android:exported="false"  />
+
+        <receiver android:name=".Alarm.service.BootReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter android:priority="${bootPriority}">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+
+
+
         <activity
             android:name=".ui.activity.DayRemindersActivity"
             android:exported="false" />
@@ -99,7 +127,7 @@
         <receiver
             android:name=".Receiver.FemaleFitnessBootReceiver"
             android:enabled="true"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.QUICKBOOT_POWERON" />

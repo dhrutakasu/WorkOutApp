@@ -15,6 +15,11 @@ import androidx.core.app.NotificationCompat;
 
 import java.util.Calendar;
 
+import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
+import static android.os.Build.VERSION.SDK_INT;
+import static android.os.Build.VERSION_CODES.KITKAT;
+import static android.os.Build.VERSION_CODES.LOLLIPOP;
+
 public class AlarmHelper {
 
     static final String PREFERENCE_LAST_REQUEST_CODE = "PREFERENCE_LAST_REQUEST_CODE";
@@ -75,6 +80,13 @@ public class AlarmHelper {
 
     public void schedulePendingIntent(long j, PendingIntent pendingIntent) {
         Log.d(TAG, "schedulePendingIntent: " + j + "/" + pendingIntent);
+      /*  if(SDK_INT > LOLLIPOP) {
+            alarmManager.setAlarmClock(new AlarmManager.AlarmClockInfo(j, launchAlarmLandingPage(ctx, alarm)), pi);
+        } else if(SDK_INT > KITKAT) {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, j, pi);
+        } else {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, j, pi);
+        }*/
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Log.d(TAG, "setExactAndAllowWhileIdle");
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, j, pendingIntent);
@@ -88,9 +100,21 @@ public class AlarmHelper {
         context.getPackageManager().setComponentEnabledSetting(new ComponentName(context, FemaleFitnessBootReceiver.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
     }
 
+    private static PendingIntent launchAlarmLandingPage(Context ctx, long alarm) {
+        return PendingIntent.getActivity(
+                ctx, (int) alarm, launchIntent(ctx), FLAG_UPDATE_CURRENT
+        );
+    }
+
+    private static Intent launchIntent(Context ctx) {
+        Intent intent = new Intent(ctx, NotificationPublisher.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        return intent;
+    }
+
     public void schedulePendingIntent(long j, PendingIntent pendingIntent, long j2) {
         Log.d(TAG, "schedulePendingIntent: " + j + "/" + pendingIntent);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+/*        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Log.d(TAG, "setExactAndAllowWhileIdle");
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, j + j2, pendingIntent);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -101,6 +125,15 @@ public class AlarmHelper {
             alarmManager.set(AlarmManager.RTC_WAKEUP, j + j2, pendingIntent);
         }
         context.getPackageManager().setComponentEnabledSetting(new ComponentName(context, FemaleFitnessBootReceiver.class), PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+
+  */
+        if (SDK_INT > LOLLIPOP) {
+            alarmManager.setAlarmClock(new AlarmManager.AlarmClockInfo(j, launchAlarmLandingPage(context, j2)), pendingIntent);
+        } else if (SDK_INT > KITKAT) {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, j, pendingIntent);
+        } else {
+            alarmManager.set(AlarmManager.RTC_WAKEUP, j, pendingIntent);
+        }
     }
 
     public void unschedulePendingIntent() {
