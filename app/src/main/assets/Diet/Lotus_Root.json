@@ -1,0 +1,177 @@
+{
+  "cons": [
+    "Being excessively rich in fiber, lotus stem, slowly increase the quantity for your body to get used to the fiber.",
+    "It is really difficult to clean it properly and there are this chances of getting parasitic infections when consumed raw or uncooked ones.",
+    "It is suggested that pregnant women must not eat raw lotus stem."
+  ],
+  "description": [
+    "Lotus root is one of the moderate calorie root vegetables.Lotus rhizome is an excellent source dietary fiber",
+    "Lotus root help reduce blood cholesterol, sugar, body weight and constipation conditions.",
+    "Fresh lotus root is one of the excellent sources of vitamin-C.Vitamin-C is a powerful water soluble antioxidant. It is essential for the collagen synthesis inside the human body.",
+    "Vitamin-C helps the body protect from scurvy, develop resistance against viral infections, boosting of immunity, wound healing and to scavenge cancer causing harmful free radicals from the body."
+  ],
+  "icon": "Lotus_Root.jpg",
+  "name": "Lotus Root",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "66 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "16.02 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "3.1 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.07 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.58 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "27.4 mg",
+          "daily_value": "33%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.127 mg",
+          "daily_value": "11%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.01 mg",
+          "daily_value": "1%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.302 mg",
+          "daily_value": "6%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.218 mg",
+          "daily_value": "17%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "25.4 mg",
+          "daily_value": "5%",
+          "name": "Choline"
+        },
+        {
+          "amount": "8 mcg",
+          "daily_value": "2%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "26 mg",
+          "daily_value": "3%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.9 mg",
+          "daily_value": "7%",
+          "name": "Iron"
+        },
+        {
+          "amount": "22 mg",
+          "daily_value": "6%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.22 mg",
+          "daily_value": "10%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "78 mg",
+          "daily_value": "11%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "363 mg",
+          "daily_value": "8%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "45 mg",
+          "daily_value": "3%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.33 mg",
+          "daily_value": "3%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Calories",
+      "value": "74Kcal"
+    },
+    {
+      "name": "Protein",
+      "value": "3g"
+    },
+    {
+      "name": "Carbohydrate",
+      "value": "17g"
+    },
+    {
+      "name": "Fiber",
+      "value": "5g"
+    }
+  ],
+  "pros": [
+    "Lotus root is one of the moderate calorie root vegetables.Lotus rhizome is an excellent source dietary fiber",
+    "Lotus root help reduce blood cholesterol, sugar, body weight and constipation conditions.",
+    "Fresh lotus root is one of the excellent sources of vitamin-C.Vitamin-C is a powerful water soluble antioxidant. It is essential for the collagen synthesis inside the human body.",
+    "Vitamin-C helps the body protect from scurvy, develop resistance against viral infections, boosting of immunity, wound healing and to scavenge cancer causing harmful free radicals from the body.",
+    "It helps in reducing cholesterol and blood pressure levels.",
+    "It has been used to treat skin diseases like fungal infection and ringworm, smallpox, leprosy, vomiting, diarrhea, cough, dysentery etc.",
+    "Vitamin C is also a major catalyst for the immune system."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

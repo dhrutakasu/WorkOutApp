@@ -1,0 +1,185 @@
+{
+  "cons": [
+    "The high amount of nondigestible fiber in beans may cause gastrointestinal problems if you aren't used to eating them.",
+    "Improve your absorption of iron by eating beans along with meat, seafood or poultry or by eating beans with a source of vitamin C, such as oranges or bell peppers"
+  ],
+  "description": [
+    "Yard-long beans are one of the ancient cultivated crops.The pods contain large quantities of soluble and insoluble fibers.",
+    "Fresh yard-long beans are one of the finest sources of folates.Folate along with vitamin B-12 is one of the essential components of DNA synthesis and cell division.",
+    "Fresh beans contain a good amount of vitamin-C. Vitamin-C is a powerful water-soluble antioxidant, and when adequately provided in the diet, it helps build immunity to combat infections, contribute to maintaining blood vessel elasticity, and offer some protection from cancers.",
+    "It is a excellent sources of vitamin-A.Vitamin-A is one of the essential vitamins for the body provided through our diet. Vitamin-A maintains mucosal integrity, enhances skin complexion, and improves night vision."
+  ],
+  "icon": "Yardlong_Beans.jpg",
+  "name": "Yardlong Beans",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "47 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "8.35 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "2.8 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "43 mcg",
+          "daily_value": "5%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "18.8 mg",
+          "daily_value": "23%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.107 mg",
+          "daily_value": "9%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.11 mg",
+          "daily_value": "9%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.41 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.55 mg",
+          "daily_value": "11%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.024 mg",
+          "daily_value": "2%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "62 mcg",
+          "daily_value": "16%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "50 mg",
+          "daily_value": "5%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.47 mg",
+          "daily_value": "4%",
+          "name": "Iron"
+        },
+        {
+          "amount": "44 mg",
+          "daily_value": "12%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.205 mg",
+          "daily_value": "10%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "59 mg",
+          "daily_value": "8%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "240 mg",
+          "daily_value": "5%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "4 mg",
+          "daily_value": "0.001%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.37 mg",
+          "daily_value": "4%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "17%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "31%"
+    },
+    {
+      "name": "Calcium",
+      "value": "5%"
+    },
+    {
+      "name": "Iron",
+      "value": "2%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "11%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "0%"
+    },
+    {
+      "name": "Protein",
+      "value": "5%"
+    }
+  ],
+  "pros": [
+    "Yard-long beans are one of the ancient cultivated crops.The pods contain large quantities of soluble and insoluble fibers.",
+    "Fresh yard-long beans are one of the finest sources of folates.Folate along with vitamin B-12 is one of the essential components of DNA synthesis and cell division.",
+    "Fresh beans contain a good amount of vitamin-C. Vitamin-C is a powerful water-soluble antioxidant, and when adequately provided in the diet, it helps build immunity to combat infections, contribute to maintaining blood vessel elasticity, and offer some protection from cancers.",
+    "It is a excellent sources of vitamin-A.Vitamin-A is one of the essential vitamins for the body provided through our diet. Vitamin-A maintains mucosal integrity, enhances skin complexion, and improves night vision.",
+    "pregnancy may help prevent neural-tube defects in the newborns.",
+    "Fiber rich food also found to reduce LDL-cholesterol levels by decreasing reabsorption of cholesterol binding bile acids in the colon.",
+    "Yard long beans provide average amounts of minerals such as iron, copper, manganese, calcium, magnesium.",
+    "The body uses manganese as a cofactor for the important antioxidant enzyme, superoxide dismutase."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

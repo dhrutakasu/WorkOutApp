@@ -1,0 +1,199 @@
+{
+  "description": [
+    "Chard leaves are an excellent source of antioxidant vitamin, vitamin-C.vitamin-C helps remove free radicals and reactive oxygen species from the human body through its reduction potential properties.",
+    "Vitamin-C help maintain normal connective tissue, prevent iron deficiency, and also help the human body develop resistance against infectious agents by boosting immunity.",
+    "Chard is one of the excellent vegetable sources for vitamin-K.Vitamin-K has potential role bone health by promoting osteoblastic activity.",
+    "Adequate vitamin-K levels in the diet help limiting neuronal damage in the brain; thus, has an established role in the treatment of patients who have Alzheimer's disease."
+  ],
+  "icon": "SwissChard.jpg",
+  "name": "Swiss Chard",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "20 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.13 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2.1 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.08 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.88 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "6124 IU",
+          "daily_value": "-",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "18 mg",
+          "daily_value": "22%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1.89 mg",
+          "daily_value": "13%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "327.3 mcg",
+          "daily_value": "312%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.034 mg",
+          "daily_value": "3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.086 mg",
+          "daily_value": "7%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.36 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.163 mg",
+          "daily_value": "3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.085 mg",
+          "daily_value": "7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "28.7 mg",
+          "daily_value": "6%",
+          "name": "Choline"
+        },
+        {
+          "amount": "9 mcg",
+          "daily_value": "0.2%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "58 mg",
+          "daily_value": "0.6%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "2.26 mg",
+          "daily_value": "17%",
+          "name": "Iron"
+        },
+        {
+          "amount": "86 mg",
+          "daily_value": "24%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.334 mg",
+          "daily_value": "16%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "33 mg",
+          "daily_value": "5%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "549 mg",
+          "daily_value": "12%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "179 mg",
+          "daily_value": "12%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.33 mg",
+          "daily_value": "3%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "122%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "50%"
+    },
+    {
+      "name": "Calcium",
+      "value": "5%"
+    },
+    {
+      "name": "Iron",
+      "value": "9%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "20%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "3%"
+    }
+  ],
+  "pros": [
+    "Chard leaves are an excellent source of antioxidant vitamin, vitamin-C.vitamin-C helps remove free radicals and reactive oxygen species from the human body through its reduction potential properties.",
+    "Vitamin-C help maintain normal connective tissue, prevent iron deficiency, and also help the human body develop resistance against infectious agents by boosting immunity.",
+    "Chard is one of the excellent vegetable sources for vitamin-K.Vitamin-K has potential role bone health by promoting osteoblastic activity.",
+    "Adequate vitamin-K levels in the diet help limiting neuronal damage in the brain; thus, has an established role in the treatment of patients who have Alzheimer's disease.",
+    "It’s also a good source of folate, which may help to protect your developing baby from neural tube disorders like spina bifida.",
+    "Swiss chard is also a good source of calcium, which both you and baby need.",
+    "Swiss chard contains an antioxidant known as alpha-lipoic acid. This has been shown to lower glucose levels, increase insulin sensitivity, and prevent oxidative stress-induced changes in patients with diabetes."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

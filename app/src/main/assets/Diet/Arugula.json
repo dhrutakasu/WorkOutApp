@@ -1,0 +1,203 @@
+{
+  "cons": [
+    "Most of the leafy vegetables like Arugula are rich in Oxalic acid, associated with the formation of Kidney stones."
+  ],
+  "description": [
+    "This vegetable also an excellent sources of the B-complex group of vitamins such as thiamin, riboflavin, niacin, vitamin B-6 (pyridoxine), and pantothenic acid those are essential for optimum cellular enzymatic and metabolic functions.",
+    "It contain healthy levels of vitamin-C. Vitamin-C is a powerful, natural anti-oxidant.",
+    "It is one of the excellent vegetable sources for vitamin-K,Vitamin K has a potential role in bone health by promoting osteotropic activity",
+    "It is an excellent source of vitamin A,vitamin A and flavonoid compounds in green leafy vegetables help humans protected from skin, lung and oral cavity cancers."
+  ],
+  "icon": "Arugula.jpg",
+  "name": "Arugula",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "7.8 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "0.2 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.7 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "47.6 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "36.4 mg",
+          "name": "Omega 6"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Fiber"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "664 IU",
+          "daily_value": "22.1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "4.2 mg",
+          "daily_value": "9.3%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "30.4 mcg",
+          "daily_value": "43.4%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "27.2 mcg",
+          "daily_value": "6.8%",
+          "name": "Folate"
+        },
+        {
+          "amount": "4.3 mg",
+          "daily_value": "0.8%",
+          "name": "Choline"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "44.8 mg",
+          "daily_value": "4.5%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "13.2 mg",
+          "daily_value": "3.1%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "14.6 mg",
+          "daily_value": "1.5%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "103 mg",
+          "daily_value": "2.7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.1 μg",
+          "daily_value": "0.1%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "7.6 mg",
+          "daily_value": "0.5%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.9%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "47%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "25%"
+    },
+    {
+      "name": "Calcium",
+      "value": "16%"
+    },
+    {
+      "name": "Iron",
+      "value": "8%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "11%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "5%"
+    }
+  ],
+  "pros": [
+    "This vegetable also an excellent sources of the B-complex group of vitamins such as thiamin, riboflavin, niacin, vitamin B-6 (pyridoxine), and pantothenic acid those are essential for optimum cellular enzymatic and metabolic functions.",
+    "It contain healthy levels of vitamin-C. Vitamin-C is a powerful, natural anti-oxidant.",
+    "It is one of the excellent vegetable sources for vitamin-K,Vitamin K has a potential role in bone health by promoting osteotropic activity",
+    "It is an excellent source of vitamin A,vitamin A and flavonoid compounds in green leafy vegetables help humans protected from skin, lung and oral cavity cancers.",
+    "Sulfur-containing compound called sulforaphane gives cruciferous vegetables both their bitter taste and their cancer-fighting power.",
+    "Leafy greens contain an antioxidant known as alpha-lipoic acid that has been shown to lower glucose levels, increase insulin sensitivity, and prevent oxidative stress-induced changes in patients with diabetes."
+  ],
+  "serving": "Nutritional information per 28g(1 cup) serving"
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/listPreferredItemHeight"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingEnd="@dimen/_16sdp"
+    android:paddingLeft="@dimen/_16sdp"
+    android:paddingRight="@dimen/_16sdp">
+
+    <TextView
+        android:id="@+id/TvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:gravity="start|bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:textStyle="bold"
+        tools:text="7:00" />
+
+    <TextView
+        android:id="@+id/TvAmPm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_alignBaseline="@+id/TvTime"
+        android:layout_toRightOf="@+id/TvTime"
+        android:layout_toEndOf="@+id/TvTime"
+        tools:text="AM" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@+id/TvAmPm"
+        android:layout_toStartOf="@+id/IvIconAlarm"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/TvLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            tools:text="Exercise TIme" />
+
+        <TextView
+            android:id="@+id/TvDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="M Tu W Th F Sa Su" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/IvIconAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_alarm_white"
+        app:tint="@color/black" />
+
+</RelativeLayout>

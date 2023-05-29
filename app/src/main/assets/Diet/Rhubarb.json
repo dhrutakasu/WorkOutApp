@@ -1,0 +1,191 @@
+{
+  "cons": [
+    "Eating too much rhubarb too often might not be a good idea because of possible stress to kidneys and inflammation of joints"
+  ],
+  "description": [
+    "Rhubarb is one of the least calorie vegetables.The stalks are good at several B-complex vitamins such as folates, riboflavin, niacin, vitamin B-6 (pyridoxine), thiamin, and pantothenic acid",
+    "Red color stems carry more vitamin-A than the green varieties.Vitamin-A is a powerful natural antioxidant which is required by the body for maintaining the integrity of skin and mucosa.",
+    "It is also an essential vitamin for healthy eyesight."
+  ],
+  "icon": "Rhubarb.jpg",
+  "name": "Rhubarb",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "21 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.54 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.8 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.3 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.8 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "8 mg",
+          "daily_value": "10%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.27 mg",
+          "daily_value": "2%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "29.3 mcg",
+          "daily_value": "28%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.02 mg",
+          "daily_value": "2%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.03 mg",
+          "daily_value": "3%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.085 mg",
+          "daily_value": "2%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.024 mg",
+          "daily_value": "2%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "6.1 mg",
+          "daily_value": "1%",
+          "name": "Choline"
+        },
+        {
+          "amount": "7 mcg",
+          "daily_value": "2%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "86 mg",
+          "daily_value": "9%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.22 mg",
+          "daily_value": "2%",
+          "name": "Iron"
+        },
+        {
+          "amount": "12 mg",
+          "daily_value": "3%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.196 mg",
+          "daily_value": "9%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "14 mg",
+          "daily_value": "2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "288 mg",
+          "daily_value": "6%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "4 mg",
+          "daily_value": "0.001%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "13%"
+    },
+    {
+      "name": "Calcium",
+      "value": "8%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Protein",
+      "value": "1%"
+    }
+  ],
+  "pros": [
+    "Rhubarb is one of the least calorie vegetables.The stalks are good at several B-complex vitamins such as folates, riboflavin, niacin, vitamin B-6 (pyridoxine), thiamin, and pantothenic acid",
+    "Red color stems carry more vitamin-A than the green varieties.Vitamin-A is a powerful natural antioxidant which is required by the body for maintaining the integrity of skin and mucosa.",
+    "It is also an essential vitamin for healthy eyesight.",
+    "The stalks are good at several B-complex vitamins such as folates, riboflavin, niacin, vitamin B-6 (pyridoxine), thiamin, and pantothenic acid.",
+    "Natural foods rich in vitamin-A may help protect from lung and oral cavity cancers.",
+    "Most of these minerals do not absorb into the body as they undergo chelation into insoluble complexes by oxalic acid, which then excreted out."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

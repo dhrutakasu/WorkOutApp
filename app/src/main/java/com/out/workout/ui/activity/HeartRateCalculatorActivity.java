@@ -79,7 +79,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
         BtnChartHeart.setOnClickListener(this);
 
         String[] ArrHeartRate = {getResources().getString(R.string.moderate), getResources().getString(R.string.little_diff), getResources().getString(R.string.moderately_diff), getResources().getString(R.string.hard)};
-        SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.layout_spinner, ArrHeartRate));
+        SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrHeartRate));
         SpinnerHeartRate.setOnItemSelectedListener(this);
     }
 

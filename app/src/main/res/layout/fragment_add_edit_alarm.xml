@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -32,7 +31,7 @@
             android:background="@drawable/divider" />
 
         <TimePicker
-            android:id="@+id/edit_alarm_time_picker"
+            android:id="@+id/PickerTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -66,7 +65,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_mon"
+                    android:id="@+id/CbMon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -89,7 +88,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_tues"
+                    android:id="@+id/CbTues"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -112,7 +111,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_wed"
+                    android:id="@+id/CbWed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -137,7 +136,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_thurs"
+                    android:id="@+id/CbThurs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -162,7 +161,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_fri"
+                    android:id="@+id/CbFri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -187,7 +186,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_sat"
+                    android:id="@+id/CbSat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -212,7 +211,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/edit_alarm_sun"
+                    android:id="@+id/CbSun"
                     android:layout_width="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"

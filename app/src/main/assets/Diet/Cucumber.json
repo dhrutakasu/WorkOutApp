@@ -1,0 +1,201 @@
+{
+  "cons": [
+    "Eating too many cucumbers can increase the risk of fluid loss and this can result in the imbalance of the body. "
+  ],
+  "description": [
+    "It is one of the very low-calorie vegetables;It contains no saturated fats or cholesterol.",
+    "Cucumber peel is a good source of dietary fiber that helps reduce constipation and offers some protection against colon cancers by eliminating toxic compounds from the gut.",
+    "Cucumbers have mild diuretic property, which perhaps attributed to their free-water, and potassium and low sodium content. It helps in checking weight gain and high blood pressure."
+  ],
+  "icon": "Cucumber.jpg",
+  "name": "Cucumber",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "5.6 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "1.1 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.3 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "0.3 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "2.5 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "14 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "52.5 IU",
+          "daily_value": "1.8%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "1.4 mg",
+          "daily_value": "3.1%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "8.2 mcg",
+          "daily_value": "11.7%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "3.3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "3 mg",
+          "daily_value": "0.5%",
+          "name": "Choline"
+        },
+        {
+          "amount": "3.5 mcg",
+          "daily_value": "0.9%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "8 mg",
+          "daily_value": "0.8%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "2.5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "6.5 mg",
+          "daily_value": "1.5%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "12 mg",
+          "daily_value": "1.2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "73.5 mg",
+          "daily_value": "1.9%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.2 μg",
+          "daily_value": "0.3%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "1 mg",
+          "daily_value": "0.1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.9%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "4%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "6%"
+    },
+    {
+      "name": "Protein",
+      "value": "0%"
+    }
+  ],
+  "pros": [
+    "It is one of the very low-calorie vegetables;It contains no saturated fats or cholesterol.",
+    "Cucumber peel is a good source of dietary fiber that helps reduce constipation and offers some protection against colon cancers by eliminating toxic compounds from the gut.",
+    "Cucumbers have mild diuretic property, which perhaps attributed to their free-water, and potassium and low sodium content. It helps in checking weight gain and high blood pressure.",
+    "Yes, you can eat small amounts of cucumber although it is not usually recommended in the pregnancy diet.",
+    "Being antioxidants rich, it fights with the free radicals of our body, stabilize them and prevents them from damaging our body cells.",
+    "Cucumber is an excellent source of water this water makes us feel hydrated and refreshed"
+  ],
+  "serving": "Nutritional information per 50g (1/2 cup.) serving"
+}

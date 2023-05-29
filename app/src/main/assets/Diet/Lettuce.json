@@ -1,0 +1,201 @@
+{
+  "cons": [
+    "Excess of vitamin K can cause problems in people on blood thinning medications like warfarin.",
+    "During Pregnancy And Breastfeeding Lettuce is safe in normal amounts. Hence, avoid excess intake."
+  ],
+  "description": [
+    "Lettuce leaves are one of the very low-calorie green vegetables.Vitamins in lettuce are plentiful.It is a rich source of vitamin-K.",
+    "Vitamin-K has a potential role in the bone metabolism where it thought to increase bone mass by promoting osteoblastic activity in the bone cells.",
+    "It also has an established role in the Alzheimer's disease patients by limiting neuronal damage in the brain.\nFresh leaves contain good amounts vitamin C.",
+    "Vitamin-C helps the body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals."
+  ],
+  "icon": "Lettuce.jpg",
+  "name": "Lettuce",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "13 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "2.23 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.1 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.22 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.25 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "166 mcg",
+          "daily_value": "21%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "3.7 mg",
+          "daily_value": "4%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.18 mg",
+          "daily_value": "1%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "102.3 mcg",
+          "daily_value": "97%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.057 mg",
+          "daily_value": "5%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.062 mg",
+          "daily_value": "5%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.15 mg",
+          "daily_value": "3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.082 mg",
+          "daily_value": "6%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "73 mcg",
+          "daily_value": "18%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "35 mg",
+          "daily_value": "4%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "1.24 mg",
+          "daily_value": "10%",
+          "name": "Iron"
+        },
+        {
+          "amount": "13 mg",
+          "daily_value": "4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.179 mg",
+          "daily_value": "9%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "33 mg",
+          "daily_value": "5%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "238 mg",
+          "daily_value": "5%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "5 mg",
+          "daily_value": "0.001%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "148%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "15%"
+    },
+    {
+      "name": "Calcium",
+      "value": "3%"
+    },
+    {
+      "name": "Iron",
+      "value": "4%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    }
+  ],
+  "pros": [
+    "Lettuce leaves are one of the very low-calorie green vegetables.Vitamins in lettuce are plentiful.It is a rich source of vitamin-K.",
+    "Vitamin-K has a potential role in the bone metabolism where it thought to increase bone mass by promoting osteoblastic activity in the bone cells.",
+    "It also has an established role in the Alzheimer's disease patients by limiting neuronal damage in the brain.\nFresh leaves contain good amounts vitamin C.",
+    "Vitamin-C helps the body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals.",
+    "Lettuce leaves are one of the very low-calorie green vegetables. ",
+    "Storehouse of many phytonutrients that possess health promoting and disease prevention properties.",
+    "Protect the body from lung and oral cavity cancers as they are rich in flavonoids.",
+    "It is a rich source of vitamin-K. Vitamin-K has a potential role in the bone metabolism where it thought to increase bone mass by promoting osteoblastic activity in the bone cells.",
+    "It also has an established role in the Alzheimer's disease patients by limiting neuronal damage in the brain.",
+    "Fresh leaves contain good amounts folates and vitamin C.",
+    "Folates are part of co-factors in the enzyme metabolism required for DNA synthesis and therefore, play a vital role in the prevention of the neural tube defects in the baby (fetus) during pregnancy."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

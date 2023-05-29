@@ -1,0 +1,213 @@
+{
+  "cons": [
+    "High-potassium foods like potatoes should be consumed in moderation when taking beta-blockers."
+  ],
+  "description": [
+    "Potatoes are one of the finest sources of starch, vitamins, minerals and dietary fiber.They are excellent natural sources of both soluble and insoluble fiber.",
+    "The fiber content aids in slow digestion starch and absorption of simple sugars in the gut.",
+    "It thus helps in keeping blood sugar levels within the normal range and avoid wide fluctuations.",
+    "The tubers are one of the richest sources of the B-complex group of vitamins such as pyridoxine (vitamin B6), thiamin, niacin, pantothenic acid, and folates."
+  ],
+  "icon": "Potato.jpg",
+  "name": "Potato",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "65.7 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "50 (Low)",
+          "name": "Glycemic Index(GI)"
+        },
+        {
+          "amount": "15.6 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.4 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.3 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "7.8 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "25 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "2.3 IU",
+          "daily_value": "0.1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "5.8 mg",
+          "daily_value": "12.9%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1.6 mcg",
+          "daily_value": "2.3%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8.3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "1 mg",
+          "daily_value": "6.3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "6.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "15.4%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "10.3 mg",
+          "daily_value": "1.9%",
+          "name": "Choline"
+        },
+        {
+          "amount": "7 mcg",
+          "daily_value": "1.8%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "6.2 mg",
+          "daily_value": "0.6%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "11.1%",
+          "name": "Copper"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "2.5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "15.6 mg",
+          "daily_value": "3.7%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "31.2 mg",
+          "daily_value": "3.1%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "256 mg",
+          "daily_value": "6.7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.2 μg",
+          "daily_value": "0.3%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "3.9 mg",
+          "daily_value": "0.3%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "1.8%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "32%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "4%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "15%"
+    },
+    {
+      "name": "Protein",
+      "value": "4%"
+    }
+  ],
+  "pros": [
+    "Potatoes are one of the finest sources of starch, vitamins, minerals and dietary fiber.They are excellent natural sources of both soluble and insoluble fiber.",
+    "The fiber content aids in slow digestion starch and absorption of simple sugars in the gut.",
+    "It thus helps in keeping blood sugar levels within the normal range and avoid wide fluctuations.",
+    "The tubers are one of the richest sources of the B-complex group of vitamins such as pyridoxine (vitamin B6), thiamin, niacin, pantothenic acid, and folates.",
+    "Iron and zinc play crucial roles in the production and maturation of collagen.",
+    "Choline is an important and versatile nutrient that is present in potatoes. It helps with muscle movement, mood, learning, and memory."
+  ],
+  "serving": "Nutritional information per 78g (1/2 cup.) serving"
+}

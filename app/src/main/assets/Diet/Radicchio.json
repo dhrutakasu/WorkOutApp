@@ -1,0 +1,193 @@
+{
+  "description": [
+    "Fresh leaves hold moderate amounts of essential B-complex groups of vitamins such as folic acid, pantothenic acid (vitamin B5), pyridoxine (vitamin B6) and thiamin (vitamin B1), niacin (B3). These vitamins are essential in the sense that human body requires them from external sources to replenish and required for fat, protein and carbohydrate metabolism.",
+    "Fresh radicchio is one of the excellent sources of vitamin-K.Vitamin K has a potential role in bone health by promoting osteoblastic (bone formation and strengthening) activity.vitamin-K levels in the diet help limiting neuronal damage in the brain.",
+    "It thus has an established role in the treatment of patients who have Alzheimer's disease."
+  ],
+  "icon": "Radicchio.jpg",
+  "name": "Radicchio",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "23 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.48 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.9 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.25 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.43 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "8832 mcg",
+          "daily_value": "-",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "8 mg",
+          "daily_value": "10%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "2.26 mg",
+          "daily_value": "15%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "255.2 mcg",
+          "daily_value": "243%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.016 mg",
+          "daily_value": "1%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.028 mg",
+          "daily_value": "2%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.255 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.269 mg",
+          "daily_value": "5%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.057 mg",
+          "daily_value": "4%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "60 mcg",
+          "daily_value": "15%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "19 mg",
+          "daily_value": "2%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.57 mg",
+          "daily_value": "5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "13 mg",
+          "daily_value": "4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.138 mg",
+          "daily_value": "7%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "40 mg",
+          "daily_value": "6%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "302 mg",
+          "daily_value": "6%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "22 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.62 mg",
+          "daily_value": "7%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "13%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "3%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "Fresh leaves hold moderate amounts of essential B-complex groups of vitamins such as folic acid, pantothenic acid (vitamin B5), pyridoxine (vitamin B6) and thiamin (vitamin B1), niacin (B3). These vitamins are essential in the sense that human body requires them from external sources to replenish and required for fat, protein and carbohydrate metabolism.",
+    "Fresh radicchio is one of the excellent sources of vitamin-K.Vitamin K has a potential role in bone health by promoting osteoblastic (bone formation and strengthening) activity.vitamin-K levels in the diet help limiting neuronal damage in the brain.",
+    "It thus has an established role in the treatment of patients who have Alzheimer's disease.",
+    "They are also a great source of potassium, fiber, folate, vitamin C, and nitrates.",
+    "It is a powerhouse of antioxidants which are essential for the immunity of the body.",
+    "Folate has been known to reduce the occurrence of Alzheimer’s disease and cognitive decline.",
+    "Potassium has been linked to increased blood flow to the brain and enhance cognition, concentration, and neural activity."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

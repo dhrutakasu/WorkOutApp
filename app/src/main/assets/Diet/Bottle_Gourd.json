@@ -1,0 +1,186 @@
+{
+  "cons": [
+    "Too Many Antioxidants Are Bad For Our Health take everything in RDA (Recommended Dietary Allowance)."
+  ],
+  "description": [
+    "Bottle gourd is one of the lowest calorie vegetables- carrying just 14 calories per 100 g. It is one of the vegetables recommended by the dieticians in weight-control programs.",
+    "Fresh calabash gourd is a modest source of vitamin-C,Vitamin-C, one of the powerful natural antioxidants that help the human body scavenge harmful free radicals, which labeled as one of the reasons for cancer development."
+  ],
+  "icon": "Bottle_Gourd.jpg",
+  "name": "Bottle Gourd",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "15 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.69 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.02 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.6 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "8.5 mg",
+          "daily_value": "10%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.029 mg",
+          "daily_value": "3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.022 mg",
+          "daily_value": "2%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.39 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.144 mg",
+          "daily_value": "2%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.038 mg",
+          "daily_value": "3%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "4 mcg",
+          "daily_value": "1%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "24 mg",
+          "daily_value": "2%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.25 mg",
+          "daily_value": "2%",
+          "name": "Iron"
+        },
+        {
+          "amount": "11 mg",
+          "daily_value": "3%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.066 mg",
+          "daily_value": "3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "13 mg",
+          "daily_value": "2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "170 mg",
+          "daily_value": "4%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "2 mg",
+          "daily_value": "0.001%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.7 mg",
+          "daily_value": "7%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "16%"
+    },
+    {
+      "name": "Calcium",
+      "value": "2%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "0%"
+    },
+    {
+      "name": "Protein",
+      "value": "1%"
+    }
+  ],
+  "pros": [
+    "Bottle gourd is one of the lowest calorie vegetables- carrying just 14 calories per 100 g. It is one of the vegetables recommended by the dieticians in weight-control programs.",
+    "Fresh calabash gourd is a modest source of vitamin-C,Vitamin-C, one of the powerful natural antioxidants that help the human body scavenge harmful free radicals, which labeled as one of the reasons for cancer development.",
+    "Fiber is the key to weight loss. Bottle gourd contains less calories with no fat.",
+    "It also contains essential vitamins and minerals like Vitamin C Vitamin B, Vitamin K, Vitamin A, Vitamin E, Iron, Folate, Potassium and Manganese.",
+    "Bottle gourd juice helps in curing constipation and also treats diarrhoea."
+  ],
+  "serving": "Nutritional information per 85g (3 oz.) serving"
+}

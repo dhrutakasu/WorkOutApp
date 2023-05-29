@@ -1,0 +1,180 @@
+{
+  "description": [
+    "Onions are very low in calories and fats.Onions are a rich source of chromium, a trace mineral that helps tissue cells respond appropriately to insulin levels in the blood.",
+    "It thus helps facilitate insulin action and control sugar levels in diabetes.They are also a good source of antioxidant flavonoid quercetin, which is found to have anti-carcinogenic, anti-inflammatory, and antidiabetic functions.",
+    "They are also good in antioxidant vitamin, vitamin-C and mineral manganese."
+  ],
+  "icon": "Onion.jpg",
+  "name": "Onion",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "40 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "9.34 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.7 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.1 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "7.4 mg",
+          "daily_value": "9%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.046 mg",
+          "daily_value": "4%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.027 mg",
+          "daily_value": "2%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.116 mg",
+          "daily_value": "1%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.123 mg",
+          "daily_value": "2%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.12 mg",
+          "daily_value": "9%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "19 mcg",
+          "daily_value": "5%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "23 mg",
+          "daily_value": "0.9%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.21 mg",
+          "daily_value": "2%",
+          "name": "Iron"
+        },
+        {
+          "amount": "10 mg",
+          "daily_value": "3%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.129 mg",
+          "daily_value": "6%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "29 mg",
+          "daily_value": "4%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "146 mg",
+          "daily_value": "3%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.17 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "12%"
+    },
+    {
+      "name": "Calcium",
+      "value": "2%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "Onions are very low in calories and fats.Onions are a rich source of chromium, a trace mineral that helps tissue cells respond appropriately to insulin levels in the blood.",
+    "It thus helps facilitate insulin action and control sugar levels in diabetes.They are also a good source of antioxidant flavonoid quercetin, which is found to have anti-carcinogenic, anti-inflammatory, and antidiabetic functions.",
+    "They are also good in antioxidant vitamin, vitamin-C and mineral manganese.",
+    "The polyphenols in onions act as antioxidants, protecting the body against free radicals",
+    "The quercetin in onions also reduces allergic reactions by stopping your body from producing histamines, which are what make you sneeze, cry and itch if you're having an allergic reaction.",
+    "safety of taking onion as a medicine if you are pregnant or breast-feeding. Stay on the safe side and avoid using onion in amounts larger than usual food amounts."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

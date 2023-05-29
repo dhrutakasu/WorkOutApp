@@ -1,0 +1,174 @@
+{
+  "cons": [
+    "Drumstick leaves have laxative properties, so, it may cause stomach upset, heartburn, and diarrhoea if consumed in significant amount.",
+    "The large quantity intake may also cause nausea so, avoid overconsumption and stay safe."
+  ],
+  "description": [
+    "Moringa are the richest sources of vitamin A.Vitamin-A is one of the fat-soluble anti-oxidant offering several benefits, including mucosal repair, maintenance of skin integrity, vision, and immunity.",
+    "Fresh moringa (drumstick) pods and leaves are an excellent sources of vitamin-C. vitamin C helps the body develop immunity to combat infectious agents, and scavenge harmful oxygen-free radicals from the body."
+  ],
+  "icon": "Moringa_Pods.jpg",
+  "name": "Moringa Pods",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "64 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "8.28 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "1.4 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "9.4 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "378 mcg",
+          "daily_value": "47%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "51.7 mg",
+          "daily_value": "62%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.257 mg",
+          "daily_value": "22%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.66 mg",
+          "daily_value": "55%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "2.22 mg",
+          "daily_value": "15%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.125 mg",
+          "daily_value": "3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "1.2 mg",
+          "daily_value": "92%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "40 mcg",
+          "daily_value": "10%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "185 mg",
+          "daily_value": "19%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "4 mg",
+          "daily_value": "31%",
+          "name": "Iron"
+        },
+        {
+          "amount": "147 mg",
+          "daily_value": "41%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.36 mg",
+          "daily_value": "17%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "112 mg",
+          "daily_value": "16%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "337 mg",
+          "daily_value": "7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "9 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.6 mg",
+          "daily_value": "6%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Calories",
+      "value": "37Kcal"
+    },
+    {
+      "name": "Protein",
+      "value": "2g"
+    },
+    {
+      "name": "Carbohydrate",
+      "value": "8.5g"
+    },
+    {
+      "name": "Fiber",
+      "value": "3g"
+    }
+  ],
+  "pros": [
+    "Moringa are the richest sources of vitamin A.Vitamin-A is one of the fat-soluble anti-oxidant offering several benefits, including mucosal repair, maintenance of skin integrity, vision, and immunity.",
+    "Fresh moringa (drumstick) pods and leaves are an excellent sources of vitamin-C. vitamin C helps the body develop immunity to combat infectious agents, and scavenge harmful oxygen-free radicals from the body.",
+    "Pregnant woman should avoid the consumption of bark and roots as they contain some chemical that may result in uterine contraction and consequently increase the risk of a miscarriage.",
+    "Antioxidants are compounds that neutralize free radicals in our body.",
+    "Benefits of moringa seeds for diabetes and blood sugar regulation.",
+    "Moringa is rich in Vitamin A, C, E and many B complex vitamins making it an excellent antioxidant.",
+    "It reduces the cell damage and ageing due to free radicals and help you maintain smooth and youthful appearance on your skin."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

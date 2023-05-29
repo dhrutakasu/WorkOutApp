@@ -135,7 +135,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void GotoCountDownPlus() {
-        if (IsCounter < 100) {
+        if (IsCounter < 65) {
             IsCounter++;
             TvCountDownTime.setText(String.valueOf(IsCounter));
             SharePreference.SetInt(getContext(), SharePreference.COUNT_TIMER, IsCounter);
@@ -151,7 +151,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     }
 
     private void GotoRestPlus() {
-        if (IsRest < 100) {
+        if (IsRest < 65) {
             IsRest++;
             TvRestTime.setText(String.valueOf(IsRest));
             SharePreference.SetInt(getContext(), SharePreference.REST_TIMER, IsRest);

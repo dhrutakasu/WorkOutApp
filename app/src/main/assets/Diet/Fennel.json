@@ -1,0 +1,179 @@
+{
+  "cons": [
+    "Fennel might act like estrogen. If you have any condition that might be made worse by exposure to estrogen, do not use fennel."
+  ],
+  "description": [
+    "Fennel is one of the very low-calorie vegetables. fennel bulb contains moderate levels of the water soluble vitamin, vitamin-C.",
+    "Vitamin-C helps the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals."
+  ],
+  "icon": "Fennel.jpg",
+  "name": "Fennel",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "13 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.2 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.6 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "1.4 g",
+          "name": "Fiber"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "58.5 IU",
+          "daily_value": "2%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "5.2 mg",
+          "daily_value": "11.6%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "1.9%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "11.8 mcg",
+          "daily_value": "3%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "21.3 mg",
+          "daily_value": "2.1%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "11.1%",
+          "name": "Copper"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "3.8%",
+          "name": "Iron"
+        },
+        {
+          "amount": "7.4 mg",
+          "daily_value": "1.8%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "21.8 mg",
+          "daily_value": "2.2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "180 mg",
+          "daily_value": "4.7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.3 μg",
+          "daily_value": "0.4%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "22.6 mg",
+          "daily_value": "1.5%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.9%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "20%"
+    },
+    {
+      "name": "Calcium",
+      "value": "4%"
+    },
+    {
+      "name": "Iron",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "4%"
+    }
+  ],
+  "pros": [
+    "Fennel is one of the very low-calorie vegetables. fennel bulb contains moderate levels of the water soluble vitamin, vitamin-C.",
+    "Vitamin-C helps the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals.",
+    "To be on the safer side and ensure that it does not cause any side effects to your pregnancy avoid it.",
+    "Fennel seed extract may have remarkable potential to protect cells and fight certain cancers, such as breast and liver cancer.",
+    "Fennel helps calm your intestinal tract and eliminate gas.",
+    "It helps cure constipation, abdominal pain, irritable bowel syndrome (IBS) and other diseases related to the intestine."
+  ],
+  "serving": "Nutritional information per 43g (1/2 cup.) serving"
+}

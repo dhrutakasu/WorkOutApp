@@ -1,0 +1,182 @@
+{
+  "cons": [
+    "Excess consumption can be harmful. It is said that having too much of okra can increase the testes size and weight. "
+  ],
+  "description": [
+    "It is an excellent source of antioxidant vitamin, vitamin-C.vitamin-C helps the human body develop immunity to combat infectious agents, reduce episodes of cold and cough and protect it from harmful free radicals.",
+    "The pods are also a good source of many essential minerals such as iron, calcium, manganese, and magnesium.",
+    "The pods compose healthy amounts of vitamin-A,Vitamin-A is essential for for maintaining healthy mucosa and skin."
+  ],
+  "icon": "LadysFinger.jpg",
+  "name": "Lady Finger",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "33 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "7.45 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "3.2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.19 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.9 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "36 mcg",
+          "daily_value": "5%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "23 mg",
+          "daily_value": "28%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.27 mg",
+          "daily_value": "2%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "31.3 mcg",
+          "daily_value": "30%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "17%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.06 mg",
+          "daily_value": "5%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "1 mg",
+          "daily_value": "7%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "60 mcg",
+          "daily_value": "15%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "82 mg",
+          "daily_value": "8%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.62 mg",
+          "daily_value": "5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "57 mg",
+          "daily_value": "16%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "61 mg",
+          "daily_value": "9%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "299 mg",
+          "daily_value": "6%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.58 mg",
+          "daily_value": "6%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "14%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "38%"
+    },
+    {
+      "name": "Calcium",
+      "value": "8%"
+    },
+    {
+      "name": "Iron",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "14%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "10%"
+    }
+  ],
+  "pros": [
+    "It is an excellent source of antioxidant vitamin, vitamin-C.vitamin-C helps the human body develop immunity to combat infectious agents, reduce episodes of cold and cough and protect it from harmful free radicals.",
+    "The pods are also a good source of many essential minerals such as iron, calcium, manganese, and magnesium.",
+    "The pods compose healthy amounts of vitamin-A,Vitamin-A is essential for for maintaining healthy mucosa and skin.",
+    "natural vegetables and fruits rich in flavonoids helps to protect from lung and oral cavity cancers.",
+    "Lady finger benefits not only helps in conceiving but also helps in facilitating the proper brain development of the baby.",
+    "It contains high folate content which is beneficial for fetal development. Having okra also reduces the chances of miscarriage.",
+    "Fibre helps you to fill your stomach faster and creates satiety for longer.",
+    "Vitamin-K is a co-factor for blood clotting enzymes and is required for strengthening of bones.",
+    "Increase the level of testosterone and improve sexual performance in men."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

@@ -1,0 +1,188 @@
+{
+  "cons": [
+    "Intake of bitter gourds for extended periods to control diabetes might induce liver inflammation. ",
+    "Seeds of the bitter gourd are very harmful to the children. So think twice while feeding bitter gourd to the kids."
+  ],
+  "description": [
+    "Fresh bitter gourd is an excellent source of vitamin-C.Vitamin-C is one of the powerful natural antioxidants which helps scavenge harmful free radicals from the human body.",
+    "Bitter gourd stimulates smooth digestion and peristalsis of food through the bowel until it excreted from the body. Thus, it helps in relieving indigestion and constipation problems."
+  ],
+  "icon": "Bitter_Gourd.jpg",
+  "name": "Bitter Gourd",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "19 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.32 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.18 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.84 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "6 mcg",
+          "daily_value": "1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "0.051 mg",
+          "daily_value": "4%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.053 mg",
+          "daily_value": "4%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.28 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.193 mg",
+          "daily_value": "4%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.041 mg",
+          "daily_value": "3%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "51 mcg",
+          "daily_value": "13%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "9 mg",
+          "daily_value": "1%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.38 mg",
+          "daily_value": "3%",
+          "name": "Iron"
+        },
+        {
+          "amount": "16 mg",
+          "daily_value": "5%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.086 mg",
+          "daily_value": "4%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "36 mg",
+          "daily_value": "5%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "319 mg",
+          "daily_value": "7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "6 mg",
+          "daily_value": "0.001%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.77 mg",
+          "daily_value": "8%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "48%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "92%"
+    },
+    {
+      "name": "Calcium",
+      "value": "4%"
+    },
+    {
+      "name": "Iron",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "23%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "40%"
+    },
+    {
+      "name": "Protein",
+      "value": "7%"
+    }
+  ],
+  "pros": [
+    "Fresh bitter gourd is an excellent source of vitamin-C.Vitamin-C is one of the powerful natural antioxidants which helps scavenge harmful free radicals from the human body.",
+    "Bitter gourd stimulates smooth digestion and peristalsis of food through the bowel until it excreted from the body. Thus, it helps in relieving indigestion and constipation problems.",
+    "Eating a moderate amount of bitter gourd in pregnancy is safe. Studies show that excess consumption can lead to problems in the uterine system, which, in turn, can result in preterm labor",
+    "They contain insulin (phytonutrient, polypeptide-P) which is known to lower blood sugar levels.",
+    "Fresh pods are an excellent source of folates.",
+    "It also contains health-benefiting flavonoids such as beta-carotene, alpha-carotene, lutein, and zeaxanthins. "
+  ],
+  "serving": "Nutritional information per 85g (3 oz.) serving"
+}

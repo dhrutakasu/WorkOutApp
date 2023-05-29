@@ -1,0 +1,207 @@
+{
+  "cons": [
+    "Beetroot is high in oxalate and can directly contribute to kidney stones.",
+    "Allergic reactions to beetroot consumption include rashes, hives, itchiness, and even chills and fever. "
+  ],
+  "description": [
+    "Fresh tubers contain small amounts of vitamin-C;Vitamin C is one of the powerful natural antioxidants, which helps the human body scavenge harmful free radicals one of the reasons for cancer development.",
+    "Its top greens are an excellent source of carotenoids, flavonoid anti-oxidants, and vitamin A",
+    "Vitamin-A is required maintaining healthy mucus membranes and skin and is essential for vision. Consumption of natural vegetables rich in flavonoids helps to protect from lung and oral cavity cancers."
+  ],
+  "icon": "Beets.jpg",
+  "name": "Beetroot",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "43 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "0.17 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.61 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "1.7 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "4.3 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "49.3 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "29.8 IU",
+          "daily_value": "1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "3.1 mg",
+          "daily_value": "6.9%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.2 mcg",
+          "daily_value": "0.3%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "1.9%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "68 mcg",
+          "daily_value": "17%",
+          "name": "Folate"
+        },
+        {
+          "amount": "5.4 mg",
+          "daily_value": "1%",
+          "name": "Choline"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "13.6 mg",
+          "daily_value": "1.4%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "11.1%",
+          "name": "Copper"
+        },
+        {
+          "amount": "0.7 mg",
+          "daily_value": "8.8%",
+          "name": "Iron"
+        },
+        {
+          "amount": "19.6 mg",
+          "daily_value": "4.7%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "13%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "32.3 mg",
+          "daily_value": "3.2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "259 mg",
+          "daily_value": "6.8%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.6 μg",
+          "daily_value": "0.9%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "65.4 mg",
+          "daily_value": "4.4%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2.7%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "8%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "4%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "3%"
+    }
+  ],
+  "pros": [
+    "Fresh tubers contain small amounts of vitamin-C;Vitamin C is one of the powerful natural antioxidants, which helps the human body scavenge harmful free radicals one of the reasons for cancer development.",
+    "Its top greens are an excellent source of carotenoids, flavonoid anti-oxidants, and vitamin A",
+    "Vitamin-A is required maintaining healthy mucus membranes and skin and is essential for vision. Consumption of natural vegetables rich in flavonoids helps to protect from lung and oral cavity cancers.",
+    "Vitamin A is necessary for proper vision, and vitamin K is important for blood clotting.",
+    "Folate and magnesium are essential for forming DNA, and you need manganese for processing cholesterol."
+  ],
+  "serving": "Nutritional information per 85g (3 oz.) serving"
+}

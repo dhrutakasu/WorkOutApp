@@ -1,0 +1,217 @@
+{
+  "cons": [
+    "There are some people who are consuming only cruciferous vegetables who complain of Vitamin B deficiency problems.",
+    "Calcium and phosphorus deficiency may also be experienced when consuming cruciferous vegetables."
+  ],
+  "description": [
+    "Fresh collard leaves are also rich in vitamin-C,Vitamin-C is a powerful natural antioxidant that offers protection against free radical injury and flu-like viral infections.",
+    "This leafy vegetable contains amazingly high levels of vitamin-K\nVitamin K has a potential role in the increase of bone mass by promoting osteoblastic activity in the bone.",
+    "It also has the beneficial effect in Alzheimer's disease patients by limiting neuronal damage in their brain."
+  ],
+  "icon": "Collard_Greens.jpg",
+  "name": "Collard Greens",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "24.5 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.7 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "2 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "2.7 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "88.5 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "66.5 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "7708 IU",
+          "daily_value": "256.9%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "17.3 mg",
+          "daily_value": "38.4%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.9 mg",
+          "daily_value": "9%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "418 mcg",
+          "daily_value": "597.1%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8.3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.6 mg",
+          "daily_value": "3.8%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "3.3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "30.2 mg",
+          "daily_value": "5.5%",
+          "name": "Choline"
+        },
+        {
+          "amount": "88.5 mcg",
+          "daily_value": "22.1%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "133 mg",
+          "daily_value": "13.3%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "1.1 mg",
+          "daily_value": "13.8%",
+          "name": "Iron"
+        },
+        {
+          "amount": "19 mg",
+          "daily_value": "4.5%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "17.4%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "28.5 mg",
+          "daily_value": "2.9%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "110 mg",
+          "daily_value": "2.9%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.5 μg",
+          "daily_value": "0.7%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "15.2 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "1.8%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "100%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "58%"
+    },
+    {
+      "name": "Calcium",
+      "value": "23%"
+    },
+    {
+      "name": "Iron",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "6%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "10%"
+    }
+  ],
+  "pros": [
+    "Fresh collard leaves are also rich in vitamin-C,Vitamin-C is a powerful natural antioxidant that offers protection against free radical injury and flu-like viral infections.",
+    "This leafy vegetable contains amazingly high levels of vitamin-K\nVitamin K has a potential role in the increase of bone mass by promoting osteoblastic activity in the bone.",
+    "It also has the beneficial effect in Alzheimer's disease patients by limiting neuronal damage in their brain.",
+    "Cruciferous vegetables will also decrease the risk of cardiovascular diseases. ",
+    "It contains protein and fiber which is essential for cellular regeneration."
+  ],
+  "serving": "Nutritional information per 95g (1/2 cup.) serving"
+}

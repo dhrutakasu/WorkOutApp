@@ -1,0 +1,216 @@
+{
+  "description": [
+    "Turnips are very low-calorie root vegetables.they are an excellent source of antioxidants, minerals, vitamins and dietary fiber.",
+    "Fresh roots indeed one of those vegetables that are rich in vitamin-C.\nVitamin-C is a powerful water-soluble antioxidant required by the human body for synthesis of collagen.",
+    "It also helps the body scavenge harmful free radicals, prevention from cancers, inflammation, and helps boost immunity."
+  ],
+  "icon": "Turnips.jpg",
+  "name": "Turnips",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "24.3 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "6.3 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "5 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.3 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.6 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "92.1 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "40.3 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "10982 IU",
+          "daily_value": "366.1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "39.5 mg",
+          "daily_value": "87.8%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "2.7 mg",
+          "daily_value": "27%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "529 mcg",
+          "daily_value": "755.7%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8.3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.6 mg",
+          "daily_value": "3.8%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "6.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "23.1%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "0.1%",
+          "name": "Choline"
+        },
+        {
+          "amount": "170 mcg",
+          "daily_value": "42.5%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "197 mg",
+          "daily_value": "19.7%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "44.4%",
+          "name": "Copper"
+        },
+        {
+          "amount": "1.2 mg",
+          "daily_value": "15%",
+          "name": "Iron"
+        },
+        {
+          "amount": "31.7 mg",
+          "daily_value": "7.5%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.5 mg",
+          "daily_value": "21.7%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "40.8 mg",
+          "daily_value": "4.2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "292 mg",
+          "daily_value": "7.7%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "1.3 μg",
+          "daily_value": "1.9%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "41.8 mg",
+          "daily_value": "2.8%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "1.8%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "35%"
+    },
+    {
+      "name": "Calcium",
+      "value": "3%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "1%"
+    }
+  ],
+  "pros": [
+    "Turnips are very low-calorie root vegetables.they are an excellent source of antioxidants, minerals, vitamins and dietary fiber.",
+    "Fresh roots indeed one of those vegetables that are rich in vitamin-C.\nVitamin-C is a powerful water-soluble antioxidant required by the human body for synthesis of collagen.",
+    "It also helps the body scavenge harmful free radicals, prevention from cancers, inflammation, and helps boost immunity.",
+    "These antioxidants fight with the free radicals in our body, stabilizes them and thus prevents them from causing oxidative damage to our cells.",
+    "Glycemic index is a scale which determines the rate at which sugar gets absorbed in the system.",
+    "Potassium plays an important role in keeping us healthy.",
+    "Turnip has been found to be safe to be consumed during pregnancy, as long as you are not eating them too much."
+  ],
+  "serving": "Nutritional information per 144g (1 cup) serving"
+}

@@ -1,0 +1,193 @@
+{
+  "cons": [
+    "It cause flatulence as cabbage contains significant quantities of riffinose, an indigestible sugar.",
+    "Consuming high quantities of cabbage might cause hypothyroidism."
+  ],
+  "description": [
+    "Fresh cabbage is an excellent source of natural antioxidan; vitamin C. Vitamin-C helps the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals.",
+    "Cabbage is an excellent source of vitamin-K,Vitamin-K has the potential role in bone metabolism through promoting osteoblastic activity. Sufficient amounts of vitamin-K in the diet contribute immensely to your bone health."
+  ],
+  "icon": "Cabbage.jpg",
+  "name": "Cabbage",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "25 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "5.8 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2.5 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.28 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "36.6 mg",
+          "daily_value": "44%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "76 mcg",
+          "daily_value": "72%",
+          "name": "Vitamin k"
+        },
+        {
+          "amount": "0.061 mg",
+          "daily_value": "5%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.04 mg",
+          "daily_value": "3%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.234 mg",
+          "daily_value": "2%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.212 mg",
+          "daily_value": "4%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.124 mg",
+          "daily_value": "10%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "43 mcg",
+          "daily_value": "11%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "40 mg",
+          "daily_value": "4%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.47 mg",
+          "daily_value": "4%",
+          "name": "Iron"
+        },
+        {
+          "amount": "12 mg",
+          "daily_value": "3%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.16 mg",
+          "daily_value": "8%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "26 mg",
+          "daily_value": "4%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "170 mg",
+          "daily_value": "4%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "18 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.18 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "60%"
+    },
+    {
+      "name": "Calcium",
+      "value": "4%"
+    },
+    {
+      "name": "Iron",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "Fresh cabbage is an excellent source of natural antioxidan; vitamin C. Vitamin-C helps the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals.",
+    "Cabbage is an excellent source of vitamin-K,Vitamin-K has the potential role in bone metabolism through promoting osteoblastic activity. Sufficient amounts of vitamin-K in the diet contribute immensely to your bone health.",
+    "Yes, it is safe to eat cabbage during pregnancy as it is rich in nutrients and offers numerous health benefits",
+    "Cooked cabbage is always safer than raw cabbage leaves as it minimizes the risk of food-borne diseases.",
+    "The insoluble fiber in cabbage increases the movement of waste in your digestive tract. ",
+    "Cabbage is very beneficial for people suffering from diabetes as it helps in controlling high blood sugar level because of its low glycemic index. "
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

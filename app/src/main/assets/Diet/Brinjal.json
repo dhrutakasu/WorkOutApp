@@ -1,0 +1,195 @@
+{
+  "cons": [
+    "Too much of brinjal can cause menstruation. Which is not bad but it is harmful when consumed in a large amount for pregnant women in the 1 st trimester (1 st three months) it may lead to miscarriage.",
+    "Brinjal when consumed too much can lead to formation of too much of acid causing acidity in the stomach. "
+  ],
+  "description": [
+    "It is very low in calories and fats but rich in soluble fiber content.It is effective in controlling high blood cholesterol levels.",
+    "It contains good amounts of many essential B-complex groups of vitamins such as pantothenic acid (vitamin B5), pyridoxine (vitamin B6) and thiamin (vitamin B1), niacin (B3).",
+    "These vitamins are essential in the sense that body requires them from external sources to replenish and required for fat, protein and carbohydrate metabolism."
+  ],
+  "icon": "Brinjal.jpg",
+  "name": "Brinjal",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "25 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "5.88 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "3 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.18 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.98 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "2.2 mg",
+          "daily_value": "3%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "3.5 mcg",
+          "daily_value": "3%",
+          "name": "Vitamin K "
+        },
+        {
+          "amount": "0.039 mg",
+          "daily_value": "3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.037 mg",
+          "daily_value": "3%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.649 mg",
+          "daily_value": "4%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.281 mg",
+          "daily_value": "6%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.084 mg",
+          "daily_value": "6%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "22 mcg",
+          "daily_value": "6%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "9 mg",
+          "daily_value": "1%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.23 mg",
+          "daily_value": "2%",
+          "name": "Iron"
+        },
+        {
+          "amount": "14 mg",
+          "daily_value": "4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.232 mg",
+          "daily_value": "11%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "24 mg",
+          "daily_value": "3%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "229 mg",
+          "daily_value": "5%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.16 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "3%"
+    },
+    {
+      "name": "Calcium",
+      "value": "0%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "It is very low in calories and fats but rich in soluble fiber content.It is effective in controlling high blood cholesterol levels.",
+    "It contains good amounts of many essential B-complex groups of vitamins such as pantothenic acid (vitamin B5), pyridoxine (vitamin B6) and thiamin (vitamin B1), niacin (B3).",
+    "These vitamins are essential in the sense that body requires them from external sources to replenish and required for fat, protein and carbohydrate metabolism.",
+    "Brinjal is also known as eggplant or aubergine.",
+    "Brinjal is good for digestion. ",
+    "Chlorogenic acid has been shown to decrease low-density lipid (LDL) levels.",
+    "It also acts as an antimicrobial, antiviral, and anticarcinogenic agent."
+  ],
+  "serving": "Nutritional information per 85g (3 oz.) serving"
+}

@@ -1,0 +1,195 @@
+{
+  "cons": [
+    "Peas contain measurable amounts of purines, which when broken down by the body turn into uric acid cause impaired kidney. So eat moderately."
+  ],
+  "description": [
+    "Green peas are one of the most nutritious leguminous vegetables rich in health promoting phytonutrients, minerals, vitamins and antioxidants.",
+    "Fresh pea pods are excellent sources of folic acid.Fresh green peas are healthy sources of ascorbic acid (vitamin-C).",
+    "Vitamin-C is a powerful natural water-soluble antioxidant.vitamin would help the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals from the body."
+  ],
+  "icon": "GreenPeas.jpg",
+  "name": "Green Peas",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "81 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "14.45 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "5.1 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "5.42 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "38 mcg",
+          "daily_value": "5%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "40 mg",
+          "daily_value": "48%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.13 mg",
+          "daily_value": "1%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "24.8 mcg",
+          "daily_value": "24%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.266 mg",
+          "daily_value": "23%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.132 mg",
+          "daily_value": "11%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "2.09 mg",
+          "daily_value": "14%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.169 mg",
+          "daily_value": "13%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "65 mcg",
+          "daily_value": "16%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "25 mg",
+          "daily_value": "3%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "1.47 mg",
+          "daily_value": "11%",
+          "name": "Iron"
+        },
+        {
+          "amount": "33 mg",
+          "daily_value": "3%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.41 mg",
+          "daily_value": "20%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "108 mg",
+          "daily_value": "15%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "244 mg",
+          "daily_value": "5%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "5 mg",
+          "daily_value": "0.01%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "1.24 mg",
+          "daily_value": "13%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "15%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "66%"
+    },
+    {
+      "name": "Calcium",
+      "value": "2%"
+    },
+    {
+      "name": "Iron",
+      "value": "8%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "8%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "10%"
+    }
+  ],
+  "pros": [
+    "Green peas are one of the most nutritious leguminous vegetables rich in health promoting phytonutrients, minerals, vitamins and antioxidants.",
+    "Fresh pea pods are excellent sources of folic acid.Fresh green peas are healthy sources of ascorbic acid (vitamin-C).",
+    "Vitamin-C is a powerful natural water-soluble antioxidant.vitamin would help the human body develop resistance against infectious agents and scavenge harmful, pro-inflammatory free radicals from the body.",
+    "Peas are rich in iron and are very useful for pregnant or lactating women who often face the problem of lack of iron.",
+    "Peas having a low glycemic index suitable vegetables for individuals with diabetes.",
+    "Vitamin C, a conventional antioxidant vitamin, and beta-carotene, which is converted by the body into vitamin A to guard against macular degeneration.",
+    "Peas benefits contain an important ingredient named as Folate, which has a positive impact on our mental health."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

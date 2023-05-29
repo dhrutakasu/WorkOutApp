@@ -1,0 +1,176 @@
+{
+  "cons": [
+    "Rutabaga is a cruciferous vegetable; it contains raffinose, which is a complex sugar that can sometimes cause abdominal discomfort, bloating and flatulence."
+  ],
+  "description": [
+    "Rutabagas are low-calorie root vegetables.they are very good source of antioxidants, minerals, vitamins, and dietary fiber.",
+    "Fresh roots indeed are excellent source of vitamin-C.Vitamin-C is a powerful water-soluble antioxidant required by the human body for synthesis of collagen.",
+    "It also helps in scavenging of harmful free radicals, prevention from cancers, inflammation, and helps boost immunity.",
+    "The taproot is also a modest source of essential minerals like calcium, copper, iron, potassium, and manganese.",
+    "Rutabaga carries relatively more amounts of some of the B-complex group of vitamins than turnips such as folates,thiamin, riboflavin, pyridoxine, pantothenic acid and thiamin."
+  ],
+  "icon": "Rutabaga.jpg",
+  "name": "Rutabaga",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "38 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "8.62 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2.3 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.16 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.08 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "25 mg",
+          "daily_value": "30%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.09 mg",
+          "daily_value": "8%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.04 mg",
+          "daily_value": "3%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.7 mg",
+          "daily_value": "5%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.16 mg",
+          "daily_value": "3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "21 mcg",
+          "daily_value": "5%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "43 mg",
+          "daily_value": "4%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.44 mg",
+          "daily_value": "3%",
+          "name": "Iron"
+        },
+        {
+          "amount": "20 mg",
+          "daily_value": "6%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.131 mg",
+          "daily_value": "6%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "53 mg",
+          "daily_value": "8%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "305 mg",
+          "daily_value": "6%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.24 mg",
+          "daily_value": "3%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "41%"
+    },
+    {
+      "name": "Calcium",
+      "value": "4%"
+    },
+    {
+      "name": "Iron",
+      "value": "2%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "Rutabagas are low-calorie root vegetables.they are very good source of antioxidants, minerals, vitamins, and dietary fiber.",
+    "Fresh roots indeed are excellent source of vitamin-C.Vitamin-C is a powerful water-soluble antioxidant required by the human body for synthesis of collagen.",
+    "It also helps in scavenging of harmful free radicals, prevention from cancers, inflammation, and helps boost immunity.",
+    "The taproot is also a modest source of essential minerals like calcium, copper, iron, potassium, and manganese.",
+    "Rutabaga carries relatively more amounts of some of the B-complex group of vitamins than turnips such as folates,thiamin, riboflavin, pyridoxine, pantothenic acid and thiamin."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

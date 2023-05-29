@@ -1,0 +1,211 @@
+{
+  "cons": [
+    "Carrots have a high sugar content and are high on the glycemic index (GI)."
+  ],
+  "description": [
+    "Carrots may offer to protect from skin, lung and oral cavity cancers.Fresh roots are also good in vitamin-C; Vitamin-C is water soluble antioxidant. It helps the body maintain healthy connective tissue, teeth, and gum.",
+    "Its anti-oxidant property helps the human body protect from diseases and cancers by scavenging action on harmful free radicals."
+  ],
+  "icon": "Carrots.jpg",
+  "name": "Carrots",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "22.2 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "0.0 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "5.8 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.6 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "1.2 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "1.7 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "70 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "10190 IU",
+          "daily_value": "339%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "3.6 mg",
+          "daily_value": "8%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.4 mg",
+          "daily_value": "4%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "8.1 mcg",
+          "daily_value": "11.6%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.6 mg",
+          "daily_value": "3.8%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "3.3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "10.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "11.6 mcg",
+          "daily_value": "2.9%",
+          "name": "Folate"
+        },
+        {
+          "amount": "5.4 mg",
+          "daily_value": "1%",
+          "name": "Choline"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "20.1 mg",
+          "daily_value": "2%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "2.5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "7.3 mg",
+          "daily_value": "1.7%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "21.4 mg",
+          "daily_value": "2.1%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "195 mg",
+          "daily_value": "5.1%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.1 μg",
+          "daily_value": "0.1%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "42 mg",
+          "daily_value": "2.8%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.9%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "334%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "9%"
+    },
+    {
+      "name": "Calcium",
+      "value": "3%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "1%"
+    }
+  ],
+  "pros": [
+    "Carrots may offer to protect from skin, lung and oral cavity cancers.Fresh roots are also good in vitamin-C; Vitamin-C is water soluble antioxidant. It helps the body maintain healthy connective tissue, teeth, and gum.",
+    "Its anti-oxidant property helps the human body protect from diseases and cancers by scavenging action on harmful free radicals.",
+    "Carrot juices are rich in beta carotene that acts as an antioxidant and protects you against free radicals.",
+    "Rich in vitamin C, A and fiber that you need in high amounts in pregnancy.",
+    "Rich in calcium and aid development of bones and teeth in your baby.",
+    "Vitamin A in carrot juices helps fighting against infections. Mothers, who are breastfeeding, must make it a point to add nutrient packed carrots in their daily diet.",
+    "Drinking carrot juice in the last few months of pregnancy is known to reduce the chances of jaundice in your baby."
+  ],
+  "serving": "Nutritional information per 61g (1 medium.) serving"
+}

@@ -137,11 +137,11 @@
                         CircleProgressView:cpv_barColor="@color/purple_500"
                         CircleProgressView:cpv_barStrokeCap="Round"
                         CircleProgressView:cpv_barWidth="@dimen/_8sdp"
-                        CircleProgressView:cpv_blockCount="10"
-                        CircleProgressView:cpv_blockScale="0.7"
+                        CircleProgressView:cpv_blockCount="60"
+                        CircleProgressView:cpv_blockScale="0.1"
                         CircleProgressView:cpv_direction="CCW"
                         CircleProgressView:cpv_innerContourSize="0dp"
-                        CircleProgressView:cpv_maxValue="100"
+                        CircleProgressView:cpv_maxValue="60"
                         CircleProgressView:cpv_outerContourSize="0dp"
                         CircleProgressView:cpv_rimColor="@color/gray"
                         CircleProgressView:cpv_rimWidth="@dimen/_8sdp"
@@ -151,7 +151,7 @@
                         CircleProgressView:cpv_textColor="@color/black"
                         CircleProgressView:cpv_textMode="Value"
                         CircleProgressView:cpv_textSize="@dimen/_35sdp"
-                        CircleProgressView:cpv_value="100" />
+                        CircleProgressView:cpv_value="5" />
 
                 </RelativeLayout>
 

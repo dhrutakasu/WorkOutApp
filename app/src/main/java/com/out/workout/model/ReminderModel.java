@@ -1,118 +1,150 @@
 package com.out.workout.model;
 
-public class ReminderModel {
-    String Id, Mon = "false", Tue = "false", Wed = "false", Thu = "false", Fri = "false", Sat = "false", Sun = "false", Time, OnOff;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.SparseBooleanArray;
 
-    public ReminderModel(String id, String mon, String tue, String wed, String thu, String fri, String sat, String sun, String time, String onOff) {
-        Id = id;
-        Mon = mon;
-        Tue = tue;
-        Wed = wed;
-        Thu = thu;
-        Fri = fri;
-        Sat = sat;
-        Sun = sun;
-        Time = time;
-        OnOff = onOff;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+import androidx.annotation.IntDef;
+
+public final class ReminderModel implements Parcelable{
+
+    private ReminderModel(Parcel in) {
+        id = in.readLong();
+        time = in.readLong();
+        booleanArray = in.readSparseBooleanArray();
+        isEnabled = in.readByte() != 0;
     }
 
-    public ReminderModel() {
+    public static final Creator<ReminderModel> CREATOR = new Creator<ReminderModel>() {
+        @Override
+        public ReminderModel createFromParcel(Parcel in) {
+            return new ReminderModel(in);
+        }
 
+        @Override
+        public ReminderModel[] newArray(int size) {
+            return new ReminderModel[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public String getId() {
-        return Id;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeLong(id);
+        parcel.writeLong(time);
+        parcel.writeSparseBooleanArray(booleanArray);
+        parcel.writeByte((byte) (isEnabled ? 1 : 0));
     }
 
-    public void setId(String id) {
-        Id = id;
+    @Retention(RetentionPolicy.SOURCE)
+    @IntDef({MON,TUES,WED,THURS,FRI,SAT,SUN})
+    @interface Days{}
+    public static final int MON = 1;
+    public static final int TUES = 2;
+    public static final int WED = 3;
+    public static final int THURS = 4;
+    public static final int FRI = 5;
+    public static final int SAT = 6;
+    public static final int SUN = 7;
+
+
+    private final long id;
+    private long time;
+    private SparseBooleanArray booleanArray;
+    private boolean isEnabled;
+
+    public ReminderModel(long id) {
+        this(id, System.currentTimeMillis());
     }
 
-    public String getMon() {
-        return Mon;
+    public ReminderModel(long id, long time, @Days int... days) {
+        this.id = id;
+        this.time = time;
+        this.booleanArray = buildDaysArray(days);
     }
 
-    public void setMon(String mon) {
-        Mon = mon;
+    public long getId() {
+        return id;
     }
 
-    public String getTue() {
-        return Tue;
+    public void setTime(long time) {
+        this.time = time;
     }
 
-    public void setTue(String tue) {
-        Tue = tue;
+    public long getTime() {
+        return time;
+    }
+    public void setDay(@Days int day, boolean isAlarmed) {
+        booleanArray.append(day, isAlarmed);
     }
 
-    public String getWed() {
-        return Wed;
+    public SparseBooleanArray getDays() {
+        return booleanArray;
     }
 
-    public void setWed(String wed) {
-        Wed = wed;
+    public boolean getDay(@Days int day){
+        return booleanArray.get(day);
     }
 
-    public String getThu() {
-        return Thu;
+    public void setIsEnabled(boolean isEnabled) {
+        this.isEnabled = isEnabled;
     }
 
-    public void setThu(String thu) {
-        Thu = thu;
+    public boolean isEnabled() {
+        return isEnabled;
     }
 
-    public String getFri() {
-        return Fri;
-    }
-
-    public void setFri(String fri) {
-        Fri = fri;
-    }
-
-    public String getSat() {
-        return Sat;
-    }
-
-    public void setSat(String sat) {
-        Sat = sat;
-    }
-
-    public String getTime() {
-        return Time;
-    }
-
-    public void setTime(String time) {
-        Time = time;
-    }
-
-    public String getSun() {
-        return Sun;
-    }
-
-    public void setSun(String sun) {
-        Sun = sun;
-    }
-
-    public String getOnOff() {
-        return OnOff;
-    }
-
-    public void setOnOff(String onOff) {
-        OnOff = onOff;
+    public int notificationId() {
+        final long id = getId();
+        return (int) (id^(id>>>32));
     }
 
     @Override
     public String toString() {
-        return "ReminderModel{" +
-                "Id='" + Id + '\'' +
-                ", Mon='" + Mon + '\'' +
-                ", Tue='" + Tue + '\'' +
-                ", Wed='" + Wed + '\'' +
-                ", Thu='" + Thu + '\'' +
-                ", Fri='" + Fri + '\'' +
-                ", Sat='" + Sat + '\'' +
-                ", Sun='" + Sun + '\'' +
-                ", Time='" + Time + '\'' +
-                ", OnOff='" + OnOff + '\'' +
+        return "Alarm{" +
+                "id=" + id +
+                ", time=" + time +
+                ", allDays=" + booleanArray +
+                ", isEnabled=" + isEnabled +
                 '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (int) (id^(id>>>32));
+        result = 31 * result + (int) (time^(time>>>32));
+        for(int i = 0; i < booleanArray.size(); i++) {
+            result = 31 * result + (booleanArray.valueAt(i)? 1 : 0);
+        }
+        return result;
+    }
+
+    private static SparseBooleanArray buildDaysArray(@Days int... days) {
+        final SparseBooleanArray array = buildBaseDaysArray();
+        for (@Days int day : days) {
+            array.append(day, true);
+        }
+        return array;
+    }
+
+    private static SparseBooleanArray buildBaseDaysArray() {
+        final int numDays = 7;
+        final SparseBooleanArray array = new SparseBooleanArray(numDays);
+        array.put(MON, false);
+        array.put(TUES, false);
+        array.put(WED, false);
+        array.put(THURS, false);
+        array.put(FRI, false);
+        array.put(SAT, false);
+        array.put(SUN, false);
+        return array;
     }
 }

@@ -28,19 +28,19 @@ public class DietTipsCategory  implements Serializable {
         return Objects.hash(icon, layoutType, name, slug);
     }
 
-    public final String getIcon() {
+    public String getIcon() {
         return this.icon;
     }
 
-    public final int getLayoutType() {
+    public int getLayoutType() {
         return this.layoutType;
     }
 
-    public final String getName() {
+    public String getName() {
         return this.name;
     }
 
-    public final String getSlug() {
+    public String getSlug() {
         return this.slug;
     }
 

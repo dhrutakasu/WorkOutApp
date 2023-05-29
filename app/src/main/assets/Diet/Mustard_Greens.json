@@ -1,0 +1,202 @@
+{
+  "cons": [
+    "Calcium and phosphorus deficiency may also be experienced when consuming only cruciferous vegetables."
+  ],
+  "description": [
+    "The greens are excellent sources of vitamin-K.Vitamin-K has been found to have a potential role in bone mass building function by promoting osteoblastic activity in the bone.",
+    "It also has an established role to play in Alzheimer's disease patients by limiting neuronal damage in their brain.",
+    "Mustard leaves are also incredible sources of vitamin-A. Vitamin-A is an essential nutrient required for maintaining healthy mucosa and skin.",
+    "Regular consumption of mustard greens in the diet is known to prevent arthritis, osteoporosis, iron deficiency anemia and believed to offer protection from cardiovascular diseases, asthma and colon and prostate cancers."
+  ],
+  "icon": "Mustard_Greens.jpg",
+  "name": "Mustard Greens",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "26 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "4.51 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.47 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "2.56 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "618 mcg",
+          "daily_value": "77%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "25.3 mg",
+          "daily_value": "30%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1.78 mg",
+          "daily_value": "12%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "592.7 mcg",
+          "daily_value": "564%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.041 mg",
+          "daily_value": "4%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.063 mg",
+          "daily_value": "5%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.33 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.12 mg",
+          "daily_value": "2%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.098 mg",
+          "daily_value": "8%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "9 mcg",
+          "daily_value": "2%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "118 mg",
+          "daily_value": "12%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.87 mg",
+          "daily_value": "7%",
+          "name": "Iron"
+        },
+        {
+          "amount": "13 mg",
+          "daily_value": "4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "42 mg",
+          "daily_value": "6%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "162 mg",
+          "daily_value": "3%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "9 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.22 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "60%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "116%"
+    },
+    {
+      "name": "Calcium",
+      "value": "11%"
+    },
+    {
+      "name": "Iron",
+      "value": "8%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "8%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "10%"
+    },
+    {
+      "name": "Protein",
+      "value": "5%"
+    }
+  ],
+  "pros": [
+    "The greens are excellent sources of vitamin-K.Vitamin-K has been found to have a potential role in bone mass building function by promoting osteoblastic activity in the bone.",
+    "It also has an established role to play in Alzheimer's disease patients by limiting neuronal damage in their brain.",
+    "Mustard leaves are also incredible sources of vitamin-A. Vitamin-A is an essential nutrient required for maintaining healthy mucosa and skin.",
+    "Regular consumption of mustard greens in the diet is known to prevent arthritis, osteoporosis, iron deficiency anemia and believed to offer protection from cardiovascular diseases, asthma and colon and prostate cancers.",
+    "They are rich in roughage and dietary fibers, which prevents constipation.",
+    "They are a rich source of Vitamin E, Vitamin B6, iron, copper, phosphorus, protein and magnesium.",
+    "Fresh mustard greens leaves are rich in folic acid, which is a water soluble vitamin and plays a very important role in DNA synthesis",
+    "They are a rich source of several vital anti-oxidants, and several essential minerals and carotenes, which build up the body immunity system",
+    "Ranked highest positions among the greens which contain a good amount of Vitamin k."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

@@ -1,0 +1,201 @@
+{
+  "cons": [
+    "Diuretic property of radish is very benefecial in removing toxins and other impurities from our body, and also lessen the burden on the kidneys."
+  ],
+  "description": [
+    "Fresh roots are a good source of vitamin-C;Vitamin-C is a powerful water soluble antioxidant required by the body for synthesis of collagen.",
+    "It helps the human body scavenge harmful free radicals, prevention from cancers, inflammation and help boost immunity."
+  ],
+  "icon": "Radish.jpg",
+  "name": "Radish",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "14.5 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.5 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.6 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.7 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "31 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "17 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "7 IU",
+          "daily_value": "0.2%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "14.8 mg",
+          "daily_value": "32.9%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1.3 mcg",
+          "daily_value": "1.9%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "1.9%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "3.3%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "6.5 mg",
+          "daily_value": "1.2%",
+          "name": "Choline"
+        },
+        {
+          "amount": "25 mcg",
+          "daily_value": "6.3%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "25 mg",
+          "daily_value": "2.5%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "11.1%",
+          "name": "Copper"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "3.8%",
+          "name": "Iron"
+        },
+        {
+          "amount": "10 mg",
+          "daily_value": "2.4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "20 mg",
+          "daily_value": "2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "233 mg",
+          "daily_value": "6.1%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.6 μg",
+          "daily_value": "0.9%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "39 mg",
+          "daily_value": "2.6%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2.7%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "24%"
+    },
+    {
+      "name": "Calcium",
+      "value": "2%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "1%"
+    }
+  ],
+  "pros": [
+    "Fresh roots are a good source of vitamin-C;Vitamin-C is a powerful water soluble antioxidant required by the body for synthesis of collagen.",
+    "It helps the human body scavenge harmful free radicals, prevention from cancers, inflammation and help boost immunity.",
+    "Collagen helps to strengthen blood vessel walls and prevents the onset of various cardiovascular diseases.",
+    "People with gallstones and pregnant women should also abstain from eating this vegetable.",
+    "Vitamin C, present in radish, acts against the free radicals in our body and prevents any damage to body cartilage"
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

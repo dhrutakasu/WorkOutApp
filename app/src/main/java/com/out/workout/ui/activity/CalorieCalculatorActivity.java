@@ -92,7 +92,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         EdtAgeCalorie.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
 
         String[] ArrCalorie = {getResources().getString(R.string.sedentary), getResources().getString(R.string.lightly_active), getResources().getString(R.string.moderately_active), getResources().getString(R.string.very_active), getResources().getString(R.string.extremely_active)};
-        SpinnerCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.layout_spinner, ArrCalorie));
+        SpinnerCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrCalorie));
         SpinnerCalorie.setOnItemSelectedListener(this);
     }
 

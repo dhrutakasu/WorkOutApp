@@ -975,8 +975,9 @@
     <string name="delete_complete">Alarm Deleted</string>
     <string name="delete_failed">Delete Failed</string>
     <string name="delete_dialog_title">Confirm Delete Alarm</string>
-    <string name="delete_dialog_content">Are you sure you would like to delete this alarm?</string>
+    <string name="delete_dialog_content">Are you sure you would like to delete this reminderModel?</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="time">Time</string>
+    <string name="calories_to_maintain_weight">Calories to maintain weight</string>
 </resources>

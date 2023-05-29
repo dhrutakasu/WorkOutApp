@@ -1,0 +1,338 @@
+[
+  {
+    "icon": "Acai_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Acai Berry",
+    "slug": "Acai_Berry"
+  },
+  {
+    "icon": "Apple.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Apple",
+    "slug": "Apple"
+  },
+  {
+    "icon": "Apricot.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Apricot",
+    "slug": "Apricot"
+  },
+  {
+    "icon": "Avocado.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Avocado",
+    "slug": "Avocado"
+  },
+  {
+    "icon": "Banana.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Banana",
+    "slug": "Banana"
+  },
+  {
+    "icon": "Black_Berries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Black Berries",
+    "slug": "Black_Berries"
+  },
+  {
+    "icon": "Black_Currants.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Black Currants",
+    "slug": "Black_Currants"
+  },
+  {
+    "icon": "Cantaloupe.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cantaloupe",
+    "slug": "Cantaloupe"
+  },
+  {
+    "icon": "Cherimoya.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cherimoya",
+    "slug": "Cherimoya"
+  },
+  {
+    "icon": "Cherry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cherry(Sweet)",
+    "slug": "Cherry"
+  },
+  {
+    "icon": "Choke_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Choke Berry(Aronia)",
+    "slug": "Choke_Berry"
+  },
+  {
+    "icon": "Craberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Cranberries",
+    "slug": "Craberries"
+  },
+  {
+    "icon": "Dates.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Dates",
+    "slug": "Dates"
+  },
+  {
+    "icon": "Durian.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Durian",
+    "slug": "Durian"
+  },
+  {
+    "icon": "Elder_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Elder Berry",
+    "slug": "Elder_Berry"
+  },
+  {
+    "icon": "Feijoa.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Feijoa",
+    "slug": "Feijoa"
+  },
+  {
+    "icon": "Figs.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Figs",
+    "slug": "Figs"
+  },
+  {
+    "icon": "GojiBerry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "GojiBerry",
+    "slug": "GojiBerry"
+  },
+  {
+    "icon": "Goose_Berries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Goose Berries(Amla)",
+    "slug": "Goose_Berries"
+  },
+  {
+    "icon": "Grape.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Grape",
+    "slug": "Grape"
+  },
+  {
+    "icon": "Guava.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Guava",
+    "slug": "Guava"
+  },
+  {
+    "icon": "JackFruit.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Jack Fruit",
+    "slug": "JackFruit"
+  },
+  {
+    "icon": "Jujube.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Jujube",
+    "slug": "Jujube"
+  },
+  {
+    "icon": "Kiwi.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Kiwi",
+    "slug": "Kiwi"
+  },
+  {
+    "icon": "Kumquat.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Kumquat",
+    "slug": "Kumquat"
+  },
+  {
+    "icon": "Lemon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lemon",
+    "slug": "Lemon"
+  },
+  {
+    "icon": "Loquat.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Loquat",
+    "slug": "Loquat"
+  },
+  {
+    "icon": "Lychee.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Lychee",
+    "slug": "Lychee"
+  },
+  {
+    "icon": "Mango.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Mango",
+    "slug": "Mango"
+  },
+  {
+    "icon": "Mangosteen.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Mangosteen",
+    "slug": "Mangosteen"
+  },
+  {
+    "icon": "Mulberries.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Mulberries",
+    "slug": "Mulberries"
+  },
+  {
+    "icon": "Nectarine.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Nectarine",
+    "slug": "Nectarine"
+  },
+  {
+    "icon": "Orange.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Orange",
+    "slug": "Orange"
+  },
+  {
+    "icon": "Papaya.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Papaya",
+    "slug": "Papaya"
+  },
+  {
+    "icon": "PassionFruit.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Passion Fruit",
+    "slug": "PassionFruit"
+  },
+  {
+    "icon": "Pears.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pears",
+    "slug": "Pears"
+  },
+  {
+    "icon": "Persimmon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Persimmon",
+    "slug": "Persimmon"
+  },
+  {
+    "icon": "Pineapple.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pineapple",
+    "slug": "Pineapple"
+  },
+  {
+    "icon": "Plums.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Plums",
+    "slug": "Plums"
+  },
+  {
+    "icon": "Pomegranate.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Pomegranate",
+    "slug": "Pomegranate"
+  },
+  {
+    "icon": "Quince.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Quince",
+    "slug": "Quince"
+  },
+  {
+    "icon": "Rasp_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Raspberry",
+    "slug": "Rasp_Berry"
+  },
+  {
+    "icon": "Sapodilla.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Sapodilla(Sapote)/chikoo",
+    "slug": "Sapodilla"
+  },
+  {
+    "icon": "Saturn_Peache.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Saturn Peache",
+    "slug": "Saturn_Peache"
+  },
+  {
+    "icon": "Star.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Star(Carambola)",
+    "slug": "Star"
+  },
+  {
+    "icon": "Straw_Berry.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Strawberry",
+    "slug": "Straw_Berry"
+  },
+  {
+    "icon": "Tangerine.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Tangerine",
+    "slug": "Tangerine"
+  },
+  {
+    "icon": "Watermelon.jpg",
+    "isSingleItem": true,
+    "layout_type": 1,
+    "name": "Watermelon",
+    "slug": "Watermelon"
+  }
+]

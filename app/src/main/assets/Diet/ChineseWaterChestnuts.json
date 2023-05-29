@@ -1,0 +1,173 @@
+{
+  "description": [
+    "The drinking of water chestnut juice is helpful in easing out of nausea. Singhara juice is good for jaundice.",
+    "It helps to lowers down the level of cholesterol and discourages the absorption of carbohydrate.",
+    "Boiled water of water chestnuts is good for measles patients."
+  ],
+  "icon": "ChineseWaterChestnuts.jpg",
+  "name": "Chinese Water Chestnuts",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "97 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "23.94 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "3 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.4 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "4 mg",
+          "daily_value": "5%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1.2 mg",
+          "daily_value": "8%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "0.14 mg",
+          "daily_value": "12%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "17%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "1 mg",
+          "daily_value": "7%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.479 mg",
+          "daily_value": "10%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.328 mg",
+          "daily_value": "25%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "16 mcg",
+          "daily_value": "4%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "22 mg",
+          "daily_value": "6%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.331 mg",
+          "daily_value": "16%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "63 mg",
+          "daily_value": "9%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "584 mg",
+          "daily_value": "12%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.5 mg",
+          "daily_value": "5%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "6%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "15%"
+    }
+  ],
+  "pros": [
+    "The drinking of water chestnut juice is helpful in easing out of nausea. Singhara juice is good for jaundice.",
+    "It helps to lowers down the level of cholesterol and discourages the absorption of carbohydrate.",
+    "Boiled water of water chestnuts is good for measles patients.",
+    "It is indeed an excellent source of nutrition and curative elements during pregnancy.",
+    "Due to its nutritive, strengthening, and cooling properties it increases fertility and chances of conception.",
+    "It promotes salivation, and the secretion of salivation increases appetite and balances metabolism.",
+    "Singhara possesses anti-bacterial and antioxidant properties. They strengthen stomach muscles and terminate acidity, fatigue and heartburn",
+    "Inside water chestnuts are an antibiotic compound called “puchin” which acts in immune function like penicillin."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

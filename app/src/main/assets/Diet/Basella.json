@@ -1,0 +1,176 @@
+{
+  "description": [
+    "Basella is rich sources of vitamin A.Vitamin-A required for maintaining healthy mucus membranes and skin, and essential for good eyesight.",
+    "Consumption of natural vegetables and fruits rich in vitamin-A and flavonoids has been thought to offer protection from the lung and oral cavity cancers.",
+    "Regular consumption of basella (Malabar spinach) in the diet helps prevent osteoporosis (weakness of bones), iron-deficiency anemia."
+  ],
+  "icon": "Basella.jpg",
+  "name": "Basella",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "19 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.4 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.3 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "1.8 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "400 mcg",
+          "daily_value": "50%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "102 mg",
+          "daily_value": "123%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.05 mg",
+          "daily_value": "4%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.155 mg",
+          "daily_value": "13%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.5 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.24 mg",
+          "daily_value": "18%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "140 mcg",
+          "daily_value": "35%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "109 mg",
+          "daily_value": "11%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "1.2 mg",
+          "daily_value": "9%",
+          "name": "Iron"
+        },
+        {
+          "amount": "65 mg",
+          "daily_value": "18%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.735 mg",
+          "daily_value": "35%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "52 mg",
+          "daily_value": "7%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "510 mg",
+          "daily_value": "11%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.43 mg",
+          "daily_value": "5%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "160%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "170%"
+    },
+    {
+      "name": "Calcium",
+      "value": "10%"
+    },
+    {
+      "name": "Iron",
+      "value": "6%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "16%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "10%"
+    },
+    {
+      "name": "Protein",
+      "value": "3%"
+    }
+  ],
+  "pros": [
+    "Basella is rich sources of vitamin A.Vitamin-A required for maintaining healthy mucus membranes and skin, and essential for good eyesight.",
+    "Consumption of natural vegetables and fruits rich in vitamin-A and flavonoids has been thought to offer protection from the lung and oral cavity cancers.",
+    "Regular consumption of basella (Malabar spinach) in the diet helps prevent osteoporosis (weakness of bones), iron-deficiency anemia.",
+    "Folate deficiency in during very early stages of pregnancy might results in the neural tube defects in the newborn baby. ",
+    "Basella is overflowing with folate or folic acid. You need folic acid during pregnancy to protect your unborn baby from birth defects such as cleft lip, cleft palate, and spina bifida.",
+    "Vitamin-C is a powerful antioxidant, which helps the human body develop resistance against infectious agents and scavenge harmful oxygen-free radicals."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

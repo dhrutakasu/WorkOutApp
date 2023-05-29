@@ -1,0 +1,172 @@
+{
+  "description": [
+    "Fresh winged beans contain quite a good amount of vitamin-C.Vitamin-C is a powerful water-soluble antioxidant, and when adequately provided in the diet, it helps build immunity against infections, maintain blood vessel elasticity, and offer some protection against cancers.",
+    "Winged beans provide adequate amounts of minerals, and vitamins. Some of the essential minerals such as iron, copper, manganese, calcium, phosphorus, magnesium are concentrated in them.",
+    "Manganese is utilized in the human body as a co-factor for the powerful antioxidant enzyme, superoxide dismutase."
+  ],
+  "icon": "Winged_Bean.jpg",
+  "name": "Winged Bean",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "409 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "41.7 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "25.9 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "16.3 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "29.65 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "1.03 mg",
+          "daily_value": "90%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.45 mg",
+          "daily_value": "38%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "3.09 mg",
+          "daily_value": "21%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.795 mg",
+          "daily_value": "16%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.175 mg",
+          "daily_value": "13%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "45 mcg",
+          "daily_value": "11%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "440 mg",
+          "daily_value": "44%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "13.44 mg",
+          "daily_value": "103%",
+          "name": "Iron"
+        },
+        {
+          "amount": "179 mg",
+          "daily_value": "50%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "3.721 mg",
+          "daily_value": "177%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "451 mg",
+          "daily_value": "64%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "977 mg",
+          "daily_value": "21%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "38 mg",
+          "daily_value": "3%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "4.48 mg",
+          "daily_value": "47%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "0%"
+    },
+    {
+      "name": "Calcium",
+      "value": "3%"
+    },
+    {
+      "name": "Iron",
+      "value": "11%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "6%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "24%"
+    }
+  ],
+  "pros": [
+    "Fresh winged beans contain quite a good amount of vitamin-C.Vitamin-C is a powerful water-soluble antioxidant, and when adequately provided in the diet, it helps build immunity against infections, maintain blood vessel elasticity, and offer some protection against cancers.",
+    "Winged beans provide adequate amounts of minerals, and vitamins. Some of the essential minerals such as iron, copper, manganese, calcium, phosphorus, magnesium are concentrated in them.",
+    "Manganese is utilized in the human body as a co-factor for the powerful antioxidant enzyme, superoxide dismutase.",
+    "Vitamin E is also found in the unsaturated oil derived from these beans.",
+    "Adequate folate content in the diet around conception and during pregnancy can help prevent neural-tube defects in the newborn baby.",
+    "Winged beans are rich in calcium and phosphorus."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

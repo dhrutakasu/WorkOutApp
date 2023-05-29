@@ -1,0 +1,177 @@
+{
+  "cons": [
+    "Pregnant women should not use the herb in therapeutic doses as it may have a contracting effect on the uterus.",
+    "It should not be consumed in large quantities by those suffering from digestive ailments and those prone to kidney stones."
+  ],
+  "description": [
+    "This wonderful green leafy vegetable is very low in calories and fats.Fresh leaves contain surprisingly more omega-3 fatty acids.omega-3 fatty acids may reduce the risk of coronary heart disease, stroke, and help prevent the development of ADHD, autism, and other developmental differences in children.",
+    "It is an excellent source of Vitamin-A.Vitamin-A is a known powerful natural antioxidant and an essential vitamin for vision. It is also required to maintain healthy mucosa and skin.",
+    "Purslane is also a rich source of vitamin-C, and some B-complex vitamins like riboflavin, niacin, pyridoxine and carotenoids, as well as dietary minerals, such as iron, magnesium, calcium, potassium, and manganese."
+  ],
+  "icon": "Purslane.jpg",
+  "name": "Purslane",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "20 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.39 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.36 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "2.03 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "1320 IU",
+          "daily_value": "-",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "21 mg",
+          "daily_value": "25%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "12.2 mg",
+          "daily_value": "81%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "0.047 mg",
+          "daily_value": "4%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.112 mg",
+          "daily_value": "9%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.48 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.073 mg",
+          "daily_value": "6%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "12 mcg",
+          "daily_value": "3%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "65 mg",
+          "daily_value": "7%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "1.99 mg",
+          "daily_value": "15%",
+          "name": "Iron"
+        },
+        {
+          "amount": "68 mg",
+          "daily_value": "19%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.303 mg",
+          "daily_value": "14%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "44 mg",
+          "daily_value": "6%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "494 mg",
+          "daily_value": "11%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.17 mg",
+          "daily_value": "2%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "26%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "35%"
+    },
+    {
+      "name": "Calcium",
+      "value": "6%"
+    },
+    {
+      "name": "Iron",
+      "value": "11%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "17%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "4%"
+    }
+  ],
+  "pros": [
+    "This wonderful green leafy vegetable is very low in calories and fats.Fresh leaves contain surprisingly more omega-3 fatty acids.omega-3 fatty acids may reduce the risk of coronary heart disease, stroke, and help prevent the development of ADHD, autism, and other developmental differences in children.",
+    "It is an excellent source of Vitamin-A.Vitamin-A is a known powerful natural antioxidant and an essential vitamin for vision. It is also required to maintain healthy mucosa and skin.",
+    "Purslane is also a rich source of vitamin-C, and some B-complex vitamins like riboflavin, niacin, pyridoxine and carotenoids, as well as dietary minerals, such as iron, magnesium, calcium, potassium, and manganese.",
+    "Purslane vegetable has extremely high levels of omega-3 fatty acids for a land vegetable, as well as significant amounts of fiber, vitamin A, vitamin C, B- family vitamins, iron, magnesium, manganese, potassium, calcium, and copper.",
+    "Purslane is very low in calories, but is nutrient-rich and packed with high dietary fiber.",
+    "Food containing high levels of magnesium and potassium have been shown to have an anti-depressant effect as well."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

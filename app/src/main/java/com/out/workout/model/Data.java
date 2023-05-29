@@ -23,7 +23,7 @@ public class Data implements Serializable {
         return Objects.hash(categories);
     }
 
-    public final ArrayList<DietTipsCategory> getCategories() {
+    public ArrayList<DietTipsCategory> getCategories() {
         return this.categories;
     }
 

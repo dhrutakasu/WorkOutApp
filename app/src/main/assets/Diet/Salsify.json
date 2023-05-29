@@ -1,0 +1,182 @@
+{
+  "cons": [
+    "The intake of Salsify in large amount can cause bloating.",
+    "The excessive consumption of root results abdoinal discomfort, stomachache, bloating and diarrhea.",
+    "It contains Inulin that leads to itching, hypersensitivity reactions and redness."
+  ],
+  "description": [
+    "Its root is rich in several health-benefiting phytonutrients, inulin, vitamins, and minerals.",
+    "It is one of the excellent sources of soluble and insoluble dietary fiber.",
+    "Fresh roots are also good in vitamin-C.the root is rich in many B-complex groups of vitamins such as folates, vitamin B-6 (pyridoxine), thiamin, and pantothenic acid."
+  ],
+  "icon": "Salsify.jpg",
+  "name": "Salsify",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "82 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "3.3 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "18.6 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.2 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "3.3 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "8 mg",
+          "daily_value": "10%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.08 mg",
+          "daily_value": "7%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.22 mg",
+          "daily_value": "18%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.5 mg",
+          "daily_value": "3%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.371 mg",
+          "daily_value": "7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.277 mg",
+          "daily_value": "21%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "26 mcg",
+          "daily_value": "7%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "60 mg",
+          "daily_value": "6%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.7 mg",
+          "daily_value": "5%",
+          "name": "Iron"
+        },
+        {
+          "amount": "23 mg",
+          "daily_value": "6%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.268 mg",
+          "daily_value": "13%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "75 mg",
+          "daily_value": "11%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "380 mg",
+          "daily_value": "8%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "20 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.38 mg",
+          "daily_value": "4%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "13%"
+    },
+    {
+      "name": "Calcium",
+      "value": "6%"
+    },
+    {
+      "name": "Iron",
+      "value": "3%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "15%"
+    },
+    {
+      "name": "Protein",
+      "value": "6%"
+    }
+  ],
+  "pros": [
+    "Its root is rich in several health-benefiting phytonutrients, inulin, vitamins, and minerals.",
+    "It is one of the excellent sources of soluble and insoluble dietary fiber.",
+    "Fresh roots are also good in vitamin-C.the root is rich in many B-complex groups of vitamins such as folates, vitamin B-6 (pyridoxine), thiamin, and pantothenic acid.",
+    "Vitamin C is well known to reduce your risk of infections when taken during flu season, preventing pathogens from damaging cells and tissues.",
+    "Salsify is used as cleansing food and helpful for liver and gall bladder.",
+    "The root is used as antibilious, deobstruent, aperient and diuretic."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

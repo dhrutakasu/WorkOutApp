@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
@@ -13,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
-import com.out.workout.Alarm.service.LoadAlarmsReceiver;
 import com.out.workout.Application.App;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -134,14 +134,34 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
         IvPlayReady.setImageResource(R.drawable.ic_pause);
 
-        System.out.println("----valll : " + Float.valueOf((ReadyCountDown - 2000) / 1000));
         ReadyCountDown = ((SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10) * 1000) + 2000);
+        System.out.println("----valll : " + Float.valueOf((ReadyCountDown - 2000) / 1000));
         CVProgressReady.setMaxValue(Float.valueOf((ReadyCountDown - 2000) / 1000).floatValue());
+        CVProgressReady.setBlockCount((SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10)));
+        if (CVProgressReady.getBlockCount() >= 30) {
+            CVProgressReady.setBlockScale(0.2f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressReady.getBlockCount() >= 25) {
+            CVProgressReady.setBlockScale(0.3f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressReady.getBlockCount() >= 20) {
+            CVProgressReady.setBlockScale(0.4f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressReady.getBlockCount() >= 15) {
+            CVProgressReady.setBlockScale(0.5f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressReady.getBlockCount() >= 10) {
+            CVProgressReady.setBlockScale(0.6f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressReady.getBlockCount() >= 5) {
+            CVProgressReady.setBlockScale(0.7f);
+            CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
+        }
         CVProgressReady.setValue(Float.valueOf((ReadyCountDown - 2000) / 1000).floatValue());
         CVProgressReady.setText(String.valueOf((ReadyCountDown - 2000) / 1000));
 
         IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-        IsSound = SharePreference.getBoolean(context,SharePreference.IS_SOUND, true);
+        IsSound = SharePreference.getBoolean(context, SharePreference.IS_SOUND, true);
 
         if (IsSound) {
             if (App.textToSpeech != null) {
@@ -213,7 +233,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
                 ExerciseTimer(model, ExCount);
             }
-
         }.start();
     }
 
@@ -275,7 +294,31 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         IvPlayRest.setImageResource(R.drawable.ic_pause);
         System.out.println("----- exCount IsRest : " + IsRest);
         CVProgressRest.setBlockCount(SharePreference.getInt(context, SharePreference.REST_TIMER, 25));
-        CVProgressRest.setBlockScale(0.45f);
+        if (CVProgressRest.getBlockCount() >= 50) {
+            CVProgressRest.setBlockScale(1f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.BUTT);
+        } else if (CVProgressRest.getBlockCount() >= 40) {
+            CVProgressRest.setBlockScale(0.1f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.BUTT);
+        } else if (CVProgressRest.getBlockCount() >= 30) {
+            CVProgressRest.setBlockScale(0.2f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressRest.getBlockCount() >= 25) {
+            CVProgressRest.setBlockScale(0.3f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressRest.getBlockCount() >= 20) {
+            CVProgressRest.setBlockScale(0.4f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressRest.getBlockCount() >= 15) {
+            CVProgressRest.setBlockScale(0.5f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressRest.getBlockCount() >= 10) {
+            CVProgressRest.setBlockScale(0.6f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        } else if (CVProgressRest.getBlockCount() >= 5) {
+            CVProgressRest.setBlockScale(0.7f);
+            CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
+        }
         CVProgressRest.setMaxValue(Float.valueOf(SharePreference.getInt(context, SharePreference.REST_TIMER, 25)).floatValue());
         RestTimer = new CountDownTimer((IsRest + 1) * 1000L, 1000) {
 
@@ -347,10 +390,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     }
 
     private String hmsTimeFormatter(long milliSeconds) {
-        String hms = String.format("%02d:%02d:%02d",
-                TimeUnit.MILLISECONDS.toHours(milliSeconds),
-                TimeUnit.MILLISECONDS.toMinutes(milliSeconds) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(milliSeconds)),
-                TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds)));
+        String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(milliSeconds), TimeUnit.MILLISECONDS.toMinutes(milliSeconds) - TimeUnit.HOURS.toMinutes(TimeUnit.MILLISECONDS.toHours(milliSeconds)), TimeUnit.MILLISECONDS.toSeconds(milliSeconds) - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(milliSeconds)));
         return hms;
     }
 
@@ -358,6 +398,15 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.IvBack:
+                if (countDownTimerReady != null) {
+                    countDownTimerReady.cancel();
+                }
+                if (ExerciseDownTimer != null) {
+                    ExerciseDownTimer.cancel();
+                }
+                if (RestTimer != null) {
+                    RestTimer.cancel();
+                }
                 onBackPressed();
                 break;
             case R.id.IvHelp:
@@ -590,10 +639,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
             }
 
             ExerciseDownTimer.cancel();
-            startActivity(new Intent(context,CompleteExerciseActivity.class)
-                    .putExtra(Constants.ExerciseCount,WorkoutExerciseList.size())
-                    .putExtra(Constants.WorkoutType,WorkoutType)
-                    .putExtra(Constants.ExerciseTime,time));
+            startActivity(new Intent(context, CompleteExerciseActivity.class).putExtra(Constants.ExerciseCount, WorkoutExerciseList.size()).putExtra(Constants.WorkoutType, WorkoutType).putExtra(Constants.ExerciseTime, time));
             finish();
         } else {
             ExerciseDownTimer.cancel();

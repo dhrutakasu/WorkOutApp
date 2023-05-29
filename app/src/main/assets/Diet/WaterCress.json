@@ -1,0 +1,196 @@
+{
+  "cons": [
+    "Watercress is UNSAFE in medicinal amounts during pregnancy. It might start menstruation and cause a miscarriage. "
+  ],
+  "description": [
+    "Cress is one of the very low-calorie green leafy vegetables and contains negligible amounts of fats.Fresh cress has a higher concentration of ascorbic acid (vitamin-C) than some of the fruits and vegetables.",
+    "Vitamin-C helps trap free-oxygen radicals and reactive oxygen species (ROS) through its reduction potential properties. vitamin-C contribute to maintaining healthy connective tissue, prevent iron deficiency, and also help the human body develop resistance against infectious agents by boosting immunity.",
+    "It is one of the excellent vegetable sources for vitamin-KVitamin-K has a potential role in bone health through promoting osteotroblastic activity.",
+    "Cress is also an excellent source of vitamin-A vitamin-A deficiency and believed to protect from cardiovascular diseases and colon and prostate cancers."
+  ],
+  "icon": "WaterCress.jpg",
+  "name": "Water Cress",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "4 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "0.4 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.8 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "7.8 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "4.1 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "1085 IU",
+          "daily_value": "36.2%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "14.6 mg",
+          "daily_value": "32.4%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "3%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "85 mcg",
+          "daily_value": "121.4%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "3.1 mg",
+          "daily_value": "0.6%",
+          "name": "Choline"
+        },
+        {
+          "amount": "3.1 mcg",
+          "daily_value": "0.8%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "40.8 mg",
+          "daily_value": "4.1%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.3%",
+          "name": "Iron"
+        },
+        {
+          "amount": "7.1 mg",
+          "daily_value": "1.7%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "20.4 mg",
+          "daily_value": "2%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "112 mg",
+          "daily_value": "1.9%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.3 μg",
+          "daily_value": "0.4%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "13.9 mg",
+          "daily_value": "0.9%",
+          "name": "Sodium"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "63%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "71%"
+    },
+    {
+      "name": "Calcium",
+      "value": "12%"
+    },
+    {
+      "name": "Iron",
+      "value": "1%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "5%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "4%"
+    }
+  ],
+  "pros": [
+    "Cress is one of the very low-calorie green leafy vegetables and contains negligible amounts of fats.Fresh cress has a higher concentration of ascorbic acid (vitamin-C) than some of the fruits and vegetables.",
+    "Vitamin-C helps trap free-oxygen radicals and reactive oxygen species (ROS) through its reduction potential properties. vitamin-C contribute to maintaining healthy connective tissue, prevent iron deficiency, and also help the human body develop resistance against infectious agents by boosting immunity.",
+    "It is one of the excellent vegetable sources for vitamin-KVitamin-K has a potential role in bone health through promoting osteotroblastic activity.",
+    "Cress is also an excellent source of vitamin-A vitamin-A deficiency and believed to protect from cardiovascular diseases and colon and prostate cancers.",
+    "Vitamin C is one of the main nutrients required by the body to function optimally since it reduces the risk of having blood cell damage, repairs brain tissue, and protects the body against various diseases.",
+    "The high vitamin C content is perfect for protecting your body against diseases caused by bacteria, virus, and fungi. ",
+    "High levels of zeaxanthin and lutein have been linked with aiding those people who suffer from cardiovascular diseases.",
+    "Watercress may be able to fight bacteria. It can also increase the amount of urine produced by the body (diuretic)."
+  ],
+  "serving": "Nutritional information per 34g (1 cup) serving"
+}

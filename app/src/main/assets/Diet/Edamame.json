@@ -1,0 +1,185 @@
+{
+  "cons": [
+    "If you have gout, soybeans may make your symptoms worse."
+  ],
+  "description": [
+    "Green soybeans play a vital role as important sources of plant protein.Edamame contains moderate amounts of vitamins, minerals, fibers, and plant sterols.",
+    "Fresh edamame is an excellent source of folates. Folate, along with vitamin B-12, is one of the essential componenets of DNA synthesis and cell division.",
+    "Fresh beans contain moderate levels of vitamin-C Vitamin-C is a natural antioxidant. Studies suggest that it help prevent free radical injury, act as an immune booster, and anti-inflammatory agent."
+  ],
+  "icon": "Edamame.jpg",
+  "name": "Edamame",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "122 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "9.94 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "5.2 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "5.2 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "10.88 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "6.1 mg",
+          "daily_value": "7%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.68 mg",
+          "daily_value": "5%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "26 mcg",
+          "daily_value": "26%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "17%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.155 mg",
+          "daily_value": "13%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.915 mg",
+          "daily_value": "6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "1.395 mg",
+          "daily_value": "8%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "311 mcg",
+          "daily_value": "57%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "63 mg",
+          "daily_value": "6%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "2.27 mg",
+          "daily_value": "17%",
+          "name": "Iron"
+        },
+        {
+          "amount": "64 mg",
+          "daily_value": "18%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "1.024 mg",
+          "daily_value": "49%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "169 mg",
+          "daily_value": "24%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "436 mg",
+          "daily_value": "9%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "1.3 mg",
+          "daily_value": "14%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin C",
+      "value": "10%"
+    },
+    {
+      "name": "Calcium",
+      "value": "6%"
+    },
+    {
+      "name": "Iron",
+      "value": "12%"
+    },
+    {
+      "name": "Vitamin D",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin B12",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "16%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    }
+  ],
+  "pros": [
+    "Green soybeans play a vital role as important sources of plant protein.Edamame contains moderate amounts of vitamins, minerals, fibers, and plant sterols.",
+    "Fresh edamame is an excellent source of folates. Folate, along with vitamin B-12, is one of the essential componenets of DNA synthesis and cell division.",
+    "Fresh beans contain moderate levels of vitamin-C Vitamin-C is a natural antioxidant. Studies suggest that it help prevent free radical injury, act as an immune booster, and anti-inflammatory agent.",
+    "Edamame contains choline, a nutrient that is similar to the B vitamins.",
+    "It contributes to healthful sleep, muscle movement, learning, and memory.",
+    "In addition, folic acid intake is essential during pregnancy to protect against neural tube defects in infants. One 155-gram cup of edamame provides 482 mcg DFE (Dietary folate equivalents) of folate."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

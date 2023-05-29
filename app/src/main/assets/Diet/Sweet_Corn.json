@@ -1,0 +1,147 @@
+{
+  "cons": [
+    "Consuming corn can lead to allergies and symptoms like rashes on the skin, swelling of mucous membrane, vomiting, etc.",
+    "Corn adversely affects people suffering from diabetes as it increases the blood sugar level in the body."
+  ],
+  "description": [
+    "Corn is a good source of the phenolic flavonoid antioxidant, ferulic acid.",
+    "Ferulic acid plays a vital role in preventing cancers, aging, and inflammation in humans.",
+    "Corn has significantly higher levels of phenolic flavonoid pigment antioxidants such as ß-carotenes, and lutein, xanthins and cryptoxanthin pigments along with vitamin-A.",
+    "It also contains good levels of some of the valuable B-complex group of vitamins such as thiamin, niacin, pantothenic acid, folates, riboflavin, and pyridoxine."
+  ],
+  "icon": "Sweet_Corn.jpg",
+  "name": "Sweet Corn",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "86 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "19.02 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2.7 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "1.18 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "3.2 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "9 mcg",
+          "daily_value": "1%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "6.8 mg",
+          "daily_value": "8%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "17%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "1.7 mg",
+          "daily_value": "11%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "46 mcg",
+          "daily_value": "12%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "0.52 mg",
+          "daily_value": "4%",
+          "name": "Iron"
+        },
+        {
+          "amount": "37 mg",
+          "daily_value": "10%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "270 mg",
+          "daily_value": "6%",
+          "name": "Potassium"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "11%"
+    },
+    {
+      "name": "Calcium",
+      "value": "0%"
+    },
+    {
+      "name": "Iron",
+      "value": "2%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "9%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "6%"
+    }
+  ],
+  "pros": [
+    "Corn is a good source of the phenolic flavonoid antioxidant, ferulic acid.",
+    "Ferulic acid plays a vital role in preventing cancers, aging, and inflammation in humans.",
+    "Corn has significantly higher levels of phenolic flavonoid pigment antioxidants such as ß-carotenes, and lutein, xanthins and cryptoxanthin pigments along with vitamin-A.",
+    "It also contains good levels of some of the valuable B-complex group of vitamins such as thiamin, niacin, pantothenic acid, folates, riboflavin, and pyridoxine.",
+    "Yes, you can eat sweet corn in pregnancy.",
+    "Corn contains folic acid, fiber, vitamins B1, B5, and C, improves digestion, strengthens circulation and also aids lactation."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

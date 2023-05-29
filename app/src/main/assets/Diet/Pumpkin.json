@@ -1,0 +1,222 @@
+{
+  "cons": [
+    "Raw pumpkin is not recommended to use with increased sugar in the blood.",
+    "Contained in the seeds of pumpkin variety of acids harmful to the enamel of the teeth"
+  ],
+  "description": [
+    "It is one of the very low-calorie vegetables.The vegetable is one of the food items recommended by dieticians in cholesterol controlling and weight reduction programs.",
+    "Pumpkin is a storehouse of many anti-oxidant vitamins such as vitamin-A, vitamin-C, and vitamin-E.Vitamin-A is a powerful natural antioxidant and is required by the body for maintaining the integrity of skin and mucosa.",
+    "It is also an essential vitamin for good eyesight. It is also an excellent source of many natural poly-phenolic flavonoid compounds such as α, ß-carotenes, cryptoxanthin, lutein, and zeaxanthin."
+  ],
+  "icon": "Pumpkin.jpg",
+  "name": "Pumpkin",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "25.8 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "75 (High)",
+          "name": "Glycemic Index(GI)"
+        },
+        {
+          "amount": "6 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "1.4 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "0.1 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "0.9 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "2.5 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "2.5 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "6115.5 IU",
+          "daily_value": "203.9%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "5.8 mg",
+          "daily_value": "12.9%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "1 mg",
+          "daily_value": "10%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "1 mcg",
+          "daily_value": "1.4%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "8.3%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "0.5 mg",
+          "daily_value": "3.1%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "5%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "7.6 mg",
+          "daily_value": "1.4%",
+          "name": "Choline"
+        },
+        {
+          "amount": "11 mcg",
+          "daily_value": "2.8%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "18.4 mg",
+          "daily_value": "1.8%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "11.1%",
+          "name": "Copper"
+        },
+        {
+          "amount": "0.7 mg",
+          "daily_value": "8.8%",
+          "name": "Iron"
+        },
+        {
+          "amount": "11 mg",
+          "daily_value": "2.6%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "36.8 mg",
+          "daily_value": "3.7%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "282 mg",
+          "daily_value": "7.4%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "0.3 μg",
+          "daily_value": "0.4%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "1.3 mg",
+          "daily_value": "0.1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.3 mg",
+          "daily_value": "2.7%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "170%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "15%"
+    },
+    {
+      "name": "Calcium",
+      "value": "2%"
+    },
+    {
+      "name": "Iron",
+      "value": "4%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "3%"
+    },
+    {
+      "name": "Vitamin B6",
+      "value": "5%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    }
+  ],
+  "pros": [
+    "It is one of the very low-calorie vegetables.The vegetable is one of the food items recommended by dieticians in cholesterol controlling and weight reduction programs.",
+    "Pumpkin is a storehouse of many anti-oxidant vitamins such as vitamin-A, vitamin-C, and vitamin-E.Vitamin-A is a powerful natural antioxidant and is required by the body for maintaining the integrity of skin and mucosa.",
+    "It is also an essential vitamin for good eyesight. It is also an excellent source of many natural poly-phenolic flavonoid compounds such as α, ß-carotenes, cryptoxanthin, lutein, and zeaxanthin.",
+    "Pumpkins contain a wealth of antioxidants. Vitamin C, vitamin E, and beta-carotene have been shown to support eye health and prevent degenerative damage.",
+    "Benefit of pumpkin is mainly due to the presence of many nutrients like vitamins, minerals, antioxidants, dietary fibers etc. in them."
+  ],
+  "serving": "Nutritional information per 120g (1/2 cup.) serving"
+}
