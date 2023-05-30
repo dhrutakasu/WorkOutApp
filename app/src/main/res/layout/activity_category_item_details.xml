@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.CategoryItemDetailsActivity">
 
-    <androidx.core.widget.NestedScrollView
+    <FrameLayout
+        android:id="@+id/FlImgCategory"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_collapseMode="parallax"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/IvItemImg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop" />
+    </FrameLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/FlImgCategory">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +45,7 @@
                 android:src="@color/text_color" />
 
             <TextView
-                android:id="@+id/tvNutritionalInfoHeader"
+                android:id="@+id/TvItemNutritionalTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
@@ -39,7 +55,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvNutritionalServing"
+                android:id="@+id/TvItemNutritionalServing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
@@ -48,15 +64,17 @@
                 android:textSize="12sp" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvNutrients"
+                android:id="@+id/RvItemNutrients"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_nutrient" />
 
             <TextView
-                android:id="@+id/tvSubDivName"
+                android:id="@+id/TvItemSubDivTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -67,7 +85,7 @@
                 android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvProteins"
+                android:id="@+id/RvItemProteins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -76,7 +94,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             <TextView
-                android:id="@+id/tvTitleVitamins"
+                android:id="@+id/TvItemVitaminsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -86,14 +104,14 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvVitamins"
+                android:id="@+id/RvItemVitamins"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             <TextView
-                android:id="@+id/tvTitleMinerals"
+                android:id="@+id/TvItemMineralsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -103,7 +121,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMinerals"
+                android:id="@+id/RvItemMinerals"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -143,7 +161,7 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_pros"
+                    android:id="@+id/RvItemPros"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
@@ -180,7 +198,7 @@
                     android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_cons"
+                    android:id="@+id/RvItemCons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"

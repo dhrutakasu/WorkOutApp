@@ -3,6 +3,7 @@ package com.out.workout.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
 import java.util.Objects;
 
 public class ValueModel {
@@ -18,7 +19,7 @@ public class ValueModel {
     private String dailyValue;
     @SerializedName("subDiv")
     @Expose
-    private String subDiv;
+    private List<subDivModel> subDiv;
 
     public String getAmount() {
         return amount;
@@ -44,11 +45,11 @@ public class ValueModel {
         this.dailyValue = dailyValue;
     }
 
-    public String getSubDiv() {
+    public List<subDivModel> getSubDiv() {
         return subDiv;
     }
 
-    public void setSubDiv(String subDiv) {
+    public void setSubDiv(List<subDivModel> subDiv) {
         this.subDiv = subDiv;
     }
 

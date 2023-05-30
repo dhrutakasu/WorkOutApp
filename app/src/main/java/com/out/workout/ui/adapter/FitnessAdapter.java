@@ -68,7 +68,7 @@ public class FitnessAdapter extends RecyclerView.Adapter<FitnessAdapter.MyViewHo
             context.startActivity(intent4);
         } else if (pos == 4) {
             Intent intent5 = new Intent(context, FatBodyCalculatorActivity.class);
-            intent5.putExtra("bmr", true);
+            intent5.putExtra(Constants.BMR, true);
             context.startActivity(intent5);
         } else if (pos != 5) {
         } else {

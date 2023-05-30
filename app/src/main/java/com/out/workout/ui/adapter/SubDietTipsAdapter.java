@@ -40,15 +40,10 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.TvDietName.setText(categories.get(position).getName());
         holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startCategoryActivity(categories.get(position),dietName);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> startCategoryActivity(categories.get(position)));
     }
 
-    private void startCategoryActivity(SubCategories categories,String dietName) {
+    private void startCategoryActivity(SubCategories categories) {
         Intent intent = new Intent(context, categories.isSingleItem() ? CategoryItemDetailsActivity.class : CategorySubItemListActivity.class);
         intent.putExtra(Constants.DIET_NAME, categories.getName());
         intent.putExtra(Constants.DIET_SLUG, categories.getSlug());

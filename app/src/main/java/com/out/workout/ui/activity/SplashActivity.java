@@ -10,7 +10,6 @@ import android.os.Handler;
 import com.out.workout.R;
 
 public class SplashActivity extends AppCompatActivity {
-
     private Context context;
 
     @Override

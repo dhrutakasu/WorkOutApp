@@ -1,0 +1,492 @@
+[
+  {
+    "icon": "article_70_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Chickpea",
+    "short_description": "Health benefits of Chickpea",
+    "slug": "article_70"
+  },
+  {
+    "icon": "article_69_1.jpg",
+    "layout_type": 1,
+    "name": "Top 7 Foods Rich in Fiber",
+    "short_description": "Top 7 Foods Rich in Fiber",
+    "slug": "article_69"
+  },
+  {
+    "icon": "article_68_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Guava",
+    "short_description": "Health benefits of Guava",
+    "slug": "article_68"
+  },
+  {
+    "icon": "article_67_1.jpg",
+    "layout_type": 1,
+    "name": "Apple cider vinegar",
+    "short_description": "Apple cider vinegar",
+    "slug": "article_67"
+  },
+  {
+    "icon": "article_66_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Dates",
+    "short_description": "Health benefits of Dates",
+    "slug": "article_66"
+  },
+  {
+    "icon": "article_65_1.jpg",
+    "layout_type": 1,
+    "name": "Benefits of papaya",
+    "short_description": "Benefits of papaya",
+    "slug": "article_65"
+  },
+  {
+    "icon": "article_64_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of coconut water",
+    "short_description": "Health benefits of coconut water",
+    "slug": "article_64"
+  },
+  {
+    "icon": "article_63_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of flaxseed",
+    "short_description": "Health benefits of flaxseed",
+    "slug": "article_63"
+  },
+  {
+    "icon": "article_62_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of chia seeds",
+    "short_description": "Health benefits of chia seeds",
+    "slug": "article_62"
+  },
+  {
+    "icon": "article_61_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of salmon fish",
+    "short_description": "Health benefits of salmon fish",
+    "slug": "article_61"
+  },
+  {
+    "icon": "article_60_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Millet",
+    "short_description": "Health benefits of Millet",
+    "slug": "article_60"
+  },
+  {
+    "icon": "article_59_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Broccoli",
+    "short_description": "Health benefits of Broccoli",
+    "slug": "article_59"
+  },
+  {
+    "icon": "article_58_1.jpg",
+    "layout_type": 1,
+    "name": "Foods that are rich in Protein",
+    "short_description": "Foods that are rich in Protein",
+    "slug": "article_58"
+  },
+  {
+    "icon": "article_57_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of soya chunks",
+    "short_description": "Health benefits of soya chunks",
+    "slug": "article_57"
+  },
+  {
+    "icon": "article_56_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Eggs",
+    "short_description": "Health benefits of Eggs",
+    "slug": "article_56"
+  },
+  {
+    "icon": "article_55_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of bitter melon",
+    "short_description": "Health benefits of bitter melon",
+    "slug": "article_55"
+  },
+  {
+    "icon": "article_54_1.jpg",
+    "layout_type": 1,
+    "name": "Cardio workouts for weight loss",
+    "short_description": "Cardio workouts for weight loss",
+    "slug": "article_54"
+  },
+  {
+    "icon": "article_53_1.jpg",
+    "layout_type": 1,
+    "name": "Diet for Asthma- what to eat and avoid",
+    "short_description": "Diet for Asthma- what to eat and avoid",
+    "slug": "article_53"
+  },
+  {
+    "icon": "article_52_1.jpg",
+    "layout_type": 1,
+    "name": "5 Reasons why berries are one of the healthiest food on earth",
+    "short_description": "5 Reasons why berries are one of the healthiest food on earth",
+    "slug": "article_52"
+  },
+  {
+    "icon": "article_51_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of cottage cheese(Paneer)",
+    "short_description": "Health benefits of cottage cheese(Paneer)",
+    "slug": "article_51"
+  },
+  {
+    "icon": "article_50_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive health benefits of apple",
+    "short_description": "5 Health benefits of Pineapple",
+    "slug": "article_50"
+  },
+  {
+    "icon": "article_49_1.jpg",
+    "layout_type": 1,
+    "name": "5 Health benefits of Pineapple",
+    "short_description": "5 Health benefits of Pineapple",
+    "slug": "article_49"
+  },
+  {
+    "icon": "article_48_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive benefits of coffee",
+    "short_description": "Impressive benefits of coffee",
+    "slug": "article_48"
+  },
+  {
+    "icon": "article_47_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Kiwi",
+    "short_description": "Health benefits of Kiwi",
+    "slug": "article_47"
+  },
+  {
+    "icon": "article_46_1.jpg",
+    "layout_type": 1,
+    "name": "Benefits of Dark chocolate",
+    "short_description": "Benefits of Dark chocolate",
+    "slug": "article_46"
+  },
+  {
+    "icon": "article_45_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive health benefits of Spinach",
+    "short_description": "Impressive health benefits of Spinach",
+    "slug": "article_45"
+  },
+  {
+    "icon": "article_44_1.jpg",
+    "layout_type": 1,
+    "name": "Foods that help in detoxify your body",
+    "short_description": "Foods that help in detoxify your body",
+    "slug": "article_44"
+  },
+  {
+    "icon": "article_43_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive Lifestyle changes to improve cholesterol",
+    "short_description": "Impressive Lifestyle changes to improve cholesterol",
+    "slug": "article_43"
+  },
+  {
+    "icon": "article_42_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive Food to Boost Immunity",
+    "short_description": "Impressive Food to Boost Immunity",
+    "slug": "article_42"
+  },
+  {
+    "icon": "article_41_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of Ginger",
+    "short_description": "Health benefits of Ginger",
+    "slug": "article_41"
+  },
+  {
+    "icon": "article_40_1.jpg",
+    "layout_type": 1,
+    "name": "Impressive Health Benefits of Saffron",
+    "short_description": "Impressive Health Benefits of Saffron",
+    "slug": "article_40"
+  },
+  {
+    "icon": "article_39_1.jpg",
+    "layout_type": 1,
+    "name": "Tips to strengthen your Hair Roots",
+    "short_description": "Tips to strengthen your Hair Roots",
+    "slug": "article_39"
+  },
+  {
+    "icon": "article_38_1.jpg",
+    "layout_type": 1,
+    "name": "5 Ways to Improve your Eyesight",
+    "short_description": "5 Ways to Improve your Eyesight",
+    "slug": "article_38"
+  },
+  {
+    "icon": "article_37_1.jpg",
+    "layout_type": 1,
+    "name": "5 tips to Control diabetes",
+    "short_description": "5 tips to Control diabetes",
+    "slug": "article_37"
+  },
+  {
+    "icon": "article_36_1.jpg",
+    "layout_type": 1,
+    "name": "5 Best fat burning foods",
+    "short_description": "5 Best fat burning foods",
+    "slug": "article_36"
+  },
+  {
+    "icon": "article_35_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of black water",
+    "short_description": "Health benefits of black water",
+    "slug": "article_35"
+  },
+  {
+    "icon": "article_34_1.jpg",
+    "layout_type": 1,
+    "name": "Food to perk up your stamina instantly",
+    "short_description": "Food to perk up your stamina instantly",
+    "slug": "article_34"
+  },
+  {
+    "icon": "article_33_1.jpg",
+    "layout_type": 1,
+    "name": "10 Amazing Benefits Of Soaked Raisins",
+    "short_description": "10 Amazing Benefits Of Soaked Raisins",
+    "slug": "article_33"
+  },
+  {
+    "icon": "article_32_1.jpg",
+    "layout_type": 1,
+    "name": "6 Benefits of good sleep",
+    "short_description": "6 Benefits of good sleep",
+    "slug": "article_32"
+  },
+  {
+    "icon": "article_31_1.jpg",
+    "layout_type": 1,
+    "name": "Side Effects Of Late Night Binging",
+    "short_description": "Side Effects Of Late Night Binging",
+    "slug": "article_31"
+  },
+  {
+    "icon": "article_30_1.jpg",
+    "layout_type": 1,
+    "name": "Ways To Slow Down Ageing",
+    "short_description": "Ways To Slow Down Ageing",
+    "slug": "article_30"
+  },
+  {
+    "icon": "article_29_1.jpg",
+    "layout_type": 1,
+    "name": "Foods To Avoid In Empty Stomach",
+    "short_description": "Foods To Avoid In Empty Stomach",
+    "slug": "article_29"
+  },
+  {
+    "icon": "article_28_1.jpg",
+    "layout_type": 1,
+    "name": "Things you should never do after eating",
+    "short_description": "Things you should never do after eating",
+    "slug": "article_28"
+  },
+  {
+    "icon": "article_27_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of 🍄 Mushrooms",
+    "short_description": "Health Benefits Of 🍄 Mushrooms",
+    "slug": "article_27"
+  },
+  {
+    "icon": "article_26_1.jpg",
+    "layout_type": 1,
+    "name": "How To Strengthen Immunity Naturally",
+    "short_description": "How To Strengthen Immunity Naturally",
+    "slug": "article_26"
+  },
+  {
+    "icon": "article_25_1.jpg",
+    "layout_type": 1,
+    "name": "Reasons Why You Must Include Figs In Your Diet",
+    "short_description": "Reasons Why You Must Include Figs In Your Diet",
+    "slug": "article_25"
+  },
+  {
+    "icon": "article_24_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Aloe Vera",
+    "short_description": "Health Benefits Of Aloe Vera",
+    "slug": "article_24"
+  },
+  {
+    "icon": "article_23_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Amla(Indian gooseberry)",
+    "short_description": "Health Benefits Of Amla(Indian gooseberry)",
+    "slug": "article_23"
+  },
+  {
+    "icon": "article_22_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Cucumber",
+    "short_description": "Health Benefits Of Cucumber",
+    "slug": "article_22"
+  },
+  {
+    "icon": "article_21_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Lemon",
+    "short_description": "Health Benefits Of Lemon",
+    "slug": "article_21"
+  },
+  {
+    "icon": "article_20_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Almonds",
+    "short_description": "Health Benefits Of Almonds",
+    "slug": "article_20"
+  },
+  {
+    "icon": "article_19_1.jpg",
+    "layout_type": 1,
+    "name": "Health Benefits Of Blueberries",
+    "short_description": "Health Benefits Of Blueberries",
+    "slug": "article_19"
+  },
+  {
+    "icon": "article_18_1.jpg",
+    "layout_type": 1,
+    "name": "Health benefits of pomegranate",
+    "short_description": "Health benefits of pomegranate",
+    "slug": "article_18"
+  },
+  {
+    "icon": "article_17_1.jpg",
+    "layout_type": 1,
+    "name": "Sources of vitamin \"C",
+    "short_description": "Sources of vitamin \"C",
+    "slug": "article_17"
+  },
+  {
+    "icon": "article_16_1.jpg",
+    "layout_type": 1,
+    "name": "Benefits Of Onion",
+    "short_description": "Benefits Of Onion",
+    "slug": "article_16"
+  },
+  {
+    "icon": "article_15_1.jpg",
+    "layout_type": 1,
+    "name": "Healthy diet for diabetic free life",
+    "short_description": "Healthy diet for diabetic free life",
+    "slug": "article_15"
+  },
+  {
+    "icon": "article_14_1.jpg",
+    "layout_type": 1,
+    "name": "Optimal & mandatory nutrient - PROTEIN",
+    "short_description": "Optimal & mandatory nutrient - PROTEIN",
+    "slug": "article_14"
+  },
+  {
+    "icon": "article_13_1.jpg",
+    "layout_type": 1,
+    "name": "Is carbs a needed nutrient?",
+    "short_description": "Is carbs a needed nutrient?",
+    "slug": "article_13"
+  },
+  {
+    "icon": "article_12_1.jpg",
+    "layout_type": 1,
+    "name": "Indoor plants health benefits",
+    "short_description": "Indoor plants health benefits",
+    "slug": "article_12"
+  },
+  {
+    "icon": "article_11_1.jpg",
+    "layout_type": 1,
+    "name": "Kickstarter of the day : Warm water",
+    "short_description": "Kickstarter of the day : Warm water",
+    "slug": "article_11"
+  },
+  {
+    "icon": "article_10_1.jpg",
+    "layout_type": 1,
+    "name": "Boost up your mornings with fruits",
+    "short_description": "Boost up your mornings with fruits",
+    "slug": "article_10"
+  },
+  {
+    "icon": "article_9_2.jpg",
+    "layout_type": 1,
+    "name": "Metabolism increasing food",
+    "short_description": "Metabolism increasing food",
+    "slug": "article_9"
+  },
+  {
+    "icon": "article_8_1.jpg",
+    "layout_type": 1,
+    "name": "Natural way to maintain BP",
+    "short_description": "Natural way to maintain BP",
+    "slug": "article_8"
+  },
+  {
+    "icon": "article_7_1.png",
+    "layout_type": 1,
+    "name": "Healthy lifestyle: A key step to managing PCOS",
+    "short_description": "Healthy lifestyle: A key step to managing PCOS",
+    "slug": "article_7"
+  },
+  {
+    "icon": "article_6_4.jpeg",
+    "layout_type": 1,
+    "name": "Foods for Healthy Eyes",
+    "short_description": "Food for Healthy Eyes",
+    "slug": "article_6"
+  },
+  {
+    "icon": "article_1_1.jpg",
+    "layout_type": 1,
+    "name": "30 days challenge for Clean Eating",
+    "short_description": "anything one line interesting description we need to write here",
+    "slug": "article_1"
+  },
+  {
+    "icon": "article_2_3.jpeg",
+    "layout_type": 1,
+    "name": "Eat Your Vegetables",
+    "short_description": "anything one line interesting description we need to write here",
+    "slug": "article_2"
+  },
+  {
+    "icon": "article_3_4.jpeg",
+    "layout_type": 1,
+    "name": "DIET but Don't STARVE",
+    "short_description": "anything one line interesting description we need to write here",
+    "slug": "article_3"
+  },
+  {
+    "icon": "article_4_2.jpg",
+    "layout_type": 1,
+    "name": "Probiotics",
+    "short_description": "anything one line interesting description we need to write here",
+    "slug": "article_4"
+  },
+  {
+    "icon": "article_5_10.jpg",
+    "layout_type": 1,
+    "name": "Are walnuts good for you?",
+    "short_description": "anything one line interesting description we need to write here",
+    "slug": "article_5"
+  }
+]

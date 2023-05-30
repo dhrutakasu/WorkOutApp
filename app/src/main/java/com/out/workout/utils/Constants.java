@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.os.Build;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Pair;
@@ -50,7 +53,7 @@ public class Constants {
     public static final int EDIT_ALARM = 1;
     public static final int ADD_ALARM = 2;
     public static final int UNKNOWN = 0;
-    public static String BMR="BMR";
+    public static String BMR = "BMR";
 
     public static String getCapsSentences(String tagName) {
         String[] splits = tagName.toLowerCase().split(" ");
@@ -120,6 +123,7 @@ public class Constants {
     public static final double toInches(float f) {
         return f / 2.54d;
     }
+
     public static final String toFormattedCm(float f) {
         String format = String.format("%.1f", Arrays.copyOf(new Object[]{Float.valueOf(f)}, 1));
         return format;
@@ -147,4 +151,17 @@ public class Constants {
         return (float) d;
     }
 
+    public static final String formattedString(float f) {
+        String format = String.format("%.1f", Arrays.copyOf(new Object[]{Float.valueOf(f)}, 1));
+        return format;
+    }
+
+    public static final Spanned fromHtml(String s) {
+        if (Build.VERSION.SDK_INT >= 24) {
+            Spanned fromHtml = Html.fromHtml(s, 0);
+            return fromHtml;
+        }
+        Spanned fromHtml2 = Html.fromHtml(s);
+        return fromHtml2;
+    }
 }

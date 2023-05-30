@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.out.workout.R;
@@ -216,14 +217,14 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
 
     public final void GotoFitCalculate() {
         float cm;
-        if (!isWeightValid()) {
-            showErrorMessageDialog(context, 1);
+        if (!isWeightValueValid()) {
+            showErrorDialog(context, 1);
             BtnFatCalculate.postDelayed(() -> updateValueOfWeight(), 2_000);
             return;
         }
         BtnFatCalculate.postDelayed(() -> updateValueOfHeightOnCalculate(), 2_000);
-        if (!isHeightValid()) {
-            showErrorMessageDialog(context, 2);
+        if (!isHeightValueValid()) {
+            showErrorDialog(context, 2);
             return;
         }
         float parseFloat = Float.parseFloat(String.valueOf(EdtFatWeight.getText()));
@@ -253,7 +254,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         window.setAttributes(lp);
 
         ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
-        LinearLayout LlFitCalorie = dialog.findViewById(R.id.LlFitCalorie);
+        NestedScrollView ScrollFitCalorie = dialog.findViewById(R.id.ScrollFitCalorie);
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         LinearLayout LlFitOtherResults = dialog.findViewById(R.id.LlFitOtherResults);
         TextView TvFitNote = dialog.findViewById(R.id.TvFitNote);
@@ -268,7 +269,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
         double doub = parseFloat * 10.0f;
-        int ValInt = (int) Math.rint((FlFatMale.isSelected() ? ((doub + (cm * 6.25d)) - (getAge() * 5)) + 5.0d : ((doub + (cm * 6.25d)) - (getAge() * 5)) - 161.0d) * getActivityFactor());
+        int ValInt = (int) Math.rint((FlFatMale.isSelected() ? ((doub + (cm * 6.25d)) - (getAge() * 5)) + 5.0d : ((doub + (cm * 6.25d)) - (getAge() * 5)) - 161.0d) * getFactor());
         ValueAnimator animator = ValueAnimator.ofInt(Math.max(0, ValInt - 200), ValInt);
         animator.setDuration(1000L);
         animator.addUpdateListener(valueAnimator -> TvFitMaintainWWeightCal.setText(valueAnimator.getAnimatedValue()+""));
@@ -305,7 +306,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
             LlFitOtherResults.setVisibility(View.GONE);
             TvFitMaintainWeightMessage.setVisibility(View.GONE);
         }
-        LlFitCalorie.setVisibility(View.VISIBLE);
+        ScrollFitCalorie.setVisibility(View.VISIBLE);
         TvDialogWeightSubTitle.setText(R.string.calories_to_maintain_weight);
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
@@ -314,7 +315,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         dialog.show();
     }
 
-    private float getActivityFactor() {
+    private float getFactor() {
         if (getIntent().getBooleanExtra(Constants.BMR, false)) {
             return 1.0f;
         }
@@ -334,7 +335,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         return 1.725f;
     }
 
-    public final void showErrorMessageDialog(Context context, int i) {
+    public final void showErrorDialog(Context context, int i) {
         String str;
         if (i == 1) {
             str = RgFatWeightUnit.getCheckedRadioButtonId() == R.id.RbFatKg ? "Please input a valid Weight(1kg - 250kg)" : "Please input a valid Weight(2lb - 551lb)";
@@ -344,7 +345,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
     }
 
-    public final boolean isHeightValid() {
+    public final boolean isHeightValueValid() {
         float f;
         if (RgFatHeightUnit.getCheckedRadioButtonId() == R.id.RbFatCm) {
             String valueOf = String.valueOf(EdtFatHeightCm.getText());
@@ -366,7 +367,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         return Integer.parseInt(valueOf2) != 8 || valueOf3.isEmpty() || Integer.parseInt(valueOf3) <= 2;
     }
 
-    public final boolean isWeightValid() {
+    public final boolean isWeightValueValid() {
         String obj;
         float f = 0.0f;
         try {
@@ -428,7 +429,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
 
     public void updateValueOfHeightOnCalculate() {
         if (LlFatFtIn.getVisibility() == View.VISIBLE) {
-            Pair<Integer, Integer> feetInches = getFeetInches();
+            Pair<Integer, Integer> feetInches = getFeetInch();
             EdtFatFt.setText(String.valueOf(feetInches.first.intValue()));
             EdtFatFt.setSelection(String.valueOf(feetInches.first.intValue()).length());
             EdtFatIn.setText(String.valueOf(feetInches.second.intValue()));
@@ -439,7 +440,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         EdtFatHeightCm.setSelection(EdtFatHeightCm.getText() == null ? 0 : EdtFatHeightCm.getText().length());
     }
 
-    private Pair<Integer, Integer> getFeetInches() {
+    private Pair<Integer, Integer> getFeetInch() {
         Editable editable;
         String obj;
         String obj2;
@@ -509,7 +510,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         if (i == R.id.RbFatCm) {
             EdtFatHeightCm.setVisibility(View.VISIBLE);
             LlFatFtIn.setVisibility(View.GONE);
-            Pair<Integer, Integer> feetInches = getFeetInches();
+            Pair<Integer, Integer> feetInches = getFeetInch();
             EdtFatHeightCm.setText(String.valueOf(Constants.toCm((feetInches.first.intValue() * 12) + feetInches.second.intValue())));
             EdtFatHeightCm.setSelection(EdtFatHeightCm.getText() != null ? EdtFatHeightCm.getText().length() : 0);
             return;

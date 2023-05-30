@@ -1,1 +1,200 @@
-{"cons":["Most of the calories in apples come from sugar.","If you do not purchase organic apples, you could be exposing yourself to trace amounts of pesticides"],"description":["It contains nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin.","Apple is reducing tooth decay by lowering the levels of bacteria.","Decrease risk of diabetes, reduces cholesterol levels, protects from diarrhea and constipation.","Antioxidant rich in apples may help to protect the lungs from oxidative damage."],"icon":"Apple.jpg","name":"Apple","nutrients":[{"heading":"Nutrients","noOfColumn":2,"values":[{"amount":"Value","name":"Nutrient"},{"amount":"60.1 cal","name":"Energy"},{"amount":"38","name":"Glycemic Index(GI)"},{"amount":"16.5 g","daily_value":"10%","name":"Carbs"},{"amount":"2.9 g","name":"Fiber"},{"amount":"10.9 mg","name":"Omega 3"},{"amount":"51.6 mg","name":"Omega 6"}]},{"heading":"Vitamins","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Vitamin"},{"amount":"5.5 mg","daily_value":"12.2%","name":"Vitamin C"},{"amount":"0.2 mg","daily_value":"2%","name":"Vitamin E"},{"amount":"2.6 mg","daily_value":"3.7%","name":"Vitamin K"},{"amount":"64.6 IU","daily_value":"2.2%","name":"Vitamin A"},{"amount":"0.1 mg","daily_value":"0.6%","name":"Niacin - B3"},{"amount":"0.1 mg","daily_value":"1.7%","name":"Pantothenic Acid - B5"},{"amount":"0.1 mg","daily_value":"7.7%","name":"Vitamin B6"},{"amount":"3.6 mcg","daily_value":"0.9%","name":"Choline"},{"amount":"3.6 mcg","daily_value":"0.9%","name":"Folate"}]},{"heading":"Minerals","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Mineral"},{"amount":"7.3 mg","daily_value":"0.7%","name":"Calcium"},{"amount":"0.1 mg","daily_value":"1.3%","name":"Iron"},{"amount":"5.9 mg","daily_value":"1.4%","name":"Magnesium"},{"amount":"0.1 mg","daily_value":"4.3%","name":"Manganese"},{"amount":"13.2 mg","daily_value":"3.4%","name":"Phosphorus"},{"amount":"128.6 mg","daily_value":"3.4%","name":"Potassium"},{"amount":"1.2 mg","daily_value":"0.1%","name":"Sodium"},{"amount":"0.1 mg","daily_value":"0.9%","name":"Zinc"}]}],"nutritionalContent":[{"name":"Vitamin A","value":"1%"},{"name":"Vitamin C","value":"7%"},{"name":"Calcium","value":"0%"},{"name":"Iron","value":"0%"},{"name":"Magnesium","value":"1%"},{"name":"Protein","value":"0%"},{"name":"Cholesterol","value":"0%"}],"pros":["It contains nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin.","Apple is reducing tooth decay by lowering the levels of bacteria.","Decrease risk of diabetes, reduces cholesterol levels, protects from diarrhea and constipation.","Antioxidant rich in apples may help to protect the lungs from oxidative damage.","Protects The Heart And Prevents Heartburn.","The B-complex vitamins (vitamin B6, riboflavin, and thiamin) found in apples help maintain your red blood cells.","The high fiber content in apples can help fight bad cholesterol.","It also prevents critical ailments like heart disease, hypertension, and diabetes.","Apples also improve your neurological health and prevent dementia and stroke."],"serving":"Nutritional information per 120g (1 medium) serving"}
+{
+  "cons": [
+    "Most of the calories in apples come from sugar.",
+    "If you do not purchase organic apples, you could be exposing yourself to trace amounts of pesticides"
+  ],
+  "description": [
+    "It contains nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin.",
+    "Apple is reducing tooth decay by lowering the levels of bacteria.",
+    "Decrease risk of diabetes, reduces cholesterol levels, protects from diarrhea and constipation.",
+    "Antioxidant rich in apples may help to protect the lungs from oxidative damage."
+  ],
+  "icon": "Apple.jpg",
+  "name": "Apple",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "60.1 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "38",
+          "name": "Glycemic Index(GI)"
+        },
+        {
+          "amount": "16.5 g",
+          "daily_value": "10%",
+          "name": "Carbs"
+        },
+        {
+          "amount": "2.9 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "10.9 mg",
+          "name": "Omega 3"
+        },
+        {
+          "amount": "51.6 mg",
+          "name": "Omega 6"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "5.5 mg",
+          "daily_value": "12.2%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.2 mg",
+          "daily_value": "2%",
+          "name": "Vitamin E"
+        },
+        {
+          "amount": "2.6 mg",
+          "daily_value": "3.7%",
+          "name": "Vitamin K"
+        },
+        {
+          "amount": "64.6 IU",
+          "daily_value": "2.2%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.6%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.7%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "7.7%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "3.6 mcg",
+          "daily_value": "0.9%",
+          "name": "Choline"
+        },
+        {
+          "amount": "3.6 mcg",
+          "daily_value": "0.9%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "7.3 mg",
+          "daily_value": "0.7%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "1.3%",
+          "name": "Iron"
+        },
+        {
+          "amount": "5.9 mg",
+          "daily_value": "1.4%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "4.3%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "13.2 mg",
+          "daily_value": "3.4%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "128.6 mg",
+          "daily_value": "3.4%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "1.2 mg",
+          "daily_value": "0.1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "0.1 mg",
+          "daily_value": "0.9%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "1%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "7%"
+    },
+    {
+      "name": "Calcium",
+      "value": "0%"
+    },
+    {
+      "name": "Iron",
+      "value": "0%"
+    },
+    {
+      "name": "Magnesium",
+      "value": "1%"
+    },
+    {
+      "name": "Protein",
+      "value": "0%"
+    },
+    {
+      "name": "Cholesterol",
+      "value": "0%"
+    }
+  ],
+  "pros": [
+    "It contains nutritional elements include vitamin C, vitamin K, vitamin B6, and riboflavin.",
+    "Apple is reducing tooth decay by lowering the levels of bacteria.",
+    "Decrease risk of diabetes, reduces cholesterol levels, protects from diarrhea and constipation.",
+    "Antioxidant rich in apples may help to protect the lungs from oxidative damage.",
+    "Protects The Heart And Prevents Heartburn.",
+    "The B-complex vitamins (vitamin B6, riboflavin, and thiamin) found in apples help maintain your red blood cells.",
+    "The high fiber content in apples can help fight bad cholesterol.",
+    "It also prevents critical ailments like heart disease, hypertension, and diabetes.",
+    "Apples also improve your neurological health and prevent dementia and stroke."
+  ],
+  "serving": "Nutritional information per 120g (1 medium) serving"
+}

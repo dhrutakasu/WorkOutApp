@@ -6,4 +6,481 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.FatWaterIntakeCalculatorActivity">
 
+    <RelativeLayout
+        android:id="@+id/RlActionBarFatCalorie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/layout_header" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RlActionBarFatCalorie">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/purple_500"
+                android:text="Gender"
+                android:textColor="@color/purple_500"
+                app:drawableStartCompat="@drawable/ic_gender" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/FlFatMale"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_gender_selection">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/LlFatGenderMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_male_selector"
+                            app:tint="@color/calculator_text_color_selector" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/male"
+                            android:textColor="@color/calculator_text_color_selector" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <ImageView
+                        android:id="@+id/IvFatMale"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="top|right"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_done" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/FlFatFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_gender_selection">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/LlFatGenderFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_female_selector"
+                            app:tint="@color/calculator_text_color_selector" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/female"
+                            android:textColor="@color/calculator_text_color_selector" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <ImageView
+                        android:id="@+id/IvFatFemale"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="top|right"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_done"
+                        android:visibility="gone" />
+                </FrameLayout>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/LlFatHeightAndWeightContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/LlFatWeight"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:drawableLeft="@drawable/ic_weight"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@color/purple_500"
+                        android:gravity="center_vertical"
+                        android:text="Weight"
+                        android:textColor="@color/purple_500" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/EdtFatWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_white_rounded_corner"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:maxLength="6"
+                        android:maxLines="1"
+                        android:text="65.0"
+                        android:textSize="36sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/RgFatWeightUnit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:background="@drawable/bg_gender_selection_parent"
+                        android:checkedButton="@+id/RbFatKg"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/RbFatKg"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rb_bg_female"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="kg"
+                            android:textColor="@color/calculator_text_color_selector"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/RbFatLb"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rb_bg_female"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="lb"
+                            android:textColor="@color/calculator_text_color_selector"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <View
+                    android:id="@+id/vBlank"
+                    android:layout_width="20dp"
+                    android:layout_height="1dp" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:drawableLeft="@drawable/ic_height"
+                        android:drawablePadding="5dp"
+                        android:drawableTint="@color/purple_500"
+                        android:gravity="center_vertical"
+                        android:text="Height"
+                        android:textColor="@color/purple_500" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/EdtFatHeightCm"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_white_rounded_corner"
+                        android:gravity="center"
+                        android:inputType="numberDecimal"
+                        android:maxLength="5"
+                        android:maxLines="1"
+                        android:text="170.2"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/LlFatFtIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0.45">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/EdtFatFt"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:background="@drawable/bg_white_rounded_corner"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="1"
+                                android:maxLines="1"
+                                android:minWidth="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="36sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/LlFatFt"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/EdtFatFt2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:background="@android:color/transparent"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:minWidth="15dp"
+                                    android:textColor="@android:color/transparent"
+                                    android:textSize="36sp"
+                                    android:textStyle="bold"
+                                    android:visibility="invisible" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="  &apos;"
+                                    android:textColor="@color/black"
+                                    android:textSize="36sp"
+                                    android:textStyle="bold" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0.55">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/EdtFatIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:background="@drawable/bg_white_rounded_corner"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:maxLength="2"
+                                android:maxLines="1"
+                                android:minWidth="15dp"
+                                android:textColor="@color/black"
+                                android:textSize="36sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/llIn"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/EdtFatIn2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:background="@android:color/transparent"
+                                    android:gravity="center"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:minWidth="15dp"
+                                    android:textColor="@android:color/transparent"
+                                    android:textSize="36sp"
+                                    android:textStyle="bold"
+                                    android:visibility="invisible" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="80dp"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginTop="12dp"
+                                    android:text="&quot;"
+                                    android:textColor="@color/black"
+                                    android:textSize="36sp"
+                                    android:textStyle="bold" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </FrameLayout>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <RadioGroup
+                        android:id="@+id/RgFatHeightUnit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_gender_selection_parent"
+                        android:checkedButton="@+id/RbFatCm"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/RbFatFt"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rb_bg_female"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="ft•in"
+                            android:textColor="@color/calculator_text_color_selector"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <RadioButton
+                            android:id="@+id/RbFatCm"
+                            android:layout_width="0dp"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/rb_bg_female"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="cm"
+                            android:textColor="@color/calculator_text_color_selector"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </RadioGroup>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_weight"
+                android:drawablePadding="8dp"
+                android:drawableTint="@color/purple_500"
+                android:text="@string/age"
+                android:textColor="@color/purple_500" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/RvFatAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_white_rounded_corner"
+                    android:clipToPadding="false" />
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_triangle" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/TvFatWorkoutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="8dp"
+                android:visibility="gone"
+                android:drawableTint="@color/purple_500"
+                android:text="Workout"
+                android:textColor="@color/purple_500"
+                app:drawableLeftCompat="@drawable/ic_workout" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvFatActivities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <Button
+                android:id="@+id/BtnFatCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/purple_500"
+                android:gravity="center"
+                android:text="Calculate"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

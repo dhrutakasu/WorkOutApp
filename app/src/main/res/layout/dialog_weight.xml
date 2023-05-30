@@ -1035,443 +1035,831 @@
 
                 </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/LlFitCalorie"
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollFitCalorie"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:gravity="center"
-                android:orientation="vertical"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/LlOvulationDesc">
 
                 <LinearLayout
-                    android:id="@+id/llResult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/bg_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/_8sdp"
                     android:gravity="center"
+                    android:scrollbars="vertical"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/TvFitMaintainWWeightCal"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="2000"
-                        android:textColor="@color/white"
-                        android:textSize="50sp" />
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_result"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/TvFitMaintainWWeightCal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2000"
+                            android:textColor="@color/white"
+                            android:textSize="50sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calories/day"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
 
                     <TextView
+                        android:id="@+id/TvFitMaintainWeightMessage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Calories/day"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="You probably do not need to lose weight!"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/LlFitOtherResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Mild weight loss"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="0.25 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitMildWeightLoseCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/purple_500" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Weight loss"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="0.5 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitWeightLoseCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/purple_500" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Extreme weight loss"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitExtremeWeightLoseCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/purple_500" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Mild weight gain"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="0.25 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitMildWeightGainCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/purple_500" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+
+                                    android:text="Weight gain"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="0.5 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitWeightGainCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/purple_500" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Fast Weight gain"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1 kg/week"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/purple_500" />
+
+                            <LinearLayout
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/TvFitFastWeightGainCalorie"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="1900"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Calories/day"
+                                    android:textColor="@color/purple_500"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/TvFitNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Note-:10Please consult with a doctor when losing 1 kg or more per week since it requires that you consume less than the minimum recommendation of 1,500 calories a day."
+                        android:textColor="@color/purple_500"
+                        android:textSize="14sp" />
+
                 </LinearLayout>
-
-                <TextView
-                    android:id="@+id/TvFitMaintainWeightMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:text="You probably do not need to lose weight!"
-                    android:textSize="14sp" />
+            </androidx.core.widget.NestedScrollView>
+            
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollIdealWeightCalorie"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ScrollFitCalorie">
 
                 <LinearLayout
-                    android:id="@+id/LlFitOtherResults"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_result"
+                        android:gravity="center"
+                        android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="0dp"
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/tvMildWeightLose"
+                                android:id="@+id/TvDialogWWeightCal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Mild weight loss"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="0.25 kg/week"
+                                android:textStyle="bold"
+                                android:text="2000"
+                                android:layout_marginStart="@dimen/_5sdp"
                                 android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
+                                android:textSize="40sp" />
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
+                            <TextView
+                                android:id="@+id/TvDialogWWeightCalMax"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="2000"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:textColor="@color/white"
+                                android:textSize="40sp" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
 
-                        <LinearLayout
-                            android:layout_width="120dp"
+                        <TextView
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/TvFitMildWeightLoseCalorie"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
+                            android:text="kgs"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
                     </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/purple_500" />
+                    <TextView
+                        android:id="@+id/TvDialognWeightMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="The ideal weight based on popular formulas:"
+                        android:textColor="@color/purple_500"
+                        android:textSize="14sp" />
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:id="@+id/LlDialogMoreResult"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/tvWeightLose"
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Weight loss"
-                                android:textSize="14sp" />
+                                android:paddingLeft="10dp"
+                                android:text="Robinson formula:"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/TvDialogRobinsonResult"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="0.5 kg/week"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:text="70kgs"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
                         </LinearLayout>
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
-
                         <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/TvFitWeightLoseCalorie"
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:paddingLeft="10dp"
+                                android:text="Miller formula:"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/TvDialogMillerResult"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/purple_500" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvExtremeWeightLose"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Extreme weight loss"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1 kg/week"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:text="70kgs"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
                         </LinearLayout>
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
-
                         <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/TvFitExtremeWeightLoseCalorie"
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:paddingLeft="10dp"
+                                android:text="Devine formula:"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/TvDialogDevineResult"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/purple_500" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvMildWeightGain"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Mild weight gain"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="0.25 kg/week"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:text="70kgs"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
                         </LinearLayout>
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
-
                         <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/TvFitMildWeightGainCalorie"
-                                android:layout_width="wrap_content"
+                                android:layout_width="150dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:paddingLeft="10dp"
+                                android:text="Hamwi formula:"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:id="@+id/TvDialogHombiResult"
+                                android:layout_width="100dp"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/purple_500" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvWeightGain"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-
-                                android:text="Weight gain"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="0.5 kg/week"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
-
-                        <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/TvFitWeightGainCalorie"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/purple_500" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/tvFastWeightGain"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Fast Weight gain"
-                                android:textSize="14sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1 kg/week"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="@color/purple_500" />
-
-                        <LinearLayout
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/TvFitFastWeightGainCalorie"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="1900"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="Calories/day"
-                                android:textColor="@color/white"
-                                android:textSize="12sp" />
+                                android:text="70kgs"
+                                android:textColor="@color/purple_500"
+                                android:textSize="16sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-                <TextView
-                    android:id="@+id/TvFitNote"
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollBodyFatCalorie"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ScrollIdealWeightCalorie">
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Note-:10Please consult with a doctor when losing 1 kg or more per week since it requires that you consume less than the minimum recommendation of 1,500 calories a day."
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_result"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/TvDialogBodyWWeightCal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2000"
+                            android:textColor="@color/white"
+                            android:textSize="50sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/TvDialogBodyWeightMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:text="You probably do not need to lose weight!"
+                        android:textColor="@color/purple_500"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/TvDialogBodyNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Note that results of these calculations are only an estimate since they are based on many different assumptions to make them as applicable to as many people as possible. For more accurate measurements of body fat, the use of instruments such as bioelectric impedance analysis or hydrostatic density testing is necessary."
+                        android:textColor="@color/purple_500"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollProtein"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ScrollBodyFatCalorie">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Based on given information, the following are the basic protein intake recommendations from multiple authoritative institutions:"
+                        android:textColor="@color/purple_500"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="American Dietetic Association (ADA)"
+                        android:textColor="@color/purple_500"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/bg_result"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="at least"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/TvDialogProteinResult"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="40sp" />
+
+                            <TextView
+                                android:id="@+id/TvDialogProteinResultMax"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:textSize="40sp" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="gram/day"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/TvDialogProteinCdcResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="The Centers for Disease Control and Prevention (CDC): 59 - 205 grams/day (10-35% of daily caloric intake)."
+                        android:textColor="@color/purple_500"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/TvDialogProteinWhoResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="The Centers for Disease Control and Prevention (CDC): 59 - 205 grams/day (10-35% of daily caloric intake)."
+                        android:textColor="@color/purple_500"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Recommended dietary allowance (RDA) of protein, based on age"
+                        android:textColor="@color/purple_500"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ScrollWater"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ScrollProtein">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/bg_result"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/TvDialogRequiredWater"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLength="3"
+                            android:text="2000"
+                            android:textColor="@color/white"
+                            android:textSize="50sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="litre/day"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Note :- Actual water requirements may vary according to the physical activity, climate, weather, health and other conditions."
+                        android:textColor="@color/purple_500"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
         </LinearLayout>
 
         <ProgressBar

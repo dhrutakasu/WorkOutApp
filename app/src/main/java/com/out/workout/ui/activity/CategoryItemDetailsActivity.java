@@ -15,13 +15,13 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.out.workout.R;
-import com.out.workout.model.ItemDetailModel;
-import com.out.workout.model.NutrientModel;
 import com.out.workout.model.NutritionalContent;
-import com.out.workout.model.SubCategories;
 import com.out.workout.model.ValueModel;
+import com.out.workout.model.subDivModel;
 import com.out.workout.ui.adapter.NutrientAdapter;
-import com.out.workout.ui.adapter.SubDietTipsAdapter;
+import com.out.workout.ui.adapter.PropsAdapter;
+import com.out.workout.ui.adapter.SubDivAdapter;
+import com.out.workout.ui.adapter.VitaminsAdapter;
 import com.out.workout.utils.Constants;
 
 import org.json.JSONArray;
@@ -34,13 +34,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryItemDetailsActivity extends AppCompatActivity implements View.OnClickListener {
+public class CategoryItemDetailsActivity extends AppCompatActivity implements View.OnClickListener, NutrientAdapter.setClickItem {
 
     private Context context;
     private String DietName, DietSlug, DietImg;
     private Gson create;
-    private ArrayList<SubCategories> categories = new ArrayList<>();
-    private RecyclerView rvNutrients;
+    private RecyclerView RvItemNutrients, RvItemProteins, RvItemVitamins, RvItemMinerals, RvItemPros, RvItemCons;
+    private TextView TvItemNutritionalTitle, TvItemNutritionalServing, TvItemSubDivTitle, TvItemVitaminsTitle, TvItemMineralsTitle;
+    private ImageView IvItemImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +51,23 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
 
         initViews();
         initIntents();
-        initListeners();
         initActions();
     }
 
     private void initViews() {
         context = this;
-        rvNutrients = (RecyclerView) findViewById(R.id.rvNutrients);
+        RvItemNutrients = (RecyclerView) findViewById(R.id.RvItemNutrients);
+        RvItemProteins = (RecyclerView) findViewById(R.id.RvItemProteins);
+        RvItemVitamins = (RecyclerView) findViewById(R.id.RvItemVitamins);
+        RvItemMinerals = (RecyclerView) findViewById(R.id.RvItemMinerals);
+        RvItemPros = (RecyclerView) findViewById(R.id.RvItemPros);
+        RvItemCons = (RecyclerView) findViewById(R.id.RvItemCons);
+        IvItemImg = (ImageView) findViewById(R.id.IvItemImg);
+        TvItemNutritionalTitle = (TextView) findViewById(R.id.TvItemNutritionalTitle);
+        TvItemNutritionalServing = (TextView) findViewById(R.id.TvItemNutritionalServing);
+        TvItemSubDivTitle = (TextView) findViewById(R.id.TvItemSubDivTitle);
+        TvItemVitaminsTitle = (TextView) findViewById(R.id.TvItemVitaminsTitle);
+        TvItemMineralsTitle = (TextView) findViewById(R.id.TvItemMineralsTitle);
     }
 
     private void initIntents() {
@@ -65,46 +76,75 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
         DietImg = getIntent().getStringExtra(Constants.DIET_IMG);
     }
 
-    private void initListeners() {
-    }
-
     private void initActions() {
+        IvItemImg.setImageResource(R.drawable.arm_arm_scissors_a);
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
-        System.out.println("---- dNAme  : " + DietName);
-        System.out.println("---- dSlug : " + DietSlug);
-        String AssetsFile = readAssetsFile(assets, "Diet/" + DietSlug + ".json");
-        System.out.println("----- ASSSS : " + AssetsFile);
+        String AssetsFile = readFile(assets, "Diet/" + DietSlug + ".json");
         try {
             JSONObject jsonObject = new JSONObject(AssetsFile);
-            ItemDetailModel itemDetailModel = new ItemDetailModel();
             JSONArray jsonArray = new JSONArray(jsonObject.getString("nutrients"));
-            List<NutrientModel> nutrientModels = new ArrayList<>();
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject Detail = jsonArray.getJSONObject(i);
-                NutrientModel model = new NutrientModel();
-                model.setHeading(Detail.getString("heading"));
-                model.setNoOfColumn(Detail.optInt("noOfColumn"));
-
-                JSONArray array = new JSONArray(Detail.getString("values"));
-                System.out.println("----- dNAme ; "+array.length());
-                List<ValueModel> valueModels = new ArrayList<>();
-                for (int j = 0; j < array.length(); j++) {
-                    ValueModel valueModel = new ValueModel();
-                    JSONObject DetailObject = jsonArray.getJSONObject(i);
-                    valueModel.setAmount(DetailObject.getString("amount"));
-                    valueModel.setDailyValue(DetailObject.getString("daily_value").isEmpty() ? "" : DetailObject.getString("daily_value"));
-                    valueModel.setSubDiv(DetailObject.getString("subDiv").isEmpty() ? "" : DetailObject.getString("daily_value"));
-                    valueModel.setName(DetailObject.getString("name"));
-                    valueModels.add(valueModel);
+                if (Detail.getString("heading").equalsIgnoreCase("Nutrients")) {
+                    JSONArray array = new JSONArray(Detail.getString("values"));
+                    List<ValueModel> valueModels = new ArrayList<>();
+                    List<subDivModel> subDivModels = new ArrayList<>();
+                    for (int j = 1; j < array.length(); j++) {
+                        ValueModel valueModel = new ValueModel();
+                        JSONObject DetailObject = array.getJSONObject(j);
+                        valueModel.setAmount(DetailObject.getString("amount"));
+                        subDivModels = new ArrayList<>();
+                        if (DetailObject.has("subDiv")) {
+                            JSONArray subDiv = new JSONArray(DetailObject.getString("subDiv"));
+                            for (int k = 0; k < subDiv.length(); k++) {
+                                JSONObject subDivObject = subDiv.getJSONObject(k);
+                                subDivModel subDivModel = new subDivModel();
+                                subDivModel.setAmount(subDivObject.getString("amount"));
+                                subDivModel.setName(subDivObject.getString("name"));
+                                subDivModels.add(subDivModel);
+                            }
+                        }
+                        valueModel.setSubDiv(subDivModels);
+                        valueModel.setName(DetailObject.getString("name"));
+                        valueModels.add(valueModel);
+                    }
+                    RvItemNutrients.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                    RvItemNutrients.setAdapter(new NutrientAdapter(context, valueModels, subDivModels, DietName, this));
+                } else if (Detail.getString("heading").equalsIgnoreCase("Vitamins")) {
+                    TvItemVitaminsTitle.setText(Detail.getString("heading"));
+                    JSONArray array = new JSONArray(Detail.getString("values"));
+                    List<ValueModel> valueModels = new ArrayList<>();
+                    for (int j = 0; j < array.length(); j++) {
+                        ValueModel valueModel = new ValueModel();
+                        JSONObject DetailObject = array.getJSONObject(j);
+                        valueModel.setAmount(DetailObject.getString("amount"));
+                        if (DetailObject.has("daily_value")) {
+                            valueModel.setDailyValue(DetailObject.getString("daily_value"));
+                        }
+                        valueModel.setName(DetailObject.getString("name"));
+                        valueModels.add(valueModel);
+                    }
+                    RvItemVitamins.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                    RvItemVitamins.setAdapter(new VitaminsAdapter(context, valueModels));
+                } else if (Detail.getString("heading").equalsIgnoreCase("Minerals")) {
+                    TvItemMineralsTitle.setText(Detail.getString("heading"));
+                    JSONArray array = new JSONArray(Detail.getString("values"));
+                    List<ValueModel> valueModels = new ArrayList<>();
+                    for (int j = 0; j < array.length(); j++) {
+                        ValueModel valueModel = new ValueModel();
+                        JSONObject DetailObject = array.getJSONObject(j);
+                        valueModel.setAmount(DetailObject.getString("amount"));
+                        if (DetailObject.has("daily_value")) {
+                            valueModel.setDailyValue(DetailObject.getString("daily_value").isEmpty() ? "" : DetailObject.getString("daily_value"));
+                        }
+                        valueModel.setName(DetailObject.getString("name"));
+                        valueModels.add(valueModel);
+                    }
+                    RvItemMinerals.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+                    RvItemMinerals.setAdapter(new VitaminsAdapter(context, valueModels));
                 }
-                rvNutrients.setLayoutManager(new LinearLayoutManager(context));
-                rvNutrients.setAdapter(new NutrientAdapter(context, valueModels, DietName));
-                model.setValues(valueModels);
-                nutrientModels.add(model);
             }
-            itemDetailModel.setNutrients(nutrientModels);
-
 
             JSONArray nutrients = new JSONArray(jsonObject.getString("nutritionalContent"));
             List<NutritionalContent> nutritionalContentList = new ArrayList<>();
@@ -120,12 +160,25 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
             for (int i = 0; i < arrays.length(); i++) {
                 ProsArrayList.add(arrays.getString(i).toString());
             }
+
+            RvItemPros.setLayoutManager(new LinearLayoutManager(context));
+            RvItemPros.setAdapter(new PropsAdapter(context, ProsArrayList));
+
+            JSONArray cons = jsonObject.getJSONArray("cons");
+            ArrayList<String> consArrayList = new ArrayList<>();
+            for (int i = 0; i < cons.length(); i++) {
+                consArrayList.add(cons.getString(i).toString());
+            }
+
+            RvItemCons.setLayoutManager(new LinearLayoutManager(context));
+            RvItemCons.setAdapter(new PropsAdapter(context, consArrayList));
+
             String serving = jsonObject.getString("serving");
+            TvItemNutritionalTitle.setText(serving.substring(0, serving.indexOf("per ")));
+            TvItemNutritionalServing.setText(serving.substring(serving.indexOf("per ") + 4));
 
         } catch (JSONException e) {
-            System.out.println("------- ex dNAme : "+e.getMessage());
             Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
-//            throw new RuntimeException(e);
         }
     }
 
@@ -135,33 +188,47 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
         }
     }
 
-    public final String readAssetsFile(AssetManager assetManager, String str) {
-        StringBuilder returnString = new StringBuilder();
-        InputStream fIn = null;
-        InputStreamReader isr = null;
-        BufferedReader input = null;
+    public final String readFile(AssetManager manager, String str) {
+        StringBuilder builder = new StringBuilder();
+        InputStream inputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader bufferedReader = null;
         try {
-            fIn = assetManager.open(str, Context.MODE_WORLD_READABLE);
-            isr = new InputStreamReader(fIn);
-            input = new BufferedReader(isr);
+            inputStream = manager.open(str, Context.MODE_WORLD_READABLE);
+            inputStreamReader = new InputStreamReader(inputStream);
+            bufferedReader = new BufferedReader(inputStreamReader);
             String line = "";
-            while ((line = input.readLine()) != null) {
-                returnString.append(line);
+            while ((line = bufferedReader.readLine()) != null) {
+                builder.append(line);
             }
         } catch (Exception e) {
             e.getMessage();
         } finally {
             try {
-                if (isr != null)
-                    isr.close();
-                if (fIn != null)
-                    fIn.close();
-                if (input != null)
-                    input.close();
+                if (inputStreamReader != null)
+                    inputStreamReader.close();
+                if (inputStream != null)
+                    inputStream.close();
+                if (bufferedReader != null)
+                    bufferedReader.close();
             } catch (Exception e2) {
                 e2.getMessage();
             }
         }
-        return returnString.toString();
+        return builder.toString();
+    }
+
+    @Override
+    public void onClick(List<subDivModel> divModels, String name) {
+        if (RvItemProteins.getVisibility() == View.GONE) {
+            TvItemSubDivTitle.setVisibility(View.VISIBLE);
+            RvItemProteins.setVisibility(View.VISIBLE);
+            TvItemSubDivTitle.setText(name);
+            RvItemProteins.setLayoutManager(new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false));
+            RvItemProteins.setAdapter(new SubDivAdapter(context, divModels));
+        } else {
+            TvItemSubDivTitle.setVisibility(View.GONE);
+            RvItemProteins.setVisibility(View.GONE);
+        }
     }
 }

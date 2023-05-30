@@ -79,9 +79,7 @@
                             android:textDirection="locale"
                             android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
-
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"

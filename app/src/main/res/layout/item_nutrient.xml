@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="35dp"
+    android:paddingTop="@dimen/_10sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -24,7 +26,7 @@
                 android:layout_weight="1">
 
                 <FrameLayout
-                    android:id="@+id/flValue"
+                    android:id="@+id/FlItemValue"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:alpha="0.6" />
@@ -36,32 +38,35 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/tvValue"
+                        android:id="@+id/TvItemValue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:textColor="#4c4c4c"
                         android:textSize="20sp"
+                        android:text="ABC"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/tvUnit"
+                        android:id="@+id/TvItemUnit"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:layout_marginStart="1dp"
                         android:layout_marginBottom="2dp"
+                        android:text="XYZ"
                         android:textColor="#4c4c4c"
                         android:textSize="10sp" />
                 </LinearLayout>
             </FrameLayout>
 
             <TextView
-                android:id="@+id/tvName"
+                android:id="@+id/TvItemName"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:text="PQR"
                 android:textSize="12sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

@@ -78,10 +78,7 @@ public class CategorySubItemListActivity extends AppCompatActivity implements Vi
         TvTitle.setText(DietName);
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
-        System.out.println("---- dNAme  : " + DietName);
-        System.out.println("---- dSlug : " + DietSlug);
         String AssetsFile = readAssetsFile(assets, "Diet/" + DietSlug + ".json");
-        System.out.println("----- ASSSS : " + AssetsFile);
         try {
             JSONArray mJsonArray = new JSONArray(AssetsFile);
             for (int i = 0; i < mJsonArray.length(); i++) {
@@ -96,7 +93,6 @@ public class CategorySubItemListActivity extends AppCompatActivity implements Vi
             }
         } catch (JSONException e) {
             Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
-//            throw new RuntimeException(e);
         }
 
         RvDietsSub.setLayoutManager(new LinearLayoutManager(context));

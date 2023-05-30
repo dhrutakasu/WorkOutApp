@@ -1,1 +1,198 @@
-{"cons":["High Cholesterol Content In Chicken Meat Even Without Skin.","Risk Of Arsenic Exposure From Chicken Feed.","Quality animal products can be on the more expensive side."],"description":["Chicken is an excellent source of protein.","Protein is the most important nutrient source for muscle recovery and for the fastest muscle growth.","Chicken is also a rich source of B vitamins, phosphorus, and tryptophan.","Chicken has phosphorus which can keep your bones and teeth healthy and prevent bone loss.","Chicken contains 74% of the daily consumption of vitamin B3 for men and 84% for women."],"icon":"chicken.jpg","name":"Chicken","nutrients":[{"heading":"Nutrients","noOfColumn":2,"values":[{"amount":"Value","name":"Nutrient"},{"amount":"250 kcal","name":"Energy"},{"amount":"12.56 g","name":"Fat","subDiv":[{"amount":"3.5 g","name":"Saturated"},{"amount":"4.93 g","name":"Monounsaturated"},{"amount":"2.74 g","name":"Polyunsaturated"}]},{"amount":"24.68 g","name":"Protein","subDiv":[{"amount":"0.276 g","name":"Tryptophan"},{"amount":"1.020 g","name":"Threonine"},{"amount":"1.233 g","name":"Isoleucine"},{"amount":"1.797 g","name":"Leucine"},{"amount":"2.011 g","name":"Lysine"},{"amount":"0.657 g","name":"Methionine"},{"amount":"0.329 g","name":"Cystine"},{"amount":"0.959 g","name":"Phenylalanine"},{"amount":"0.796 g","name":"Tyrosine"},{"amount":"1.199 g","name":"Valine"},{"amount":"1.545 g","name":"Arginine"},{"amount":"0.726 g","name":"Histidine"},{"amount":"1.436 g","name":"Alanine"},{"amount":"2.2 g","name":"Aspartic acid"},{"amount":"3.610 g","name":"Glutamic acid"},{"amount":"1.583 g","name":"Glycine"},{"amount":"1.190 g","name":"Proline"},{"amount":"0.870 g","name":"Serine"}]}]},{"heading":"Vitamins","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Vitamin"},{"amount":"44 μg","daily_value":"6%","name":"Vitamin A"},{"amount":"0.667 mg","daily_value":"13%","name":"Pantothenic acid (B5)"}]},{"heading":"Minerals","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Mineral"},{"amount":"67 mg","daily_value":"4%","name":"Sodium"},{"amount":"1.16 mg","daily_value":"9%","name":"Iron"}]}],"nutritionalContent":[{"name":"Vitamin A","value":"2%"},{"name":"Vitamin C","value":"0%"},{"name":"Calcium","value":"1%"},{"name":"Iron","value":"6%"}],"pros":["Chicken is an excellent source of protein.","Protein is the most important nutrient source for muscle recovery and for the fastest muscle growth.","Chicken is also a rich source of B vitamins, phosphorus, and tryptophan.","Chicken has phosphorus which can keep your bones and teeth healthy and prevent bone loss.","Chicken contains 74% of the daily consumption of vitamin B3 for men and 84% for women.","Homocysteine is an amino acid that can cause cardiovascular disease if levels are high in the body. Fortunately for us, eating chicken breast suppresses and controls homocysteine levels.","Selenium is important for immune system function and aids in regulating the thyroid hormone."],"serving":"Nutritional information per 100g (3.5 oz.) serving"}
+{
+  "cons": [
+    "High Cholesterol Content In Chicken Meat Even Without Skin.",
+    "Risk Of Arsenic Exposure From Chicken Feed.",
+    "Quality animal products can be on the more expensive side."
+  ],
+  "description": [
+    "Chicken is an excellent source of protein.",
+    "Protein is the most important nutrient source for muscle recovery and for the fastest muscle growth.",
+    "Chicken is also a rich source of B vitamins, phosphorus, and tryptophan.",
+    "Chicken has phosphorus which can keep your bones and teeth healthy and prevent bone loss.",
+    "Chicken contains 74% of the daily consumption of vitamin B3 for men and 84% for women."
+  ],
+  "icon": "chicken.jpg",
+  "name": "Chicken",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "250 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "12.56 g",
+          "name": "Fat",
+          "subDiv": [
+            {
+              "amount": "3.5 g",
+              "name": "Saturated"
+            },
+            {
+              "amount": "4.93 g",
+              "name": "Monounsaturated"
+            },
+            {
+              "amount": "2.74 g",
+              "name": "Polyunsaturated"
+            }
+          ]
+        },
+        {
+          "amount": "24.68 g",
+          "name": "Protein",
+          "subDiv": [
+            {
+              "amount": "0.276 g",
+              "name": "Tryptophan"
+            },
+            {
+              "amount": "1.020 g",
+              "name": "Threonine"
+            },
+            {
+              "amount": "1.233 g",
+              "name": "Isoleucine"
+            },
+            {
+              "amount": "1.797 g",
+              "name": "Leucine"
+            },
+            {
+              "amount": "2.011 g",
+              "name": "Lysine"
+            },
+            {
+              "amount": "0.657 g",
+              "name": "Methionine"
+            },
+            {
+              "amount": "0.329 g",
+              "name": "Cystine"
+            },
+            {
+              "amount": "0.959 g",
+              "name": "Phenylalanine"
+            },
+            {
+              "amount": "0.796 g",
+              "name": "Tyrosine"
+            },
+            {
+              "amount": "1.199 g",
+              "name": "Valine"
+            },
+            {
+              "amount": "1.545 g",
+              "name": "Arginine"
+            },
+            {
+              "amount": "0.726 g",
+              "name": "Histidine"
+            },
+            {
+              "amount": "1.436 g",
+              "name": "Alanine"
+            },
+            {
+              "amount": "2.2 g",
+              "name": "Aspartic acid"
+            },
+            {
+              "amount": "3.610 g",
+              "name": "Glutamic acid"
+            },
+            {
+              "amount": "1.583 g",
+              "name": "Glycine"
+            },
+            {
+              "amount": "1.190 g",
+              "name": "Proline"
+            },
+            {
+              "amount": "0.870 g",
+              "name": "Serine"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "44 μg",
+          "daily_value": "6%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "0.667 mg",
+          "daily_value": "13%",
+          "name": "Pantothenic acid (B5)"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "67 mg",
+          "daily_value": "4%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "1.16 mg",
+          "daily_value": "9%",
+          "name": "Iron"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "2%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "0%"
+    },
+    {
+      "name": "Calcium",
+      "value": "1%"
+    },
+    {
+      "name": "Iron",
+      "value": "6%"
+    }
+  ],
+  "pros": [
+    "Chicken is an excellent source of protein.",
+    "Protein is the most important nutrient source for muscle recovery and for the fastest muscle growth.",
+    "Chicken is also a rich source of B vitamins, phosphorus, and tryptophan.",
+    "Chicken has phosphorus which can keep your bones and teeth healthy and prevent bone loss.",
+    "Chicken contains 74% of the daily consumption of vitamin B3 for men and 84% for women.",
+    "Homocysteine is an amino acid that can cause cardiovascular disease if levels are high in the body. Fortunately for us, eating chicken breast suppresses and controls homocysteine levels.",
+    "Selenium is important for immune system function and aids in regulating the thyroid hormone."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}

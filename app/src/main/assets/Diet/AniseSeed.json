@@ -1,1 +1,187 @@
-{"cons":["Pregnant women advised to avoid anise seed as it may cause early labor.","Anise may cause mild, allergic skin reactions in some people."],"description":["Anise herb is extremely therapeutic for the digestive system.","Aniseed tea is incredibly valuable in the management of sleeping disorders, if used after meals or even before you go to bed.","Aniseed has got outstanding expectorative qualities, and therefore it’s great for the management of cough, along with asthma.","Aniseed consists of anethole like a main element of its essential oil, which is a phytoestrogen.","Anise seed functions an ideal expectorant within the body. It will help loose phlegm within the throat and lungs.","It treats severe stomach pain as well as hiccups in infants. It will help cure numerous digestive system problems in infants."],"icon":"AniseSeed.jpg","name":"Anise Seed","nutrients":[{"heading":"Nutrients","noOfColumn":2,"values":[{"amount":"Value","name":"Nutrient"},{"amount":"337 kcal","name":"Energy"},{"amount":"50.02 g","name":"Carbs"},{"amount":"15.9 g","name":"Fat"},{"amount":"14.6 g","name":"Fiber"},{"amount":"17.6 g","name":"Protein"}]},{"heading":"Vitamins","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Vitamin"},{"amount":"311 IU","daily_value":"10.5%","name":"Vitamin A"},{"amount":"21 mg","daily_value":"35%","name":"Vitamin C"},{"amount":"0.34 mg","daily_value":"28%","name":"Thiamin - B1"},{"amount":"0.29 mg","daily_value":"22%","name":"Riboflavin - B2"},{"amount":"3.06 mg","daily_value":"19%","name":"Niacin - B3"},{"amount":"0.797 mg","daily_value":"16%","name":"Pantothenic Acid - B5"},{"amount":"0.65 mg","daily_value":"50%","name":"Vitamin B6"},{"amount":"10 mcg","daily_value":"2.5%","name":"Folate"}]},{"heading":"Minerals","noOfColumn":3,"values":[{"amount":"Quantity","daily_value":"%DV","name":"Mineral"},{"amount":"646 mg","daily_value":"65%","name":"Calcium"},{"amount":"0.91 mg","daily_value":"101%","name":"Copper"},{"amount":"36.96 mg","daily_value":"462%","name":"Iron"},{"amount":"170 mg","daily_value":"42.5%","name":"Magnesium"},{"amount":"2.3 mg","daily_value":"100%","name":"Manganese"},{"amount":"440 mg","daily_value":"64%","name":"Phosphorus"},{"amount":"1441 mg","daily_value":"31%","name":"Potassium"},{"amount":"5 μg","daily_value":"9%","name":"Selenium"},{"amount":"16 mg","daily_value":"1%","name":"Sodium"},{"amount":"5.3 mg","daily_value":"48%","name":"Zinc"}]}],"nutritionalContent":[{"name":"Vitamin A","value":"6%"},{"name":"Vitamin C","value":"35%"},{"name":"Calcium","value":"65%"},{"name":"Iron","value":"205%"}],"pros":["Anise herb is extremely therapeutic for the digestive system.","Aniseed tea is incredibly valuable in the management of sleeping disorders, if used after meals or even before you go to bed.","Aniseed has got outstanding expectorative qualities, and therefore it’s great for the management of cough, along with asthma.","Aniseed consists of anethole like a main element of its essential oil, which is a phytoestrogen.","Anise seed functions an ideal expectorant within the body. It will help loose phlegm within the throat and lungs.","It treats severe stomach pain as well as hiccups in infants. It will help cure numerous digestive system problems in infants."],"serving":"Nutritional information per 100g (3.5 oz.) serving"}
+{
+  "cons": [
+    "Pregnant women advised to avoid anise seed as it may cause early labor.",
+    "Anise may cause mild, allergic skin reactions in some people."
+  ],
+  "description": [
+    "Anise herb is extremely therapeutic for the digestive system.",
+    "Aniseed tea is incredibly valuable in the management of sleeping disorders, if used after meals or even before you go to bed.",
+    "Aniseed has got outstanding expectorative qualities, and therefore it’s great for the management of cough, along with asthma.",
+    "Aniseed consists of anethole like a main element of its essential oil, which is a phytoestrogen.",
+    "Anise seed functions an ideal expectorant within the body. It will help loose phlegm within the throat and lungs.",
+    "It treats severe stomach pain as well as hiccups in infants. It will help cure numerous digestive system problems in infants."
+  ],
+  "icon": "AniseSeed.jpg",
+  "name": "Anise Seed",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "337 kcal",
+          "name": "Energy"
+        },
+        {
+          "amount": "50.02 g",
+          "name": "Carbs"
+        },
+        {
+          "amount": "15.9 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "14.6 g",
+          "name": "Fiber"
+        },
+        {
+          "amount": "17.6 g",
+          "name": "Protein"
+        }
+      ]
+    },
+    {
+      "heading": "Vitamins",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Vitamin"
+        },
+        {
+          "amount": "311 IU",
+          "daily_value": "10.5%",
+          "name": "Vitamin A"
+        },
+        {
+          "amount": "21 mg",
+          "daily_value": "35%",
+          "name": "Vitamin C"
+        },
+        {
+          "amount": "0.34 mg",
+          "daily_value": "28%",
+          "name": "Thiamin - B1"
+        },
+        {
+          "amount": "0.29 mg",
+          "daily_value": "22%",
+          "name": "Riboflavin - B2"
+        },
+        {
+          "amount": "3.06 mg",
+          "daily_value": "19%",
+          "name": "Niacin - B3"
+        },
+        {
+          "amount": "0.797 mg",
+          "daily_value": "16%",
+          "name": "Pantothenic Acid - B5"
+        },
+        {
+          "amount": "0.65 mg",
+          "daily_value": "50%",
+          "name": "Vitamin B6"
+        },
+        {
+          "amount": "10 mcg",
+          "daily_value": "2.5%",
+          "name": "Folate"
+        }
+      ]
+    },
+    {
+      "heading": "Minerals",
+      "noOfColumn": 3,
+      "values": [
+        {
+          "amount": "Quantity",
+          "daily_value": "%DV",
+          "name": "Mineral"
+        },
+        {
+          "amount": "646 mg",
+          "daily_value": "65%",
+          "name": "Calcium"
+        },
+        {
+          "amount": "0.91 mg",
+          "daily_value": "101%",
+          "name": "Copper"
+        },
+        {
+          "amount": "36.96 mg",
+          "daily_value": "462%",
+          "name": "Iron"
+        },
+        {
+          "amount": "170 mg",
+          "daily_value": "42.5%",
+          "name": "Magnesium"
+        },
+        {
+          "amount": "2.3 mg",
+          "daily_value": "100%",
+          "name": "Manganese"
+        },
+        {
+          "amount": "440 mg",
+          "daily_value": "64%",
+          "name": "Phosphorus"
+        },
+        {
+          "amount": "1441 mg",
+          "daily_value": "31%",
+          "name": "Potassium"
+        },
+        {
+          "amount": "5 μg",
+          "daily_value": "9%",
+          "name": "Selenium"
+        },
+        {
+          "amount": "16 mg",
+          "daily_value": "1%",
+          "name": "Sodium"
+        },
+        {
+          "amount": "5.3 mg",
+          "daily_value": "48%",
+          "name": "Zinc"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "6%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "35%"
+    },
+    {
+      "name": "Calcium",
+      "value": "65%"
+    },
+    {
+      "name": "Iron",
+      "value": "205%"
+    }
+  ],
+  "pros": [
+    "Anise herb is extremely therapeutic for the digestive system.",
+    "Aniseed tea is incredibly valuable in the management of sleeping disorders, if used after meals or even before you go to bed.",
+    "Aniseed has got outstanding expectorative qualities, and therefore it’s great for the management of cough, along with asthma.",
+    "Aniseed consists of anethole like a main element of its essential oil, which is a phytoestrogen.",
+    "Anise seed functions an ideal expectorant within the body. It will help loose phlegm within the throat and lungs.",
+    "It treats severe stomach pain as well as hiccups in infants. It will help cure numerous digestive system problems in infants."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}
