@@ -1,1 +1,89 @@
-{"description":["Acai berries contain a good amount of minerals like potassium, manganese, copper, iron, and magnesium.","Potassium is an important component of cell and body fluids that helps controlling heart rate and blood pressure.","Manganese is used by the body as a co-factor for the antioxidant enzyme, superoxide dismutase.","Acai pulp has good levels of dietary fiber. A high fiber diet to reduce the risk of chronic disease such as diabetes, heart disease and some types of cancer. ","The juice has also been used to treat a variety of skin allergies and infections."],"icon":"Acai_Berry.jpg","name":"Acai Berry","nutrients":[{"heading":"Nutrients","noOfColumn":2,"values":[{"amount":"Value","name":"Nutrient"},{"amount":"534 cal","name":"Energy"},{"amount":"51.9 mg","name":"Carbs"},{"amount":"31.61 g","name":"Fat"},{"amount":"8.12 g","name":"Protein"},{"amount":"260 mg","name":"Calcium"},{"amount":"4.8 mg","name":"Iron"},{"amount":"1002 U","name":"Vitamin A"}]}],"nutritionalContent":[{"name":"Vitamin A","value":"0%"},{"name":"Vitamin C","value":"0%"},{"name":"Calcium","value":"0%"},{"name":"Iron","value":"0%"},{"name":"Protein","value":"2%"},{"name":"Cholesterol","value":"0%"}],"pros":["Acai berries contain a good amount of minerals like potassium, manganese, copper, iron, and magnesium.","Potassium is an important component of cell and body fluids that helps controlling heart rate and blood pressure.","Manganese is used by the body as a co-factor for the antioxidant enzyme, superoxide dismutase.","Acai pulp has good levels of dietary fiber. A high fiber diet to reduce the risk of chronic disease such as diabetes, heart disease and some types of cancer. ","The juice has also been used to treat a variety of skin allergies and infections.","Acai berries contain healthy fats and low amounts of sugar, as well as many trace minerals and plant compounds, including anthocyanins.","Acai is incredibly rich in antioxidants, boasting three times the amount found in blueberries.","Acai berry, being a nutrient-dense fruit, can be included in your pregnancy diet.","The amino acids present in it promote fetal growth."],"serving":"Nutritional information per 100g (3.5 oz.) serving"}
+{
+  "description": [
+    "Acai berries contain a good amount of minerals like potassium, manganese, copper, iron, and magnesium.",
+    "Potassium is an important component of cell and body fluids that helps controlling heart rate and blood pressure.",
+    "Manganese is used by the body as a co-factor for the antioxidant enzyme, superoxide dismutase.",
+    "Acai pulp has good levels of dietary fiber. A high fiber diet to reduce the risk of chronic disease such as diabetes, heart disease and some types of cancer. ",
+    "The juice has also been used to treat a variety of skin allergies and infections."
+  ],
+  "icon": "Acai_Berry.jpg",
+  "name": "Acai Berry",
+  "nutrients": [
+    {
+      "heading": "Nutrients",
+      "noOfColumn": 2,
+      "values": [
+        {
+          "amount": "Value",
+          "name": "Nutrient"
+        },
+        {
+          "amount": "534 cal",
+          "name": "Energy"
+        },
+        {
+          "amount": "51.9 mg",
+          "name": "Carbs"
+        },
+        {
+          "amount": "31.61 g",
+          "name": "Fat"
+        },
+        {
+          "amount": "8.12 g",
+          "name": "Protein"
+        },
+        {
+          "amount": "260 mg",
+          "name": "Calcium"
+        },
+        {
+          "amount": "4.8 mg",
+          "name": "Iron"
+        },
+        {
+          "amount": "1002 U",
+          "name": "Vitamin A"
+        }
+      ]
+    }
+  ],
+  "nutritionalContent": [
+    {
+      "name": "Vitamin A",
+      "value": "0%"
+    },
+    {
+      "name": "Vitamin C",
+      "value": "0%"
+    },
+    {
+      "name": "Calcium",
+      "value": "0%"
+    },
+    {
+      "name": "Iron",
+      "value": "0%"
+    },
+    {
+      "name": "Protein",
+      "value": "2%"
+    },
+    {
+      "name": "Cholesterol",
+      "value": "0%"
+    }
+  ],
+  "pros": [
+    "Acai berries contain a good amount of minerals like potassium, manganese, copper, iron, and magnesium.",
+    "Potassium is an important component of cell and body fluids that helps controlling heart rate and blood pressure.",
+    "Manganese is used by the body as a co-factor for the antioxidant enzyme, superoxide dismutase.",
+    "Acai pulp has good levels of dietary fiber. A high fiber diet to reduce the risk of chronic disease such as diabetes, heart disease and some types of cancer. ",
+    "The juice has also been used to treat a variety of skin allergies and infections.",
+    "Acai berries contain healthy fats and low amounts of sugar, as well as many trace minerals and plant compounds, including anthocyanins.",
+    "Acai is incredibly rich in antioxidants, boasting three times the amount found in blueberries.",
+    "Acai berry, being a nutrient-dense fruit, can be included in your pregnancy diet.",
+    "The amino acids present in it promote fetal growth."
+  ],
+  "serving": "Nutritional information per 100g (3.5 oz.) serving"
+}
