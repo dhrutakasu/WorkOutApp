@@ -2,55 +2,55 @@
   "categories": [
     {
       "name": "Vegetarian",
-      "icon": "cat_vegeterian.jpg",
+      "icon": "vegeterian.png",
       "slug": "vegetarian",
       "layout_type": 1
     },
     {
       "name": "Non Vegetarian",
-      "icon": "cat_non_vegeterian.jpg",
+      "icon": "non_vegeterian.png",
       "layout_type": 1,
       "slug": "non_vegetarian"
     },
     {
       "name": "Immunity Boosting Foods",
-      "icon": "immunity_booster.jpg",
+      "icon": "immunity_booster.png",
       "layout_type": 1,
       "slug": "immunity_booster"
     },
     {
       "name": "World Best Foods",
-      "icon": "cat_world_food.jpg",
+      "icon": "world_food.png",
       "layout_type": 1,
       "slug": "world_best_foods"
     },
     {
       "name": "Foods Heal Your Body",
-      "icon": "cat_disease.jpg",
+      "icon": "disease.png",
       "layout_type": 1,
       "slug": "Foods_Heal_Your_Body"
     },
     {
       "name": "Rainbow",
-      "icon": "cat_rainbow.jpg",
+      "icon": "rainbow.png",
       "layout_type": 1,
       "slug": "Rainbow"
     },
     {
       "name": "Fitness and Health\nCalculators",
-      "icon": "cat_BMI.jpg",
+      "icon": "bmi.png",
       "slug": "fitness_calculators",
       "layout_type": 2
     },
     {
       "name": "Articles",
-      "icon": "blog.jpg",
+      "icon": "blog.png",
       "slug": "article_list",
       "layout_type": 4
     },
     {
       "name": "Tips for Healthy Life",
-      "icon": "cat_lifetips.jpg",
+      "icon": "lifetips.png",
       "layout_type": 3,
       "slug": "healthy_life_tips"
     }

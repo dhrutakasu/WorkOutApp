@@ -11,6 +11,19 @@
         android:layout_height="match_parent"
         android:padding="@dimen/_8sdp">
 
+        <ImageView
+            android:id="@+id/IvRoutinesBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/RlReminders"
+            android:layout_alignEnd="@id/RlReminders"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_training_top" />
+
         <RelativeLayout
             android:id="@+id/RlReminders"
             android:layout_width="match_parent"
@@ -21,7 +34,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/TvExerciseReminders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8ssp"
@@ -35,7 +47,6 @@
                 android:id="@+id/TvExerciseRemindersTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/TvExerciseReminders"
                 android:layout_marginStart="@dimen/_8ssp"
                 android:layout_marginTop="@dimen/_8ssp"
                 android:gravity="center_vertical"
@@ -44,7 +55,6 @@
                 android:textSize="@dimen/_14sdp" />
 
             <TextView
-                android:id="@+id/TvDayReminders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/VReminders"
@@ -74,21 +84,13 @@
             android:background="@drawable/ic_border"
             android:orientation="vertical">
 
-            <CheckBox
-                android:id="@+id/CbSound"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:checked="true" />
 
             <TextView
-                android:id="@+id/TvExerciseSounds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8ssp"
                 android:layout_marginTop="@dimen/_8ssp"
                 android:layout_marginBottom="@dimen/_8ssp"
-                android:layout_toStartOf="@+id/CbSound"
                 android:gravity="center_vertical"
                 android:text="@string/beep_timer"
                 android:textColor="@color/black"
@@ -229,12 +231,124 @@
             android:id="@+id/TvReminders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/IvRoutinesBanner"
             android:layout_marginTop="@dimen/_10sdp"
             android:gravity="center"
             android:text="@string/reminder_str"
             android:textColor="@color/black"
             android:textSize="@dimen/_18sdp"
             android:textStyle="bold" />
-    </RelativeLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardExerciseReminders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/IvRoutinesBanner"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_2ssp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10ssp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/ic_time" />
+
+                <TextView
+                    android:id="@+id/TvExerciseReminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/main_bold"
+                    android:text="@string/exercise_time"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardDayReminders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CardExerciseReminders"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_2ssp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10ssp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/ic_reminder" />
+
+                <TextView
+                    android:id="@+id/TvDayReminders"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/main_bold"
+                    android:text="@string/Day_Planner_Reminder"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardExerciseSounds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/CardDayReminders"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:cardElevation="@dimen/_2ssp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10ssp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:src="@drawable/ic_sound" />
+
+                <TextView
+                    android:id="@+id/TvExerciseSounds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:fontFamily="@font/main_bold"
+                    android:text="@string/sound"
+                    android:textColor="@color/black" />
+
+                <CheckBox
+                    android:id="@+id/CbSound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:checked="true" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 </FrameLayout>

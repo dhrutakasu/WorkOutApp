@@ -54,9 +54,9 @@ public class RoutinesFragment extends Fragment {
     private void initActions() {
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.morning_title), R.drawable.arm_workout_banner);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.morning_title), R.drawable.ic_morning);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.evening_title), R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel(getString(R.string.evening_title), R.drawable.ic_evening);
         workOutModels.add(workOutModel);
         RvRoutines.setLayoutManager(new LinearLayoutManager(getContext()));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {

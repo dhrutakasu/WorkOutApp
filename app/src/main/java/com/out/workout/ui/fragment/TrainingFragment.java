@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -52,15 +53,15 @@ public class TrainingFragment extends Fragment {
     private void initActions() {
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.buttocks_title), R.drawable.arm_workout_banner);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.buttocks_title), R.drawable.ic_arms);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel("Weight Loss Workout", R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel("Weight Loss Workout", R.drawable.ic_weight_los);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.abs_title), R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel(getString(R.string.abs_title), R.drawable.ic_abs);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.fatburn_title), R.drawable.arm_workout_banner);
+        workOutModel = new WorkOutTypeModel(getString(R.string.fatburn_title), R.drawable.ic_chest);
         workOutModels.add(workOutModel);
-        RvTraining.setLayoutManager(new LinearLayoutManager(getContext()));
+        RvTraining.setLayoutManager(new GridLayoutManager(getContext(),2));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {
             @Override
             public void setWorkout(int pos) {

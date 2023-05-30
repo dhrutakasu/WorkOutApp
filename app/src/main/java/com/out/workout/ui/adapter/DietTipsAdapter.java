@@ -2,6 +2,7 @@ package com.out.workout.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,7 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.TvDietName.setText(categories.get(position).getName());
-        holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
+        holder.IvDietImg.setImageURI(Uri.parse("android.resource://"+R.class.getPackage().getName()+"/" +categories.get(position).getIcon().toString()));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -11,6 +11,8 @@ import androidx.navigation.ui.NavigationUI;
 import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.out.workout.R;
@@ -18,11 +20,10 @@ import com.out.workout.R;
 public class MainActivity extends AppCompatActivity implements ActionBar.OnNavigationListener {
 
     private Context context;
-    private DrawerLayout DlMain;
     private NavController NcMain;
     private AppBarConfiguration AcMain;
-    private NavigationView NvMain;
     private Toolbar TbMain;
+    private ImageView IvTraining, IvRoutines, IvDietTips, IvCalculator, IvProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,25 +35,83 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     }
 
     private void initView() {
-        context=this;
+        context = this;
         TbMain = findViewById(R.id.TbMain);
-        setSupportActionBar(TbMain);
+        IvTraining = findViewById(R.id.IvTraining);
+        IvRoutines = findViewById(R.id.IvRoutines);
+        IvDietTips = findViewById(R.id.IvDietTips);
+        IvCalculator = findViewById(R.id.IvCalculator);
+        IvProfile = findViewById(R.id.IvProfile);
 
-        DlMain = findViewById(R.id.DlMain);
+//        setSupportActionBar(TbMain);
+//
+//        AcMain = new AppBarConfiguration.Builder(R.id.NavTraining, R.id.NavRoutines, R.id.NavCalculator, R.id.NavDietTips, R.id.NavProfile)
+//                .setDrawerLayout(DlMain)
+//                .build();
+//        NcMain = Navigation.findNavController(this, R.id.NcMain);
+//        NavigationUI.setupActionBarWithNavController(this, NcMain, AcMain);
+//        NavigationUI.setupWithNavController(NvMain, NcMain);
 
-        NvMain = findViewById(R.id.NvMain);
-        NvMain.bringToFront();
-        NvMain.setItemIconTintList(null);
-        AcMain = new AppBarConfiguration.Builder(R.id.NavTraining, R.id.NavRoutines, R.id.NavCalculator, R.id.NavDietTips, R.id.NavProfile)
-                .setDrawerLayout(DlMain)
-                .build();
-        NcMain = Navigation.findNavController(this, R.id.NcMain);
-        NavigationUI.setupActionBarWithNavController(this, NcMain, AcMain);
-        NavigationUI.setupWithNavController(NvMain, NcMain);
     }
 
     private void initListener() {
-        NvMain.setNavigationItemSelectedListener(menuItem -> {
+        NcMain.navigate(R.id.NavTraining);
+        IvTraining.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IvTraining.setBackgroundResource(R.drawable.ic_training_press);
+                IvRoutines.setBackgroundResource(R.drawable.ic_routines);
+                IvDietTips.setBackgroundResource(R.drawable.ic_diet_tips);
+                IvDietTips.setBackgroundResource(R.drawable.ic_calculator);
+                NcMain.navigate(R.id.NavTraining);
+            }
+        });
+        IvRoutines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IvTraining.setBackgroundResource(R.drawable.ic_training);
+                IvRoutines.setBackgroundResource(R.drawable.ic_routines_press);
+                IvDietTips.setBackgroundResource(R.drawable.ic_diet_tips);
+                IvDietTips.setBackgroundResource(R.drawable.ic_calculator);
+                NcMain.popBackStack(R.id.NavTraining, false);
+                NcMain.navigate(R.id.NavRoutines);
+            }
+        });
+        IvDietTips.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IvTraining.setBackgroundResource(R.drawable.ic_training);
+                IvRoutines.setBackgroundResource(R.drawable.ic_routines);
+                IvDietTips.setBackgroundResource(R.drawable.ic_diet_tips_press);
+                IvDietTips.setBackgroundResource(R.drawable.ic_calculator);
+                NcMain.popBackStack(R.id.NavTraining, false);
+                NcMain.navigate(R.id.NavDietTips);
+            }
+        });
+        IvCalculator.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IvTraining.setBackgroundResource(R.drawable.ic_training);
+                IvRoutines.setBackgroundResource(R.drawable.ic_routines);
+                IvDietTips.setBackgroundResource(R.drawable.ic_diet_tips);
+                IvDietTips.setBackgroundResource(R.drawable.ic_calculator_press);
+                NcMain.popBackStack(R.id.NavTraining, false);
+                NcMain.navigate(R.id.NavCalculator);
+            }
+        });
+        IvProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IvTraining.setBackgroundResource(R.drawable.ic_training);
+                IvRoutines.setBackgroundResource(R.drawable.ic_routines);
+                IvDietTips.setBackgroundResource(R.drawable.ic_diet_tips);
+                IvDietTips.setBackgroundResource(R.drawable.ic_calculator);
+                NcMain.popBackStack(R.id.NavTraining, false);
+                NcMain.navigate(R.id.NavProfile);
+            }
+        });
+
+        /*NvMain.setNavigationItemSelectedListener(menuItem -> {
             switch (menuItem.getItemId()) {
                 case R.id.NavTraining:
                     NcMain.navigate(R.id.NavTraining);
@@ -80,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
                     break;
             }
             return true;
-        });
+        });*/
     }
 
     @Override
