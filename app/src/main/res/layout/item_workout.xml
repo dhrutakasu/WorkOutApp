@@ -3,13 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/CvItem"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginTop="5dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginBottom="5dp"
+    android:layout_height="@dimen/_60sdp"
+    android:layout_margin="@dimen/_8sdp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="20dp">
+    app:cardElevation="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,13 +14,12 @@
 
         <RelativeLayout
             android:id="@+id/RlImageAnimate"
-            android:layout_width="88dp"
-            android:layout_height="88dp"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/box_gray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -47,23 +43,24 @@
             android:layout_marginRight="5dp"
             android:layout_toLeftOf="@+id/RlRotate"
             android:layout_toRightOf="@+id/RlImageAnimate"
-            android:fontFamily="@font/main"
+            android:fontFamily="@font/main_medium"
             android:maxLines="2"
             android:paddingEnd="5dp"
             android:text="testggg"
-            android:textColor="@color/text_color"
-            android:textSize="18sp" />
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp" />
 
         <RelativeLayout
             android:id="@+id/RlRotate"
             android:layout_width="50dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="8dp"
-            android:background="@color/box_gray"
+            android:background="@drawable/ic_box"
             app:layout_constraintBottom_toTopOf="@+id/View_divider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TvExerciseName">
@@ -73,10 +70,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:fontFamily="@font/main"
+                android:fontFamily="@font/main_semibold"
                 android:text="x20"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="@dimen/_12sdp" />
         </RelativeLayout>
 
         <View

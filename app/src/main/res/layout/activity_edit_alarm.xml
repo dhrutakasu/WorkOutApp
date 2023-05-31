@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/RlActionBarEditReminder"
@@ -19,33 +19,33 @@
     <FrameLayout
         android:id="@+id/edit_alarm_frag_container"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_20sdp">
 
-        <ScrollView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:layout_height="wrap_content"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:scrollbarStyle="outsideOverlay">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/_16sdp"
-                android:paddingBottom="@dimen/_16sdp"
+                android:orientation="vertical"
                 android:paddingLeft="@dimen/_16sdp"
-                android:paddingRight="@dimen/_16sdp">
+                android:paddingRight="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_16sdp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:text="@string/time"
-                    tools:text="Time"/>
+                    android:fontFamily="@font/main_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:text="Time" />
 
                 <View
                     android:layout_width="match_parent"
@@ -55,21 +55,21 @@
 
                 <TimePicker
                     android:id="@+id/PickerTime"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/_16sdp"
-                    android:timePickerMode="spinner"
-                    tools:targetApi="lollipop" />
-
+                    android:timePickerMode="spinner" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:text="@string/days"
-                    tools:text="Days"/>
+                    android:fontFamily="@font/main_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp"
+                    tools:text="Days" />
 
                 <View
                     android:layout_width="match_parent"
@@ -92,8 +92,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"/>
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -101,6 +102,9 @@
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
                             android:layout_marginBottom="@dimen/_8sdp"
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             android:text="@string/monday"
                             tools:text="Monday" />
                     </RelativeLayout>
@@ -115,16 +119,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"/>
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/tu"
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Tuesday" />
                     </RelativeLayout>
 
@@ -137,19 +145,21 @@
                             android:id="@+id/CbWed"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            />
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/wed"
-
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Wednesday" />
                     </RelativeLayout>
 
@@ -163,18 +173,20 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            />
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/thursday"
-
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Thursday" />
                     </RelativeLayout>
 
@@ -187,19 +199,21 @@
                             android:id="@+id/CbFri"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            />
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/fri"
-
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Friday" />
                     </RelativeLayout>
 
@@ -212,19 +226,21 @@
                             android:id="@+id/CbSat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:buttonTint="@color/calculator_text_color_selector"
                             android:layout_alignParentEnd="true"
                             android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            />
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/sat"
-
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Saturday" />
                     </RelativeLayout>
 
@@ -236,20 +252,22 @@
                         <CheckBox
                             android:id="@+id/CbSun"
                             android:layout_width="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            />
+                            android:layout_alignParentEnd="true"
+                            android:buttonTint="@color/calculator_text_color_selector"
+                            android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="@dimen/_8sdp"
                             android:layout_alignParentStart="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginBottom="@dimen/_8sdp"
                             android:text="@string/sun"
-
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
                             tools:text="Sunday" />
                     </RelativeLayout>
                 </LinearLayout>

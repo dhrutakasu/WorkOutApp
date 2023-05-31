@@ -27,7 +27,8 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     public static final int ExerciseCode = 111;
     private Context context;
     private ImageView IvBack;
-    private TextView TvTitle, TvWorkoutStart;
+    private TextView TvTitle;
+    private ImageView TvWorkoutStart;
     private RecyclerView RvWorkoutList;
     private String WorkoutType;
     private ArrayList<WorkoutExerciseModel> workoutExerciseModels;
@@ -50,7 +51,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
-        TvWorkoutStart = (TextView) findViewById(R.id.TvWorkoutStart);
+        TvWorkoutStart = (ImageView) findViewById(R.id.TvWorkoutStart);
         RvWorkoutList = (RecyclerView) findViewById(R.id.RvWorkoutList);
     }
 

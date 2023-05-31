@@ -21,18 +21,19 @@
         android:id="@+id/NsWorkout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarExerciseComplete">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_margin="@dimen/_10sdp"
+            android:gravity="center"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardElevation="@dimen/_3sdp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -43,32 +44,33 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="congratulations !"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/main_bold"
                     android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_26sdp"
-                    android:textStyle="bold"/>
+                    android:text="congratulations !"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/_20sdp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="You Just Completed"
-                    android:gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/main_semibold"
+                    android:gravity="center"
+                    android:text="You Just Completed"
                     android:textColor="@color/text_gray"
-                    android:textSize="@dimen/_16sdp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/_12sdp" />
 
                 <TextView
                     android:id="@+id/TvCompletedExerciseName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="congratulations !"
-                    android:gravity="center"
                     android:layout_marginTop="@dimen/_15sdp"
+                    android:fontFamily="@font/main_semibold"
+                    android:gravity="center"
+                    android:text="congratulations !"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold"/>
+                    android:textSize="@dimen/_12sdp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,22 +83,23 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/main_semibold"
                         android:gravity="center"
                         android:text="25"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_15sdp"
+                        android:fontFamily="@font/main_semibold"
                         android:gravity="center"
                         android:text="Exercises"
                         android:textColor="@color/text_gray"
-                        android:textSize="@dimen/_20sdp"
-                        android:textStyle="bold" />
+                        android:textSize="@dimen/_16sdp" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -121,21 +124,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="0"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_18sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_16sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Hours"
                                 android:textColor="@color/text_gray"
-                                android:textSize="@dimen/_20sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_14sdp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -150,21 +153,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="0"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_18sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_16sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Minutes"
                                 android:textColor="@color/text_gray"
-                                android:textSize="@dimen/_20sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_14sdp" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -179,21 +182,21 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="0"
                                 android:textColor="@color/black"
-                                android:textSize="@dimen/_18sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_16sdp" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_15sdp"
+                                android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Seconds"
                                 android:textColor="@color/text_gray"
-                                android:textSize="@dimen/_20sdp"
-                                android:textStyle="bold" />
+                                android:textSize="@dimen/_14sdp" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -203,23 +206,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_15sdp"
-                    android:paddingStart="@dimen/_18sdp"
-                    android:paddingEnd="@dimen/_18sdp"
-                    android:paddingTop="@dimen/_8sdp"
-                    android:paddingBottom="@dimen/_8sdp"
-                    android:background="@drawable/ic_border">
+                    android:layout_marginBottom="@dimen/_15sdp">
 
                     <TextView
                         android:id="@+id/TvCompletedExerciseContinue"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/_150sdp"
                         android:layout_height="wrap_content"
-                        android:text="Continue"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:fontFamily="@font/main_medium"
                         android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold"/>
+                        android:padding="@dimen/_6sdp"
+                        android:text="Continue"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -64,33 +65,33 @@ public class CalculatorFragment extends Fragment {
 
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getResources().getString(R.string.idealweight), getResources().getString(R.string.idealweight_desc), Integer.valueOf(R.drawable.ic_ideal_weight));
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getResources().getString(R.string.idealweight), getResources().getString(R.string.idealweight_desc), R.drawable.ic_ideal_weight);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bmi_title), getResources().getString(R.string.bmi_desc), Integer.valueOf(R.drawable.ic_body_mass_index));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bmi_title), getResources().getString(R.string.bmi_desc), R.drawable.ic_body_mass_index);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.heartrate), getResources().getString(R.string.heart_desc), Integer.valueOf(R.drawable.ic_heart_rate));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.heartrate), getResources().getString(R.string.heart_desc), R.drawable.ic_heart_reate);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bloodvol), getResources().getString(R.string.bloodvol_desc), Integer.valueOf(R.drawable.ic_blood_volume));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bloodvol), getResources().getString(R.string.bloodvol_desc), R.drawable.ic_blood_volume);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.blood_donate), getResources().getString(R.string.blood_don_desc), Integer.valueOf(R.drawable.ic_blood_donate));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.blood_donate), getResources().getString(R.string.blood_don_desc), R.drawable.ic_blood_donate);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.calories), getResources().getString(R.string.calorie_desc), Integer.valueOf(R.drawable.ic_blood_volume));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.calories), getResources().getString(R.string.calorie_desc), R.drawable.ic_weight_loss_gain);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.waterintake), getResources().getString(R.string.waterintake_desc), Integer.valueOf(R.drawable.ic_water_intake));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.waterintake), getResources().getString(R.string.waterintake_desc), R.drawable.ic_water_intake);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bodyfat), getResources().getString(R.string.bodyfat_desc), Integer.valueOf(R.drawable.ic_body_fat));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bodyfat), getResources().getString(R.string.bodyfat_desc), R.drawable.ic_body_fat);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bloodalcohol), getResources().getString(R.string.bloodalcohol_desc), Integer.valueOf(R.drawable.ic_blood_alcohol));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.bloodalcohol), getResources().getString(R.string.bloodalcohol_desc), R.drawable.ic_blood_alcohol);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.pregnancy), getResources().getString(R.string.pregnancy_desc), Integer.valueOf(R.drawable.ic_pregncy_due_date));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.pregnancy), getResources().getString(R.string.pregnancy_desc), R.drawable.ic_pregncy_due_date);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.ovulation), getResources().getString(R.string.ovulation_desc), Integer.valueOf(R.drawable.ic_ovulation));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.ovulation), getResources().getString(R.string.ovulation_desc), R.drawable.ic_ovulation);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.breath_count), getResources().getString(R.string.breath_count_desc), Integer.valueOf(R.drawable.ic_breath_count));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.breath_count), getResources().getString(R.string.breath_count_desc), R.drawable.ic_breath_count);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.blood_pressure), getResources().getString(R.string.calc_bp_val), Integer.valueOf(R.drawable.ic_blood_pressure));
+        workOutModel = new WorkOutTypeModel(getResources().getString(R.string.blood_pressure), getResources().getString(R.string.calc_bp_val), R.drawable.ic_blood_pressure);
         workOutModels.add(workOutModel);
-        RvCalculator.setLayoutManager(new GridLayoutManager(getContext(),2));
+        RvCalculator.setLayoutManager(new LinearLayoutManager(getContext()));
         CalculatorAdapter calculatorAdapter = new CalculatorAdapter(getContext(), workOutModels, new CalculatorAdapter.WorkoutInterface() {
             @Override
             public void setWorkout(int pos) {

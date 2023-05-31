@@ -2,6 +2,8 @@ package com.out.workout.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.out.workout.BuildConfig;
 import com.out.workout.R;
 import com.out.workout.model.DietTipsCategory;
+import com.out.workout.ui.activity.ArticleActivity;
 import com.out.workout.ui.activity.CategorySubItemListActivity;
 import com.out.workout.ui.activity.FitnessCalculatorsActivity;
 import com.out.workout.utils.Constants;
@@ -37,8 +41,10 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+//        res/drawable/vegeterian.png
+        System.out.println("------ valueIcon  : "+categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")));
         holder.TvDietName.setText(categories.get(position).getName());
-        holder.IvDietImg.setImageURI(Uri.parse("android.resource://"+R.class.getPackage().getName()+"/" +categories.get(position).getIcon().toString()));
+        holder.IvDietImg.setImageResource(context.getResources().getIdentifier(categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")), "drawable", BuildConfig.APPLICATION_ID));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,10 +72,10 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
         } else if (layoutType != 4) {
 //            showOutDatedAppPopup();
         } else {
-//            Intent intent4 = new Intent(context, ArticleListActivity.class);
-//            intent4.putExtra(Constants.DIET_NAME, categories.getName());
-//            intent4.putExtra(Constants.DIET_SLUG, categories.getSlug());
-//            context.startActivity(intent4);
+            Intent intent4 = new Intent(context, ArticleActivity.class);
+            intent4.putExtra(Constants.DIET_NAME, categories.getName());
+            intent4.putExtra(Constants.DIET_SLUG, categories.getSlug());
+            context.startActivity(intent4);
         }
     }
 

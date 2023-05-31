@@ -1,1 +1,56 @@
-{"description":"","details":[{"full_description":"Walnuts are one of the Smartest food also called as ‘brain food’ not only because of its wrinkled appearance but also its highly valuable content. Walnuts contain good fats, such as monounsaturated and polyunsaturated fats (PUFAs), but they are also a valuable vegetarian source of the essential fatty acid omega-3, selenium, calcium, zinc, vitamin E (gamma-tocopherol)  B9 vitamin(biological functions and pregnancy), Manganese, Vitamin B6(strengthen your immune system and support nerve), Copper(heart health) and many more.","header":"","image":"article_5_11.jpeg"},{"full_description":"Walnuts contain Omega-3 plays a part by helping to reduce oxidative stress in the brain. It also contains vitamin E, folate and ellagic acid that contribute to neuroprotection and memory function.","header":"Good for brain","image":"article_5_4.jpeg"},{"full_description":"Omega-3, found in walnuts, is important in the development and function of the central nervous system. ","header":"Mood-Boosting","image":"article_5_6.jpeg"},{"full_description":"The antioxidant activity comes from vitamin E, melatonin and plant compounds called polyphenols. It can help fight oxidative damage in your body, including damage due to bad/LDL cholesterol, which promotes atherosclerosis.","header":"Antioxidants Rich","image":"article_5_2.jpeg"},{"full_description":"Eating walnuts may help support sperm health(sperm shape, vitality, and mobility)and male fertility. Studies reveal that eating walnuts regularly protects sperm by reducing oxidative damage in their membranes.","header":"Supports Male Reproductive Health","image":"article_5_12.jpeg"},{"full_description":"Rich source of vitamin B-complex present in roasted unsalted/unprocessed walnuts is essential for fetal growth.","header":"Pregnant Women","image":"article_5_7.jpg"},{"full_description":"Melatonin is present in the bio-available form in these nuts. This nut makes melatonin, a hormone that helps induce and regulate sleep.","header":"Regulate Sleep","image":"article_5_8.jpg"},{"full_description":"The vitamin E content in walnuts helps in protecting the skin from harmful free radicals. It also helps in preventing wrinkles and dry skin. ","header":"Skin Care","image":"article_5_9.jpeg"},{"full_description":"Walnuts are a rich source of antioxidants. Regular consumption of walnuts helps in building a strong immune system.","header":"Boost Immunity","image":"article_5_3.jpeg"},{"full_description":"They provide thicker, longer and stronger hair. Walnuts are also responsible for healthy hair, as the high amounts of vitamins, minerals, healthy fats, and antioxidants strengthen hair follicles and make scalp dandruff free.","header":"Hair Care","image":"article_5_1.jpeg"}],"title":"Are walnuts good for you?"}
+{
+  "description": "",
+  "details": [
+    {
+      "full_description": "Walnuts are one of the Smartest food also called as ‘brain food’ not only because of its wrinkled appearance but also its highly valuable content. Walnuts contain good fats, such as monounsaturated and polyunsaturated fats (PUFAs), but they are also a valuable vegetarian source of the essential fatty acid omega-3, selenium, calcium, zinc, vitamin E (gamma-tocopherol)  B9 vitamin(biological functions and pregnancy), Manganese, Vitamin B6(strengthen your immune system and support nerve), Copper(heart health) and many more.",
+      "header": "",
+      "image": "article_5_11.jpeg"
+    },
+    {
+      "full_description": "Walnuts contain Omega-3 plays a part by helping to reduce oxidative stress in the brain. It also contains vitamin E, folate and ellagic acid that contribute to neuroprotection and memory function.",
+      "header": "Good for brain",
+      "image": "article_5_4.jpeg"
+    },
+    {
+      "full_description": "Omega-3, found in walnuts, is important in the development and function of the central nervous system. ",
+      "header": "Mood-Boosting",
+      "image": "article_5_6.jpeg"
+    },
+    {
+      "full_description": "The antioxidant activity comes from vitamin E, melatonin and plant compounds called polyphenols. It can help fight oxidative damage in your body, including damage due to bad/LDL cholesterol, which promotes atherosclerosis.",
+      "header": "Antioxidants Rich",
+      "image": "article_5_2.jpeg"
+    },
+    {
+      "full_description": "Eating walnuts may help support sperm health(sperm shape, vitality, and mobility)and male fertility. Studies reveal that eating walnuts regularly protects sperm by reducing oxidative damage in their membranes.",
+      "header": "Supports Male Reproductive Health",
+      "image": "article_5_12.jpeg"
+    },
+    {
+      "full_description": "Rich source of vitamin B-complex present in roasted unsalted/unprocessed walnuts is essential for fetal growth.",
+      "header": "Pregnant Women",
+      "image": "article_5_7.jpg"
+    },
+    {
+      "full_description": "Melatonin is present in the bio-available form in these nuts. This nut makes melatonin, a hormone that helps induce and regulate sleep.",
+      "header": "Regulate Sleep",
+      "image": "article_5_8.jpg"
+    },
+    {
+      "full_description": "The vitamin E content in walnuts helps in protecting the skin from harmful free radicals. It also helps in preventing wrinkles and dry skin. ",
+      "header": "Skin Care",
+      "image": "article_5_9.jpeg"
+    },
+    {
+      "full_description": "Walnuts are a rich source of antioxidants. Regular consumption of walnuts helps in building a strong immune system.",
+      "header": "Boost Immunity",
+      "image": "article_5_3.jpeg"
+    },
+    {
+      "full_description": "They provide thicker, longer and stronger hair. Walnuts are also responsible for healthy hair, as the high amounts of vitamins, minerals, healthy fats, and antioxidants strengthen hair follicles and make scalp dandruff free.",
+      "header": "Hair Care",
+      "image": "article_5_1.jpeg"
+    }
+  ],
+  "title": "Are walnuts good for you?"
+}

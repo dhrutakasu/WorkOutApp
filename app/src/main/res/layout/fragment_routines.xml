@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/IvRoutinesBanner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_60sdp"
         android:layout_alignStart="@id/RvRoutines"
         android:layout_alignEnd="@id/RvRoutines"
         android:layout_alignParentTop="true"

@@ -29,9 +29,4 @@
         android:label="@string/str_diet_tips"
         tools:layout="@layout/fragment_diet_tips" />
 
-    <fragment
-        android:id="@+id/NavProfile"
-        android:name="com.out.workout.ui.fragment.ProfileFragment"
-        android:label="@string/str_profile"
-        tools:layout="@layout/fragment_profile" />
 </navigation>

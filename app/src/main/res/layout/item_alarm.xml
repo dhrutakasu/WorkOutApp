@@ -4,71 +4,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="?attr/listPreferredItemHeight"
-    android:paddingStart="@dimen/_16sdp"
-    android:paddingEnd="@dimen/_16sdp"
-    android:paddingLeft="@dimen/_16sdp"
-    android:paddingRight="@dimen/_16sdp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/TvTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="start|bottom"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:textStyle="bold"
-        tools:text="7:00" />
-
-    <TextView
-        android:id="@+id/TvAmPm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:layout_alignBaseline="@+id/TvTime"
-        android:layout_toRightOf="@+id/TvTime"
-        android:layout_toEndOf="@+id/TvTime"
-        tools:text="AM" />
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toEndOf="@+id/TvAmPm"
-        android:layout_toStartOf="@+id/IvIconAlarm"
-        android:layout_marginEnd="@dimen/_16sdp"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_centerVertical="true">
+        android:layout_height="@dimen/_50sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardElevation="@dimen/_3sdp">
 
-        <TextView
-            android:id="@+id/TvLabel"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_12sdp"
-            tools:text="Exercise TIme" />
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingEnd="@dimen/_16sdp">
 
-        <TextView
-            android:id="@+id/TvDays"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="M Tu W Th F Sa Su" />
+            <TextView
+                android:id="@+id/TvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:gravity="start|bottom"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textSize="@dimen/_12sdp"
+                android:fontFamily="@font/main_semibold"
+                tools:text="7:00" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/TvAmPm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/TvTime"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:gravity="center"
+                android:fontFamily="@font/main_semibold"
+                android:layout_toEndOf="@+id/TvTime"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+                android:textAllCaps="true"
+                tools:text="AM" />
 
-    <ImageView
-        android:id="@+id/IvIconAlarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_alarm_white"
-        app:tint="@color/black" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_toEndOf="@+id/TvAmPm"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_centerVertical="true">
 
+                <TextView
+                    android:id="@+id/TvLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/main_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Exercise TIme" />
+
+                <TextView
+                    android:id="@+id/TvDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="M Tu W Th F Sa Su" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

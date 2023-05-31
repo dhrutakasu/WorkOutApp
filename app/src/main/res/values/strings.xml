@@ -980,4 +980,6 @@
     <string name="no">No</string>
     <string name="time">Time</string>
     <string name="calories_to_maintain_weight">Calories to maintain weight</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="share_app">Share app</string>
 </resources>

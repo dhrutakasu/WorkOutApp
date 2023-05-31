@@ -32,7 +32,8 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
     private TextView TvTitle;
     private ExerciseHelper helper;
     private RecyclerView RvAddReminderList;
-    private TextView TvNoReminderFound, TvAddReminder;
+    private TextView TvNoReminderFound;
+    private ImageView IvAddReminder;
     private List<ReminderModel> ReminderRecordsList = new ArrayList<>();
     private RemindersAdapter mAdapter;
 
@@ -51,13 +52,13 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         RvAddReminderList = (RecyclerView) findViewById(R.id.RvAddReminderList);
-        TvAddReminder = (TextView) findViewById(R.id.TvAddReminder);
+        IvAddReminder = (ImageView) findViewById(R.id.IvAddReminder);
         TvNoReminderFound = (TextView) findViewById(R.id.TvNoReminderFound);
     }
 
     private void initListeners() {
         IvBack.setOnClickListener(this);
-        TvAddReminder.setOnClickListener(this);
+        IvAddReminder.setOnClickListener(this);
     }
 
     private void initActions() {
@@ -67,8 +68,6 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
         RvAddReminderList.setLayoutManager(new LinearLayoutManager(context));
         mAdapter = new RemindersAdapter();
         RvAddReminderList.setAdapter(mAdapter);
-        RvAddReminderList.addItemDecoration(new DividerItemDecoration(context));
-        RvAddReminderList.setItemAnimator(new DefaultItemAnimator());
     }
 
     @Override
@@ -91,7 +90,7 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
             case R.id.IvBack:
                 onBackPressed();
                 break;
-            case R.id.TvAddReminder:
+            case R.id.IvAddReminder:
                 AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
                 final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
                 startActivity(i);

@@ -6,7 +6,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_170sdp"
+        android:layout_height="@dimen/_164sdp"
         android:layout_margin="@dimen/_8sdp"
         app:cardCornerRadius="@dimen/_8sdp"
         app:cardElevation="@dimen/_5ssp"
@@ -29,8 +29,9 @@
                 android:src="@drawable/vegeterian" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/IvArrow"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:layout_alignParentBottom="true"
                 android:layout_below="@id/IvDietImg"
                 android:layout_marginEnd="@dimen/_20sdp"
@@ -39,7 +40,10 @@
 
             <LinearLayout
                 android:id="@+id/LlDietTip"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/IvArrow"
+                android:layout_marginEnd="@dimen/_3sdp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/IvDietImg"
                 android:layout_marginStart="@dimen/_8sdp"
@@ -47,22 +51,24 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/TvDietTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/main_medium"
-                    android:text="@string/str_routines"
+                    android:text="@string/str_diet_tips"
                     android:textColor="@color/new_gray"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_8sdp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvDietName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/main_bold"
+                    android:fontFamily="@font/main_semibold"
+                    android:gravity="center_vertical"
                     android:text="@string/str_diet_tips"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/_12sdp"
                     android:textStyle="bold" />
             </LinearLayout>
         </RelativeLayout>

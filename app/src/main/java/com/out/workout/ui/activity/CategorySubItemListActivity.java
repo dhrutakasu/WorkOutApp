@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -95,7 +96,7 @@ public class CategorySubItemListActivity extends AppCompatActivity implements Vi
             Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
         }
 
-        RvDietsSub.setLayoutManager(new LinearLayoutManager(context));
+        RvDietsSub.setLayoutManager(new GridLayoutManager(context,2));
         RvDietsSub.setAdapter(new SubDietTipsAdapter(context, categories, DietName));
     }
 

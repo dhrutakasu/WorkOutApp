@@ -51,6 +51,7 @@ public class CompleteExerciseActivity extends AppCompatActivity implements View.
     }
 
     private void initListeners() {
+        IvBack.setOnClickListener(this);
         LlContinue.setOnClickListener(this);
     }
 

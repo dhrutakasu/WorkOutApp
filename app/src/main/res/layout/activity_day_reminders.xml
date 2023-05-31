@@ -36,7 +36,7 @@
             android:layout_marginBottom="@dimen/_15sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/TvAddReminder"
+            app:layout_constraintBottom_toTopOf="@+id/IvAddReminder"
             android:scrollbars="vertical" />
 
         <TextView
@@ -45,27 +45,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/noreminders"
+            android:fontFamily="@font/main_semibold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:textColor="@color/text_color"
-            android:textSize="25sp" />
+            android:textSize="@dimen/_20sdp" />
 
-        <TextView
-            android:id="@+id/TvAddReminder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_border"
-            android:padding="@dimen/_8sdp"
+        <ImageView
+            android:id="@+id/IvAddReminder"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/ic_add"
             android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:text="@string/add_reminder"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:layout_marginEnd="@dimen/_15sdp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,13 +53,13 @@ public class TrainingFragment extends Fragment {
     private void initActions() {
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.buttocks_title), R.drawable.ic_arms);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.butocks), R.drawable.ic_arms);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel("Weight Loss Workout", R.drawable.ic_weight_los);
+        workOutModel = new WorkOutTypeModel(getString(R.string.weight), R.drawable.ic_weight_los);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.abs_title), R.drawable.ic_abs);
+        workOutModel = new WorkOutTypeModel(getString(R.string.Abs), R.drawable.ic_abs);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.fatburn_title), R.drawable.ic_chest);
+        workOutModel = new WorkOutTypeModel(getString(R.string.Fatbrn), R.drawable.ic_chest);
         workOutModels.add(workOutModel);
         RvTraining.setLayoutManager(new GridLayoutManager(getContext(),2));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {

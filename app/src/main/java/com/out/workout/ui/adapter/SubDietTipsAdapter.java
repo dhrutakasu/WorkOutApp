@@ -2,6 +2,9 @@ package com.out.workout.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +20,8 @@ import com.out.workout.ui.activity.CategoryItemDetailsActivity;
 import com.out.workout.ui.activity.CategorySubItemListActivity;
 import com.out.workout.utils.Constants;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.MyViewHolder> {
@@ -38,8 +43,19 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        holder.TvDietTitle.setVisibility(View.GONE);
+        holder.IvArrow.setVisibility(View.GONE);
+        holder.TvDietName.setLines(1);
         holder.TvDietName.setText(categories.get(position).getName());
-        holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
+        try {
+            InputStream ims = context.getAssets().open("DietImg/" + categories.get(position).getIcon());
+            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+            holder.IvDietImg.setImageBitmap(bitmap);
+            ims.close();
+        } catch (IOException ex) {
+            System.out.println("----- catch : " + ex.getMessage());
+            return;
+        }
         holder.itemView.setOnClickListener(v -> startCategoryActivity(categories.get(position)));
     }
 
@@ -57,13 +73,15 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private ImageView IvDietImg;
-        private TextView TvDietName;
+        private ImageView IvDietImg,IvArrow;
+        private TextView TvDietName, TvDietTitle;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             IvDietImg = itemView.findViewById(R.id.IvDietImg);
+            IvArrow = itemView.findViewById(R.id.IvArrow);
             TvDietName = itemView.findViewById(R.id.TvDietName);
+            TvDietTitle = itemView.findViewById(R.id.TvDietTitle);
         }
     }
 }
