@@ -37,11 +37,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/purple_500"
-                android:text="Gender"
-                android:textColor="@color/purple_500"
-                app:drawableStartCompat="@drawable/ic_gender" />
+                android:text="Choose Gender"
+                android:fontFamily="@font/main_semibold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/purple_500"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -86,6 +85,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="top|right"
+                        android:tint="@color/purple_500"
                         android:layout_margin="10dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/ic_done" />
@@ -129,6 +129,7 @@
                         android:layout_margin="10dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/ic_done"
+                        android:tint="@color/purple_500"
                         android:visibility="gone" />
                 </FrameLayout>
             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -153,11 +154,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:drawableLeft="@drawable/ic_weight"
-                        android:drawablePadding="5dp"
-                        android:drawableTint="@color/purple_500"
                         android:gravity="center_vertical"
-                        android:text="Weight"
+                        android:text="Enter Weight"
+                        android:fontFamily="@font/main_semibold"
+                        android:textSize="@dimen/_12sdp"
                         android:textColor="@color/purple_500" />
 
                     <androidx.appcompat.widget.AppCompatEditText
@@ -166,7 +166,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_white_rounded_corner"
+                        android:background="@drawable/ic_border"
                         android:gravity="center"
                         android:inputType="numberDecimal"
                         android:maxLength="6"
@@ -228,12 +228,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:drawableLeft="@drawable/ic_height"
-                        android:drawablePadding="5dp"
-                        android:drawableTint="@color/purple_500"
                         android:gravity="center_vertical"
-                        android:text="Height"
-                        android:textColor="@color/purple_500" />
+                        android:text="Enter Height"
+                        android:fontFamily="@font/main_semibold"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/purple_500"  />
 
                     <androidx.appcompat.widget.AppCompatEditText
                         android:id="@+id/EdtFatHeightCm"
@@ -241,7 +240,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_white_rounded_corner"
+                        android:background="@drawable/ic_border"
                         android:gravity="center"
                         android:inputType="numberDecimal"
                         android:maxLength="5"
@@ -419,11 +418,10 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:drawableLeft="@drawable/ic_weight"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/purple_500"
-                android:text="@string/age"
-                android:textColor="@color/purple_500" />
+                android:text="@string/enter_age"
+                android:fontFamily="@font/main_semibold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/purple_500"  />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -444,7 +442,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
                     android:scaleType="fitXY"
-                    android:src="@drawable/ic_triangle" />
+                    android:src="@drawable/ic_triangle"
+                    app:tint="@color/purple_500" />
             </FrameLayout>
 
             <TextView
@@ -453,11 +452,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:drawablePadding="8dp"
-                android:drawableTint="@color/purple_500"
-                android:text="Workout"
-                android:textColor="@color/purple_500"
-                app:drawableLeftCompat="@drawable/ic_workout" />
+                android:text="Choose Workout"
+                android:fontFamily="@font/main_semibold"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/purple_500" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RvFatActivities"
@@ -467,17 +465,18 @@
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-            <Button
+            <TextView
                 android:id="@+id/BtnFatCalculate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/ic_border_color"
                 android:backgroundTint="@color/purple_500"
                 android:gravity="center"
-                android:text="Calculate"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_gravity="center"
+                android:fontFamily="@font/main_semibold"
+                android:text="@string/calculate"
+                android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

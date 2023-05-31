@@ -33,7 +33,7 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
     private ImageView IvBack;
     private TextView TvTitle;
     private TextView EdtDateBloodDonate;
-    private Button BtnWeightBloodDonate, BtnBloodDonate, BtnEligibilityBloodDonate;
+    private TextView BtnWeightBloodDonate, BtnBloodDonate, BtnEligibilityBloodDonate;
     private boolean BoolChooseDate=false;
     private Calendar calendar;
     private SimpleDateFormat simpleDateFormat;
@@ -55,9 +55,9 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtDateBloodDonate = (TextView) findViewById(R.id.EdtDateBloodDonate);
         IvCalendarBloodDonate = (ImageView) findViewById(R.id.IvCalendarBloodDonate);
-        BtnWeightBloodDonate = (Button) findViewById(R.id.BtnWeightBloodDonate);
-        BtnBloodDonate = (Button) findViewById(R.id.BtnBloodDonate);
-        BtnEligibilityBloodDonate = (Button) findViewById(R.id.BtnEligibilityBloodDonate);
+        BtnWeightBloodDonate = (TextView) findViewById(R.id.BtnWeightBloodDonate);
+        BtnBloodDonate = (TextView) findViewById(R.id.BtnBloodDonate);
+        BtnEligibilityBloodDonate = (TextView) findViewById(R.id.BtnEligibilityBloodDonate);
     }
 
     private void initListeners() {

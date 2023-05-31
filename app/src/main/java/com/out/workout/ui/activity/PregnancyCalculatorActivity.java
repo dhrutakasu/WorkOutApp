@@ -31,7 +31,8 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     private ImageView IvBack;
     private TextView TvTitle;
     private TextView EdtDatePregnancy;
-    private Button BtnWeightPregnancy, BtnPregnancy;
+    private TextView BtnWeightPregnancy;
+    private TextView BtnPregnancy;
     private boolean BoolChooseDate = false;
     private Calendar calendar;
     private SimpleDateFormat simpleDateFormat;
@@ -53,8 +54,8 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtDatePregnancy = (TextView) findViewById(R.id.EdtDatePregnancy);
         IvCalendarPregnancy = (ImageView) findViewById(R.id.IvCalendarPregnancy);
-        BtnWeightPregnancy = (Button) findViewById(R.id.BtnWeightPregnancy);
-        BtnPregnancy = (Button) findViewById(R.id.BtnPregnancy);
+        BtnWeightPregnancy = (TextView) findViewById(R.id.BtnWeightPregnancy);
+        BtnPregnancy = (TextView) findViewById(R.id.BtnPregnancy);
     }
 
     private void initListeners() {

@@ -5,19 +5,19 @@
             <item android:state_selected="true">
                 <shape android:shape="rectangle">
                     <corners android:radius="15dp"/>
-                    <solid android:color="#fff"/>
+                    <solid android:color="#F6F6FA"/>
                 </shape>
             </item>
             <item android:state_activated="true">
                 <shape android:shape="rectangle">
                     <corners android:radius="15dp"/>
-                    <solid android:color="#fff"/>
+                    <solid android:color="#F6F6FA"/>
                 </shape>
             </item>
             <item>
                 <shape android:shape="rectangle">
                     <corners android:radius="15dp"/>
-                    <solid android:color="#80ffffff"/>
+                    <solid android:color="#F6F6FA"/>
                 </shape>
             </item>
         </selector>

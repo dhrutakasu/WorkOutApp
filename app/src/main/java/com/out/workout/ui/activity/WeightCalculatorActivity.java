@@ -12,32 +12,37 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class WeightCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class WeightCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Context context;
     private ImageView IvBack;
-    private TextView TvTitle;
+    private TextView TvTitle,TvFTOrCMIdealWeight;
+    private Spinner SpinnerGenderIdealWeight, SpinnerHeightIdealWeight;
     private EditText EdtAgeCalculator;
-    private RadioGroup RgGender, RgWeight;
-    private RadioButton RbMale, RbFemale, RbCm, RbInch;
     private EditText EdtHeightCalculator, EdtInchCalculator;
     private LinearLayout LLHeightCalculator;
-    private Button BtnWeightCalculator, BtnResetCalculator, BtnChartCalculator;
+    private TextView BtnWeightCalculator;
+    private TextView BtnResetCalculator;
+    private ImageView BtnChartCalculator;
     private double DoubleHeight, DoubleAge, DoubleInch;
     private boolean check;
     private double calculate;
@@ -58,18 +63,15 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeCalculator = (EditText) findViewById(R.id.EdtAgeCalculator);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
-        RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
-        RbCm = (RadioButton) findViewById(R.id.RbCm);
-        RbInch = (RadioButton) findViewById(R.id.RbInch);
+        SpinnerGenderIdealWeight = (Spinner) findViewById(R.id.SpinnerGenderIdealWeight);
+        SpinnerHeightIdealWeight = (Spinner) findViewById(R.id.SpinnerHeightIdealWeight);
+
         EdtHeightCalculator = (EditText) findViewById(R.id.EdtHeightCalculator);
         LLHeightCalculator = (LinearLayout) findViewById(R.id.LLHeightCalculator);
         EdtInchCalculator = (EditText) findViewById(R.id.EdtInchCalculator);
-        BtnWeightCalculator = (Button) findViewById(R.id.BtnWeightCalculator);
-        BtnResetCalculator = (Button) findViewById(R.id.BtnResetCalculator);
-        BtnChartCalculator = (Button) findViewById(R.id.BtnChartCalculator);
+        BtnWeightCalculator = (TextView) findViewById(R.id.BtnWeightCalculator);
+        BtnResetCalculator = (TextView) findViewById(R.id.BtnResetCalculator);
+        BtnChartCalculator = (ImageView) findViewById(R.id.BtnChartCalculator);
     }
 
     private void initListeners() {
@@ -77,13 +79,19 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         BtnWeightCalculator.setOnClickListener(this);
         BtnResetCalculator.setOnClickListener(this);
         BtnChartCalculator.setOnClickListener(this);
-        RgWeight.setOnCheckedChangeListener(this);
+        SpinnerHeightIdealWeight.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.idealweight));
+        TvFTOrCMIdealWeight.setText(getString(R.string.cm));
         LLHeightCalculator.setVisibility(View.GONE);
         EdtAgeCalculator.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
+        SpinnerGenderIdealWeight.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
+        SpinnerHeightIdealWeight.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+
     }
 
     @Override
@@ -105,10 +113,8 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-        String weight = (String) radioWeightButton.getText();
+        String gender = (String) SpinnerGenderIdealWeight.getSelectedItem().toString();
+        String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();
         System.out.println("-- --- --- come : ");
         try {
             try {
@@ -138,7 +144,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
                 return;
             }
 
-            if (weight.equalsIgnoreCase(getString(R.string.cm))) {
+            if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
                 if (DoubleHeight < 153.0d) {
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.entercm), Toast.LENGTH_SHORT).show();
                     return;
@@ -213,10 +219,10 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         EdtInchCalculator.setText("");
         EdtAgeCalculator.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioWeightButton = (RadioButton) RgWeight.getChildAt(0);
-        radioWeightButton.setChecked(true);
+        TvFTOrCMIdealWeight.setText(getString(R.string.cm));
+        SpinnerGenderIdealWeight.setSelection(0);
+        SpinnerHeightIdealWeight.setSelection(0);
+        LLHeightCalculator.setVisibility(View.GONE);
     }
 
     private void GotoCalculateChart() {
@@ -224,21 +230,27 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()) {
-            case R.id.RgWeight:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
-                if (weight.equalsIgnoreCase("CM")) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()) {
+            case R.id.SpinnerHeightIdealWeight:
+                String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();
+                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
                     EdtHeightCalculator.setText("");
                     EdtInchCalculator.setText("");
+                    TvFTOrCMIdealWeight.setText(getString(R.string.cm));
                     LLHeightCalculator.setVisibility(View.GONE);
                 } else {
+                    TvFTOrCMIdealWeight.setText(getString(R.string.ft));
                     EdtHeightCalculator.setText("");
                     EdtInchCalculator.setText("");
                     LLHeightCalculator.setVisibility(View.VISIBLE);
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

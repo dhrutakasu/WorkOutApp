@@ -33,7 +33,7 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
     private ImageView IvBack;
     private TextView TvTitle;
     private RecyclerView  RvFatAge;
-    private Button BtnFatCalculate;
+    private TextView BtnFatCalculate;
     private FrameLayout FlFatMale, FlFatFemale;
     private ArrayList<String> data = new ArrayList<>();
     private ImageView IvFatFemale, IvFatMale;

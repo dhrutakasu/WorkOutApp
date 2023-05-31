@@ -37,10 +37,10 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeHeart, EdtHeartRate;
-    private RadioGroup RgGender;
-    private RadioButton RbMale, RbFemale;
-    private Spinner SpinnerHeartRate;
-    private Button BtnHeartRate, BtnResetHeart, BtnChartHeart;
+    private Spinner SpinnerHeartRate, SpinnerGenderHeart;
+    private TextView BtnHeartRate;
+    private TextView BtnResetHeart;
+    private ImageView BtnChartHeart;
     private double StrRate, StrRateSec;
     private double DoubleRate, DoubleAge;
 
@@ -62,14 +62,12 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeHeart = (EditText) findViewById(R.id.EdtAgeHeart);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
         EdtHeartRate = (EditText) findViewById(R.id.EdtHeartRate);
+        SpinnerGenderHeart = (Spinner) findViewById(R.id.SpinnerGenderHeart);
         SpinnerHeartRate = (Spinner) findViewById(R.id.SpinnerHeartRate);
-        BtnHeartRate = (Button) findViewById(R.id.BtnHeartRate);
-        BtnResetHeart = (Button) findViewById(R.id.BtnResetHeart);
-        BtnChartHeart = (Button) findViewById(R.id.BtnChartHeart);
+        BtnHeartRate = (TextView) findViewById(R.id.BtnHeartRate);
+        BtnResetHeart = (TextView) findViewById(R.id.BtnResetHeart);
+        BtnChartHeart = (ImageView) findViewById(R.id.BtnChartHeart);
     }
 
     private void initListeners() {
@@ -77,15 +75,17 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
         BtnHeartRate.setOnClickListener(this);
         BtnResetHeart.setOnClickListener(this);
         BtnChartHeart.setOnClickListener(this);
-
-        String[] ArrHeartRate = {getResources().getString(R.string.moderate), getResources().getString(R.string.little_diff), getResources().getString(R.string.moderately_diff), getResources().getString(R.string.hard)};
-        SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrHeartRate));
         SpinnerHeartRate.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.heartrate));
         EdtAgeHeart.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] ArrHeartRate = {getResources().getString(R.string.moderate), getResources().getString(R.string.little_diff), getResources().getString(R.string.moderately_diff), getResources().getString(R.string.hard)};
+        SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrHeartRate));
+        SpinnerGenderHeart.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
+
     }
 
     @Override
@@ -107,8 +107,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
     }
 
     private void GotoCalculateHeartRate() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
+        String gender = (String) SpinnerGenderHeart.getSelectedItem().toString();
         System.out.println("-- --- --- come : ");
         try {
             try {
@@ -191,9 +190,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
         EdtHeartRate.setText("");
         EdtAgeHeart.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
         EdtAgeHeart.requestFocus();
-
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
+        SpinnerHeartRate.setSelection(0);
         SpinnerHeartRate.setSelection(0);
     }
 

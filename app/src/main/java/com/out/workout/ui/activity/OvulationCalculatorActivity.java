@@ -32,7 +32,8 @@ public class OvulationCalculatorActivity extends AppCompatActivity implements Vi
     private ImageView IvBack;
     private TextView TvTitle;
     private TextView EdtDateOvulation;
-    private Button BtnWeightOvulation, BtnOvulation;
+    private TextView BtnWeightOvulation;
+    private TextView BtnOvulation;
     private boolean BoolChooseDate = false;
     private Calendar calendar;
     private SimpleDateFormat simpleDateFormat;
@@ -55,8 +56,8 @@ public class OvulationCalculatorActivity extends AppCompatActivity implements Vi
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtDateOvulation = (TextView) findViewById(R.id.EdtDateOvulation);
         IvCalendarOvulation = (ImageView) findViewById(R.id.IvCalendarOvulation);
-        BtnWeightOvulation = (Button) findViewById(R.id.BtnWeightOvulation);
-        BtnOvulation = (Button) findViewById(R.id.BtnOvulation);
+        BtnWeightOvulation = (TextView) findViewById(R.id.BtnWeightOvulation);
+        BtnOvulation = (TextView) findViewById(R.id.BtnOvulation);
     }
 
     private void initListeners() {

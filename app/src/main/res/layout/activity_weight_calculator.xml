@@ -4,7 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".ui.activity.WeightCalculatorActivity">
 
     <RelativeLayout
         android:id="@+id/RlActionBarCalculator"
@@ -44,25 +46,29 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/main_semibold"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:text="@string/enter_age"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
                         android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/IvAgeCalculator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_age" />
+                        android:background="@drawable/ic_border">
 
                             <EditText
                                 android:id="@+id/EdtAgeCalculator"
@@ -79,129 +85,64 @@
                                 android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
 
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="0.5"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/ic_border">
+
+                        <Spinner
+                            android:id="@+id/SpinnerGenderIdealWeight"
+                            style="@style/Widget.App.Spinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="start"
+                            android:spinnerMode="dropdown" />
+
+                    </RelativeLayout>
                 </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
-                    android:background="@drawable/ic_border"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center_vertical">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_border">
 
-                    <ImageView
-                        android:id="@+id/IvGenderCalculator"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:src="@drawable/ic_gender" />
-                    <RadioGroup
-                        android:id="@+id/RgGender"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/RbMale"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:checked="true"
-                            android:text="@string/male" />
-
-                        <RadioButton
-                            android:id="@+id/RbFemale"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:text="@string/female" />
-                    </RadioGroup>
-
-        <!--            <Spinner
-                        android:id="@+id/SpinnerGenderCalculator"
+                    <Spinner
+                        android:id="@+id/SpinnerHeightIdealWeight"
+                        style="@style/Widget.App.Spinner"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginStart="5dp"/>-->
-                </LinearLayout>
+                        android:gravity="start"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/main_semibold"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:text="@string/enter_value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
                     android:baselineAligned="false"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="0dp"
+                        android:layout_weight="0.85"
                         android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="0.7">
-
-                        <ImageView
-                            android:id="@+id/IvHeightCalculator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
-
-                        <RadioGroup
-                            android:id="@+id/RgWeight"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/RbCm"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:checked="true"
-                                android:text="@string/cm" />
-
-                            <RadioButton
-                                android:id="@+id/RbInch"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:text="@string/in" />
-                        </RadioGroup>
-                     <!--   <Spinner
-                            android:id="@+id/SpinnerHeightCalculator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="10dp"
-                            android:gravity="start" />-->
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/IvCentimeterCalculator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
+                        android:background="@drawable/ic_border">
 
                         <EditText
                             android:id="@+id/EdtHeightCalculator"
@@ -217,137 +158,125 @@
                             android:textDirection="locale"
                             android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
-<!--
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1.1">
 
-                        <TextView
-                            android:id="@+id/EdtCmCalculator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:gravity="center"
-                            android:text="@string/cm"
-                            android:textAllCaps="true"
-                            android:textSize="@dimen/_15sdp"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:textColor="@color/black" />
-                    </LinearLayout>-->
+                    <TextView
+                        android:id="@+id/TvFTOrCMIdealWeight"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.15"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:gravity="center_vertical"
+                        android:text="@string/ft"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:id="@+id/LLHeightCalculator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:text="@string/enter_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/IvInchCalculator"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_inch" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:background="@drawable/ic_border">
 
-                        <EditText
-                            android:id="@+id/EdtInchCalculator"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:background="@color/transparent"
-                            android:ems="10"
-                            android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
-                            android:inputType="number"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                            android:textColor="@color/black"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_15sdp"    />
-                    </LinearLayout>
-
-                   <!-- <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1.1">
+                            <EditText
+                                android:id="@+id/EdtInchCalculator"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:background="@color/transparent"
+                                android:ems="10"
+                                android:gravity="start|center_vertical"
+                                android:hint="@string/enter_value"
+                                android:inputType="number"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:textColor="@color/black"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/_15sdp" />
+                        </LinearLayout>
 
                         <TextView
-                            android:id="@+id/TvInch"
-                            android:layout_width="match_parent"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_gravity="bottom"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:gravity="center"
+                            android:layout_marginStart="@dimen/_8ssp"
+                            android:layout_weight="0.15"
+                            android:fontFamily="@font/main_semibold"
+                            android:gravity="center_vertical"
                             android:text="@string/in"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_15sdp" />
-                    </LinearLayout>-->
-                </LinearLayout>
+                            android:textSize="@dimen/_14sdp" />
+                    </LinearLayout>
 
+                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="15dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="0dp"
                     android:weightSum="2">
 
-                    <Button
-                        android:id="@+id/BtnWeightCalculator"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/calculate"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
-
-                    <Button
+                    <TextView
                         android:id="@+id/BtnResetCalculator"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.85"
                         android:gravity="center"
-                        android:includeFontPadding="false"
+                        android:fontFamily="@font/main_semibold"
+                        android:textSize="@dimen/_12sdp"
                         android:text="@string/reset"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-                <Button
-                    android:id="@+id/BtnChartCalculator"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:text="@string/ideal_chart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/white" />
+                        android:textColor="@color/purple_500" />
 
+                    <TextView
+                        android:id="@+id/BtnWeightCalculator"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:layout_weight="0.85"
+                        android:gravity="center"
+                        android:fontFamily="@font/main_semibold"
+                        android:text="@string/calculate"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:id="@+id/BtnChartCalculator"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_chart"/>
+                </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>

@@ -47,12 +47,6 @@
       "icon": "blog.png",
       "slug": "article_list",
       "layout_type": 4
-    },
-    {
-      "name": "Tips for Healthy Life",
-      "icon": "lifetips.png",
-      "layout_type": 3,
-      "slug": "healthy_life_tips"
     }
   ]
 }

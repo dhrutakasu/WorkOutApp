@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,6 +28,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -33,7 +36,7 @@ import java.util.ArrayList;
 public class ArticleDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Context context;
-    private ImageView IvBack;
+    private ImageView IvBack, IvArticleImage;
     private TextView TvTitle, TvArticleDescr;
 
     private String DietName, DietSlug;
@@ -41,6 +44,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private Gson create;
     private ArrayList<DetailModel> categories = new ArrayList<>();
     private RecyclerView RvArticleDetails;
+    private boolean isImage = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private void initViews() {
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
+        IvArticleImage = (ImageView) findViewById(R.id.IvArticleImage);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         TvArticleDescr = (TextView) findViewById(R.id.TvArticleDescr);
         RvArticleDetails = (RecyclerView) findViewById(R.id.RvArticleDetails);
@@ -63,6 +68,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private void initIntents() {
         DietName = getIntent().getStringExtra(Constants.DIET_NAME);
         DietSlug = getIntent().getStringExtra(Constants.DIET_SLUG);
+        System.out.println("----- DIet slug : "+DietSlug);
     }
 
     private void initListeners() {
@@ -76,8 +82,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
         try {
             ArrayList<DetailModel> models = new ArrayList<>();
             JSONObject mJsonObject = new JSONObject(AssetsFile);
-//            for (int i = 0; i < mJsonArray.length(); i++) {
-//                JSONObject mJsonObject = mJsonArray.getJSONObject(i);
             if (mJsonObject.getString("description").equalsIgnoreCase("")) {
                 TvArticleDescr.setVisibility(View.GONE);
             } else {
@@ -88,6 +92,20 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
             JSONArray jsonArray = new JSONArray(mJsonObject.getString("details"));
             for (int j = 0; j < jsonArray.length(); j++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(j);
+                System.out.println("----- DIet slug Json: "+jsonObject.getString("image").equalsIgnoreCase(""));
+                if (isImage) {
+                    if (!jsonObject.getString("image").equalsIgnoreCase("")) {
+                        try {
+                            InputStream ims = context.getAssets().open("DietImg/" + jsonObject.getString("image"));
+                            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+                            IvArticleImage.setImageBitmap(bitmap);
+                        } catch (IOException ex) {
+                            System.out.println("----- catch : " + ex.getMessage());
+                            return;
+                        }
+                        isImage = true;
+                    }
+                }
                 DetailModel detailModel1 = new DetailModel();
                 detailModel1.setHeader(jsonObject.getString("header"));
                 detailModel1.setFullDescription(jsonObject.getString("full_description"));
@@ -95,7 +113,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
                 models.add(detailModel1);
             }
             categories.addAll(models);
-//            }
         } catch (JSONException e) {
             System.out.println("-------- detail : " + e.getMessage());
             Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
@@ -118,6 +135,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
                 returnString.append(line);
             }
         } catch (Exception e) {
+            System.out.println("----catch inn : "+e.getMessage());
             e.getMessage();
         } finally {
             try {

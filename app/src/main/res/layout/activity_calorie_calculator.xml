@@ -34,7 +34,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="20dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="10dp"
             app:cardElevation="@dimen/_5sdp">
@@ -44,83 +44,150 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:text="@string/enter_age"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/IvAgeCalorie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_age" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/ic_border"
+                            android:layout_weight="0.5">
 
-                        <EditText
-                            android:id="@+id/EdtAgeCalorie"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            <EditText
+                                android:id="@+id/EdtAgeCalorie"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:ems="10"
+                                android:gravity="start|center_vertical"
+                                android:background="@color/transparent"
+                                android:hint="@string/enter_age"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/_15sdp" />
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_weight="0.5"
                             android:layout_marginStart="10dp"
-                            android:ems="10"
-                            android:gravity="start|center_vertical"
-                            android:background="@color/transparent"
-                            android:hint="@string/enter_age"
-                            android:inputType="number"
-                            android:textColor="@color/black"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_15sdp" />
-                    </LinearLayout>
+                            android:background="@drawable/ic_border">
 
+                            <Spinner
+                                android:id="@+id/SpinnerGenderCalorie"
+                                style="@style/Widget.App.Spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="start"
+                                android:spinnerMode="dropdown" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_border">
+
+                    <Spinner
+                        android:id="@+id/SpinnerHeightCalorie"
+                        style="@style/Widget.App.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="start"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:background="@drawable/ic_border"
-                    android:layout_marginTop="5dp"
-                    android:layout_gravity="center_vertical">
+                    android:layout_height="wrap_content"
+                    android:baselineAligned="false"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/IvGenderCalorie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:src="@drawable/ic_gender" />
-                    <RadioGroup
-                        android:id="@+id/RgGender"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_8sdp"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:text="@string/enter_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/RbMale"
+                        <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:checked="true"
-                            android:text="@string/male" />
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/ic_border"
+                            android:layout_weight="0.85">
 
-                        <RadioButton
-                            android:id="@+id/RbFemale"
+                            <EditText
+                                android:id="@+id/EdtHeightCalorie"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:background="@color/transparent"
+                                android:ems="10"
+                                android:gravity="start|center_vertical"
+                                android:hint="@string/enter_value"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/_15sdp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/TvFTOrCMCalorie"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:text="@string/female" />
-                    </RadioGroup>
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="@dimen/_8ssp"
+                            android:layout_weight="0.15"
+                            android:fontFamily="@font/main_semibold"
+                            android:gravity="center_vertical"
+                            android:text="@string/ft"
+                            android:textAllCaps="true"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_14sdp" />
+                    </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
+                    android:id="@+id/LLHeightCalorie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -131,100 +198,7 @@
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="0.7">
-
-                        <ImageView
-                            android:id="@+id/IvHeightCalorie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_height" />
-
-                        <RadioGroup
-                            android:id="@+id/RgWeight"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/RbCm"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:checked="true"
-                                android:text="@string/cm" />
-
-                            <RadioButton
-                                android:id="@+id/RbInch"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:text="@string/in" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/IvCentimeterCalorie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_cm" />
-
-                        <EditText
-                            android:id="@+id/EdtHeightCalorie"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:background="@color/transparent"
-                            android:ems="10"
-                            android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
-                            android:inputType="number"
-                            android:textColor="@color/black"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_15sdp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/LLHeightCalorie"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/IvInchCalorie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_inch" />
+                        android:layout_weight="0.85">
 
                         <EditText
                             android:id="@+id/EdtInchCalorie"
@@ -242,173 +216,141 @@
                             android:textSize="@dimen/_15sdp"    />
                     </LinearLayout>
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:baselineAligned="false"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="0dp"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp"
-                        android:layout_weight="0.7">
-
-                        <ImageView
-                            android:id="@+id/IvWeightCalorie"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_weight" />
-
-                        <RadioGroup
-                            android:id="@+id/RgWeightCalorie"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:id="@+id/RbKg"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:checked="true"
-                                android:text="@string/kilograms" />
-
-                            <RadioButton
-                                android:id="@+id/RbPounds"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="0.5"
-                                android:buttonTint="@color/purple_500"
-                                android:text="@string/pounds"/>
-                        </RadioGroup>
-                        <!--   <Spinner
-                               android:id="@+id/SpinnerHeightCalorie"
-                               android:layout_width="match_parent"
-                               android:layout_height="match_parent"
-                               android:layout_gravity="center_vertical"
-                               android:layout_marginStart="10dp"
-                               android:gravity="start" />-->
-                    </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_weight="0.15"
+                        android:fontFamily="@font/main_semibold"
+                        android:gravity="center_vertical"
+                        android:text="@string/in"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_border">
+
+                    <Spinner
+                        android:id="@+id/SpinnerWeightCalorie"
+                        style="@style/Widget.App.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="start"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:text="@string/enter_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
+                        android:layout_height="wrap_content"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/IvCalorieWeight"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_kg" />
-
-                        <EditText
-                            android:id="@+id/EdtWeightCalorie"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:background="@color/transparent"
-                            android:ems="10"
-                            android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
-                            android:inputType="number"
-                            android:textColor="@color/black"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_15sdp" />
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/ic_border"
+                            android:layout_marginTop="5dp">
+
+                            <EditText
+                                android:id="@+id/EdtWeightCalorie"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:background="@color/transparent"
+                                android:ems="10"
+                                android:gravity="start|center_vertical"
+                                android:hint="@string/enter_value"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/_15sdp" />
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_40sdp"
-                android:background="@drawable/ic_border"
-                android:layout_marginTop="5dp">
-
-                <Spinner
-                    android:id="@+id/SpinnerCalorie"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="5dp"
-                    android:gravity="start" />
-            </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
+                    android:background="@drawable/ic_border"
+                    android:layout_marginTop="@dimen/_10sdp">
+
+                    <Spinner
+                        android:id="@+id/SpinnerCalorie"
+                        style="@style/Widget.App.Spinner"
+                        android:spinnerMode="dropdown"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="start" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="15dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="0dp"
                     android:weightSum="2">
 
-                    <Button
-                        android:id="@+id/BtnWeightCalorie"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/calculate"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
-
-                    <Button
+                    <TextView
                         android:id="@+id/BtnResetCalorie"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.85"
                         android:gravity="center"
-                        android:includeFontPadding="false"
+                        android:fontFamily="@font/main_semibold"
+                        android:textSize="@dimen/_12sdp"
                         android:text="@string/reset"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/purple_500" />
+
+                    <TextView
+                        android:id="@+id/BtnWeightCalorie"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:layout_weight="0.85"
+                        android:gravity="center"
+                        android:fontFamily="@font/main_semibold"
+                        android:text="@string/calculate"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:id="@+id/BtnChartCalorie"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_chart"/>
                 </LinearLayout>
-
-                <Button
-                    android:id="@+id/BtnChartCalorie"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:text="@string/chart_calorie"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/BtnFoodChartCalorie"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:visibility="gone"
-                    android:includeFontPadding="false"
-                    android:text="@string/pdf_calorie"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/white" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>

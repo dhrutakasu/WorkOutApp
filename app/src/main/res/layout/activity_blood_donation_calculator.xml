@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/enterblddon"
                 android:textColor="@color/black"
-                android:textDirection="locale"
+                android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_14sdp" />
 
             <LinearLayout
@@ -62,7 +62,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_40sdp"
-                    android:layout_weight="0.9"
+                    android:layout_weight="0.88"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/ic_border">
 
@@ -83,27 +83,33 @@
                 <ImageView
                     android:id="@+id/IvCalendarBloodDonate"
                     android:layout_width="0dp"
-                    android:layout_weight="0.1"
+                    android:layout_weight="0.12"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
+                    android:layout_gravity="bottom"
                     android:layout_marginStart="@dimen/_8sdp"
-                    android:src="@drawable/ic_calendar" />
+                    android:layout_marginEnd="@dimen/_5ssp"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:src="@drawable/ic_calendar"
+                    app:tint="@color/purple_500" />
             </LinearLayout>
 
-            <Button
+            <TextView
                 android:id="@+id/BtnWeightBloodDonate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center"
-                android:includeFontPadding="false"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/ic_border_color"
+                android:backgroundTint="@color/purple_500"
+                android:gravity="center"
+                android:fontFamily="@font/main_semibold"
                 android:text="@string/calculate"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="15dp"
@@ -111,25 +117,32 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <Button
+                <TextView
                     android:id="@+id/BtnBloodDonate"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginEnd="15dp"
                     android:layout_weight="1"
                     android:text="@string/canidonate"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:background="@drawable/ic_border_color"
+                    android:backgroundTint="@color/purple_500"
+                    android:gravity="center"
+                    android:fontFamily="@font/main_semibold"
                     android:textColor="@color/white" />
 
-                <Button
+                <TextView
                     android:id="@+id/BtnEligibilityBloodDonate"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_marginStart="15dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="@string/eligibility_check"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_border_color"
+                    android:backgroundTint="@color/purple_500"
+                    android:gravity="center"
+                    android:fontFamily="@font/main_semibold"
                     android:textColor="@color/white" />
             </LinearLayout>
         </LinearLayout>

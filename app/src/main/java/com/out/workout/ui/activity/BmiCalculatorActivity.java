@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,32 +20,37 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 import java.io.PrintStream;
 import java.text.NumberFormat;
 
-public class BmiCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class BmiCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Context context;
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeBMI;
-    private RadioGroup RgGender, RgWeight, RgWeightBMI;
-    private RadioButton RbMale, RbFemale, RbCm, RbInch, RbKg, RbPounds;
     private EditText EdtHeightBMI, EdtInchBMI, EdtWeightBMI;
     private LinearLayout LLHeightBMI;
-    private Button BtnWeightBMI, BtnResetBMI, BtnChartBMI;
+    private TextView BtnWeightBMI;
+    private TextView BtnResetBMI;
+    private ImageView BtnChartBMI;
     private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch;
     private boolean check;
     private double calculate;
     private String calculate_Kg, calculate_BMI;
     private int calculate_BMI_Int;
+    private Spinner SpinnerGenderBMI,SpinnerHeightBMI,SpinnerWeightBMI;
+    private TextView TvFTOrCMBMI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,22 +66,17 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeBMI = (EditText) findViewById(R.id.EdtAgeBMI);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
-        RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
-        RbCm = (RadioButton) findViewById(R.id.RbCm);
-        RbInch = (RadioButton) findViewById(R.id.RbInch);
-        RgWeightBMI = (RadioGroup) findViewById(R.id.RgWeightBMI);
-        RbKg = (RadioButton) findViewById(R.id.RbKg);
-        RbPounds = (RadioButton) findViewById(R.id.RbPounds);
         EdtHeightBMI = (EditText) findViewById(R.id.EdtHeightBMI);
         LLHeightBMI = (LinearLayout) findViewById(R.id.LLHeightBMI);
         EdtInchBMI = (EditText) findViewById(R.id.EdtInchBMI);
         EdtWeightBMI = (EditText) findViewById(R.id.EdtWeightBMI);
-        BtnWeightBMI = (Button) findViewById(R.id.BtnWeightBMI);
-        BtnResetBMI = (Button) findViewById(R.id.BtnResetBMI);
-        BtnChartBMI = (Button) findViewById(R.id.BtnChartBMI);
+        SpinnerGenderBMI=(Spinner) findViewById(R.id.SpinnerGenderBMI);
+        SpinnerHeightBMI=(Spinner) findViewById(R.id.SpinnerHeightBMI);
+        SpinnerWeightBMI=(Spinner) findViewById(R.id.SpinnerWeightBMI);
+        TvFTOrCMBMI= (TextView) findViewById(R.id.TvFTOrCMBMI);
+        BtnWeightBMI = (TextView) findViewById(R.id.BtnWeightBMI);
+        BtnResetBMI = (TextView) findViewById(R.id.BtnResetBMI);
+        BtnChartBMI = (ImageView) findViewById(R.id.BtnChartBMI);
     }
 
     private void initListeners() {
@@ -83,13 +84,20 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         BtnWeightBMI.setOnClickListener(this);
         BtnResetBMI.setOnClickListener(this);
         BtnChartBMI.setOnClickListener(this);
-        RgWeight.setOnCheckedChangeListener(this);
+        SpinnerHeightBMI.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.bmi_title));
+        TvFTOrCMBMI.setText(R.string.centimeters);
         LLHeightBMI.setVisibility(View.GONE);
         EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        SpinnerGenderBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
+        SpinnerHeightBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerWeightBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
     }
 
     @Override
@@ -111,12 +119,9 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
     }
 
     private void GotoCalculateBMI() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-        String weight = (String) radioWeightButton.getText();
-        RadioButton radioBMIWeightButton = (RadioButton) findViewById(RgWeightBMI.getCheckedRadioButtonId());
-        String weightBMI = (String) radioBMIWeightButton.getText();
+        String gender = (String) SpinnerGenderBMI.getSelectedItem().toString();
+        String weight = (String) SpinnerHeightBMI.getSelectedItem().toString();
+        String weightBMI = (String) SpinnerWeightBMI.getSelectedItem().toString();
         try {
             try {
                 DoubleHeight = Double.parseDouble(EdtHeightBMI.getText().toString());
@@ -143,7 +148,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 check = false;
                 return;
             }
-            if (weight.equalsIgnoreCase(getString(R.string.cm))) {
+            if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
                 DoubleHeight /= 100.0d;
             } else {
                 DoubleHeight *= 12.0d;
@@ -251,12 +256,11 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         EdtWeightBMI.setText("");
         EdtAgeBMI.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioWeightButton = (RadioButton) RgWeight.getChildAt(0);
-        radioWeightButton.setChecked(true);
-        RadioButton radioBMIWeightButton = (RadioButton) RgWeightBMI.getChildAt(0);
-        radioBMIWeightButton.setChecked(true);
+        TvFTOrCMBMI.setText(getString(R.string.cm));
+        SpinnerGenderBMI.setSelection(0);
+        SpinnerHeightBMI.setSelection(0);
+        SpinnerWeightBMI.setSelection(0);
+        LLHeightBMI.setVisibility(View.GONE);
     }
 
     private void GotoBMIChart() {
@@ -264,21 +268,27 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()) {
-            case R.id.RgWeight:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
-                if (weight.equalsIgnoreCase("CM")) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()){
+            case R.id.SpinnerHeightBMI:
+                String weight = (String) SpinnerHeightBMI.getSelectedItem().toString();
+                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
                     EdtHeightBMI.setText("");
                     EdtInchBMI.setText("");
+                    TvFTOrCMBMI.setText(getString(R.string.cm));
                     LLHeightBMI.setVisibility(View.GONE);
                 } else {
+                    TvFTOrCMBMI.setText(getString(R.string.ft));
                     EdtHeightBMI.setText("");
                     EdtInchBMI.setText("");
                     LLHeightBMI.setVisibility(View.VISIBLE);
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

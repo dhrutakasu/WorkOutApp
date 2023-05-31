@@ -48,7 +48,7 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
     private EditText EdtFatHeightCm, EdtFatWeight, EdtFatFt, EdtFatFt2, EdtFatIn, EdtFatIn2;
     private LinearLayoutCompat LlFatFtIn;
     private RadioGroup RgFatWeightUnit, RgFatHeightUnit;
-    private Button BtnFatCalculate;
+    private TextView BtnFatCalculate;
     private FrameLayout FlFatMale, FlFatFemale;
     private ArrayList<String> data = new ArrayList<>();
     private ImageView IvFatFemale, IvFatMale;

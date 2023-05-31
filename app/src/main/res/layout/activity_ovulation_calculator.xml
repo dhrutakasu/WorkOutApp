@@ -51,8 +51,8 @@
                     android:layout_height="wrap_content"
                     android:text="@string/enterpregdate"
                     android:textColor="@color/black"
-                    android:textDirection="locale"
-                    android:textSize="@dimen/_14sdp" />
+                    android:fontFamily="@font/main_medium"
+                    android:textSize="@dimen/_12sdp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,7 +63,7 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_40sdp"
-                        android:layout_weight="0.9"
+                        android:layout_weight="0.88"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/ic_border">
 
@@ -84,28 +84,36 @@
                     <ImageView
                         android:id="@+id/IvCalendarOvulation"
                         android:layout_width="0dp"
-                        android:layout_weight="0.1"
+                        android:layout_weight="0.12"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
+                        android:layout_gravity="bottom"
                         android:layout_marginStart="@dimen/_8sdp"
-                        android:src="@drawable/ic_calendar" />
+                        android:layout_marginEnd="@dimen/_5ssp"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/purple_500"  />
                 </LinearLayout>
 
-                <Button
+                <TextView
                     android:id="@+id/BtnWeightOvulation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginTop="15dp"
+                    android:background="@drawable/ic_border_color"
+                    android:backgroundTint="@color/purple_500"
+                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:includeFontPadding="false"
+                    android:fontFamily="@font/main_semibold"
                     android:text="@string/calculate"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"/>
 
-                    <Button
+                    <TextView
                         android:id="@+id/BtnOvulation"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/_30sdp"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:gravity="center"
                         android:layout_gravity="center"
                         android:layout_margin="15dp"
                         android:text="@string/chart_ovulation"

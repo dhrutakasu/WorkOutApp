@@ -42,7 +42,6 @@ public class ArticleDetailAdapter extends RecyclerView.Adapter<ArticleDetailAdap
             holder.TvDietName.setText(categories.get(position).getHeader());
         }
         holder.TvDietTitle.setText(categories.get(position).getFullDescription());
-        holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
     }
 
     @Override
@@ -51,12 +50,10 @@ public class ArticleDetailAdapter extends RecyclerView.Adapter<ArticleDetailAdap
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        private ImageView IvDietImg;
         private TextView TvDietName,TvDietTitle;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            IvDietImg = itemView.findViewById(R.id.IvDietImg);
             TvDietName = itemView.findViewById(R.id.TvDietName);
             TvDietTitle = itemView.findViewById(R.id.TvDietTitle);
         }

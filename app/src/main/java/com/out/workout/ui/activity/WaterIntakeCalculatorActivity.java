@@ -18,10 +18,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
@@ -31,12 +34,14 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeWater, EdtWeightWater;
-    private RadioGroup RgWeightWater;
-    private Button BtnWeightWater, BtnResetWater, BtnChartWater;
+    private TextView BtnWeightWater;
+    private TextView BtnResetWater;
+    private ImageView BtnChartWater;
     private double  DoubleWeight, DoubleAge,  DoubleWater;
     private boolean BoolCheck;
     private int calculate_water;
     private String calculate_glass;
+    private Spinner SpinnerGenderWater,SpinnerWeightWater;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +57,12 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeWater = (EditText) findViewById(R.id.EdtAgeWater);
-        RgWeightWater = (RadioGroup) findViewById(R.id.RgWeightWater);
+        SpinnerGenderWater = (Spinner) findViewById(R.id.SpinnerGenderWater);
+        SpinnerWeightWater = (Spinner) findViewById(R.id.SpinnerWeightWater);
         EdtWeightWater = (EditText) findViewById(R.id.EdtWeightWater);
-        BtnWeightWater = (Button) findViewById(R.id.BtnWeightWater);
-        BtnResetWater = (Button) findViewById(R.id.BtnResetWater);
-        BtnChartWater = (Button) findViewById(R.id.BtnChartWater);
+        BtnWeightWater = (TextView) findViewById(R.id.BtnWeightWater);
+        BtnResetWater = (TextView) findViewById(R.id.BtnResetWater);
+        BtnChartWater = (ImageView) findViewById(R.id.BtnChartWater);
     }
 
     private void initListeners() {
@@ -69,6 +75,10 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     private void initActions() {
         TvTitle.setText(getString(R.string.waterintake));
         EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        SpinnerGenderWater.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
+        SpinnerWeightWater.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, WeightArr));
     }
 
     @Override
@@ -90,8 +100,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioWaterWeightButton = (RadioButton) findViewById(RgWeightWater.getCheckedRadioButtonId());
-        String WaterWeight = (String) radioWaterWeightButton.getText();
+        String WaterWeight = (String) SpinnerWeightWater.getSelectedItem().toString();
         System.out.println("-- --- --- come : ");
         try {
             try {
@@ -167,8 +176,8 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
         EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
         EdtAgeWater.requestFocus();
 
-        RadioButton radioWeightButton = (RadioButton) RgWeightWater.getChildAt(0);
-        radioWeightButton.setChecked(true);
+        SpinnerGenderWater.setSelection(0);
+        SpinnerWeightWater.setSelection(0);
     }
 
     private void GotoCalculateChart() {

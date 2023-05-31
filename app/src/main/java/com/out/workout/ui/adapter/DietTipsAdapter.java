@@ -41,7 +41,6 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-//        res/drawable/vegeterian.png
         System.out.println("------ valueIcon  : "+categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")));
         holder.TvDietName.setText(categories.get(position).getName());
         holder.IvDietImg.setImageResource(context.getResources().getIdentifier(categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")), "drawable", BuildConfig.APPLICATION_ID));

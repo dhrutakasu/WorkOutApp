@@ -24,7 +24,8 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtSystolicBloodPressure, EdtDiastolicBloodPressure;
-    private Button BtnWeightBloodPressure, BtnResetBloodPressure;
+    private TextView BtnWeightBloodPressure;
+    private TextView BtnResetBloodPressure;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +42,8 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtSystolicBloodPressure = (EditText) findViewById(R.id.EdtSystolicBloodPressure);
         EdtDiastolicBloodPressure = (EditText) findViewById(R.id.EdtDiastolicBloodPressure);
-        BtnWeightBloodPressure = (Button) findViewById(R.id.BtnWeightBloodPressure);
-        BtnResetBloodPressure = (Button) findViewById(R.id.BtnResetBloodPressure);
+        BtnWeightBloodPressure = (TextView) findViewById(R.id.BtnWeightBloodPressure);
+        BtnResetBloodPressure = (TextView) findViewById(R.id.BtnResetBloodPressure);
     }
 
     private void initListeners() {

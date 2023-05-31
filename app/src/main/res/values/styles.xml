@@ -20,17 +20,8 @@
         <item name="colorAccent">@color/black</item>
     </style>
 
-    <style name="timepicker">
-        <item name="android:numbersTextColor">#000000</item>
-        <item name="android:numbersBackgroundColor">@color/white</item>
-        <item name="android:numbersSelectorColor">@color/purple_500</item>
-        <item name="android:headerBackground">@color/white</item>
-        <item name="colorAccent">#FF5722</item>
-        <item name="colorControlActivated">#2196F3</item>
-        <item name="android:selectableItemBackgroundBorderless">@color/black</item>
-        <item name="colorControlHighlight">#d50000</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:colorAccent">@android:color/white</item>
-        <item name="android:textColorPrimary">@android:color/white</item>
+    <style name="Widget.App.Spinner" parent="@style/Widget.AppCompat.Spinner">
+        <item name="overlapAnchor">true</item>
+        <item name="android:background">@drawable/spinner_background</item>
     </style>
 </resources>

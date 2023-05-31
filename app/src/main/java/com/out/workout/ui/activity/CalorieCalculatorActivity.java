@@ -31,20 +31,20 @@ import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class CalorieCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener, AdapterView.OnItemSelectedListener {
+public class CalorieCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Context context;
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeCalorie;
-    private RadioGroup RgGender, RgWeight, RgWeightCalorie;
-    private RadioButton RbMale, RbFemale, RbCm, RbInch;
     private EditText EdtHeightCalorie, EdtInchCalorie, EdtWeightCalorie;
     private LinearLayout LLHeightCalorie;
-    private Button BtnWeightCalorie, BtnResetCalorie, BtnChartCalorie;
+    private TextView BtnWeightCalorie, TvFTOrCMCalorie;
+    private TextView BtnResetCalorie;
+    private ImageView BtnChartCalorie;
     private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch, DoubleCalorie, DoubleBMR;
     private boolean check;
-    private Spinner SpinnerCalorie;
+    private Spinner SpinnerCalorie, SpinnerGenderCalorie, SpinnerHeightCalorie, SpinnerWeightCalorie;
     private String calculate_BMR;
 
     @Override
@@ -61,21 +61,18 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeCalorie = (EditText) findViewById(R.id.EdtAgeCalorie);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
-        RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
-        RgWeightCalorie = (RadioGroup) findViewById(R.id.RgWeightCalorie);
-        RbCm = (RadioButton) findViewById(R.id.RbCm);
-        RbInch = (RadioButton) findViewById(R.id.RbInch);
         EdtHeightCalorie = (EditText) findViewById(R.id.EdtHeightCalorie);
         LLHeightCalorie = (LinearLayout) findViewById(R.id.LLHeightCalorie);
         EdtInchCalorie = (EditText) findViewById(R.id.EdtInchCalorie);
         EdtWeightCalorie = (EditText) findViewById(R.id.EdtWeightCalorie);
-        BtnWeightCalorie = (Button) findViewById(R.id.BtnWeightCalorie);
-        BtnResetCalorie = (Button) findViewById(R.id.BtnResetCalorie);
-        BtnChartCalorie = (Button) findViewById(R.id.BtnChartCalorie);
+        TvFTOrCMCalorie = (TextView) findViewById(R.id.TvFTOrCMCalorie);
+        BtnWeightCalorie = (TextView) findViewById(R.id.BtnWeightCalorie);
+        BtnResetCalorie = (TextView) findViewById(R.id.BtnResetCalorie);
+        BtnChartCalorie = (ImageView) findViewById(R.id.BtnChartCalorie);
         SpinnerCalorie = (Spinner) findViewById(R.id.SpinnerCalorie);
+        SpinnerGenderCalorie = (Spinner) findViewById(R.id.SpinnerGenderCalorie);
+        SpinnerHeightCalorie = (Spinner) findViewById(R.id.SpinnerHeightCalorie);
+        SpinnerWeightCalorie = (Spinner) findViewById(R.id.SpinnerWeightCalorie);
     }
 
     private void initListeners() {
@@ -83,17 +80,24 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         BtnWeightCalorie.setOnClickListener(this);
         BtnResetCalorie.setOnClickListener(this);
         BtnChartCalorie.setOnClickListener(this);
-        RgWeight.setOnCheckedChangeListener(this);
+        SpinnerWeightCalorie.setOnItemSelectedListener(this);
+        SpinnerCalorie.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.calories));
+        TvFTOrCMCalorie.setText(getString(R.string.cm));
         LLHeightCalorie.setVisibility(View.GONE);
         EdtAgeCalorie.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
 
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
         String[] ArrCalorie = {getResources().getString(R.string.sedentary), getResources().getString(R.string.lightly_active), getResources().getString(R.string.moderately_active), getResources().getString(R.string.very_active), getResources().getString(R.string.extremely_active)};
         SpinnerCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrCalorie));
-        SpinnerCalorie.setOnItemSelectedListener(this);
+        SpinnerGenderCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
+        SpinnerHeightCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, HeightArr));
+        SpinnerWeightCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, WeightArr));
     }
 
     @Override
@@ -115,12 +119,9 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-        String weight = (String) radioWeightButton.getText();
-        RadioButton radioCalorieWeightButton = (RadioButton) findViewById(RgWeightCalorie.getCheckedRadioButtonId());
-        String CalorieWeight = (String) radioCalorieWeightButton.getText();
+        String gender = (String) SpinnerGenderCalorie.getSelectedItem().toString();
+        String weight = (String) SpinnerHeightCalorie.getSelectedItem().toString();
+        String CalorieWeight = (String) SpinnerWeightCalorie.getSelectedItem().toString();
         System.out.println("-- --- --- come : ");
         try {
             try {
@@ -148,7 +149,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 check = false;
                 return;
             }
-            if (!weight.equalsIgnoreCase(getString(R.string.cm))) {
+            if (!weight.equalsIgnoreCase(getString(R.string.centimeters))) {
                 DoubleHeight *= 12.0d;
                 DoubleHeight += DoubleInch;
                 DoubleHeight *= 2.54d;
@@ -175,7 +176,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
             DoubleBMR = (DoubleWeight + DoubleHeight) - DoubleAge;
             DoubleBMR *= DoubleCalorie;
             calculate_BMR = NumberFormat.getInstance().format(DoubleBMR);
-            System.out.println("--- -- callllllll : "+calculate_BMR);
+            System.out.println("--- -- callllllll : " + calculate_BMR);
 
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -217,13 +218,12 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         EdtWeightCalorie.setText("");
         EdtAgeCalorie.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioWeightButton = (RadioButton) RgWeight.getChildAt(0);
-        radioWeightButton.setChecked(true);
-        RadioButton radioCalorieWeightButton = (RadioButton) RgWeightCalorie.getChildAt(0);
-        radioCalorieWeightButton.setChecked(true);
         SpinnerCalorie.setSelection(0);
+        SpinnerGenderCalorie.setSelection(0);
+        SpinnerHeightCalorie.setSelection(0);
+        SpinnerWeightCalorie.setSelection(0);
+        TvFTOrCMCalorie.setText(getString(R.string.cm));
+        LLHeightCalorie.setVisibility(View.GONE);
     }
 
     private void GotoCalculateChart() {
@@ -231,37 +231,36 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()) {
-            case R.id.RgWeight:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
-                if (weight.equalsIgnoreCase("CM")) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()) {
+            case R.id.SpinnerCalorie:
+                String obj = SpinnerCalorie.getSelectedItem().toString();
+                if (obj.equals(getResources().getString(R.string.sedentary))) {
+                    DoubleCalorie = 1.2d;
+                } else if (obj.equals(getResources().getString(R.string.lightly_active))) {
+                    DoubleCalorie = 1.375d;
+                } else if (obj.equals(getResources().getString(R.string.moderately_active))) {
+                    DoubleCalorie = 1.55d;
+                } else if (obj.equals(getResources().getString(R.string.very_active))) {
+                    DoubleCalorie = 1.725d;
+                } else {
+                    DoubleCalorie = 1.9d;
+                }
+                break;
+            case R.id.SpinnerWeightCalorie:
+                String weight = SpinnerWeightCalorie.getSelectedItem().toString();
+                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+                    TvFTOrCMCalorie.setText(getString(R.string.cm));
                     EdtHeightCalorie.setText("");
                     EdtInchCalorie.setText("");
                     LLHeightCalorie.setVisibility(View.GONE);
                 } else {
+                    TvFTOrCMCalorie.setText(getString(R.string.ft));
                     EdtHeightCalorie.setText("");
                     EdtInchCalorie.setText("");
                     LLHeightCalorie.setVisibility(View.VISIBLE);
                 }
                 break;
-        }
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String obj = SpinnerCalorie.getSelectedItem().toString();
-        if (obj.equals(getResources().getString(R.string.sedentary))) {
-            DoubleCalorie = 1.2d;
-        } else if (obj.equals(getResources().getString(R.string.lightly_active))) {
-            DoubleCalorie = 1.375d;
-        } else if (obj.equals(getResources().getString(R.string.moderately_active))) {
-            DoubleCalorie = 1.55d;
-        } else if (obj.equals(getResources().getString(R.string.very_active))) {
-            DoubleCalorie = 1.725d;
-        } else {
-            DoubleCalorie = 1.9d;
         }
     }
 

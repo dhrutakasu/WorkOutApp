@@ -12,35 +12,39 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Context context;
-    private ImageView IvBack;
+    private ImageView IvBack, BtnChartBloodAlcohol;
     private TextView TvTitle;
     private EditText EdtAgeBloodAlcohol;
-    private RadioGroup RgGender, RgWeightBloodAlcohol, RgDrink, RgTime;
-    private RadioButton RbMale, RbFemale, RbOunces, RbMl, RbCup,RbHour,RbMinutes, RbDay;
+    private Spinner SpinnerGenderBloodAlcohol, SpinnerDrinkBloodAlcohol, SpinnerTimeBloodAlcohol, SpinnerWeightBloodAlcohol;
     private EditText EdtWeightBloodAlcohol, EdtDrinkBloodAlcohol, EdtTimeBloodAlcohol;
-    private Button BtnWeightBloodAlcohol, BtnResetBloodAlcohol,BtnChartBloodAlcohol;
-    private double DoubleWeight, DoubleAge, DoubleTime, DoubleAlcohol,DoubleBloodAlcohol = 0, DoubleNewAlcohol = 0,calculateAlcohol;
+    private TextView BtnWeightBloodAlcohol, BtnResetBloodAlcohol;
+    private double DoubleWeight, DoubleAge, DoubleTime, DoubleAlcohol, DoubleBloodAlcohol = 0, DoubleNewAlcohol = 0, calculateAlcohol;
     private boolean BoolCheckBloodAlcohol;
     private String calculate_BloodAlcohol;
-    
+    private boolean StrMale = true, StrKg = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,24 +59,16 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeBloodAlcohol = (EditText) findViewById(R.id.EdtAgeBloodAlcohol);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
-        RgWeightBloodAlcohol = (RadioGroup) findViewById(R.id.RgWeightBloodAlcohol);
-        RgDrink = (RadioGroup) findViewById(R.id.RgDrink);
-        RbOunces = (RadioButton) findViewById(R.id.RbOunces);
-        RbMl = (RadioButton) findViewById(R.id.RbMl);
-        RbCup = (RadioButton) findViewById(R.id.RbCup);
-        RgTime = (RadioGroup) findViewById(R.id.RgTime);
-        RbHour = (RadioButton) findViewById(R.id.RbHour);
-        RbMinutes = (RadioButton) findViewById(R.id.RbMinutes);
-        RbDay = (RadioButton) findViewById(R.id.RbDay);
         EdtDrinkBloodAlcohol = (EditText) findViewById(R.id.EdtDrinkBloodAlcohol);
         EdtTimeBloodAlcohol = (EditText) findViewById(R.id.EdtTimeBloodAlcohol);
         EdtWeightBloodAlcohol = (EditText) findViewById(R.id.EdtWeightBloodAlcohol);
-        BtnWeightBloodAlcohol = (Button) findViewById(R.id.BtnWeightBloodAlcohol);
-        BtnResetBloodAlcohol = (Button) findViewById(R.id.BtnResetBloodAlcohol);
-        BtnChartBloodAlcohol = (Button) findViewById(R.id.BtnChartBloodAlcohol);
+        SpinnerGenderBloodAlcohol = (Spinner) findViewById(R.id.SpinnerGenderBloodAlcohol);
+        SpinnerDrinkBloodAlcohol = (Spinner) findViewById(R.id.SpinnerDrinkBloodAlcohol);
+        SpinnerTimeBloodAlcohol = (Spinner) findViewById(R.id.SpinnerTimeBloodAlcohol);
+        SpinnerWeightBloodAlcohol = (Spinner) findViewById(R.id.SpinnerWeightBloodAlcohol);
+        BtnWeightBloodAlcohol = (TextView) findViewById(R.id.BtnWeightBloodAlcohol);
+        BtnResetBloodAlcohol = (TextView) findViewById(R.id.BtnResetBloodAlcohol);
+        BtnChartBloodAlcohol = (ImageView) findViewById(R.id.BtnChartBloodAlcohol);
     }
 
     private void initListeners() {
@@ -80,12 +76,23 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         BtnWeightBloodAlcohol.setOnClickListener(this);
         BtnResetBloodAlcohol.setOnClickListener(this);
         BtnChartBloodAlcohol.setOnClickListener(this);
-        RgDrink.setOnCheckedChangeListener(this);
+        SpinnerGenderBloodAlcohol.setOnItemSelectedListener(this);
+        SpinnerDrinkBloodAlcohol.setOnItemSelectedListener(this);
+        SpinnerTimeBloodAlcohol.setOnItemSelectedListener(this);
+        SpinnerWeightBloodAlcohol.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.bloodalcohol));
         EdtAgeBloodAlcohol.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        String[] TimeArr = {getResources().getString(R.string.hour), getResources().getString(R.string.minute), getResources().getString(R.string.day)};
+        String[] DrinkArr = {getResources().getString(R.string.ounces), getResources().getString(R.string.ml), getResources().getString(R.string.cup)};
+        SpinnerGenderBloodAlcohol.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
+        SpinnerDrinkBloodAlcohol.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, DrinkArr));
+        SpinnerWeightBloodAlcohol.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
+        SpinnerTimeBloodAlcohol.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, TimeArr));
     }
 
     @Override
@@ -107,24 +114,16 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioBloodAlcoholWeightButton = (RadioButton) findViewById(RgWeightBloodAlcohol.getCheckedRadioButtonId());
-        String BloodAlcoholWeight = (String) radioBloodAlcoholWeightButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgDrink.getCheckedRadioButtonId());
-        String weight = (String) radioWeightButton.getText();
-        if (weight.equals(getResources().getString(R.string.ounces))) {
+        if (SpinnerDrinkBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.ounces))) {
             DoubleBloodAlcohol = 1;
-        } else if (weight.equals(getResources().getString(R.string.ml))) {
+        } else if (SpinnerDrinkBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.ml))) {
             DoubleBloodAlcohol = 2;
         } else {
             DoubleBloodAlcohol = 3;
         }
-        RadioButton radioTimeButton = (RadioButton) findViewById(RgTime.getCheckedRadioButtonId());
-        String time = (String) radioTimeButton.getText();
-        if (time.equals(getResources().getString(R.string.hour))) {
+        if (SpinnerTimeBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.hour))) {
             DoubleNewAlcohol = 1;
-        } else if (time.equals(getResources().getString(R.string.minute))) {
+        } else if (SpinnerTimeBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.minute))) {
             DoubleNewAlcohol = 2;
         } else {
             DoubleNewAlcohol = 3;
@@ -156,7 +155,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
                 BoolCheckBloodAlcohol = false;
                 return;
             }
-            if (BloodAlcoholWeight.equalsIgnoreCase(getString(R.string.kilograms))) {
+            if (SpinnerWeightBloodAlcohol.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.kilograms))) {
                 DoubleWeight *= 2.20462d;
             }
             if (DoubleNewAlcohol != 1) {
@@ -177,7 +176,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
             }
             DoubleWeight = 5.14d / DoubleWeight;
             DoubleTime *= 0.015d;
-            if (gender.equalsIgnoreCase(getString(R.string.male))) {
+            if (SpinnerGenderBloodAlcohol.getSelectedItem().toString().equalsIgnoreCase(getString(R.string.male))) {
                 calculateAlcohol = ((DoubleAlcohol * DoubleWeight) * 0.73d) - DoubleTime;
             } else {
                 calculateAlcohol = ((DoubleAlcohol * DoubleWeight) * 0.66d) - DoubleTime;
@@ -224,14 +223,11 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         EdtTimeBloodAlcohol.setText("");
         EdtAgeBloodAlcohol.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioBloodAlcoholWeightButton = (RadioButton) RgWeightBloodAlcohol.getChildAt(0);
-        radioBloodAlcoholWeightButton.setChecked(true);
-        RadioButton radioBloodAlcoholWaistButton = (RadioButton) RgDrink.getChildAt(0);
-        radioBloodAlcoholWaistButton.setChecked(true);
-        RadioButton radioBloodAlcoholNeckButton = (RadioButton) RgTime.getChildAt(0);
-        radioBloodAlcoholNeckButton.setChecked(true);
+
+        SpinnerGenderBloodAlcohol.setSelection(0);
+        SpinnerDrinkBloodAlcohol.setSelection(0);
+        SpinnerTimeBloodAlcohol.setSelection(0);
+        SpinnerWeightBloodAlcohol.setSelection(0);
     }
 
     private void GotoCalculateChart() {
@@ -239,11 +235,13 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()){
-            case R.id.RgDrink:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgDrink.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()) {
+            case R.id.SpinnerGenderBloodAlcohol:
+                StrMale = SpinnerGenderBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.male));
+                break;
+            case R.id.SpinnerDrinkBloodAlcohol:
+                String weight = SpinnerDrinkBloodAlcohol.getSelectedItem().toString();
                 if (weight.equals(getResources().getString(R.string.ounces))) {
                     DoubleBloodAlcohol = 1;
                 } else if (weight.equals(getResources().getString(R.string.ml))) {
@@ -252,9 +250,11 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
                     DoubleBloodAlcohol = 3;
                 }
                 break;
-            case R.id.RgTime:
-                RadioButton radioTimeButton = (RadioButton) findViewById(RgTime.getCheckedRadioButtonId());
-                String time = (String) radioTimeButton.getText();
+            case R.id.SpinnerTimeBloodAlcohol:
+                StrKg = SpinnerTimeBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.kilograms));
+                break;
+            case R.id.SpinnerWeightBloodAlcohol:
+                String time = (String) SpinnerWeightBloodAlcohol.getSelectedItem().toString();
                 if (time.equals(getResources().getString(R.string.hour))) {
                     DoubleNewAlcohol = 1;
                 } else if (time.equals(getResources().getString(R.string.minute))) {
@@ -264,5 +264,10 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

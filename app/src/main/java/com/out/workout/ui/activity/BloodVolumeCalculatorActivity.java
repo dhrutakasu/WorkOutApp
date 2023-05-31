@@ -13,6 +13,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,22 +30,19 @@ import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class BloodVolumeCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class BloodVolumeCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private Context context;
     private ImageView IvBack;
     private TextView TvTitle;
-    private RadioGroup RgGender, RgWeight, RgWeightBloodVolume;
     private EditText EdtAgeBloodVolume,EdtHeightBloodVolume, EdtInchBloodVolume, EdtWeightBloodVolume;
     private LinearLayout LLHeightBloodVolume;
-    private Button BtnWeightBloodVolume, BtnResetBloodVolume;
+    private TextView BtnWeightBloodVolume, BtnResetBloodVolume,TvFTOrCMBloodVolume;
     private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch;
     private boolean check;
-    private double calculate;
-    private String calculate_Kg, calculate_BMI;
-    private int calculate_BMI_Int;
     private double DoubleBloodVolume;
     private String StrBloodVolume;
+    private Spinner SpinnerGenderBloodVolume,SpinnerHeightBloodVolume,SpinnerWeightBloodVolume;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,27 +57,29 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
+        SpinnerGenderBloodVolume = (Spinner) findViewById(R.id.SpinnerGenderBloodVolume);
+        SpinnerHeightBloodVolume = (Spinner) findViewById(R.id.SpinnerHeightBloodVolume);
+        SpinnerWeightBloodVolume = (Spinner) findViewById(R.id.SpinnerWeightBloodVolume);
         EdtAgeBloodVolume = (EditText) findViewById(R.id.EdtAgeBloodVolume);
         EdtHeightBloodVolume = (EditText) findViewById(R.id.EdtHeightBloodVolume);
         LLHeightBloodVolume = (LinearLayout) findViewById(R.id.LLHeightBloodVolume);
         EdtInchBloodVolume = (EditText) findViewById(R.id.EdtInchBloodVolume);
-        RgWeightBloodVolume = (RadioGroup) findViewById(R.id.RgWeightBloodVolume);
         EdtWeightBloodVolume = (EditText) findViewById(R.id.EdtWeightBloodVolume);
-        BtnWeightBloodVolume = (Button) findViewById(R.id.BtnWeightBloodVolume);
-        BtnResetBloodVolume = (Button) findViewById(R.id.BtnResetBloodVolume);
+        TvFTOrCMBloodVolume = (TextView) findViewById(R.id.TvFTOrCMBloodVolume);
+        BtnWeightBloodVolume = (TextView) findViewById(R.id.BtnWeightBloodVolume);
+        BtnResetBloodVolume = (TextView) findViewById(R.id.BtnResetBloodVolume);
     }
 
     private void initListeners() {
         IvBack.setOnClickListener(this);
         BtnWeightBloodVolume.setOnClickListener(this);
         BtnResetBloodVolume.setOnClickListener(this);
-        RgWeight.setOnCheckedChangeListener(this);
+        SpinnerWeightBloodVolume.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.bloodvol));
+        TvFTOrCMBloodVolume.setText(getString(R.string.cm));
         LLHeightBloodVolume.setVisibility(View.GONE);
         EdtAgeBloodVolume.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
     }
@@ -99,12 +100,9 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-        String rbWeight = (String) radioWeightButton.getText();
-        RadioButton radioBloodWeightButton = (RadioButton) findViewById(RgWeightBloodVolume.getCheckedRadioButtonId());
-        String weightBlood = (String) radioBloodWeightButton.getText();
+        String gender = (String) SpinnerGenderBloodVolume.getSelectedItem().toString();
+        String rbWeight = (String) SpinnerHeightBloodVolume.getSelectedItem().toString();
+        String weightBlood = (String) SpinnerWeightBloodVolume.getSelectedItem().toString();
         try {
             try {
                 DoubleHeight = Double.parseDouble(EdtHeightBloodVolume.getText().toString());
@@ -126,7 +124,7 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
                 check = false;
                 return;
             }
-            if (rbWeight.equalsIgnoreCase(getString(R.string.cm))) {
+            if (rbWeight.equalsIgnoreCase(getString(R.string.centimeters))) {
                 DoubleHeight /= 100.0d;
             } else {
                 DoubleHeight *= 12.0d;
@@ -190,30 +188,35 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         EdtWeightBloodVolume.setText("");
         EdtHeightBloodVolume.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioWeightButton = (RadioButton) RgWeight.getChildAt(0);
-        radioWeightButton.setChecked(true);
-        RadioButton radioBloodWeightButton = (RadioButton) RgWeightBloodVolume.getChildAt(0);
-        radioBloodWeightButton.setChecked(true);
+        SpinnerWeightBloodVolume.setSelection(0);
+        SpinnerGenderBloodVolume.setSelection(0);
+        SpinnerHeightBloodVolume.setSelection(0);
+        TvFTOrCMBloodVolume.setText(getString(R.string.cm));
+        LLHeightBloodVolume.setVisibility(View.GONE);
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()) {
-            case R.id.RgWeight:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
-                if (weight.equalsIgnoreCase("CM")) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()) {
+            case R.id.SpinnerWeightBloodVolume:
+                String weight = (String) SpinnerWeightBloodVolume.getSelectedItem().toString();
+                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+                    TvFTOrCMBloodVolume.setText(getString(R.string.cm));
                     EdtHeightBloodVolume.setText("");
                     EdtInchBloodVolume.setText("");
                     LLHeightBloodVolume.setVisibility(View.GONE);
                 } else {
+                    TvFTOrCMBloodVolume.setText(getString(R.string.ft));
                     EdtHeightBloodVolume.setText("");
                     EdtInchBloodVolume.setText("");
                     LLHeightBloodVolume.setVisibility(View.VISIBLE);
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

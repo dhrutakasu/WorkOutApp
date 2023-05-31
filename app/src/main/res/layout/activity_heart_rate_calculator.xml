@@ -48,101 +48,90 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:fontFamily="@font/main_semibold"
+                        android:text="@string/enter_age"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_40sdp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/ic_border">
-
-                        <ImageView
-                            android:id="@+id/IvAgeHeart"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_age" />
-
-                        <EditText
-                            android:id="@+id/EdtAgeHeart"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="10dp"
-                            android:background="@color/transparent"
-                            android:ems="10"
-                            android:gravity="start|center_vertical"
-                            android:hint="@string/enter_age"
-                            android:inputType="number"
-                            android:textColor="@color/black"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_15sdp" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="5dp"
-                    android:background="@drawable/ic_border">
-
-                    <ImageView
-                        android:id="@+id/IvGenderHeart"
-                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="@dimen/_8sdp"
-                        android:src="@drawable/ic_gender" />
-
-                    <RadioGroup
-                        android:id="@+id/RgGender"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_8sdp"
+                        android:baselineAligned="false"
                         android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/RbMale"
+                        <LinearLayout
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:checked="true"
-                            android:text="@string/male" />
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@drawable/ic_border">
 
-                        <RadioButton
-                            android:id="@+id/RbFemale"
+                            <EditText
+                                android:id="@+id/EdtAgeHeart"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="10dp"
+                                android:background="@color/transparent"
+                                android:ems="10"
+                                android:gravity="start|center_vertical"
+                                android:hint="@string/enter_age"
+                                android:inputType="number"
+                                android:textColor="@color/black"
+                                android:textDirection="locale"
+                                android:textSize="@dimen/_15sdp" />
+
+                        </LinearLayout>
+
+                        <RelativeLayout
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/_40sdp"
                             android:layout_weight="0.5"
-                            android:buttonTint="@color/purple_500"
-                            android:text="@string/female" />
-                    </RadioGroup>
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/ic_border">
 
+                            <Spinner
+                                android:id="@+id/SpinnerGenderHeart"
+                                style="@style/Widget.App.Spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="start"
+                                android:spinnerMode="dropdown" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
-                    android:orientation="horizontal">
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/main_semibold"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:text="@string/enter_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/ic_border"
-                        android:layout_marginTop="5dp">
-
-                        <ImageView
-                            android:id="@+id/IvHeartRate"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="@dimen/_8sdp"
-                            android:src="@drawable/ic_heart_rate" />
+                        android:baselineAligned="false"
+                        android:orientation="horizontal">
 
                         <EditText
                             android:id="@+id/EdtHeartRate"
@@ -157,12 +146,14 @@
                             android:textColor="@color/black"
                             android:textDirection="locale"
                             android:textSize="@dimen/_15sdp" />
+
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
+                    android:layout_marginTop="@dimen/_10ssp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -170,62 +161,63 @@
                         android:layout_height="@dimen/_40sdp"
                         android:background="@drawable/ic_border"
                         android:layout_marginTop="5dp">
+
                         <Spinner
                             android:id="@+id/SpinnerHeartRate"
+                            style="@style/Widget.App.Spinner"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
-                            android:gravity="start" />
+                            android:gravity="start"
+                            android:spinnerMode="dropdown" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="15dp"
                     android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="0dp"
                     android:weightSum="2">
 
-                    <Button
-                        android:id="@+id/BtnHeartRate"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:includeFontPadding="false"
-                        android:text="@string/calculate"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
-
-                    <Button
+                    <TextView
                         android:id="@+id/BtnResetHeart"
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.85"
                         android:gravity="center"
-                        android:includeFontPadding="false"
+                        android:fontFamily="@font/main_semibold"
+                        android:textSize="@dimen/_12sdp"
                         android:text="@string/reset"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/purple_500"/>
+
+                    <TextView
+                        android:id="@+id/BtnHeartRate"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/ic_border_color"
+                        android:backgroundTint="@color/purple_500"
+                        android:layout_weight="0.85"
+                        android:gravity="center"
+                        android:fontFamily="@font/main_semibold"
+                        android:text="@string/calculate"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:id="@+id/BtnChartHeart"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_chart"/>
                 </LinearLayout>
-                <Button
-                    android:id="@+id/BtnChartHeart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="@dimen/_15sdp"
-                    android:gravity="center"
-                    android:includeFontPadding="false"
-                    android:text="@string/heart_chart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                    android:textColor="@color/white" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>

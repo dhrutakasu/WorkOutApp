@@ -26,19 +26,36 @@
         android:fontFamily="@font/main_medium"
         android:padding="@dimen/_5sdp"
         android:textColor="@color/black"
-        android:textSize="@dimen/_14sdp"
+        android:textSize="@dimen/_10sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RlActionBarArticleDetail" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardImgArticle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_5ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvArticleDescr" >
+
+        <ImageView
+            android:id="@+id/IvArticleImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_150sdp" />
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RvArticleDetails"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TvArticleDescr" />
+        app:layout_constraintTop_toBottomOf="@id/CardImgArticle" />
 </androidx.constraintlayout.widget.ConstraintLayout>

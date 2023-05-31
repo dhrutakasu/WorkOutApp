@@ -31,7 +31,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     private ImageView IvBack;
     private TextView TvTitle;
     private TextView EdtDateBreathCount;
-    private Button BtnWeightBreathCount;
+    private TextView BtnWeightBreathCount;
     private boolean BoolChooseDate = false;
     private Calendar calendar;
     private SimpleDateFormat simpleDateFormat;
@@ -53,7 +53,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtDateBreathCount = (TextView) findViewById(R.id.EdtDateBreathCount);
         IvCalendarBreathCount = (ImageView) findViewById(R.id.IvCalendarBreathCount);
-        BtnWeightBreathCount = (Button) findViewById(R.id.BtnWeightBreathCount);
+        BtnWeightBreathCount = (TextView) findViewById(R.id.BtnWeightBreathCount);
     }
 
     private void initListeners() {

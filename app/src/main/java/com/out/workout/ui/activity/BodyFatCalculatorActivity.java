@@ -12,12 +12,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,21 +29,23 @@ import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
 
-public class BodyFatCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+public class BodyFatCalculatorActivity extends AppCompatActivity implements View.OnClickListener,
+        AdapterView.OnItemSelectedListener {
 
     private Context context;
     private ImageView IvBack;
     private TextView TvTitle;
     private EditText EdtAgeBodyFate;
-    private RadioGroup RgGender, RgWeight, RgWeightBodyFate, RgWaistBodyFate, RgNeckBodyFate, RgArmBodyFate, RgWristBodyFate, RgHipBodyFate;
-    private RadioButton RbMale, RbFemale, RbCm, RbInch, RbWaistCm, RbWaistInch, RbNeckCm, RbNeckInch;
-    private RadioButton RbArmCm, RbArmInch, RbWristCm, RbWristInch, RbHipCm, RbHipInch;
     private EditText EdtHeightBodyFate, EdtInchBodyFate, EdtWeightBodyFate, EdtWaistBodyFate, EdtNeckBodyFate, EdtArmBodyFate, EdtWristBodyFate, EdtHipBodyFate;
     private LinearLayout LLHeightBodyFate, LLArmRg, LLArmEdt, LLWristRg, LLWristEdt, LLHipRg, LLHipEdt;
-    private Button BtnWeightBodyFate, BtnResetBodyFate,BtnChartBodyFate;
+    private TextView BtnWeightBodyFate;
+    private TextView BtnResetBodyFate;
+    private ImageView BtnChartBodyFate;
     private double DoubleHeight, DoubleWeight, DoubleAge, DoubleInch, DoubleWaist, DoubleNeck,DoubleArm,DoubleWrist,DoubleHip, DoubleBodyFate, DoubleFate, DoubleNewFate;
     private boolean BoolCheckBodyFate;
     private String calculate_BodyFate, calculateFate;
+    private Spinner SpinnerGenderBodyFat,SpinnerHeightBodyFat,SpinnerWeightBodyFat,SpinnerWaistBodyFat,SpinnerArmBodyFat,SpinnerWristBodyFat,SpinnerNeckBodyFat,SpinnerHipBodyFat;
+    private TextView TvFTOrCMBodyFat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,28 +61,16 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
         EdtAgeBodyFate = (EditText) findViewById(R.id.EdtAgeBodyFate);
-        RgGender = (RadioGroup) findViewById(R.id.RgGender);
-        RbMale = (RadioButton) findViewById(R.id.RbMale);
-        RbFemale = (RadioButton) findViewById(R.id.RbFemale);
-        RgWeight = (RadioGroup) findViewById(R.id.RgWeight);
-        RgWeightBodyFate = (RadioGroup) findViewById(R.id.RgWeightBodyFate);
-        RbCm = (RadioButton) findViewById(R.id.RbCm);
-        RbInch = (RadioButton) findViewById(R.id.RbInch);
-        RgWaistBodyFate = (RadioGroup) findViewById(R.id.RgWaistBodyFate);
-        RbWaistCm = (RadioButton) findViewById(R.id.RbWaistCm);
-        RbWaistInch = (RadioButton) findViewById(R.id.RbWaistInch);
-        RgNeckBodyFate = (RadioGroup) findViewById(R.id.RgNeckBodyFate);
-        RbNeckCm = (RadioButton) findViewById(R.id.RbNeckCm);
-        RbNeckInch = (RadioButton) findViewById(R.id.RbNeckInch);
-        RgArmBodyFate = (RadioGroup) findViewById(R.id.RgArmBodyFate);
-        RbArmCm = (RadioButton) findViewById(R.id.RbArmCm);
-        RbArmInch = (RadioButton) findViewById(R.id.RbArmInch);
-        RgWristBodyFate = (RadioGroup) findViewById(R.id.RgWristBodyFate);
-        RbWristCm = (RadioButton) findViewById(R.id.RbWristCm);
-        RbWristInch = (RadioButton) findViewById(R.id.RbWristInch);
-        RgHipBodyFate = (RadioGroup) findViewById(R.id.RgHipBodyFate);
-        RbHipCm = (RadioButton) findViewById(R.id.RbHipCm);
-        RbHipInch = (RadioButton) findViewById(R.id.RbHipInch);
+
+        SpinnerGenderBodyFat = (Spinner) findViewById(R.id.SpinnerGenderBodyFat);
+        SpinnerHeightBodyFat = (Spinner) findViewById(R.id.SpinnerHeightBodyFat);
+        SpinnerWeightBodyFat = (Spinner) findViewById(R.id.SpinnerWeightBodyFat);
+        SpinnerWaistBodyFat = (Spinner) findViewById(R.id.SpinnerWaistBodyFat);
+        SpinnerArmBodyFat = (Spinner) findViewById(R.id.SpinnerArmBodyFat);
+        SpinnerWristBodyFat = (Spinner) findViewById(R.id.SpinnerWristBodyFat);
+        SpinnerNeckBodyFat = (Spinner) findViewById(R.id.SpinnerNeckBodyFat);
+        SpinnerHipBodyFat = (Spinner) findViewById(R.id.SpinnerHipBodyFat);
+        TvFTOrCMBodyFat = (TextView) findViewById(R.id.TvFTOrCMBodyFat);
         EdtHeightBodyFate = (EditText) findViewById(R.id.EdtHeightBodyFate);
         LLHeightBodyFate = (LinearLayout) findViewById(R.id.LLHeightBodyFate);
         LLArmRg = (LinearLayout) findViewById(R.id.LlArmRg);
@@ -94,9 +86,9 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         EdtArmBodyFate = (EditText) findViewById(R.id.EdtArmBodyFate);
         EdtWristBodyFate = (EditText) findViewById(R.id.EdtWristBodyFate);
         EdtHipBodyFate = (EditText) findViewById(R.id.EdtHipBodyFate);
-        BtnWeightBodyFate = (Button) findViewById(R.id.BtnWeightBodyFate);
-        BtnResetBodyFate = (Button) findViewById(R.id.BtnResetBodyFate);
-        BtnChartBodyFate = (Button) findViewById(R.id.BtnChartBodyFate);
+        BtnWeightBodyFate = (TextView) findViewById(R.id.BtnWeightBodyFate);
+        BtnResetBodyFate = (TextView) findViewById(R.id.BtnResetBodyFate);
+        BtnChartBodyFate = (ImageView) findViewById(R.id.BtnChartBodyFate);
     }
 
     private void initListeners() {
@@ -104,12 +96,13 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         BtnWeightBodyFate.setOnClickListener(this);
         BtnResetBodyFate.setOnClickListener(this);
         BtnChartBodyFate.setOnClickListener(this);
-        RgGender.setOnCheckedChangeListener(this);
-        RgWeight.setOnCheckedChangeListener(this);
+        SpinnerGenderBodyFat.setOnItemSelectedListener(this);
+        SpinnerWeightBodyFat.setOnItemSelectedListener(this);
     }
 
     private void initActions() {
         TvTitle.setText(getString(R.string.bodyfat));
+        TvFTOrCMBodyFat.setText(getString(R.string.cm));
         LLHeightBodyFate.setVisibility(View.GONE);
         EdtAgeBodyFate.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
     }
@@ -133,22 +126,14 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
     }
 
     private void GotoCalculateWeight() {
-        RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-        String gender = (String) radioGenderButton.getText();
-        RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-        String weight = (String) radioWeightButton.getText();
-        RadioButton radioBodyFateWeightButton = (RadioButton) findViewById(RgWeightBodyFate.getCheckedRadioButtonId());
-        String BodyFateWeight = (String) radioBodyFateWeightButton.getText();
-        RadioButton radioBodyFateWaistButton = (RadioButton) findViewById(RgWaistBodyFate.getCheckedRadioButtonId());
-        String BodyFateWaist = (String) radioBodyFateWaistButton.getText();
-        RadioButton radioBodyFateNeckButton = (RadioButton) findViewById(RgNeckBodyFate.getCheckedRadioButtonId());
-        String BodyFateNeck = (String) radioBodyFateNeckButton.getText();
-        RadioButton radioBodyFateArmButton = (RadioButton) findViewById(RgArmBodyFate.getCheckedRadioButtonId());
-        String BodyFateArm = (String) radioBodyFateArmButton.getText();
-        RadioButton radioBodyFateWristButton = (RadioButton) findViewById(RgWristBodyFate.getCheckedRadioButtonId());
-        String BodyFateWrist = (String) radioBodyFateWristButton.getText();
-        RadioButton radioBodyFateHipButton = (RadioButton) findViewById(RgHipBodyFate.getCheckedRadioButtonId());
-        String BodyFateHip = (String) radioBodyFateHipButton.getText();
+        String gender = (String) SpinnerGenderBodyFat.getSelectedItem().toString();
+        String weight = (String) SpinnerWeightBodyFat.getSelectedItem().toString();
+        String BodyFateWeight = (String) SpinnerHeightBodyFat.getSelectedItem().toString();
+        String BodyFateWaist = (String) SpinnerWaistBodyFat.getSelectedItem().toString();
+        String BodyFateNeck = (String) SpinnerNeckBodyFat.getSelectedItem().toString();
+        String BodyFateArm = (String) SpinnerArmBodyFat.getSelectedItem().toString();
+        String BodyFateWrist = (String) SpinnerWristBodyFat.getSelectedItem().toString();
+        String BodyFateHip = (String) SpinnerHipBodyFat.getSelectedItem().toString();
         System.out.println("-- --- --- come : ");
         try {
             if (gender.equalsIgnoreCase(getString(R.string.male))) {
@@ -182,10 +167,10 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                     BoolCheckBodyFate = false;
                     return;
                 }
-                if (BodyFateWeight.equalsIgnoreCase(getResources().getString(R.string.kilograms))) {
+                if (BodyFateWeight.equalsIgnoreCase(getResources().getString(R.string.centimeters))) {
                     DoubleWeight *= 2.20462d;
                 }
-                if (weight.equalsIgnoreCase(getResources().getString(R.string.cm))) {
+                if (weight.equalsIgnoreCase(getResources().getString(R.string.kilograms))) {
                     DoubleHeight *= 0.393701d;
                 } else {
                     DoubleHeight *= 12.0d;
@@ -261,7 +246,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                 if (weight.equalsIgnoreCase(getString(R.string.kilograms))) {
                     DoubleWeight *= 2.20462d;
                 }
-                if (BodyFateWeight.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateWeight.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleHeight *= 0.393701d;
                 } else {
                     DoubleHeight *= 12.0d;
@@ -342,22 +327,16 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         EdtNeckBodyFate.setText("");
         EdtAgeBodyFate.requestFocus();
 
-        RadioButton radioGenderButton = (RadioButton) RgGender.getChildAt(0);
-        radioGenderButton.setChecked(true);
-        RadioButton radioWeightButton = (RadioButton) RgWeight.getChildAt(0);
-        radioWeightButton.setChecked(true);
-        RadioButton radioBodyFateWeightButton = (RadioButton) RgWeightBodyFate.getChildAt(0);
-        radioBodyFateWeightButton.setChecked(true);
-        RadioButton radioBodyFateWaistButton = (RadioButton) RgWaistBodyFate.getChildAt(0);
-        radioBodyFateWaistButton.setChecked(true);
-        RadioButton radioBodyFateNeckButton = (RadioButton) RgNeckBodyFate.getChildAt(0);
-        radioBodyFateNeckButton.setChecked(true);
-        RadioButton radioBodyFateArmButton = (RadioButton) RgArmBodyFate.getChildAt(0);
-        radioBodyFateArmButton.setChecked(true);
-        RadioButton radioBodyFateWristButton = (RadioButton) RgWristBodyFate.getChildAt(0);
-        radioBodyFateWristButton.setChecked(true);
-        RadioButton radioBodyFateHipButton = (RadioButton) RgHipBodyFate.getChildAt(0);
-        radioBodyFateHipButton.setChecked(true);
+        SpinnerGenderBodyFat.setSelection(0);
+        SpinnerHipBodyFat.setSelection(0);
+        SpinnerWristBodyFat.setSelection(0);
+        SpinnerWaistBodyFat.setSelection(0);
+        SpinnerNeckBodyFat.setSelection(0);
+        SpinnerWeightBodyFat.setSelection(0);
+        SpinnerArmBodyFat.setSelection(0);
+        SpinnerHeightBodyFat.setSelection(0);
+        TvFTOrCMBodyFat.setText(getString(R.string.cm));
+        LLHeightBodyFate.setVisibility(View.GONE);
     }
 
     private void GotoCalculateChart() {
@@ -365,24 +344,24 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
     }
 
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (radioGroup.getId()) {
-            case R.id.RgWeight:
-                RadioButton radioWeightButton = (RadioButton) findViewById(RgWeight.getCheckedRadioButtonId());
-                String weight = (String) radioWeightButton.getText();
-                if (weight.equalsIgnoreCase("CM")) {
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        switch (view.getId()){
+            case R.id.SpinnerHeightBodyFat:
+                String weight = (String) SpinnerHeightBodyFat.getSelectedItem().toString();
+                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+                    TvFTOrCMBodyFat.setText(getString(R.string.cm));
                     EdtHeightBodyFate.setText("");
                     EdtInchBodyFate.setText("");
                     LLHeightBodyFate.setVisibility(View.GONE);
                 } else {
+                    TvFTOrCMBodyFat.setText(getString(R.string.ft));
                     EdtHeightBodyFate.setText("");
                     EdtInchBodyFate.setText("");
                     LLHeightBodyFate.setVisibility(View.VISIBLE);
                 }
                 break;
-            case R.id.RgGender:
-                RadioButton radioGenderButton = (RadioButton) findViewById(RgGender.getCheckedRadioButtonId());
-                String gender = (String) radioGenderButton.getText();
+            case R.id.SpinnerGenderBodyFat:
+                String gender = (String) SpinnerGenderBodyFat.getSelectedItem().toString();
                 if (gender.equalsIgnoreCase(getString(R.string.male))) {
                     EdtHeightBodyFate.setText("");
                     EdtInchBodyFate.setText("");
@@ -414,5 +393,10 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }
