@@ -18,8 +18,11 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.FitSliderAdapter;
 import com.out.workout.ui.adapter.SliderLayoutManager;
@@ -69,6 +72,8 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         List<Number> list = new ArrayList<>();
         for (int i = 5; i < 99; i++) {
             list.add(i);

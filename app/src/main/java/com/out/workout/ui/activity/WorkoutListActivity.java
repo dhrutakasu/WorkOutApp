@@ -10,8 +10,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -63,6 +66,8 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         helper = new ExerciseHelper(context);
         TvTitle.setText(WorkoutType);
         workoutExerciseModels = new ArrayList<>();

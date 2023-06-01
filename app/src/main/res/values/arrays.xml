@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="abs_alt_v_up">
-        <item>@drawable/alt_v_up_a</item>
-        <item>@drawable/alt_v_up_b</item>
-        <item>@drawable/alt_v_up_a</item>
-        <item>@drawable/alt_v_up_c</item>
+        <item>@drawable/ic_alt_v_up_a</item>
+        <item>@drawable/ic_alt_v_up_b</item>
+        <item>@drawable/ic_alt_v_up_a</item>
+        <item>@drawable/ic_alt_v_up_c</item>
     </array>
     <array name="abs_bent_leg_twist">
-        <item>@drawable/bent_leg_twist_a</item>
-        <item>@drawable/bent_leg_twist_b</item>
-        <item>@drawable/bent_leg_twist_a</item>
-        <item>@drawable/bent_leg_twist_c</item>
+        <item>@drawable/ic_bent_leg_twist_a</item>
+        <item>@drawable/ic_bent_leg_twist_b</item>
+        <item>@drawable/ic_bent_leg_twist_a</item>
+        <item>@drawable/ic_bent_leg_twist_c</item>
     </array>
     <array name="abs_bicycle_crunches">
-        <item>@drawable/bicyle_crunches_a</item>
-        <item>@drawable/bicyle_crunches_b</item>
-        <item>@drawable/bicyle_crunches_a</item>
-        <item>@drawable/bicyle_crunches_c</item>
+        <item>@drawable/ic_bicyle_crunches_a</item>
+        <item>@drawable/ic_bicyle_crunches_b</item>
+        <item>@drawable/ic_bicyle_crunches_a</item>
+        <item>@drawable/ic_bicyle_crunches_c</item>
     </array>
     <array name="abs_childs_pose">
-        <item>@drawable/child_pose</item>
+        <item>@drawable/ic_child_pose</item>
     </array>
     <array name="abs_clapping_crunches">
-        <item>@drawable/clapping_crunches_a</item>
-        <item>@drawable/clapping_crunches_b</item>
-        <item>@drawable/clapping_crunches_a</item>
-        <item>@drawable/clapping_crunches_c</item>
+        <item>@drawable/ic_clapping_crunches_a</item>
+        <item>@drawable/ic_clapping_crunches_b</item>
+        <item>@drawable/ic_clapping_crunches_a</item>
+        <item>@drawable/ic_clapping_crunches_c</item>
     </array>
     <array name="abs_cobra_stretch">
-        <item>@drawable/cobra</item>
+        <item>@drawable/ic_cobra</item>
     </array>
     <array name="abs_cross_arm_crunches">
-        <item>@drawable/cross_arm_crunches_a</item>
-        <item>@drawable/cross_arm_crunches_b</item>
+        <item>@drawable/ic_cross_arm_crunches_a</item>
+        <item>@drawable/ic_cross_arm_crunches_b</item>
     </array>
     <array name="abs_cross_knee_plank">
-        <item>@drawable/cross_knee_plank_a</item>
-        <item>@drawable/cross_knee_plank_b</item>
-        <item>@drawable/cross_knee_plank_a</item>
-        <item>@drawable/cross_knee_plank_c</item>
+        <item>@drawable/ic_cross_knee_plank_a</item>
+        <item>@drawable/ic_cross_knee_plank_b</item>
+        <item>@drawable/ic_cross_knee_plank_a</item>
+        <item>@drawable/ic_cross_knee_plank_c</item>
     </array>
     <array name="abs_crunches_with_legs_raised">
-        <item>@drawable/crunches_with_legs_raised_a</item>
-        <item>@drawable/crunches_with_legs_raised_b</item>
+        <item>@drawable/ic_crunches_with_legs_raised_a</item>
+        <item>@drawable/ic_crunches_with_legs_raised_b</item>
     </array>
     <array name="abs_cycles">
         <item>18</item>
@@ -90,208 +90,208 @@
         <item>16</item>
     </array>
     <array name="abs_dumbbell_bicycle_passes">
-        <item>@drawable/dumbbell_bicycle_passes_a</item>
-        <item>@drawable/dumbbell_bicycle_passes_b</item>
-        <item>@drawable/dumbbell_bicycle_passes_d</item>
-        <item>@drawable/dumbbell_bicycle_passes_c</item>
+        <item>@drawable/ic_dumbbell_bicycle_passes_a</item>
+        <item>@drawable/ic_dumbbell_bicycle_passes_b</item>
+        <item>@drawable/ic_dumbbell_bicycle_passes_d</item>
+        <item>@drawable/ic_dumbbell_bicycle_passes_c</item>
     </array>
     <array name="abs_dumbbell_crunch_and_punches">
-        <item>@drawable/dumbbell_crunch_punches_a</item>
-        <item>@drawable/dumbbell_crunch_punches_b</item>
-        <item>@drawable/dumbbell_crunch_punches_c</item>
+        <item>@drawable/ic_dumbbell_crunch_punches_a</item>
+        <item>@drawable/ic_dumbbell_crunch_punches_b</item>
+        <item>@drawable/ic_dumbbell_crunch_punches_c</item>
     </array>
     <array name="abs_dumbbell_crunches">
-        <item>@drawable/dumbbell_crunches_a</item>
-        <item>@drawable/dumbbell_crunches_b</item>
+        <item>@drawable/ic_dumbbell_crunches_a</item>
+        <item>@drawable/ic_dumbbell_crunches_b</item>
     </array>
     <array name="abs_dumbbell_paddle_boats">
-        <item>@drawable/dumbbell_paddle_boats_a</item>
-        <item>@drawable/dumbbell_paddle_boats_b</item>
-        <item>@drawable/dumbbell_paddle_boats_a</item>
-        <item>@drawable/dumbbell_paddle_boats_c</item>
+        <item>@drawable/ic_dumbbell_paddle_boats_a</item>
+        <item>@drawable/ic_dumbbell_paddle_boats_b</item>
+        <item>@drawable/ic_dumbbell_paddle_boats_a</item>
+        <item>@drawable/ic_dumbbell_paddle_boats_c</item>
     </array>
     <array name="abs_dumbbell_russian_twist">
-        <item>@drawable/dumbbell_russian_twist_a</item>
-        <item>@drawable/dumbbell_russian_twist_b</item>
-        <item>@drawable/dumbbell_russian_twist_a</item>
-        <item>@drawable/dumbbell_russian_twist_c</item>
+        <item>@drawable/ic_dumbbell_russian_twist_a</item>
+        <item>@drawable/ic_dumbbell_russian_twist_b</item>
+        <item>@drawable/ic_dumbbell_russian_twist_a</item>
+        <item>@drawable/ic_dumbbell_russian_twist_c</item>
     </array>
     <array name="abs_dumbbell_side_bend_left">
-        <item>@drawable/dumbbell_side_bend_left_a</item>
-        <item>@drawable/dumbbell_side_bend_left_b</item>
+        <item>@drawable/ic_dumbbell_side_bend_left_a</item>
+        <item>@drawable/ic_dumbbell_side_bend_left_b</item>
     </array>
     <array name="abs_dumbbell_side_bend_right">
-        <item>@drawable/dumbbell_side_bend_right_a</item>
-        <item>@drawable/dumbbell_side_bend_right_b</item>
+        <item>@drawable/ic_dumbbell_side_bend_right_a</item>
+        <item>@drawable/ic_dumbbell_side_bend_right_b</item>
     </array>
     <array name="abs_dumbbell_toe_touch_crunch_left">
-        <item>@drawable/dumbbell_toe_touch_crunch_left_a</item>
-        <item>@drawable/dumbbell_toe_touch_crunch_left_b</item>
+        <item>@drawable/ic_dumbbell_toe_touch_crunch_left_a</item>
+        <item>@drawable/ic_dumbbell_toe_touch_crunch_left_b</item>
     </array>
     <array name="abs_dumbbell_toe_touch_crunch_right">
-        <item>@drawable/dumbbell_toe_touch_crunch_right_a</item>
-        <item>@drawable/dumbbell_toe_touch_crunch_right_b</item>
+        <item>@drawable/ic_dumbbell_toe_touch_crunch_right_a</item>
+        <item>@drawable/ic_dumbbell_toe_touch_crunch_right_b</item>
     </array>
     <array name="abs_flutter_kicks">
-        <item>@drawable/flutter_kicks_a</item>
-        <item>@drawable/flutter_kicks_b</item>
-        <item>@drawable/flutter_kicks_c</item>
-        <item>@drawable/flutter_kicks_a</item>
-        <item>@drawable/flutter_kicks_d</item>
-        <item>@drawable/flutter_kicks_e</item>
+        <item>@drawable/ic_flutter_kicks_a</item>
+        <item>@drawable/ic_flutter_kicks_b</item>
+        <item>@drawable/ic_flutter_kicks_c</item>
+        <item>@drawable/ic_flutter_kicks_a</item>
+        <item>@drawable/ic_flutter_kicks_d</item>
+        <item>@drawable/ic_flutter_kicks_e</item>
     </array>
     <array name="abs_heel_touch">
-        <item>@drawable/heel_touch_a</item>
-        <item>@drawable/heel_touch_b</item>
-        <item>@drawable/heel_touch_a</item>
-        <item>@drawable/heel_touch_c</item>
+        <item>@drawable/ic_heel_touch_a</item>
+        <item>@drawable/ic_heel_touch_b</item>
+        <item>@drawable/ic_heel_touch_a</item>
+        <item>@drawable/ic_heel_touch_c</item>
     </array>
     <array name="abs_heels_to_the_heaven">
-        <item>@drawable/heels_to_the_heavens_a</item>
-        <item>@drawable/heels_to_the_heavens_b</item>
+        <item>@drawable/ic_heels_to_the_heavens_a</item>
+        <item>@drawable/ic_heels_to_the_heavens_b</item>
     </array>
     <array name="abs_lying_twist_stretch_left">
-        <item>@drawable/lying_twist_stretch_left_a</item>
+        <item>@drawable/ic_lying_twist_stretch_left_a</item>
     </array>
     <array name="abs_lying_twist_stretch_right">
-        <item>@drawable/lying_twist_stretch_right_a</item>
+        <item>@drawable/ic_lying_twist_stretch_right_a</item>
     </array>
     <array name="abs_ninty_crunch">
-        <item>@drawable/nintynintycrunch_a</item>
-        <item>@drawable/nintynintycrunch_b</item>
+        <item>@drawable/ic_nintynintycrunch_a</item>
+        <item>@drawable/ic_nintynintycrunch_b</item>
     </array>
     <array name="abs_oblique_v_ups_left">
-        <item>@drawable/oblique_v_ups_lift_left_a</item>
-        <item>@drawable/oblique_v_ups_lift_left_b</item>
+        <item>@drawable/ic_oblique_v_ups_lift_left_a</item>
+        <item>@drawable/ic_oblique_v_ups_lift_left_b</item>
     </array>
     <array name="abs_oblique_v_ups_right">
-        <item>@drawable/oblique_v_ups_lift_right_a</item>
-        <item>@drawable/oblique_v_ups_lift_right_b</item>
+        <item>@drawable/ic_oblique_v_ups_lift_right_a</item>
+        <item>@drawable/ic_oblique_v_ups_lift_right_b</item>
     </array>
     <array name="abs_one_down_two_ups">
-        <item>@drawable/one_down_two_ups_a</item>
-        <item>@drawable/one_down_two_ups_b</item>
-        <item>@drawable/one_down_two_ups_a</item>
-        <item>@drawable/one_down_two_ups_c</item>
+        <item>@drawable/ic_one_down_two_ups_a</item>
+        <item>@drawable/ic_one_down_two_ups_b</item>
+        <item>@drawable/ic_one_down_two_ups_a</item>
+        <item>@drawable/ic_one_down_two_ups_c</item>
     </array>
     <array name="abs_plank">
-        <item>@drawable/plank</item>
+        <item>@drawable/ic_plank</item>
     </array>
     <array name="abs_reverse_crunches">
-        <item>@drawable/reverse_crunches_a</item>
-        <item>@drawable/reverse_crunches_b</item>
+        <item>@drawable/ic_reverse_crunches_a</item>
+        <item>@drawable/ic_reverse_crunches_b</item>
     </array>
     <array name="abs_seated_abs_clockwise">
-        <item>@drawable/seated_abc_clockwisw_circles_a</item>
-        <item>@drawable/seated_abc_clockwisw_circles_b</item>
-        <item>@drawable/seated_abc_clockwisw_circles_c</item>
-        <item>@drawable/seated_abc_clockwisw_circles_d</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_a</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_b</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_c</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_d</item>
     </array>
     <array name="abs_seated_abs_counterclockwise">
-        <item>@drawable/seated_abc_clockwisw_circles_a</item>
-        <item>@drawable/seated_abc_clockwisw_circles_d</item>
-        <item>@drawable/seated_abc_clockwisw_circles_c</item>
-        <item>@drawable/seated_abc_clockwisw_circles_b</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_a</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_d</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_c</item>
+        <item>@drawable/ic_seated_abc_clockwisw_circles_b</item>
     </array>
     <array name="abs_side_crunches_left">
-        <item>@drawable/side_crunches_left_a</item>
-        <item>@drawable/side_crunches_left_b</item>
+        <item>@drawable/ic_side_crunches_left_a</item>
+        <item>@drawable/ic_side_crunches_left_b</item>
     </array>
     <array name="abs_side_crunches_right">
-        <item>@drawable/side_crunches_right_a</item>
-        <item>@drawable/side_crunches_right_b</item>
+        <item>@drawable/ic_side_crunches_right_a</item>
+        <item>@drawable/ic_side_crunches_right_b</item>
     </array>
     <array name="abs_side_leg_rise_left">
-        <item>@drawable/side_leg_raise_left_a</item>
-        <item>@drawable/side_leg_raise_left_b</item>
+        <item>@drawable/ic_side_leg_raise_left_a</item>
+        <item>@drawable/ic_side_leg_raise_left_b</item>
     </array>
     <array name="abs_side_leg_rise_right">
-        <item>@drawable/side_leg_raise_right_a</item>
-        <item>@drawable/side_leg_raise_right_b</item>
+        <item>@drawable/ic_side_leg_raise_right_a</item>
+        <item>@drawable/ic_side_leg_raise_right_b</item>
     </array>
     <array name="abs_side_plank_left">
-        <item>@drawable/side_plank_left</item>
+        <item>@drawable/ic_side_plank_left</item>
     </array>
     <array name="abs_side_plank_right">
-        <item>@drawable/side_plank_right</item>
+        <item>@drawable/ic_side_plank_right</item>
     </array>
     <array name="abs_sit_up_twist">
-        <item>@drawable/sit_up_twist_a</item>
-        <item>@drawable/sit_up_twist_b</item>
-        <item>@drawable/sit_up_twist_a</item>
-        <item>@drawable/sit_up_twist_c</item>
+        <item>@drawable/ic_sit_up_twist_a</item>
+        <item>@drawable/ic_sit_up_twist_b</item>
+        <item>@drawable/ic_sit_up_twist_a</item>
+        <item>@drawable/ic_sit_up_twist_c</item>
     </array>
     <array name="abs_v_crunch">
-        <item>@drawable/v_crunch_a</item>
-        <item>@drawable/v_crunch_b</item>
+        <item>@drawable/ic_v_crunch_a</item>
+        <item>@drawable/ic_v_crunch_b</item>
     </array>
     <array name="abs_v_hold">
-        <item>@drawable/v_hold</item>
+        <item>@drawable/ic_v_hold</item>
     </array>
     <array name="abs_v_up">
-        <item>@drawable/v_up_a</item>
-        <item>@drawable/v_up_b</item>
+        <item>@drawable/ic_v_up_a</item>
+        <item>@drawable/ic_v_up_b</item>
     </array>
     <array name="abs_x_man_crunch">
-        <item>@drawable/x_man_mrunch_a</item>
-        <item>@drawable/x_man_mrunch_b</item>
+        <item>@drawable/ic_x_man_mrunch_a</item>
+        <item>@drawable/ic_x_man_mrunch_b</item>
     </array>
     <array name="alternater_heeltouch">
-        <item>@drawable/alternater_hell_touches_a</item>
-        <item>@drawable/alternater_hell_touches_b</item>
-        <item>@drawable/alternater_hell_touches_a</item>
-        <item>@drawable/alternater_hell_touches_c</item>
-        <item>@drawable/alternater_hell_touches_a</item>
+        <item>@drawable/ic_alternater_hell_touches_a</item>
+        <item>@drawable/ic_alternater_hell_touches_b</item>
+        <item>@drawable/ic_alternater_hell_touches_a</item>
+        <item>@drawable/ic_alternater_hell_touches_c</item>
+        <item>@drawable/ic_alternater_hell_touches_a</item>
     </array>
     <array name="arm_crunches">
-        <item>@drawable/arm_reaching_crunches_a</item>
-        <item>@drawable/arm_reaching_crunches_b</item>
-        <item>@drawable/arm_reaching_crunches_a</item>
+        <item>@drawable/ic_arm_reaching_crunches_a</item>
+        <item>@drawable/ic_arm_reaching_crunches_b</item>
+        <item>@drawable/ic_arm_reaching_crunches_a</item>
     </array>
     <array name="arm_crunches_left">
-        <item>@drawable/arm_arm_crunches_left_a</item>
-        <item>@drawable/arm_arm_crunches_left_b</item>
-        <item>@drawable/arm_arm_crunches_left_a</item>
+        <item>@drawable/ic_arm_arm_crunches_left_a</item>
+        <item>@drawable/ic_arm_arm_crunches_left_b</item>
+        <item>@drawable/ic_arm_arm_crunches_left_a</item>
     </array>
     <array name="arm_crunches_right">
-        <item>@drawable/arm_arm_crunches_right_a</item>
-        <item>@drawable/arm_arm_crunches_right_b</item>
-        <item>@drawable/arm_arm_crunches_right_a</item>
+        <item>@drawable/ic_arm_arm_crunches_right_a</item>
+        <item>@drawable/ic_arm_arm_crunches_right_b</item>
+        <item>@drawable/ic_arm_arm_crunches_right_a</item>
     </array>
     <array name="arm_scissors">
-        <item>@drawable/arm_arm_scissors_a</item>
-        <item>@drawable/arm_arm_scissors_b</item>
-        <item>@drawable/arm_arm_scissors_a</item>
-        <item>@drawable/arm_arm_scissors_c</item>
-        <item>@drawable/arm_arm_scissors_a</item>
+        <item>@drawable/ic_arm_arm_scissors_a</item>
+        <item>@drawable/ic_arm_arm_scissors_b</item>
+        <item>@drawable/ic_arm_arm_scissors_a</item>
+        <item>@drawable/ic_arm_arm_scissors_c</item>
+        <item>@drawable/ic_arm_arm_scissors_a</item>
     </array>
     <array name="army_pushups">
-        <item>@drawable/arm_army_pushups_a</item>
-        <item>@drawable/arm_army_pushups_b</item>
-        <item>@drawable/arm_army_pushups_a</item>
+        <item>@drawable/ic_ic_arm_army_pushups_a</item>
+        <item>@drawable/ic_arm_army_pushups_b</item>
+        <item>@drawable/ic_ic_arm_army_pushups_a</item>
     </array>
     <array name="atomic">
-        <item>@drawable/atomic_a</item>
-        <item>@drawable/atomic_b</item>
-        <item>@drawable/atomic_a</item>
-        <item>@drawable/atomic_c</item>
-        <item>@drawable/atomic_a</item>
+        <item>@drawable/ic_atomic_a</item>
+        <item>@drawable/ic_atomic_b</item>
+        <item>@drawable/ic_atomic_a</item>
+        <item>@drawable/ic_atomic_c</item>
+        <item>@drawable/ic_atomic_a</item>
     </array>
     <array name="basic_crunches">
-        <item>@drawable/basic_crunches_a</item>
-        <item>@drawable/basic_crunches_b</item>
-        <item>@drawable/basic_crunches_a</item>
+        <item>@drawable/ic_basic_crunches_a</item>
+        <item>@drawable/ic_basic_crunches_b</item>
+        <item>@drawable/ic_basic_crunches_a</item>
     </array>
     <array name="bench_dips">
-        <item>@drawable/bench_dips_a</item>
-        <item>@drawable/bench_dips_b</item>
-        <item>@drawable/bench_dips_a</item>
+        <item>@drawable/ic_bench_dips_a</item>
+        <item>@drawable/ic_bench_dips_b</item>
+        <item>@drawable/ic_bench_dips_a</item>
     </array>
     <array name="bicycle_crunches">
-        <item>@drawable/bicyle_crunches_a</item>
-        <item>@drawable/bicyle_crunches_b</item>
-        <item>@drawable/bicyle_crunches_a</item>
-        <item>@drawable/bicyle_crunches_c</item>
+        <item>@drawable/ic_bicyle_crunches_a</item>
+        <item>@drawable/ic_bicyle_crunches_b</item>
+        <item>@drawable/ic_bicyle_crunches_a</item>
+        <item>@drawable/ic_bicyle_crunches_c</item>
     </array>
     <array name="buttock_cycles">
         <item>18</item>
@@ -321,37 +321,37 @@
         <item>16</item>
     </array>
     <array name="clap">
-        <item>@drawable/clap_a</item>
-        <item>@drawable/clap_b</item>
-        <item>@drawable/clap_a</item>
-        <item>@drawable/clap_c</item>
-        <item>@drawable/clap_a</item>
+        <item>@drawable/ic_clap_a</item>
+        <item>@drawable/ic_clap_b</item>
+        <item>@drawable/ic_clap_a</item>
+        <item>@drawable/ic_clap_c</item>
+        <item>@drawable/ic_clap_a</item>
     </array>
     <array name="decline_pushups">
-        <item>@drawable/arm_decline_pushups_a</item>
-        <item>@drawable/arm_decline_pushups_b</item>
-        <item>@drawable/arm_decline_pushups_a</item>
+        <item>@drawable/ic_arm_decline_pushups_a</item>
+        <item>@drawable/ic_arm_decline_pushups_b</item>
+        <item>@drawable/ic_arm_decline_pushups_a</item>
     </array>
     <array name="diamond_pushups">
-        <item>@drawable/arm_diamond_pushups_a</item>
-        <item>@drawable/arm_diamond_pushups_b</item>
-        <item>@drawable/arm_diamond_pushups_a</item>
+        <item>@drawable/ic_arm_diamond_pushups_a</item>
+        <item>@drawable/ic_arm_diamond_pushups_b</item>
+        <item>@drawable/ic_arm_diamond_pushups_a</item>
     </array>
     <array name="eccentric">
-        <item>@drawable/eccentric_a</item>
-        <item>@drawable/eccentric_b</item>
-        <item>@drawable/eccentric_c</item>
-        <item>@drawable/eccentric_a</item>
+        <item>@drawable/ic_eccentric_a</item>
+        <item>@drawable/ic_eccentric_b</item>
+        <item>@drawable/ic_eccentric_c</item>
+        <item>@drawable/ic_eccentric_a</item>
     </array>
     <array name="elbow_back">
-        <item>@drawable/arm_elbow_back_a</item>
-        <item>@drawable/arm_elbow_back_b</item>
-        <item>@drawable/arm_elbow_back_a</item>
+        <item>@drawable/ic_arm_elbow_back_a</item>
+        <item>@drawable/ic_arm_elbow_back_b</item>
+        <item>@drawable/ic_arm_elbow_back_a</item>
     </array>
     <array name="elevated_hands">
-        <item>@drawable/elevated_hands_a</item>
-        <item>@drawable/elevated_hands_b</item>
-        <item>@drawable/elevated_hands_a</item>
+        <item>@drawable/ic_elevated_hands_a</item>
+        <item>@drawable/ic_elevated_hands_b</item>
+        <item>@drawable/ic_elevated_hands_a</item>
     </array>
     <array name="fatburn_cycles">
         <item>18</item>
@@ -371,53 +371,53 @@
         <item>12</item>
     </array>
     <array name="feet_elivated">
-        <item>@drawable/feet_elivated_a</item>
-        <item>@drawable/feet_elivated_b</item>
-        <item>@drawable/feet_elivated_a</item>
+        <item>@drawable/ic_feet_elivated_a</item>
+        <item>@drawable/ic_feet_elivated_b</item>
+        <item>@drawable/ic_feet_elivated_a</item>
     </array>
     <array name="flutter_kicks">
-        <item>@drawable/flutter_kicks_a</item>
-        <item>@drawable/flutter_kicks_b</item>
-        <item>@drawable/flutter_kicks_a</item>
-        <item>@drawable/flutter_kicks_c</item>
+        <item>@drawable/ic_flutter_kicks_a</item>
+        <item>@drawable/ic_flutter_kicks_b</item>
+        <item>@drawable/ic_flutter_kicks_a</item>
+        <item>@drawable/ic_flutter_kicks_c</item>
     </array>
     <array name="high_knees">
-        <item>@drawable/high_knees_a</item>
-        <item>@drawable/high_knees_b</item>
+        <item>@drawable/ic_high_knees_a</item>
+        <item>@drawable/ic_high_knees_b</item>
     </array>
     <array name="incline_pushups">
-        <item>@drawable/arm_incline_pushups_a</item>
-        <item>@drawable/arm_incline_pushups_b</item>
-        <item>@drawable/arm_incline_pushups_a</item>
+        <item>@drawable/ic_arm_incline_pushups_a</item>
+        <item>@drawable/ic_arm_incline_pushups_b</item>
+        <item>@drawable/ic_arm_incline_pushups_a</item>
     </array>
     <array name="jumping_jacks">
-        <item>@drawable/arm_jumping_a</item>
-        <item>@drawable/arm_jumping_b</item>
-        <item>@drawable/arm_jumping_c</item>
-        <item>@drawable/arm_jumping_b</item>
-        <item>@drawable/arm_jumping_a</item>
+        <item>@drawable/ic_arm_jumping_a</item>
+        <item>@drawable/ic_arm_jumping_b</item>
+        <item>@drawable/ic_arm_jumping_c</item>
+        <item>@drawable/ic_arm_jumping_b</item>
+        <item>@drawable/ic_arm_jumping_a</item>
     </array>
     <array name="knee_pushups">
-        <item>@drawable/arm_knee_pushups_a</item>
-        <item>@drawable/arm_knee_pushups_b</item>
-        <item>@drawable/arm_knee_pushups_a</item>
+        <item>@drawable/ic_arm_knee_pushups_a</item>
+        <item>@drawable/ic_arm_knee_pushups_b</item>
+        <item>@drawable/ic_arm_knee_pushups_a</item>
     </array>
     <array name="leg_raise">
-        <item>@drawable/leg_raise_a</item>
-        <item>@drawable/leg_raise_b</item>
-        <item>@drawable/leg_raise_a</item>
+        <item>@drawable/ic_leg_raise_a</item>
+        <item>@drawable/ic_leg_raise_b</item>
+        <item>@drawable/ic_leg_raise_a</item>
     </array>
     <array name="leg_up_crunches">
-        <item>@drawable/leg_up_crunches_a</item>
-        <item>@drawable/leg_up_crunches_b</item>
-        <item>@drawable/leg_up_crunches_a</item>
+        <item>@drawable/ic_leg_up_crunches_a</item>
+        <item>@drawable/ic_leg_up_crunches_b</item>
+        <item>@drawable/ic_leg_up_crunches_a</item>
     </array>
     <array name="lunge">
-        <item>@drawable/lunge_a</item>
-        <item>@drawable/lunge_b</item>
-        <item>@drawable/lunge_a</item>
-        <item>@drawable/lunge_c</item>
-        <item>@drawable/lunge_a</item>
+        <item>@drawable/ic_lunge_a</item>
+        <item>@drawable/ic_lunge_b</item>
+        <item>@drawable/ic_lunge_a</item>
+        <item>@drawable/ic_lunge_c</item>
+        <item>@drawable/ic_lunge_a</item>
     </array>
     <array name="morning_cycle">
         <item>10</item>
@@ -426,132 +426,132 @@
         <item>10</item>
     </array>
     <array name="narrow_grip">
-        <item>@drawable/narrow_grip_a</item>
-        <item>@drawable/narrow_grip_b</item>
-        <item>@drawable/narrow_grip_a</item>
+        <item>@drawable/ic_narrow_grip_a</item>
+        <item>@drawable/ic_narrow_grip_b</item>
+        <item>@drawable/ic_narrow_grip_a</item>
     </array>
     <array name="pike">
-        <item>@drawable/pike_a</item>
-        <item>@drawable/pike_b</item>
-        <item>@drawable/pike_a</item>
+        <item>@drawable/ic_pike_a</item>
+        <item>@drawable/ic_pike_b</item>
+        <item>@drawable/ic_pike_a</item>
     </array>
     <array name="plank">
-        <item>@drawable/arm_plank_a</item>
+        <item>@drawable/ic_arm_plank_a</item>
     </array>
     <array name="plank_alternate_reach">
-        <item>@drawable/arm_plank_alternate_reach_a</item>
-        <item>@drawable/arm_plank_alternate_reach_b</item>
-        <item>@drawable/arm_plank_alternate_reach_a</item>
-        <item>@drawable/arm_plank_alternate_reach_c</item>
-        <item>@drawable/arm_plank_alternate_reach_a</item>
+        <item>@drawable/ic_arm_plank_alternate_reach_a</item>
+        <item>@drawable/ic_arm_plank_alternate_reach_b</item>
+        <item>@drawable/ic_arm_plank_alternate_reach_a</item>
+        <item>@drawable/ic_arm_plank_alternate_reach_c</item>
+        <item>@drawable/ic_arm_plank_alternate_reach_a</item>
     </array>
     <array name="plank_taps">
-        <item>@drawable/arm_plank_taps_b</item>
-        <item>@drawable/arm_plank_taps_a</item>
-        <item>@drawable/arm_plank_taps_b</item>
-        <item>@drawable/arm_plank_taps_c</item>
-        <item>@drawable/arm_plank_taps_b</item>
+        <item>@drawable/ic_arm_plank_taps_b</item>
+        <item>@drawable/ic_arm_plank_taps_a</item>
+        <item>@drawable/ic_arm_plank_taps_b</item>
+        <item>@drawable/ic_arm_plank_taps_c</item>
+        <item>@drawable/ic_arm_plank_taps_b</item>
     </array>
     <array name="plank_with_leg_lift">
-        <item>@drawable/plank_with_leg_lift_a</item>
-        <item>@drawable/plank_with_leg_lift_b</item>
-        <item>@drawable/plank_with_leg_lift_a</item>
-        <item>@drawable/plank_with_leg_lift_c</item>
+        <item>@drawable/ic_plank_with_leg_lift_a</item>
+        <item>@drawable/ic_plank_with_leg_lift_b</item>
+        <item>@drawable/ic_plank_with_leg_lift_a</item>
+        <item>@drawable/ic_plank_with_leg_lift_c</item>
     </array>
     <array name="punches">
-        <item>@drawable/arm_punches_a</item>
-        <item>@drawable/arm_punches_b</item>
-        <item>@drawable/arm_punches_a</item>
-        <item>@drawable/arm_punches_c</item>
-        <item>@drawable/arm_punches_a</item>
+        <item>@drawable/ic_arm_punches_a</item>
+        <item>@drawable/ic_arm_punches_b</item>
+        <item>@drawable/ic_arm_punches_a</item>
+        <item>@drawable/ic_arm_punches_c</item>
+        <item>@drawable/ic_arm_punches_a</item>
     </array>
     <array name="pushup_low_hold">
-        <item>@drawable/arm_pushup_low_hold_a</item>
+        <item>@drawable/ic_arm_pushup_low_hold_a</item>
     </array>
     <array name="pushups">
-        <item>@drawable/arm_push_up_a</item>
-        <item>@drawable/arm_push_up_b</item>
-        <item>@drawable/arm_push_up_a</item>
+        <item>@drawable/ic_arm_push_up_a</item>
+        <item>@drawable/ic_arm_push_up_b</item>
+        <item>@drawable/ic_arm_push_up_a</item>
     </array>
     <array name="shoulder_gators">
-        <item>@drawable/arm_shoulder_gators_a</item>
-        <item>@drawable/arm_shoulder_gators_b</item>
-        <item>@drawable/arm_shoulder_gators_a</item>
+        <item>@drawable/ic_arm_shoulder_gators_a</item>
+        <item>@drawable/ic_arm_shoulder_gators_b</item>
+        <item>@drawable/ic_arm_shoulder_gators_a</item>
     </array>
     <array name="single_arm_left">
-        <item>@drawable/single_arm_left_a</item>
-        <item>@drawable/single_arm_left_b</item>
-        <item>@drawable/single_arm_left_a</item>
+        <item>@drawable/ic_single_arm_left_a</item>
+        <item>@drawable/ic_single_arm_left_b</item>
+        <item>@drawable/ic_single_arm_left_a</item>
     </array>
     <array name="single_arm_right">
-        <item>@drawable/single_arm_right_a</item>
-        <item>@drawable/single_arm_right_b</item>
-        <item>@drawable/single_arm_right_a</item>
+        <item>@drawable/ic_single_arm_right_a</item>
+        <item>@drawable/ic_single_arm_right_b</item>
+        <item>@drawable/ic_single_arm_right_a</item>
     </array>
     <array name="single_leg_left">
-        <item>@drawable/single_leg_left_a</item>
-        <item>@drawable/single_leg_left_b</item>
-        <item>@drawable/single_leg_left_a</item>
+        <item>@drawable/ic_single_leg_left_a</item>
+        <item>@drawable/ic_single_leg_left_b</item>
+        <item>@drawable/ic_single_leg_left_a</item>
     </array>
     <array name="single_leg_right">
-        <item>@drawable/single_leg_right_a</item>
-        <item>@drawable/single_leg_right_b</item>
-        <item>@drawable/single_leg_right_a</item>
+        <item>@drawable/ic_single_leg_right_a</item>
+        <item>@drawable/ic_single_leg_right_b</item>
+        <item>@drawable/ic_single_leg_right_a</item>
     </array>
     <array name="skip_the_rope">
-        <item>@drawable/arm_skip_the_rope_a</item>
-        <item>@drawable/arm_skip_the_rope_b</item>
-        <item>@drawable/arm_skip_the_rope_c</item>
+        <item>@drawable/ic_arm_skip_the_rope_a</item>
+        <item>@drawable/ic_arm_skip_the_rope_b</item>
+        <item>@drawable/ic_arm_skip_the_rope_c</item>
     </array>
     <array name="spiderman">
-        <item>@drawable/spiderman_a</item>
-        <item>@drawable/spiderman_b</item>
-        <item>@drawable/spiderman_c</item>
-        <item>@drawable/spiderman_a</item>
-        <item>@drawable/spiderman_b</item>
-        <item>@drawable/spiderman_d</item>
-        <item>@drawable/spiderman_a</item>
+        <item>@drawable/ic_spiderman_a</item>
+        <item>@drawable/ic_spiderman_b</item>
+        <item>@drawable/ic_spiderman_c</item>
+        <item>@drawable/ic_spiderman_a</item>
+        <item>@drawable/ic_spiderman_b</item>
+        <item>@drawable/ic_spiderman_d</item>
+        <item>@drawable/ic_spiderman_a</item>
     </array>
     <array name="squats">
-        <item>@drawable/squats_a</item>
-        <item>@drawable/squats_b</item>
+        <item>@drawable/ic_squats_a</item>
+        <item>@drawable/ic_squats_b</item>
     </array>
     <array name="standard_grip">
-        <item>@drawable/standard_grip_a</item>
-        <item>@drawable/standard_grip_b</item>
-        <item>@drawable/standard_grip_a</item>
+        <item>@drawable/ic_standard_grip_a</item>
+        <item>@drawable/ic_standard_grip_b</item>
+        <item>@drawable/ic_standard_grip_a</item>
     </array>
     <array name="standing_biceps_stretch_left">
-        <item>@drawable/arm_standing_biceps_stretch_left</item>
+        <item>@drawable/ic_arm_standing_biceps_stretch_left</item>
     </array>
     <array name="standing_biceps_stretch_right">
-        <item>@drawable/arm_standing_biceps_stretch_right</item>
+        <item>@drawable/ic_arm_standing_biceps_stretch_right</item>
     </array>
     <array name="triceps_dips">
-        <item>@drawable/arm_triceps_dips_a</item>
-        <item>@drawable/arm_triceps_dips_b</item>
-        <item>@drawable/arm_triceps_dips_a</item>
+        <item>@drawable/ic_arm_triceps_dips_a</item>
+        <item>@drawable/ic_arm_triceps_dips_b</item>
+        <item>@drawable/ic_arm_triceps_dips_a</item>
     </array>
     <array name="triceps_stretch_left">
-        <item>@drawable/arm_triceps_stretch_left</item>
+        <item>@drawable/ic_arm_triceps_stretch_left</item>
     </array>
     <array name="triceps_stretch_right">
-        <item>@drawable/arm_triceps_stretch_right</item>
+        <item>@drawable/ic_arm_triceps_stretch_right</item>
     </array>
     <array name="v_crunches">
-        <item>@drawable/v_crunches_a</item>
-        <item>@drawable/v_crunches_b</item>
-        <item>@drawable/v_crunches_a</item>
+        <item>@drawable/ic_v_crunches_a</item>
+        <item>@drawable/ic_v_crunches_b</item>
+        <item>@drawable/ic_v_crunches_a</item>
     </array>
     <array name="vertical_leg_crunches">
-        <item>@drawable/vertical_leg_crunches_a</item>
-        <item>@drawable/vertical_leg_crunches_b</item>
-        <item>@drawable/vertical_leg_crunches_a</item>
+        <item>@drawable/ic_vertical_leg_crunches_a</item>
+        <item>@drawable/ic_vertical_leg_crunches_b</item>
+        <item>@drawable/ic_vertical_leg_crunches_a</item>
     </array>
     <array name="wall_pushups">
-        <item>@drawable/arm_wall_pushups_a</item>
-        <item>@drawable/arm_wall_pushups_b</item>
-        <item>@drawable/arm_wall_pushups_a</item>
+        <item>@drawable/ic_arm_wall_pushups_a</item>
+        <item>@drawable/ic_arm_wall_pushups_b</item>
+        <item>@drawable/ic_arm_wall_pushups_a</item>
     </array>
     <array name="weightloss_cycles">
         <item>18</item>
@@ -572,25 +572,25 @@
         <item>12</item>
     </array>
     <array name="wide_arm_pushups">
-        <item>@drawable/arm_wide_arm_pushups_a</item>
-        <item>@drawable/arm_wide_arm_pushups_b</item>
-        <item>@drawable/arm_wide_arm_pushups_a</item>
+        <item>@drawable/ic_arm_wide_arm_pushups_a</item>
+        <item>@drawable/ic_arm_wide_arm_pushups_b</item>
+        <item>@drawable/ic_arm_wide_arm_pushups_a</item>
     </array>
     <array name="wide_grip">
-        <item>@drawable/wide_grip_a</item>
-        <item>@drawable/wide_grip_b</item>
-        <item>@drawable/wide_grip_a</item>
+        <item>@drawable/ic_wide_grip_a</item>
+        <item>@drawable/ic_wide_grip_b</item>
+        <item>@drawable/ic_wide_grip_a</item>
     </array>
     <array name="with_jump">
-        <item>@drawable/with_jump_d</item>
-        <item>@drawable/with_jump_a</item>
-        <item>@drawable/with_jump_b</item>
-        <item>@drawable/with_jump_a</item>
-        <item>@drawable/with_jump_c</item>
-        <item>@drawable/with_jump_a</item>
-        <item>@drawable/with_jump_d</item>
-        <item>@drawable/with_jump_e</item>
-        <item>@drawable/with_jump_d</item>
+        <item>@drawable/ic_with_jump_d</item>
+        <item>@drawable/ic_with_jump_a</item>
+        <item>@drawable/ic_with_jump_b</item>
+        <item>@drawable/ic_with_jump_a</item>
+        <item>@drawable/ic_with_jump_c</item>
+        <item>@drawable/ic_with_jump_a</item>
+        <item>@drawable/ic_with_jump_d</item>
+        <item>@drawable/ic_with_jump_e</item>
+        <item>@drawable/ic_with_jump_d</item>
     </array>
 
 

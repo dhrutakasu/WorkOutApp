@@ -22,7 +22,7 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:background="@drawable/dialog_bg"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarBloodDonate">
@@ -147,4 +147,22 @@
         </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlAdViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="bottom|center">
+
+        <RelativeLayout
+            android:id="@+id/RlAdView"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center|bottom" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

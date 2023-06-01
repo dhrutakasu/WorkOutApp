@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
@@ -70,6 +71,7 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         helper = new ExerciseHelper(context);
         TvTitle.setText(Constants.getCapsSentences(ExerciseName));
         MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");

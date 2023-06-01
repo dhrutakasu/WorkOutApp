@@ -21,47 +21,64 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_marginTop="@dimen/_15sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarDayExercise">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RvAddReminderList"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintTop_toTopOf="parent"
+        <ImageView
+            android:id="@+id/IvAddReminder"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_15sdp"
             android:layout_marginBottom="@dimen/_15sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/IvAddReminder"
-            android:scrollbars="vertical" />
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/TvNoReminderFound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/noreminders"
             android:fontFamily="@font/main_semibold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/noreminders"
             android:textColor="@color/text_color"
-            android:textSize="@dimen/_20sdp" />
-
-        <ImageView
-            android:id="@+id/IvAddReminder"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
-            android:src="@drawable/ic_add"
-            android:layout_gravity="center"
+            android:textSize="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RvAddReminderList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"/>
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/IvAddReminder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/RlAdViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_gravity="bottom|center"
+        android:gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/RlAdView"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center|bottom" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

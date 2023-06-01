@@ -23,7 +23,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/FlNative"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarProfile">
@@ -157,7 +157,7 @@
                         android:layout_weight="0.15"
                         android:checked="true"
                         android:thumb="@drawable/thumb_selector"
-                        app:track="@drawable/track_selector" />
+                        app:track="@drawable/ic_track_selector" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -438,6 +438,15 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/FlNative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

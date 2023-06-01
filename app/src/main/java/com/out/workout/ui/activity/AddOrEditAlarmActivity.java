@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -17,6 +18,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.model.ReminderModel;
 import com.out.workout.Receiver.ReminderReceiver;
 import com.out.workout.service.AlarmsService;
@@ -76,6 +79,8 @@ public class AddOrEditAlarmActivity extends AppCompatActivity implements View.On
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         helper=new ExerciseHelper(context);
         TvTitle.setText(getToolbarTitle());
         IvDelete.setVisibility(View.VISIBLE);

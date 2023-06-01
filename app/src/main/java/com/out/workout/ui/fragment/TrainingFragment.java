@@ -11,7 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.WorkOutTypeModel;
 import com.out.workout.ui.activity.WorkoutListActivity;
@@ -51,6 +54,7 @@ public class TrainingFragment extends Fragment {
     }
 
     private void initActions() {
+
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
         WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.butocks), R.drawable.ic_arms);

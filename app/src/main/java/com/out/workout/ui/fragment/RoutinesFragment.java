@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.WorkOutTypeModel;
 import com.out.workout.ui.activity.WorkoutListActivity;

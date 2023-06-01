@@ -6,54 +6,99 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.CategoryItemDetailsActivity">
 
-    <FrameLayout
-        android:id="@+id/FlImgCategory"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/CardImgCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_collapseMode="parallax"
         android:padding="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_5ssp"
+        app:cardElevation="@dimen/_3sdp"
+        android:layout_margin="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/IvItemImg"
+        <FrameLayout
+            android:id="@+id/FlImgCategory"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_180sdp"
-            android:scaleType="centerCrop" />
+            android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/IvBack"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_gravity="top"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:src="@drawable/ic_back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </FrameLayout>
+            <ImageView
+                android:id="@+id/IvItemImg"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:scaleType="centerCrop" />
 
+            <ImageView
+                android:id="@+id/IvBack"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="top"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/FlImgCategory">
+        app:layout_constraintTop_toBottomOf="@id/CardImgCategory">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="15dp"
-            android:paddingBottom="56dp">
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/TvItemVitaminsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/main_semibold"
+                android:paddingTop="5dp"
+                android:textColor="#393939"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvItemVitamins"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/TvItemMineralsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:paddingTop="8dp"
+                android:fontFamily="@font/main_semibold"
+                android:textColor="#393939"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RvItemMinerals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
             <TextView
                 android:id="@+id/TvItemNutritionalTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
+                android:fontFamily="@font/main_semibold"
                 android:paddingTop="8dp"
                 android:textColor="#393939"
                 android:textSize="18sp"
@@ -64,8 +109,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
+                android:fontFamily="@font/main_medium"
                 android:paddingTop="2dp"
-                android:textColor="#28685a"
+                android:textColor="@color/purple_500"
                 android:textSize="12sp" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -85,6 +131,7 @@
                 android:layout_marginStart="20dp"
                 android:paddingTop="20dp"
                 android:textColor="#393939"
+                android:fontFamily="@font/main_semibold"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
@@ -98,56 +145,7 @@
                 android:visibility="gone"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-            <TextView
-                android:id="@+id/TvItemVitaminsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:paddingTop="20dp"
-                android:textColor="#393939"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RvItemVitamins"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-            <TextView
-                android:id="@+id/TvItemMineralsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:paddingTop="20dp"
-                android:textColor="#393939"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/RvItemMinerals"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/purple_500"
-                android:paddingLeft="20dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:tag="binding_1"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
-
             <LinearLayout
-                android:id="@+id/cv_pros"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -161,6 +159,7 @@
                     android:layout_marginStart="10dp"
                     android:padding="5dp"
                     android:text="Pros :"
+                    android:fontFamily="@font/main_semibold"
                     android:textColor="#4d4c4c"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -174,13 +173,11 @@
                     android:padding="2dp" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/cv_cons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@color/white"
-                android:orientation="vertical"
-                android:tag="binding_3">
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -188,6 +185,7 @@
                     android:layout_marginStart="10dp"
                     android:padding="5dp"
                     android:text="Cons :"
+                    android:fontFamily="@font/main_semibold"
                     android:textColor="#4d4c4c"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -200,32 +198,6 @@
                     android:layout_marginTop="5dp"
                     android:padding="2dp" />
             </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_serving"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@color/white"
-                android:visibility="gone"
-                app:cardCornerRadius="9dp"
-                app:contentPadding="12dp">
-
-                <TextView
-                    android:id="@+id/tv_serving"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:tag="binding_4"
-                    android:textColor="@color/bg_gray"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_nutrients"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:visibility="gone" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

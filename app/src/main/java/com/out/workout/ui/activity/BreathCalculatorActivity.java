@@ -12,13 +12,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 
 import java.text.SimpleDateFormat;
@@ -65,6 +64,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getString(R.string.breath_count));
         calendar = Calendar.getInstance();
         Fab = calendar.get(Calendar.YEAR);

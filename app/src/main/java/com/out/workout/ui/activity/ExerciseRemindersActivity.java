@@ -25,6 +25,7 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
@@ -64,6 +65,7 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getString(R.string.exercise_time));
 
         System.out.println("---- : HR " + SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr));

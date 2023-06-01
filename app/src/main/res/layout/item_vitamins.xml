@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginStart="40dp"
+    android:layout_marginStart="20dp"
     android:orientation="horizontal"
     android:paddingTop="10dp">
 
@@ -24,7 +24,7 @@
 
             <com.google.android.material.progressindicator.CircularProgressIndicator
                 app:indicatorColor="@color/purple_500"
-                app:indicatorSize="80dp"
+                app:indicatorSize="105dp"
                 app:trackColor="#dadada"
                 app:trackCornerRadius="5dp"
                 app:trackThickness="7dp"
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content" />
 
             <LinearLayout
-                android:layout_width="68dp"
+                android:layout_width="58dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="vertical">
@@ -44,6 +44,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:maxLines="2"
+                    android:fontFamily="@font/main_medium"
                     android:padding="2dp"
                     android:textColor="#4c4c4c"
                     android:textSize="12sp" />
@@ -60,6 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:fontFamily="@font/main_medium"
                     android:textColor="#4c4c4c"
                     android:textSize="14sp"
                     android:textStyle="bold" />
@@ -73,6 +75,7 @@
             android:layout_gravity="center_horizontal"
             android:ellipsize="end"
             android:gravity="center"
+            android:fontFamily="@font/main_medium"
             android:maxLines="2"
             android:minLines="2"
             android:textColor="#4c4c4c"

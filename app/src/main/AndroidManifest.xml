@@ -18,50 +18,62 @@
         android:theme="@style/Theme.MyApplication">
         <activity
             android:name=".ui.activity.ArticleDetailsActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.ArticleActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.ProfileActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FatWaterIntakeCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FatProteinCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FatBodyCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FatCalculatorResultActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FatCalorieCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.FitnessCalculatorsActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.CategoryItemDetailsActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.CategorySubItemListActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.AddOrEditAlarmActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
 
         <service
             android:name=".service.AlarmsService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false"  />
 
         <receiver
             android:name=".Receiver.ReminderReceiver"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false"  />
         <receiver
             android:name=".Receiver.BootReceiver"
             android:enabled="true"
@@ -73,82 +85,110 @@
 
         <activity
             android:name=".ui.activity.DayRemindersActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.ExerciseRemindersActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.CompleteExerciseActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.WorkOutExerciseActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.EligibilityBloodActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BMIUnderstandResultActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.ExerciseDetailsActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.ChartActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BloodPressureCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BreathCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.OvulationCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.PregnancyCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BloodAlcoholCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BodyFatCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.WaterIntakeCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.CalorieCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BloodDonationCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BloodVolumeCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.HeartRateCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.BmiCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.WeightCalculatorActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.WorkoutListActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.SplashActivity"
-            android:exported="false" />
+            android:exported="false"  
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.activity.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
     </application>
 
 </manifest>

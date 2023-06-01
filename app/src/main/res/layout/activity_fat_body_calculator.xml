@@ -20,7 +20,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarFatCalorie">
@@ -71,7 +71,7 @@
                             android:layout_height="45dp"
                             android:scaleType="centerInside"
                             android:src="@drawable/ic_male_selector"
-                            app:tint="@color/calculator_text_color_selector" />
+                            app:tint="@color/text_color_selector" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -112,7 +112,7 @@
                             android:layout_height="45dp"
                             android:scaleType="centerInside"
                             android:src="@drawable/ic_female_selector"
-                            app:tint="@color/calculator_text_color_selector" />
+                            app:tint="@color/text_color_selector" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -479,4 +479,22 @@
                 android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlAdViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="bottom|center">
+
+        <RelativeLayout
+            android:id="@+id/RlAdView"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center|bottom" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

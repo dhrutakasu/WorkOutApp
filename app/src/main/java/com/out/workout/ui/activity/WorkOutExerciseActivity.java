@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Application.App;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -494,105 +495,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         if (dialogHelp != null && dialogHelp.isShowing()) {
             dialogHelp.dismiss();
         } else {
-            if (App.textToSpeech != null) {
-                if (App.textToSpeech.isSpeaking()) {
-                    App.textToSpeech.stop();
-                    App.textToSpeech.shutdown();
-                }
-            }
-            if (RlReadyExercise.getVisibility() == View.VISIBLE) {
-                IvPlayReady.setImageResource(R.drawable.ic_play);
-                BoolTimer = true;
-                countDownTimerReady.cancel();
-            } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
-                TvPauseExercise.setText(getString(R.string.play));
-                BoolTimer = true;
-                ExerciseDownTimer.cancel();
-            } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
-                IvPlayRest.setImageResource(R.drawable.ic_play);
-                BoolTimer = true;
-                RestTimer.cancel();
-            }
-
-            Dialog dialogExit = new Dialog(context);
-            dialogExit.setCancelable(false);
-            dialogExit.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialogExit.setContentView(R.layout.dialog_quit);
-            dialogExit.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-            WindowManager.LayoutParams lp = dialogExit.getWindow().getAttributes();
-            Window window = dialogExit.getWindow();
-            lp.copyFrom(window.getAttributes());
-            lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            lp.gravity = Gravity.CENTER;
-            window.setAttributes(lp);
-
-            TextView BtnDialogExreciseExit = dialogExit.findViewById(R.id.BtnDialogExreciseExit);
-            TextView BtnDialogExreciseNo = dialogExit.findViewById(R.id.BtnDialogExreciseNo);
-
-            BtnDialogExreciseExit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (RlReadyExercise.getVisibility() == View.VISIBLE) {
-                        if (App.textToSpeech != null) {
-                            if (App.textToSpeech.isSpeaking()) {
-                                App.textToSpeech.stop();
-                                App.textToSpeech.shutdown();
-                            }
-                        }
-                        countDownTimerReady.cancel();
-                    } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
-                        ExerciseDownTimer.cancel();
-                    } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
-                        RestTimer.cancel();
-                    }
-                    finish();
-                }
-            });
-
-            BtnDialogExreciseNo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (RlReadyExercise.getVisibility() == View.VISIBLE) {
-                        BoolTimer = false;
-                        IvPlayReady.setImageResource(R.drawable.ic_pause);
-                        GotoCounter(NotedReadyTime);
-                    } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
-                        BoolTimer = false;
-                        TvPauseExercise.setText(getString(R.string.pause));
-
-                        if (ExCount > 0) {
-                            IvExercisePrevious.setVisibility(View.VISIBLE);
-                        }
-                        RlReadyExercise.setVisibility(View.GONE);
-                        RlRestExercise.setVisibility(View.GONE);
-                        RlExerciseStart.setVisibility(View.VISIBLE);
-                        IvHelp.setVisibility(View.VISIBLE);
-                        WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
-                        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
-                        for (int i = 0; i < model.getExerciseImg().length(); i++) {
-                            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
-                        }
-                        sectionBuilder.setOneshot(false);
-                        sectionBuilder.setFrameDuration(800);
-                        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
-                        stateAnimation.transitionNow("pending");
-
-                        TvPauseExercise.setText(getString(R.string.pause));
-                        TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
-                        ExTimer = (int) NotedExerciseTimer;
-                        ExerciseTimer(model, ExCount);
-                    } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
-                        BoolTimer = false;
-                        IvPlayRest.setImageResource(R.drawable.ic_pause);
-                        IsRest = (int) NotedRestTimer;
-                        RestTimer();
-                    }
-                    dialogExit.dismiss();
-                }
-            });
-
-            dialogExit.show();
+            super.onBackPressed();
         }
     }
 
@@ -719,14 +622,21 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private void GotoNextExercise() {
         System.out.println("----- exCount InRest : " + (ExCount));
         if ((WorkoutExerciseList.size() - 1) == ExCount) {
-            int time = 0;
-            for (int i = 0; i < WorkoutExerciseList.size(); i++) {
-                time = time + WorkoutExerciseList.get(i).getExerciseImg().length() + 30;
-            }
 
             ExerciseDownTimer.cancel();
-            startActivity(new Intent(context, CompleteExerciseActivity.class).putExtra(Constants.ExerciseCount, WorkoutExerciseList.size()).putExtra(Constants.WorkoutType, WorkoutType).putExtra(Constants.ExerciseTime, time));
-            finish();
+            Ad_Interstitial.getInstance().showInter(WorkOutExerciseActivity.this, new Ad_Interstitial.MyCallback() {
+                @Override
+                public void callbackCall() {
+                    int time = 0;
+                    for (int i = 0; i < WorkoutExerciseList.size(); i++) {
+                        time = time + WorkoutExerciseList.get(i).getExerciseImg().length() + 30;
+                    }
+
+                    startActivity(new Intent(context, CompleteExerciseActivity.class).putExtra(Constants.ExerciseCount, WorkoutExerciseList.size()).putExtra(Constants.WorkoutType, WorkoutType).putExtra(Constants.ExerciseTime, time));
+                    finish();
+                }
+            });
+
         } else {
             ExerciseDownTimer.cancel();
             ExerciseDownTimer.onFinish();

@@ -20,8 +20,11 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
 
@@ -72,6 +75,8 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         TvTitle.setText(getString(R.string.blood_donate));
         calendar = Calendar.getInstance();
         Fab = calendar.get(Calendar.YEAR);

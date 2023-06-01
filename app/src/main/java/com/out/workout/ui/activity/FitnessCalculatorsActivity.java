@@ -9,8 +9,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.FitnessAdapter;
 import com.out.workout.ui.adapter.SubDietTipsAdapter;
@@ -46,6 +49,8 @@ public class FitnessCalculatorsActivity extends AppCompatActivity implements Vie
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         TvTitle.setText(getString(R.string.title_activity_fitness_and_health_calculators));
         ArrayList<String> list = new ArrayList<>();
         list.add("BMR Calculator");

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".ui.activity.AddOrEditAlarmActivity">
 
     <RelativeLayout
         android:id="@+id/RlActionBarEditReminder"
@@ -15,263 +17,292 @@
 
         <include layout="@layout/layout_header" />
     </RelativeLayout>
-
-    <FrameLayout
-        android:id="@+id/edit_alarm_frag_container"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/_20sdp">
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialog_bg"
+        app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/RlActionBarEditReminder" >
 
-        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
+
+        <FrameLayout
+            android:id="@+id/edit_alarm_frag_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarStyle="outsideOverlay">
+            android:layout_marginTop="@dimen/_20sdp">
 
-            <LinearLayout
+            <ScrollView
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingLeft="@dimen/_16sdp"
-                android:paddingRight="@dimen/_16sdp"
-                android:paddingBottom="@dimen/_16sdp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:text="@string/time"
-                    android:fontFamily="@font/main_semibold"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    tools:text="Time" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:background="@drawable/divider" />
-
-                <TimePicker
-                    android:id="@+id/PickerTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/_16sdp"
-                    android:timePickerMode="spinner" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:text="@string/days"
-                    android:fontFamily="@font/main_semibold"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    tools:text="Days" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:background="@drawable/divider" />
+                android:scrollbarStyle="outsideOverlay">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/_16sdp"
+                    android:paddingRight="@dimen/_16sdp"
+                    android:paddingBottom="@dimen/_16sdp">
 
-                    <RelativeLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="@string/time"
+                        android:fontFamily="@font/main_semibold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        tools:text="Time" />
 
-                        <CheckBox
-                            android:id="@+id/CbMon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@drawable/divider" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            android:text="@string/monday"
-                            tools:text="Monday" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
+                    <TimePicker
+                        android:id="@+id/PickerTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:timePickerMode="spinner" />
 
-                        <CheckBox
-                            android:id="@+id/CbTues"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/tu"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Tuesday" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:text="@string/days"
+                        android:fontFamily="@font/main_semibold"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"
+                        tools:text="Days" />
 
-                        <CheckBox
-                            android:id="@+id/CbWed"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="@dimen/_8sdp"
+                        android:background="@drawable/divider" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/wed"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Wednesday" />
-                    </RelativeLayout>
-
-                    <RelativeLayout
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
-                        <CheckBox
-                            android:id="@+id/CbThurs"
-                            android:layout_width="wrap_content"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <CheckBox
+                                android:id="@+id/CbMon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                android:text="@string/monday"
+                                tools:text="Monday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/thursday"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Thursday" />
-                    </RelativeLayout>
+                            android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/CbTues"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
 
-                        <CheckBox
-                            android:id="@+id/CbFri"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/tu"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Tuesday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <CheckBox
+                                android:id="@+id/CbWed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/wed"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Wednesday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/fri"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Friday" />
-                    </RelativeLayout>
+                            android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/CbThurs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
 
-                        <CheckBox
-                            android:id="@+id/CbSat"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/thursday"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Thursday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <CheckBox
+                                android:id="@+id/CbFri"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/fri"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Friday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/sat"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Saturday" />
-                    </RelativeLayout>
+                            android:orientation="horizontal">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                            <CheckBox
+                                android:id="@+id/CbSat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
 
-                        <CheckBox
-                            android:id="@+id/CbSun"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/sat"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Saturday" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:buttonTint="@color/calculator_text_color_selector"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp" />
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentStart="true"
-                            android:layout_centerVertical="true"
-                            android:layout_marginBottom="@dimen/_8sdp"
-                            android:text="@string/sun"
-                            android:fontFamily="@font/main_semibold"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_12sdp"
-                            tools:text="Sunday" />
-                    </RelativeLayout>
+                            <CheckBox
+                                android:id="@+id/CbSun"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:text="@string/sun"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp"
+                                tools:text="Sunday" />
+                        </RelativeLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </ScrollView>
-    </FrameLayout>
-</LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlAdViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="bottom|center">
+
+        <RelativeLayout
+            android:id="@+id/RlAdView"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center|bottom" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -74,7 +74,7 @@ public class ReminderReceiver extends BroadcastReceiver {
         builder.setVibrate(new long[]{1000, 500, 1000, 500, 1000, 500});
         builder.setContentIntent(launchAlarmLandingPage(context, reminderModel));
         builder.setStyle(new NotificationCompat.BigPictureStyle()
-                .bigPicture(BitmapFactory.decodeResource(context.getResources(), R.drawable.notification_banner))
+                .bigPicture(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_notification_banner))
                 .setBigContentTitle(string).setSummaryText(string2)).setAutoCancel(true);
         builder.setPriority(Notification.PRIORITY_HIGH);
 

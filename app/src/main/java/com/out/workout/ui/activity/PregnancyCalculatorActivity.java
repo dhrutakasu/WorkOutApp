@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
 
@@ -67,6 +68,7 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getString(R.string.pregnancy));
         calendar = Calendar.getInstance();
         Fab = calendar.get(Calendar.YEAR);

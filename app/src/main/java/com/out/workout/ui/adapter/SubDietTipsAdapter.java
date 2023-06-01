@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,7 +39,7 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_diet_tips, parent, false));
+        return new MyViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_sub_diet_tips, parent, false));
     }
 
     @Override
@@ -46,6 +47,8 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
         holder.TvDietTitle.setVisibility(View.GONE);
         holder.IvArrow.setVisibility(View.GONE);
         holder.TvDietName.setLines(1);
+        holder.RlDiet.setBackgroundColor(context.getResources().getColor(R.color.purple_500));
+        holder.TvDietName.setTextColor(context.getResources().getColor(R.color.white));
         holder.TvDietName.setText(categories.get(position).getName());
         try {
             InputStream ims = context.getAssets().open("DietImg/" + categories.get(position).getIcon());
@@ -73,6 +76,7 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
+        private final RelativeLayout RlDiet;
         private ImageView IvDietImg,IvArrow;
         private TextView TvDietName, TvDietTitle;
 
@@ -82,6 +86,7 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
             IvArrow = itemView.findViewById(R.id.IvArrow);
             TvDietName = itemView.findViewById(R.id.TvDietName);
             TvDietTitle = itemView.findViewById(R.id.TvDietTitle);
+            RlDiet = itemView.findViewById(R.id.RlDiet);
         }
     }
 }

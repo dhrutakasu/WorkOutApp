@@ -3,79 +3,53 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable-v24/ic_alarm_white.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/background_gradient.xml" value="0.1145" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/bg_gender_selection.xml" value="0.1015" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/bg_gender_selection_parent.xml" value="0.1015" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/bg_white_rounded_corner.xml" value="0.1015" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/dialog_bg.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/divider.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_alarm_white.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_border.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_centimeter.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_done.xml" value="0.1015" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_height.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_shadow.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/menu_background_color.xml" value="0.1145" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/progress_bg.xml" value="0.1065" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/spinner_background.xml" value="0.1015" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_article_details.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_alcohol_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_donation_calculator.xml" value="0.13" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_pressure_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_volume_calculator.xml" value="0.14" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_bmi_calculator_activtiy.xml" value="0.25" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_article_details.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_alcohol_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_donation_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_pressure_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_volume_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_bmi_calculator_activtiy.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_bmiunderstand_result.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_body_fat_calculator.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_breath_calculator.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_calorie_calculator.xml" value="0.21" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_category_item_details.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_chart.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_chart2.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_complete_exercise.xml" value="0.18" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_edit_alarm.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_eligibility_blood.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_exercise_details.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_body_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_calculator_result.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_calorie_calculator.xml" value="0.2" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_body_fat_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_breath_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_calorie_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_category_item_details.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_category_sub_item_list.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_chart.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_complete_exercise.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_day_reminders.xml" value="0.2" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_edit_alarm.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_eligibility_blood.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_exercise_details.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_exercise_reminders.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_body_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_calculator_result.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_calorie_calculator.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_protein_calculator.xml" value="0.14537037037037037" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_water_intake_calculator.xml" value="0.25" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_heart_rate_calculator.xml" value="0.18" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_ovulation_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_pregnancy_calculator.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_water_intake_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_weight_calculator.xml" value="0.25" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_work_out_exercise.xml" value="0.14" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_workout_list.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/alarm_row.xml" value="0.16" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/app_bar_dashboard.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/content_dashboard.xml" value="0.15462962962962962" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/dialog_weight.xml" value="0.22" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_add_edit_alarm.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_calculator.xml" value="0.25" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_diet_tips.xml" value="0.33" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_routines.xml" value="0.15462962962962962" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_training.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_article.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_calculator.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_diet_tips.xml" value="0.33" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_nutrient.xml" value="0.15462962962962962" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_spinner.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_training.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_workout.xml" value="0.2" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/layout_header.xml" value="0.17" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/layout_spinner.xml" value="0.16" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/nav_header_dashboard.xml" value="0.16944444444444445" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/menu/edit_alarm_menu.xml" value="0.15462962962962962" />
-        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/menu/nav_actionbar.xml" value="0.14826254826254825" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fat_water_intake_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_fitness_calculators.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_heart_rate_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_main.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_ovulation_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_pregnancy_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_profile.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_water_intake_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_weight_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_work_out_exercise.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_workout_list.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/dialog_quit.xml" value="0.2" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_calculator.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_diet_tips.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_routines.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_training.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_ad_unified.xml" value="0.14537037037037037" />
       </map>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
   </component>
 </project>

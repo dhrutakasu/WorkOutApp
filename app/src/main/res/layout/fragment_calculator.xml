@@ -24,10 +24,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/IvCalculatorBanner"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_8sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_calculator" />
+
 </RelativeLayout>

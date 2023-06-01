@@ -24,9 +24,12 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.ExerciseAdapter;
 import com.out.workout.ui.adapter.FitSliderAdapter;
@@ -95,6 +98,8 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
     }
 
     private void initActions() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         List<Number> list = new ArrayList<>();
         for (int i = 5; i < 99; i++) {
             list.add(i);

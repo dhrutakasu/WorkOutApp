@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
 import com.google.android.material.navigation.NavigationView;
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.Application.App;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
-
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNativeExit));
         TextView BtnDialogQuit = dialogExit.findViewById(R.id.BtnDialogQuit);
         TextView BtnDialogExreciseExit = dialogExit.findViewById(R.id.BtnDialogExreciseExit);
         TextView BtnDialogExreciseNo = dialogExit.findViewById(R.id.BtnDialogExreciseNo);

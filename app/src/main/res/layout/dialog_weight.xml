@@ -62,7 +62,7 @@
             android:backgroundTint="@color/purple_500"
             android:padding="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:src="@drawable/woman4"
+            android:src="@drawable/ic_woman4"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

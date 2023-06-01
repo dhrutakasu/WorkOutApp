@@ -8,13 +8,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.BuildConfig;
 import com.out.workout.R;
-import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
@@ -73,6 +72,8 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getResources().getString(R.string.str_profile));
         IsCounter = SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10);
         IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);

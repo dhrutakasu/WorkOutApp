@@ -25,6 +25,7 @@
         android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RlActionBarCalculator">
@@ -46,50 +47,39 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/main_semibold"
-                    android:layout_marginTop="@dimen/_8ssp"
-                    android:layout_marginStart="@dimen/_8ssp"
-                    android:layout_marginBottom="@dimen/_3ssp"
-                    android:text="@string/enter_age"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:baselineAligned="false"
                     android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_weight="0.5"
                         android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="0.5"
                         android:background="@drawable/ic_border">
 
-                            <EditText
-                                android:id="@+id/EdtAgeCalculator"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="10dp"
-                                android:ems="10"
-                                android:gravity="start|center_vertical"
-                                android:background="@color/transparent"
-                                android:hint="@string/enter_age"
-                                android:inputType="number"
-                                android:textColor="@color/black"
-                                android:textDirection="locale"
-                                android:textSize="@dimen/_15sdp" />
+                        <EditText
+                            android:id="@+id/EdtAgeCalculator"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="start|center_vertical"
+                            android:hint="@string/enter_age"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textDirection="locale"
+                            android:textSize="@dimen/_15sdp" />
                     </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_40sdp"
-                        android:layout_weight="0.5"
                         android:layout_marginStart="10dp"
+                        android:layout_weight="0.5"
                         android:background="@drawable/ic_border">
 
                         <Spinner
@@ -104,44 +94,17 @@
                     </RelativeLayout>
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/ic_border">
-
-                    <Spinner
-                        android:id="@+id/SpinnerHeightIdealWeight"
-                        style="@style/Widget.App.Spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="start"
-                        android:spinnerMode="dropdown" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/main_semibold"
-                    android:layout_marginTop="@dimen/_8ssp"
-                    android:layout_marginStart="@dimen/_8ssp"
-                    android:layout_marginBottom="@dimen/_3ssp"
-                    android:text="@string/enter_value"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:baselineAligned="false"
                     android:layout_marginTop="5dp"
+                    android:baselineAligned="false"
                     android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_weight="0.85"
                         android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="0.85"
                         android:background="@drawable/ic_border">
 
                         <EditText
@@ -162,10 +125,10 @@
                     <TextView
                         android:id="@+id/TvFTOrCMIdealWeight"
                         android:layout_width="0dp"
-                        android:layout_weight="0.15"
                         android:layout_height="match_parent"
-                        android:fontFamily="@font/main_semibold"
                         android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_weight="0.15"
+                        android:fontFamily="@font/main_semibold"
                         android:gravity="center_vertical"
                         android:text="@string/ft"
                         android:textAllCaps="true"
@@ -173,24 +136,12 @@
                         android:textSize="@dimen/_14sdp" />
                 </LinearLayout>
 
-
                 <LinearLayout
                     android:id="@+id/LLHeightCalculator"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:baselineAligned="false"
                     android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="@font/main_semibold"
-                        android:layout_marginTop="@dimen/_8ssp"
-                        android:layout_marginStart="@dimen/_8ssp"
-                        android:layout_marginBottom="@dimen/_3ssp"
-                        android:text="@string/enter_value"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_13sdp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -234,7 +185,19 @@
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/_8ssp"
+                        android:layout_marginTop="@dimen/_8ssp"
+                        android:layout_marginBottom="@dimen/_3ssp"
+                        android:fontFamily="@font/main_semibold"
+                        android:text="@string/enter_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_30sdp"
@@ -246,38 +209,96 @@
                     android:padding="0dp"
                     android:weightSum="2">
 
-                    <TextView
-                        android:id="@+id/BtnResetCalculator"
+                    <ImageView
+                        android:id="@+id/BtnChartCalculator"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.85"
-                        android:gravity="center"
-                        android:fontFamily="@font/main_semibold"
-                        android:textSize="@dimen/_12sdp"
-                        android:text="@string/reset"
-                        android:textColor="@color/purple_500" />
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_chart" />
 
                     <TextView
                         android:id="@+id/BtnWeightCalculator"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginEnd="10dp"
+                        android:layout_weight="0.85"
                         android:background="@drawable/ic_border_color"
                         android:backgroundTint="@color/purple_500"
-                        android:layout_weight="0.85"
-                        android:gravity="center"
                         android:fontFamily="@font/main_semibold"
+                        android:gravity="center"
                         android:text="@string/calculate"
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
 
-                    <ImageView
-                        android:id="@+id/BtnChartCalculator"
+                    <TextView
+                        android:id="@+id/BtnResetCalculator"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.3"
-                        android:src="@drawable/ic_chart"/>
+                        android:layout_weight="0.85"
+                        android:fontFamily="@font/main_semibold"
+                        android:gravity="center"
+                        android:text="@string/reset"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_border">
+
+                    <Spinner
+                        android:id="@+id/SpinnerHeightIdealWeight"
+                        style="@style/Widget.App.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="start"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/main_semibold"
+                    android:text="@string/enter_value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/main_semibold"
+                    android:text="@string/enter_age"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RlAdViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="bottom|center">
+
+        <RelativeLayout
+            android:id="@+id/RlAdView"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginBottom="0dp"
+            android:gravity="center|bottom" />
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

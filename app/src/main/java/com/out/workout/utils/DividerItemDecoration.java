@@ -22,7 +22,7 @@ public final class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     public DividerItemDecoration(Context context, Drawable divider) {
         mDivider = (divider == null)
-                ? ContextCompat.getDrawable(context, R.drawable.divider)
+                ? ContextCompat.getDrawable(context, R.drawable.ic_divider)
                 : divider;
     }
 

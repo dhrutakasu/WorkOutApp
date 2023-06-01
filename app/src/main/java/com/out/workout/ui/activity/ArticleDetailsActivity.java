@@ -11,11 +11,14 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdSize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.ArticleDetailModel;
 import com.out.workout.model.DetailModel;
@@ -66,6 +69,8 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     }
 
     private void initIntents() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         DietName = getIntent().getStringExtra(Constants.DIET_NAME);
         DietSlug = getIntent().getStringExtra(Constants.DIET_SLUG);
         DietImage = getIntent().getStringExtra(Constants.DIET_IMG);

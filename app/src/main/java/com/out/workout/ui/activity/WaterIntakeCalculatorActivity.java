@@ -23,6 +23,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
@@ -73,6 +74,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     }
 
     private void initActions() {
+        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getString(R.string.waterintake));
         EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
         String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
