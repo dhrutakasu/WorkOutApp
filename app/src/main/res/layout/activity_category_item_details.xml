@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_collapseMode="parallax"
+        android:padding="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -18,8 +19,19 @@
         <ImageView
             android:id="@+id/IvItemImg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_180sdp"
             android:scaleType="centerCrop" />
+
+        <ImageView
+            android:id="@+id/IvBack"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_gravity="top"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </FrameLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -36,13 +48,6 @@
             android:orientation="vertical"
             android:paddingTop="15dp"
             android:paddingBottom="56dp">
-
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="6dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="10dp"
-                android:src="@color/text_color" />
 
             <TextView
                 android:id="@+id/TvItemNutritionalTitle"
@@ -168,16 +173,6 @@
                     android:layout_marginTop="5dp"
                     android:padding="2dp" />
             </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/adsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@color/white"
-                app:cardCornerRadius="9dp"
-                app:contentPadding="8dp" />
-
             <LinearLayout
                 android:id="@+id/cv_cons"
                 android:layout_width="match_parent"

@@ -151,11 +151,21 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             LinearLayout LlWater = dialog.findViewById(R.id.LlWater);
             TextView TvDialogWater = dialog.findViewById(R.id.TvDialogWater);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_water_intake);
+            TvDialogName.setText(getResources().getString(R.string.waterintake));
+            TvDialogDesc.setText(getResources().getString(R.string.waterintake_desc));
 
             LlWater.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.dailywaterreq));
@@ -163,7 +173,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());

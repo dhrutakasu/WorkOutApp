@@ -105,43 +105,43 @@ public class CalculatorFragment extends Fragment {
         switch (pos) {
             case 0:
                 GoIntent(WeightCalculatorActivity.class);
-                return;
+                break;
             case 1:
                 GoIntent(BmiCalculatorActivity.class);
-                return;
+                break;
             case 2:
                 GoIntent(HeartRateCalculatorActivity.class);
-                return;
+                break;
             case 3:
                 GoIntent(BloodVolumeCalculatorActivity.class);
-                return;
+                break;
             case 4:
                 GoIntent(BloodDonationCalculatorActivity.class);
-                return;
+                break;
             case 5:
                 GoIntent(CalorieCalculatorActivity.class);
-                return;
+                break;
             case 6:
                 GoIntent(WaterIntakeCalculatorActivity.class);
-                return;
+                break;
             case 7:
                 GoIntent(BodyFatCalculatorActivity.class);
-                return;
+                break;
             case 8:
                 GoIntent(BloodAlcoholCalculatorActivity.class);
-                return;
+                break;
             case 9:
                 GoIntent(PregnancyCalculatorActivity.class);
-                return;
+                break;
             case 10:
                 GoIntent(OvulationCalculatorActivity.class);
-                return;
+                break;
             case 11:
                 GoIntent(BreathCalculatorActivity.class);
-                return;
+                break;
             case 12:
                 GoIntent(BloodPressureCalculatorActivity.class);
-                return;
+                break;
         }
     }
 

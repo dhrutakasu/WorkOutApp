@@ -166,7 +166,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_white_rounded_corner"
+                        android:background="@drawable/ic_border"
                         android:gravity="center"
                         android:inputType="numberDecimal"
                         android:maxLength="6"
@@ -240,7 +240,7 @@
                         android:layout_height="80dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:background="@drawable/bg_white_rounded_corner"
+                        android:background="@drawable/ic_border"
                         android:gravity="center"
                         android:inputType="numberDecimal"
                         android:maxLength="5"
@@ -270,7 +270,7 @@
                                 android:id="@+id/EdtFatFt"
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
-                                android:background="@drawable/bg_white_rounded_corner"
+                                android:background="@drawable/ic_border"
                                 android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="1"
@@ -327,7 +327,7 @@
                                 android:id="@+id/EdtFatIn"
                                 android:layout_width="match_parent"
                                 android:layout_height="80dp"
-                                android:background="@drawable/bg_white_rounded_corner"
+                                android:background="@drawable/ic_border"
                                 android:gravity="center"
                                 android:inputType="number"
                                 android:maxLength="2"
@@ -434,7 +434,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_white_rounded_corner"
+                    android:background="@drawable/ic_border"
                     android:clipToPadding="false" />
 
                 <ImageView
@@ -442,6 +442,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|center_horizontal"
                     android:scaleType="fitXY"
+                    android:tint="@color/purple_500"
                     android:src="@drawable/ic_triangle" />
             </FrameLayout>
 

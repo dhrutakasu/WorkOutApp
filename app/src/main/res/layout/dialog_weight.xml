@@ -11,50 +11,62 @@
         android:background="@drawable/dialog_bg"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="@dimen/_20sdp"
+        android:padding="@dimen/_10sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <TextView
             android:id="@+id/BtnDialogResult"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ok"
+            android:layout_height="@dimen/_30sdp"
+            android:fontFamily="@font/main_medium"
+            android:textSize="@dimen/_12sdp"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/_8sdp"
+            android:textColor="@color/purple_500"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="center"
+            android:text="@string/understand_bmi"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/LlDialogTexts" />
 
-        <Button
+        <TextView
             android:id="@+id/BtnDialogWeight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:layout_marginBottom="@dimen/_15sdp"
+            android:background="@drawable/ic_border_color"
+            android:backgroundTint="@color/purple_500"
+            android:fontFamily="@font/main_medium"
+            android:gravity="center"
             android:text="@string/ok"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/BtnDialogResult" />
-
-        <ImageView
-            android:id="@+id/IvWeightClose"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_close"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/BtnDialogResult"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/IvWeightWomen"
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:background="#000000"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/ic_border_color"
+            android:backgroundTint="@color/purple_500"
             android:padding="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
             android:src="@drawable/woman4"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/IvWeightClose" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <LinearLayout
             android:id="@+id/LlDialogTexts"
@@ -63,7 +75,7 @@
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+            app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
             <LinearLayout
                 android:id="@+id/LlHeartRate"
@@ -72,102 +84,137 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogMaxRateValue"
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginEnd="2dp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/beats"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/TvDialogMaxRateValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:gravity="center"
+                                android:fontFamily="@font/main_semibold"
+                                android:text="@string/idealweight"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp"
+                                android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/TvDialogTrainingRateValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="2dp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/beats"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/beats"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:gravity="center"
-                    android:text="@string/targethrrate"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                            <TextView
+                                android:id="@+id/TvDialogTrainingRateValue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="2dp"
+                                android:gravity="center"
+                                android:text="@string/idealweight"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
 
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/beats"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:layout_marginBottom="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:text="@string/targethrrate"
+                            android:fontFamily="@font/main_medium"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_12sdp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/LlBloodVolume"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <TextView
-                    android:id="@+id/TvDialogBloodValue"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="2dp"
-                    android:gravity="center"
-                    android:text="@string/idealweight"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="center"
-                    android:text="@string/litres"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:padding="@dimen/_8sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/TvDialogBloodValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="2dp"
+                            android:gravity="center"
+                            android:text="@string/idealweight"
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_14sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:gravity="center"
+                            android:text="@string/litres"
+                            android:fontFamily="@font/main_medium"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_14sdp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -180,77 +227,115 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <TextView
-                    android:id="@+id/TvDialogBloodDonate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:gravity="center"
-                    android:text="@string/idealweight"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/TvDialogBloodDonateLong"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:gravity="center"
-                    android:text="@string/idealweight"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/TvDialogWeightBloodDonate"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/ic_border"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:text="@string/blddondesc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <TextView
+                            android:id="@+id/TvDialogBloodDonate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:text="@string/idealweight"
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_14sdp"/>
+
+                        <TextView
+                            android:id="@+id/TvDialogBloodDonateLong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:gravity="center"
+                            android:text="@string/idealweight"
+                            android:fontFamily="@font/main_semibold"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_14sdp"/>
+
+                        <TextView
+                            android:id="@+id/TvDialogWeightBloodDonate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:layout_marginEnd="8dp"
+                            android:gravity="center"
+                            android:padding="@dimen/_5sdp"
+                            android:text="@string/blddondesc"
+                            android:fontFamily="@font/main_medium"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_10sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/LlBloodDonateDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <Button
-                    android:id="@+id/BtnDialogBloodDonateChart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:text="@string/chart_giving_blood" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220sdp"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                <TextView
-                    android:id="@+id/TvDialogBloodDonateDesc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:scrollbars="vertical"
-                    android:text="@string/canigiveblood_desc"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
 
+                        <TextView
+                            android:id="@+id/BtnDialogBloodDonateChart"
+                            android:layout_width="@dimen/_180sdp"
+                            android:layout_height="@dimen/_30sdp"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/main_medium"
+                            android:gravity="center"
+                            android:text="@string/chart_giving_blood"
+                            android:textColor="@color/purple_500"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <TextView
+                            android:id="@+id/TvDialogBloodDonateDesc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:scrollbars="vertical"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="@string/canigiveblood_desc"
+                            android:fontFamily="@font/main_medium"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -263,224 +348,236 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogCalorie"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="2dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
-                        android:text="@string/caloriesval"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:gravity="start"
-                    android:text="@string/tdeedesc"
-                    android:textColor="#000000"
-                    android:textDirection="locale"
-                    android:textSize="@dimen/_12sdp" />
+                            <TextView
+                                android:id="@+id/TvDialogCalorie"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="2dp"
+                                android:gravity="center"
+                                android:text="@string/idealweight"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginBottom="15dp"
-                    android:gravity="start"
-                    android:text="@string/tdeedesc2"
-                    android:textColor="#000000"
-                    android:textDirection="locale"
-                    android:textSize="@dimen/_12sdp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginBottom="15dp"
-                    android:gravity="start"
-                    android:text="@string/tdeedesc3"
-                    android:textColor="#000000"
-                    android:textDirection="locale"
-                    android:textSize="@dimen/_12sdp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:text="@string/stayhealthy"
-                    android:textColor="#000000"
-                    android:textDirection="locale"
-                    android:textSize="@dimen/_12sdp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ic_border"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center"
+                                android:text="@string/caloriesval"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp"/>
+                        </LinearLayout>
 
                         <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/avg_cal"
+                            android:layout_gravity="start"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start"
+                            android:text="@string/tdeedesc"
                             android:textColor="#000000"
                             android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
+                            android:fontFamily="@font/main_medium"
+                            android:textSize="@dimen/_10sdp" />
 
                         <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/women"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start"
+                            android:text="@string/tdeedesc2"
                             android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
+                            android:fontFamily="@font/main_medium"
+                            android:textSize="@dimen/_10sdp"  />
 
                         <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/men"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="8dp"
+                            android:gravity="start"
+                            android:text="@string/tdeedesc3"
                             android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
+                            android:fontFamily="@font/main_medium"
+                            android:textSize="@dimen/_10sdp"  />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="5dp"
+                            android:gravity="center"
+                            android:text="@string/stayhealthy"
+                            android:textColor="#000000"
+                            android:fontFamily="@font/main_medium"
+                            android:textSize="@dimen/_10sdp"  />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/avg_cal"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/women"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/men"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="2dp"
+                                android:background="#000000" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/maintain_weight"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/range1"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_9sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/range2"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_9sdp"/>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_8sdp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/lose_weight"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/range3"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_9sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/range4"
+                                    android:textColor="#000000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_9sdp"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
-
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="#000000" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/maintain_weight"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/range1"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/range2"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/lose_weight"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/range3"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/range4"
-                            android:textColor="#000000"
-                            android:textDirection="locale"
-                            android:textSize="@dimen/_12sdp" />
-                    </LinearLayout>
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -493,54 +590,71 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogWater"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="2dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
-                        android:text="@string/glasses"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp" />
-                </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="@dimen/_10sdp"
-                    android:background="@drawable/ic_border"
-                    android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/TvDialogWater"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="2dp"
+                                android:fontFamily="@font/main_medium"
+                                android:gravity="center"
+                                android:text="@string/idealweight"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
-                        android:text="@string/dwrdesc"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center"
+                                android:text="@string/glasses"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center"
+                                android:text="@string/dwrdesc"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/main_medium"
+                                android:textSize="@dimen/_10sdp"  />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -553,327 +667,355 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogBodyFate"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="2dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:gravity="center"
-                        android:text="@string/percent"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_8sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:gravity="end"
-                        android:text="@string/assessment"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12sdp" />
+                            <TextView
+                                android:id="@+id/TvDialogBodyFate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="2dp"
+                                android:gravity="center"
+                                android:text="@string/idealweight"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
 
-                    <TextView
-                        android:id="@+id/TvAssessment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="start"
-                        android:textStyle="bold"
-                        android:text="@string/assessment"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    android:text="@string/stayhealthy"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp" />
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="@dimen/_10sdp"
-                    android:background="@drawable/ic_border"
-                    android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center"
+                                android:text="@string/percent"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp"/>
+                        </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_weight="1.3"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
                             android:gravity="center"
-                            android:text="@string/category"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_weight="1"
+                                android:gravity="end"
+                                android:text="@string/assessment"
+                                android:fontFamily="@font/main_medium"
+                                android:textSize="@dimen/_10sdp"  />
+
+                            <TextView
+                                android:id="@+id/TvAssessment"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_weight="1"
+                                android:gravity="start"
+                                android:text="@string/assessment"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_10sdp"/>
+                        </LinearLayout>
 
                         <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
+                            android:layout_gravity="start"
+                            android:layout_marginBottom="5dp"
                             android:gravity="center"
-                            android:text="@string/women"
+                            android:text="@string/stayhealthy"
                             android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
+                            android:textSize="@dimen/_12sdp" />
 
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
                             android:gravity="center"
-                            android:text="@string/men"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/category"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/women"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/men"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginBottom="5dp"
+                                android:background="@color/black" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/essential"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang1"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang2"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/typicalathlete"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang3"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang4"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/physicallyfit"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang5"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang6"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/acceptable"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang7"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp"/>
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang8"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:orientation="horizontal"
+                                android:weightSum="3">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1.3"
+                                    android:gravity="center"
+                                    android:text="@string/obese"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_semibold"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang9"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="0.85"
+                                    android:gravity="center"
+                                    android:text="@string/rang10"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textSize="@dimen/_10sdp"/>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginBottom="15dp"
-                        android:background="@color/black" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/essential"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang1"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang2"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/typicalathlete"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang3"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang4"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/physicallyfit"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang5"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang6"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/acceptable"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang7"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang8"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="15dp"
-                        android:orientation="horizontal"
-                        android:weightSum="3">
-
-                        <TextView
-                            android:textStyle="bold"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1.3"
-                            android:gravity="center"
-                            android:text="@string/obese"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang9"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0.85"
-                            android:gravity="center"
-                            android:text="@string/rang10"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_11sdp" />
-                    </LinearLayout>
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
@@ -886,36 +1028,52 @@
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+            app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/TvDialogBloodAlcohol"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="2dp"
-                    android:gravity="center"
-                    android:text="@string/idealweight"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:gravity="center"
-                    android:text="@string/percent"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
-            </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="@dimen/_8sdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/TvDialogBloodAlcohol"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="2dp"
+                                android:gravity="center"
+                                android:text="@string/idealweight"
+                                android:fontFamily="@font/main_semibold"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:gravity="center"
+                                android:text="@string/percent"
+                                android:fontFamily="@font/main_medium"
+                                android:textColor="@color/purple_500"
+                                android:textSize="@dimen/_14sdp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
         </LinearLayout>
 
              <LinearLayout
@@ -928,47 +1086,62 @@
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                    app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                    <TextView
-                        android:id="@+id/TvDialogPregnancy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                 <androidx.cardview.widget.CardView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="@dimen/_8sdp"
+                     app:cardCornerRadius="@dimen/_10sdp"
+                     app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogPregnancyLong"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogWeightPregnancy"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/ic_border"
-                        android:gravity="center"
-                        android:padding="@dimen/_5sdp"
-                        android:text="@string/edddesc"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                         <TextView
+                             android:id="@+id/TvDialogPregnancy"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:gravity="center"
+                             android:text="@string/idealweight"
+                             android:fontFamily="@font/main_semibold"
+                             android:textColor="@color/purple_500"
+                             android:textSize="@dimen/_14sdp" />
 
+                         <TextView
+                             android:id="@+id/TvDialogPregnancyLong"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_5sdp"
+                             android:gravity="center"
+                             android:text="@string/idealweight"
+                             android:fontFamily="@font/main_semibold"
+                             android:textColor="@color/purple_500"
+                             android:textSize="@dimen/_14sdp" />
+
+                         <TextView
+                             android:id="@+id/TvDialogWeightPregnancy"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="8dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginEnd="8dp"
+                             android:fontFamily="@font/main_medium"
+                             android:textSize="@dimen/_10sdp"
+                             android:gravity="center"
+                             android:padding="@dimen/_5sdp"
+                             android:text="@string/edddesc"
+                             android:textColor="@color/black"
+                             app:layout_constraintEnd_toEndOf="parent"
+                             app:layout_constraintStart_toStartOf="parent"
+                             app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                     </LinearLayout>
+                 </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
              <LinearLayout
@@ -981,58 +1154,73 @@
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/TvDialogWeightValue">
+                    app:layout_constraintTop_toBottomOf="@id/CardIdealWeight">
 
-                    <TextView
-                        android:id="@+id/TvDialogOvulation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                 <androidx.cardview.widget.CardView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_margin="@dimen/_8sdp"
+                     app:cardCornerRadius="@dimen/_10sdp"
+                     app:cardElevation="@dimen/_2sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogOvulationDash"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_10sdp"
-                        android:gravity="center"
-                        android:text="@string/hypen"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                     <LinearLayout
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"
+                         android:gravity="center"
+                         android:orientation="vertical"
+                         android:padding="@dimen/_8sdp">
 
-                    <TextView
-                        android:id="@+id/TvDialogOvulationLong"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:gravity="center"
-                        android:text="@string/idealweight"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_18sdp"
-                        android:textStyle="bold" />
+                         <TextView
+                             android:id="@+id/TvDialogOvulation"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_10sdp"
+                             android:fontFamily="@font/main_semibold"
+                             android:gravity="center"
+                             android:text="@string/idealweight"
+                             android:textColor="@color/purple_500"
+                             android:textSize="@dimen/_14sdp" />
 
-                    <TextView
-                        android:id="@+id/TvDialogWeightOvulation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@drawable/ic_border"
-                        android:gravity="center"
-                        android:padding="@dimen/_5sdp"
-                        android:text="@string/edddesc"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                         <TextView
+                             android:id="@+id/TvDialogOvulationDash"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_5sdp"
+                             android:fontFamily="@font/main_semibold"
+                             android:gravity="center"
+                             android:text="@string/hypen"
+                             android:textColor="@color/purple_500"
+                             android:textSize="@dimen/_14sdp" />
 
+                         <TextView
+                             android:id="@+id/TvDialogOvulationLong"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_marginTop="@dimen/_5sdp"
+                             android:fontFamily="@font/main_semibold"
+                             android:gravity="center"
+                             android:text="@string/idealweight"
+                             android:textColor="@color/purple_500"
+                             android:textSize="@dimen/_14sdp" />
+
+                         <TextView
+                             android:id="@+id/TvDialogWeightOvulation"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:layout_marginStart="8dp"
+                             android:layout_marginTop="4dp"
+                             android:layout_marginEnd="8dp"
+                             android:fontFamily="@font/main_medium"
+                             android:gravity="center"
+                             android:padding="@dimen/_5sdp"
+                             android:text="@string/edddesc"
+                             android:textColor="@color/black"
+                             android:textSize="@dimen/_10sdp"
+                             app:layout_constraintEnd_toEndOf="parent"
+                             app:layout_constraintStart_toStartOf="parent"
+                             app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+                     </LinearLayout>
+                 </androidx.cardview.widget.CardView>
                 </LinearLayout>
 
             <androidx.core.widget.NestedScrollView
@@ -1483,165 +1671,211 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ScrollFitCalorie">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_margin="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_2sdp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:background="@drawable/bg_result"
-                        android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:padding="20dp">
 
-                        <androidx.appcompat.widget.LinearLayoutCompat
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_gravity="center_horizontal"
+                            android:background="@drawable/bg_result"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/TvDialogWWeightCal"
+                            <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold"
-                                android:text="2000"
-                                android:layout_marginStart="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="40sp" />
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/TvDialogWWeightCal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_5sdp"
+                                    android:text="2000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_24sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/TvDialogWWeightCalMax"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="@dimen/_5sdp"
+                                    android:text="2000"
+                                    android:fontFamily="@font/main_medium"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_24sdp"
+                                    android:textStyle="bold" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
 
                             <TextView
-                                android:id="@+id/TvDialogWWeightCalMax"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textStyle="bold"
-                                android:text="2000"
-                                android:layout_marginEnd="@dimen/_5sdp"
-                                android:textColor="@color/white"
-                                android:textSize="40sp" />
-                        </androidx.appcompat.widget.LinearLayoutCompat>
+                                android:text="kgs"  
+                                android:fontFamily="@font/main_medium"
+                                android:textSize="@dimen/_12sdp"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
 
                         <TextView
+                            android:id="@+id/TvDialognWeightMessage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="kgs"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:text="The ideal weight based on popular formulas:"
+                            android:fontFamily="@font/main_medium"
+                            android:textSize="@dimen/_10sdp"
+                            android:textColor="@color/purple_500"
+                            android:gravity="center" />
+
+                        <LinearLayout
+                            android:id="@+id/LlDialogMoreResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_semibold"
+                                        android:gravity="center"
+                                        android:text="Robinson formula"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:id="@+id/TvDialogRobinsonResult"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_medium"
+                                        android:gravity="center"
+                                        android:text="70kgs"
+                                        android:textColor="@color/purple_500"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/_10sdp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_semibold"
+                                        android:gravity="center"
+                                        android:text="Miller formula"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:id="@+id/TvDialogMillerResult"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_medium"
+                                        android:gravity="center"
+                                        android:text="70kgs"
+                                        android:textColor="@color/purple_500"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:layout_gravity="center_horizontal"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_semibold"
+                                        android:gravity="center"
+                                        android:text="Devine formula"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:id="@+id/TvDialogDevineResult"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_medium"
+                                        android:text="70kgs"
+                                        android:gravity="center"
+                                        android:textColor="@color/purple_500"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginStart="10dp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_semibold"
+                                        android:gravity="center"
+                                        android:text="Hamwi formula"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/_10sdp" />
+
+                                    <TextView
+                                        android:id="@+id/TvDialogHombiResult"
+                                        android:layout_width="match_parent"
+                                        android:gravity="center"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/main_medium"
+                                        android:text="70kgs"
+                                        android:textColor="@color/purple_500"
+                                        android:textSize="@dimen/_10sdp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
                     </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/TvDialognWeightMessage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:text="The ideal weight based on popular formulas:"
-                        android:textColor="@color/purple_500"
-                        android:textSize="14sp" />
-
-                    <LinearLayout
-                        android:id="@+id/LlDialogMoreResult"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:text="Robinson formula:"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/TvDialogRobinsonResult"
-                                android:layout_width="100dp"
-                                android:layout_height="wrap_content"
-                                android:text="70kgs"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:text="Miller formula:"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/TvDialogMillerResult"
-                                android:layout_width="100dp"
-                                android:layout_height="wrap_content"
-                                android:text="70kgs"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:text="Devine formula:"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/TvDialogDevineResult"
-                                android:layout_width="100dp"
-                                android:layout_height="wrap_content"
-                                android:text="70kgs"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:text="Hamwi formula:"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/TvDialogHombiResult"
-                                android:layout_width="100dp"
-                                android:layout_height="wrap_content"
-                                android:text="70kgs"
-                                android:textColor="@color/purple_500"
-                                android:textSize="16sp" />
-                        </LinearLayout>
-                    </LinearLayout>
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </androidx.core.widget.NestedScrollView>
 
             <androidx.core.widget.NestedScrollView
@@ -1879,56 +2113,140 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/TvDialogWeightSubTitle" />
 
-        <TextView
-            android:id="@+id/TvDialogWeightValue"
-            android:layout_width="0dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/CardIdealWeight"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="center"
-            android:text="@string/idealweight"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp"
-            android:textStyle="bold"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_2sdp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/TvDialogWeightBMIValue" />
+            app:layout_constraintTop_toBottomOf="@id/PbBMI">
 
-        <TextView
-            android:id="@+id/TvDialogWeightBMIValue"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/ic_border"
-            android:gravity="center"
-            android:padding="@dimen/_15sdp"
-            android:text="@string/idealweight"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp"
-            android:textStyle="bold"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TvDialogWeightValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/main_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/idealweight"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/TvDialogWeightBMIValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/main_semibold"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/idealweight"
+                    android:textColor="@color/purple_500"
+                    android:textSize="@dimen/_14sdp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/PbBMI" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/TvDialogWeightSubTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
             android:layout_marginEnd="8dp"
-            android:gravity="center"
+            android:gravity="clip_vertical"
             android:text="@string/uridealweight"
+            android:fontFamily="@font/main_semibold"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/IvWeightWomen" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toBottomOf="@id/RlCardItem" />
 
+        <RelativeLayout
+            android:id="@+id/RlCardItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/IvWeightWomen">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_55sdp"
+                android:layout_margin="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_2sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_5ssp">
+
+                    <ImageView
+                        android:id="@+id/IvDialogBanner"
+                        android:layout_width="@dimen/_40sdp"
+                        android:layout_height="@dimen/_38sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_ideal_weight"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="@+id/IvDialogBanner"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/IvDialogBanner"
+                        app:layout_constraintTop_toTopOf="@+id/IvDialogBanner">
+
+                        <TextView
+                            android:id="@+id/TvDialogName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/str_diet_tips"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:fontFamily="@font/main_semibold"/>
+
+                        <TextView
+                            android:id="@+id/TvDialogDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lines="2"
+                            android:text="@string/str_diet_tips"
+                            android:textSize="@dimen/_9sdp"
+                            app:layout_constraintBottom_toBottomOf="@+id/IvCalculatorBanner"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/IvCalculatorBanner"
+                            app:layout_constraintTop_toBottomOf="@+id/TvCalculatorName" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

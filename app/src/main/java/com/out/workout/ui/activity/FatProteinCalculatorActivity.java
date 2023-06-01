@@ -3,6 +3,7 @@ package com.out.workout.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,7 +20,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -249,8 +249,8 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
         TextView TvDialogProteinCdcResult = dialog.findViewById(R.id.TvDialogProteinCdcResult);
         TextView TvDialogProteinWhoResult = dialog.findViewById(R.id.TvDialogProteinWhoResult);
@@ -259,6 +259,8 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         NestedScrollView ScrollProtein = dialog.findViewById(R.id.ScrollProtein);
 
+        CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+        RlCardItem.setVisibility(View.GONE);
         TvDialogWeightSubTitle.setVisibility(View.GONE);
         ScrollProtein.setVisibility(View.VISIBLE);
         double doublef = 10.0f * parseFloat;
@@ -288,7 +290,7 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
         TvDialogProteinCdcResult.setText(Constants.fromHtml(builder.toString()));
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
     private Pair<Integer, Integer> getLimit(float f) {
@@ -299,7 +301,7 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
     }
 
     private float getFactor() {
-        int itemPosition = ((ExerciseAdapter) RvFatActivities.getAdapter()).getSelectedItemPosition();
+        int itemPosition = ((ExerciseAdapter) RvFatActivities.getAdapter()).getItemPosition();
         if (itemPosition == 1) {
             return 1.375f;
         }

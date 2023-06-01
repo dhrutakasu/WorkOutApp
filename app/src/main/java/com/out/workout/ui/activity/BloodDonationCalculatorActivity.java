@@ -8,7 +8,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
 import android.text.method.ScrollingMovementMethod;
+import android.text.style.UnderlineSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -169,12 +171,20 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogBloodDonate = dialog.findViewById(R.id.TvDialogBloodDonate);
         TextView TvDialogBloodDonateLong = dialog.findViewById(R.id.TvDialogBloodDonateLong);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
         LinearLayout LlBloodDonate = dialog.findViewById(R.id.LlBloodDonate);
+
+        ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+        TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+        TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+        IvDialogBanner.setImageResource(R.drawable.ic_blood_donate);
+        TvDialogName.setText(getResources().getString(R.string.blood_donate));
+        TvDialogDesc.setText(getResources().getString(R.string.blood_don_desc));
 
         LlBloodDonate.setVisibility(View.VISIBLE);
 
@@ -223,7 +233,7 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 
@@ -241,13 +251,24 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogBloodDonateDesc = dialog.findViewById(R.id.TvDialogBloodDonateDesc);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
-        Button BtnDialogBloodDonateChart = dialog.findViewById(R.id.BtnDialogBloodDonateChart);
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        TextView BtnDialogBloodDonateChart = dialog.findViewById(R.id.BtnDialogBloodDonateChart);
         LinearLayout LlBloodDonateDesc = dialog.findViewById(R.id.LlBloodDonateDesc);
 
+        ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+        TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+        TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+        IvDialogBanner.setImageResource(R.drawable.ic_blood_donate);
+        TvDialogName.setText(getResources().getString(R.string.blood_donate));
+        TvDialogDesc.setText(getResources().getString(R.string.blood_don_desc));
+
+        SpannableString content = new SpannableString(getString(R.string.chart_giving_blood));
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        BtnDialogBloodDonateChart.setText(content);
         LlBloodDonateDesc.setVisibility(View.VISIBLE);
         TvDialogWeightSubTitle.setVisibility(View.GONE);
         BtnDialogWeight.setVisibility(View.GONE);
@@ -260,7 +281,7 @@ public class BloodDonationCalculatorActivity extends AppCompatActivity implement
             startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.canidonate)));
         });
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 

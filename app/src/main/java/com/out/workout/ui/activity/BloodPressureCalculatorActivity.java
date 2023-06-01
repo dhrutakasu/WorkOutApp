@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -107,19 +108,27 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            CardView CardIdealWeight = dialog.findViewById(R.id.CardIdealWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
-            TvDialogWeightValue.setVisibility(View.VISIBLE);
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_blood_pressure);
+            TvDialogName.setText(getResources().getString(R.string.blood_pressure));
+            TvDialogDesc.setText(getResources().getString(R.string.calc_bp_val));
+            CardIdealWeight.setVisibility(View.VISIBLE);
 
             TvDialogWeightSubTitle.setText(getString(R.string.your_bp));
             TvDialogWeightValue.setText(String.valueOf(CalculateBp));
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         }
     }

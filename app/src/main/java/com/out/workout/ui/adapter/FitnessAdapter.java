@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.out.workout.R;
@@ -43,7 +44,7 @@ public class FitnessAdapter extends RecyclerView.Adapter<FitnessAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.TvDietName.setText(categories.get(position).toString());
-        holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
+        holder.CardImg.setVisibility(View.GONE);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,11 +85,13 @@ public class FitnessAdapter extends RecyclerView.Adapter<FitnessAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private ImageView IvDietImg;
+        private CardView CardImg;
         private TextView TvDietName;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             IvDietImg = itemView.findViewById(R.id.IvDietImg);
+            CardImg = itemView.findViewById(R.id.CardImg);
             TvDietName = itemView.findViewById(R.id.TvDietName);
         }
     }

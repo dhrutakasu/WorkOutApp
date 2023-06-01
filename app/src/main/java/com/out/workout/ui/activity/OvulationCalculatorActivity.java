@@ -164,12 +164,21 @@ public class OvulationCalculatorActivity extends AppCompatActivity implements Vi
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogOvulation = dialog.findViewById(R.id.TvDialogOvulation);
         TextView TvDialogOvulationLong = dialog.findViewById(R.id.TvDialogOvulationLong);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
         LinearLayout LlOvulation = dialog.findViewById(R.id.LlOvulationDesc);
+
+
+        ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+        TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+        TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+        IvDialogBanner.setImageResource(R.drawable.ic_ovulation);
+        TvDialogName.setText(getResources().getString(R.string.ovulation));
+        TvDialogDesc.setText(getResources().getString(R.string.ovulation_desc));
 
         LlOvulation.setVisibility(View.VISIBLE);
         TvDialogWeightSubTitle.setText(getString(R.string.urfer));
@@ -267,7 +276,7 @@ public class OvulationCalculatorActivity extends AppCompatActivity implements Vi
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
 
         dialog.show();
     }

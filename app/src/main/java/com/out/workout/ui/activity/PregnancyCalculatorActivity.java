@@ -163,12 +163,21 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogPregnancy = dialog.findViewById(R.id.TvDialogPregnancy);
         TextView TvDialogPregnancyLong = dialog.findViewById(R.id.TvDialogPregnancyLong);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
         LinearLayout LlPregnancy = dialog.findViewById(R.id.LlPregnancyDesc);
+
+
+        ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+        TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+        TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+        IvDialogBanner.setImageResource(R.drawable.ic_pregncy_due_date);
+        TvDialogName.setText(getResources().getString(R.string.pregnancy));
+        TvDialogDesc.setText(getResources().getString(R.string.pregnancy_desc));
 
         LlPregnancy.setVisibility(View.VISIBLE);
 
@@ -217,7 +226,7 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 

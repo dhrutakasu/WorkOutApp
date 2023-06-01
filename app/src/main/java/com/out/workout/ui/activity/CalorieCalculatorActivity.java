@@ -191,11 +191,20 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             LinearLayout LlCalorie = dialog.findViewById(R.id.LlCalorie);
             TextView TvDialogCalorie = dialog.findViewById(R.id.TvDialogCalorie);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_weight_loss_gain);
+            TvDialogName.setText(getResources().getString(R.string.calories));
+            TvDialogDesc.setText(getResources().getString(R.string.calorie_desc));
 
             LlCalorie.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.urcal));
@@ -203,7 +212,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());
@@ -232,7 +241,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()) {
+        switch (adapterView.getId()) {
             case R.id.SpinnerCalorie:
                 String obj = SpinnerCalorie.getSelectedItem().toString();
                 if (obj.equals(getResources().getString(R.string.sedentary))) {

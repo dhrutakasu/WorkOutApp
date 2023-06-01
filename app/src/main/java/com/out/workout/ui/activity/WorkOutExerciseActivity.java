@@ -2,13 +2,18 @@ package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -55,6 +60,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private TextView TvRestWorkOutExercise, TvWorkOutExerciseRestDesc, TvSkipRest;
     private CircleProgressView CVProgressRest;
     private int ExTimer;
+    private Dialog dialogHelp;
 
 
     @Override
@@ -252,7 +258,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
             public void onFinish() {
                 TvPauseExercise.setText(getString(R.string.play));
                 System.out.println("----- **** : " + exCount);
-                if (exCount > 0) {
+                if ((exCount + 1) > 0) {
                     IvExercisePrevious.setVisibility(View.VISIBLE);
                 }
                 System.out.println("-----*** : " + exCount);
@@ -449,7 +455,145 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     }
 
     private void GotoHelp() {
+        TvPauseExercise.setText(getString(R.string.play));
+        BoolTimer = true;
+        ExerciseDownTimer.cancel();
 
+        dialogHelp = new Dialog(context);
+        dialogHelp.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogHelp.setContentView(R.layout.dialog_help);
+        dialogHelp.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        WindowManager.LayoutParams lp = dialogHelp.getWindow().getAttributes();
+        Window window = dialogHelp.getWindow();
+        lp.copyFrom(window.getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.CENTER;
+        window.setAttributes(lp);
+
+        TextView BtnDialogExreciseName = dialogHelp.findViewById(R.id.BtnDialogExreciseName);
+        ImageView IvAnimatedExercise = dialogHelp.findViewById(R.id.IvAnimatedExercise);
+        TextView BtnDialogExreciseDesc = dialogHelp.findViewById(R.id.BtnDialogExreciseDesc);
+        WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
+        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+        for (int i = 0; i < model.getExerciseImg().length(); i++) {
+            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+        }
+        sectionBuilder.setOneshot(false);
+        sectionBuilder.setFrameDuration(800);
+        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
+        stateAnimation.transitionNow("pending");
+        BtnDialogExreciseName.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
+        BtnDialogExreciseDesc.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseDesc()));
+
+        dialogHelp.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (dialogHelp != null && dialogHelp.isShowing()) {
+            dialogHelp.dismiss();
+        } else {
+            if (App.textToSpeech != null) {
+                if (App.textToSpeech.isSpeaking()) {
+                    App.textToSpeech.stop();
+                    App.textToSpeech.shutdown();
+                }
+            }
+            if (RlReadyExercise.getVisibility() == View.VISIBLE) {
+                IvPlayReady.setImageResource(R.drawable.ic_play);
+                BoolTimer = true;
+                countDownTimerReady.cancel();
+            } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
+                TvPauseExercise.setText(getString(R.string.play));
+                BoolTimer = true;
+                ExerciseDownTimer.cancel();
+            } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
+                IvPlayRest.setImageResource(R.drawable.ic_play);
+                BoolTimer = true;
+                RestTimer.cancel();
+            }
+
+            Dialog dialogExit = new Dialog(context);
+            dialogExit.setCancelable(false);
+            dialogExit.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialogExit.setContentView(R.layout.dialog_quit);
+            dialogExit.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+            WindowManager.LayoutParams lp = dialogExit.getWindow().getAttributes();
+            Window window = dialogExit.getWindow();
+            lp.copyFrom(window.getAttributes());
+            lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            lp.gravity = Gravity.CENTER;
+            window.setAttributes(lp);
+
+            TextView BtnDialogExreciseExit = dialogExit.findViewById(R.id.BtnDialogExreciseExit);
+            TextView BtnDialogExreciseNo = dialogExit.findViewById(R.id.BtnDialogExreciseNo);
+
+            BtnDialogExreciseExit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (RlReadyExercise.getVisibility() == View.VISIBLE) {
+                        if (App.textToSpeech != null) {
+                            if (App.textToSpeech.isSpeaking()) {
+                                App.textToSpeech.stop();
+                                App.textToSpeech.shutdown();
+                            }
+                        }
+                        countDownTimerReady.cancel();
+                    } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
+                        ExerciseDownTimer.cancel();
+                    } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
+                        RestTimer.cancel();
+                    }
+                    finish();
+                }
+            });
+
+            BtnDialogExreciseNo.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (RlReadyExercise.getVisibility() == View.VISIBLE) {
+                        BoolTimer = false;
+                        IvPlayReady.setImageResource(R.drawable.ic_pause);
+                        GotoCounter(NotedReadyTime);
+                    } else if (RlExerciseStart.getVisibility() == View.VISIBLE) {
+                        BoolTimer = false;
+                        TvPauseExercise.setText(getString(R.string.pause));
+
+                        if (ExCount > 0) {
+                            IvExercisePrevious.setVisibility(View.VISIBLE);
+                        }
+                        RlReadyExercise.setVisibility(View.GONE);
+                        RlRestExercise.setVisibility(View.GONE);
+                        RlExerciseStart.setVisibility(View.VISIBLE);
+                        IvHelp.setVisibility(View.VISIBLE);
+                        WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
+                        MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
+                        for (int i = 0; i < model.getExerciseImg().length(); i++) {
+                            sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
+                        }
+                        sectionBuilder.setOneshot(false);
+                        sectionBuilder.setFrameDuration(800);
+                        MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedExercise).addSection(sectionBuilder).build(context);
+                        stateAnimation.transitionNow("pending");
+
+                        TvPauseExercise.setText(getString(R.string.pause));
+                        TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
+                        ExTimer = (int) NotedExerciseTimer;
+                        ExerciseTimer(model, ExCount);
+                    } else if (RlRestExercise.getVisibility() == View.VISIBLE) {
+                        BoolTimer = false;
+                        IvPlayRest.setImageResource(R.drawable.ic_pause);
+                        IsRest = (int) NotedRestTimer;
+                        RestTimer();
+                    }
+                    dialogExit.dismiss();
+                }
+            });
+
+            dialogExit.show();
+        }
     }
 
     private void GotoPlayPauseReady() {

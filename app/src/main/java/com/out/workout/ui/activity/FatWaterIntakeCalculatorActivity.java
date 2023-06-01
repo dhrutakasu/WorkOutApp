@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -160,13 +161,15 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogRequiredWater = dialog.findViewById(R.id.TvDialogRequiredWater);
         NestedScrollView ScrollWater = dialog.findViewById(R.id.ScrollWater);
 
+        CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+        RlCardItem.setVisibility(View.GONE);
         TvDialogWeightSubTitle.setText("Total water (incl. water in food):10≈");
         ScrollWater.setVisibility(View.VISIBLE);
 
@@ -177,7 +180,7 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 

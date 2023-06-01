@@ -20,10 +20,12 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
@@ -37,7 +39,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
     private TextView TvTitle;
     private EditText EdtAgeBodyFate;
     private EditText EdtHeightBodyFate, EdtInchBodyFate, EdtWeightBodyFate, EdtWaistBodyFate, EdtNeckBodyFate, EdtArmBodyFate, EdtWristBodyFate, EdtHipBodyFate;
-    private LinearLayout LLHeightBodyFate, LLArmRg, LLArmEdt, LLWristRg, LLWristEdt, LLHipRg, LLHipEdt;
+    private LinearLayout LLHeightBodyFate,  LLArmEdt,  LLWristEdt,  LLHipEdt;
     private TextView BtnWeightBodyFate;
     private TextView BtnResetBodyFate;
     private ImageView BtnChartBodyFate;
@@ -73,11 +75,8 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         TvFTOrCMBodyFat = (TextView) findViewById(R.id.TvFTOrCMBodyFat);
         EdtHeightBodyFate = (EditText) findViewById(R.id.EdtHeightBodyFate);
         LLHeightBodyFate = (LinearLayout) findViewById(R.id.LLHeightBodyFate);
-        LLArmRg = (LinearLayout) findViewById(R.id.LlArmRg);
         LLArmEdt = (LinearLayout) findViewById(R.id.LlArmEdt);
-        LLWristRg = (LinearLayout) findViewById(R.id.LlWristRg);
         LLWristEdt = (LinearLayout) findViewById(R.id.LlWristEdt);
-        LLHipRg = (LinearLayout) findViewById(R.id.LlHipRg);
         LLHipEdt = (LinearLayout) findViewById(R.id.LlHipEdt);
         EdtInchBodyFate = (EditText) findViewById(R.id.EdtInchBodyFate);
         EdtWeightBodyFate = (EditText) findViewById(R.id.EdtWeightBodyFate);
@@ -105,6 +104,18 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         TvFTOrCMBodyFat.setText(getString(R.string.cm));
         LLHeightBodyFate.setVisibility(View.GONE);
         EdtAgeBodyFate.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        SpinnerGenderBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
+        SpinnerHeightBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerWeightBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
+        SpinnerWaistBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerWristBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerNeckBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerArmBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerHipBodyFat.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
     }
 
     @Override
@@ -176,10 +187,10 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                     DoubleHeight *= 12.0d;
                     DoubleHeight += DoubleInch;
                 }
-                if (BodyFateWaist.equalsIgnoreCase(getResources().getString(R.string.cm))) {
+                if (BodyFateWaist.equalsIgnoreCase(getResources().getString(R.string.centimeters))) {
                     DoubleWaist *= 0.393701d;
                 }
-                if (BodyFateNeck.equalsIgnoreCase(getResources().getString(R.string.cm))) {
+                if (BodyFateNeck.equalsIgnoreCase(getResources().getString(R.string.centimeters))) {
                     DoubleNeck *= 0.393701d;
                 }
                 DoubleBodyFate = (DoubleWeight * 1.082d) + 94.42d;
@@ -252,19 +263,19 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                     DoubleHeight *= 12.0d;
                     DoubleHeight += DoubleInch;
                 }
-                if (BodyFateWaist.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateWaist.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleWaist *= 0.393701d;
                 }
-                if (BodyFateNeck.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateNeck.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleNeck *= 0.393701d;
                 }
-                if (BodyFateArm.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateArm.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleArm *= 0.393701d;
                 }
-                if (BodyFateWrist.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateWrist.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleWrist *= 0.393701d;
                 }
-                if (BodyFateHip.equalsIgnoreCase(getString(R.string.cm))) {
+                if (BodyFateHip.equalsIgnoreCase(getString(R.string.centimeters))) {
                     DoubleHip *= 0.393701d;
                 }
                 DoubleFate = (((((DoubleWeight * 0.0732d) + 8.987d) + (DoubleWaist / 3.14d)) - (DoubleWrist * 0.157d)) - (DoubleHip * 0.249d)) + (DoubleArm * 0.434d);
@@ -296,12 +307,21 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             LinearLayout LlBodyFate = dialog.findViewById(R.id.LlBodyFate);
             TextView TvDialogBodyFate = dialog.findViewById(R.id.TvDialogBodyFate);
             TextView TvAssessment = dialog.findViewById(R.id.TvAssessment);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_body_fat);
+            TvDialogName.setText(getResources().getString(R.string.bodyfat));
+            TvDialogDesc.setText(getResources().getString(R.string.bodyfat_desc));
 
             LlBodyFate.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.urbodyfat));
@@ -310,7 +330,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());
@@ -345,7 +365,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()){
+        switch (adapterView.getId()){
             case R.id.SpinnerHeightBodyFat:
                 String weight = (String) SpinnerHeightBodyFat.getSelectedItem().toString();
                 if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
@@ -370,11 +390,8 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                     EdtArmBodyFate.setText("");
                     EdtWristBodyFate.setText("");
                     EdtHipBodyFate.setText("");
-                    LLArmRg.setVisibility(View.GONE);
                     LLArmEdt.setVisibility(View.GONE);
-                    LLWristRg.setVisibility(View.GONE);
                     LLWristEdt.setVisibility(View.GONE);
-                    LLHipRg.setVisibility(View.GONE);
                     LLHipEdt.setVisibility(View.GONE);
                 } else {
                     EdtHeightBodyFate.setText("");
@@ -384,11 +401,8 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
                     EdtArmBodyFate.setText("");
                     EdtWristBodyFate.setText("");
                     EdtHipBodyFate.setText("");
-                    LLArmRg.setVisibility(View.VISIBLE);
                     LLArmEdt.setVisibility(View.VISIBLE);
-                    LLWristRg.setVisibility(View.VISIBLE);
                     LLWristEdt.setVisibility(View.VISIBLE);
-                    LLHipRg.setVisibility(View.VISIBLE);
                     LLHipEdt.setVisibility(View.VISIBLE);
                 }
                 break;

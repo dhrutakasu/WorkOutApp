@@ -61,7 +61,6 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/ic_box"
-            app:layout_constraintBottom_toTopOf="@+id/View_divider"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/TvExerciseName">
 
@@ -75,15 +74,5 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp" />
         </RelativeLayout>
-
-        <View
-            android:id="@+id/View_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginEnd="@dimen/_16sdp"
-            android:contentDescription="@string/image"
-            android:scaleType="fitXY"
-            android:background="#C0C0C0"
-            android:visibility="gone"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

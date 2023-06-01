@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,6 +31,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -37,6 +40,7 @@ import java.util.List;
 public class CategoryItemDetailsActivity extends AppCompatActivity implements View.OnClickListener, NutrientAdapter.setClickItem {
 
     private Context context;
+    private ImageView IvBack;
     private String DietName, DietSlug, DietImg;
     private Gson create;
     private RecyclerView RvItemNutrients, RvItemProteins, RvItemVitamins, RvItemMinerals, RvItemPros, RvItemCons;
@@ -56,6 +60,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
 
     private void initViews() {
         context = this;
+        IvBack = (ImageView) findViewById(R.id.IvBack);
         RvItemNutrients = (RecyclerView) findViewById(R.id.RvItemNutrients);
         RvItemProteins = (RecyclerView) findViewById(R.id.RvItemProteins);
         RvItemVitamins = (RecyclerView) findViewById(R.id.RvItemVitamins);
@@ -77,7 +82,16 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
     }
 
     private void initActions() {
-        IvItemImg.setImageResource(R.drawable.arm_arm_scissors_a);
+        IvBack.setOnClickListener(v -> onBackPressed());
+        try {
+            InputStream ims = context.getAssets().open("DietImg/" + DietImg);
+            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+            IvItemImg.setImageBitmap(bitmap);
+            ims.close();
+        } catch (IOException ex) {
+            IvItemImg.setVisibility(View.GONE);
+            System.out.println("----- catch : " + ex.getMessage());
+        }
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
         String AssetsFile = readFile(assets, "Diet/" + DietSlug + ".json");

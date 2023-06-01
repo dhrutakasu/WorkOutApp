@@ -78,13 +78,27 @@ public class Constants {
         calendar.set(Calendar.SECOND, i3);
         Intent intent = new Intent(context, ReminderReceiver.class);
         intent.getIntExtra("RequestCode", 100);
-        alarmManager.cancel(PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT));
+        PendingIntent pendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+        }else {
+            pendingIntent = PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+        alarmManager.cancel(pendingIntent);
         Log.d("Tag", "previous alarm canceled");
         Log.d("Tag", "new alarm sets");
-        PendingIntent broadcast = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingintent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+
+        }else {
+            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
+
+        }
+//        PendingIntent broadcast = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         if (alarmManager != null) {
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 86400000L, broadcast);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 86400000L, pendingintent);
         }
     }
 

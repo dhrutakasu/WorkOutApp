@@ -9,15 +9,24 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.app.ActionBar;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
 import com.google.android.material.navigation.NavigationView;
+import com.out.workout.Application.App;
 import com.out.workout.R;
+import com.out.workout.model.WorkoutExerciseModel;
+import com.out.workout.utils.Constants;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.OnNavigationListener {
 
@@ -46,14 +55,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         IvProfile = findViewById(R.id.IvProfile);
         IvNotification = findViewById(R.id.IvNotification);
 
-//        setSupportActionBar(TbMain);
-//
-//        AcMain = new AppBarConfiguration.Builder(R.id.NavTraining, R.id.NavRoutines, R.id.NavCalculator, R.id.NavDietTips, R.id.NavProfile)
-//                .setDrawerLayout(DlMain)
-//                .build();
         NcMain = Navigation.findNavController(this, R.id.NcMain);
-//        NavigationUI.setupActionBarWithNavController(this, NcMain, AcMain);
-//        NavigationUI.setupWithNavController(NvMain, NcMain);
 
     }
 
@@ -97,35 +99,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
             startActivity(new Intent(context, DayRemindersActivity.class));
         });
 
-        /*NvMain.setNavigationItemSelectedListener(menuItem -> {
-            switch (menuItem.getItemId()) {
-                case R.id.NavTraining:
-                    NcMain.navigate(R.id.NavTraining);
-                    DlMain.closeDrawers();
-                    break;
-                case R.id.NavRoutines:
-                    NcMain.popBackStack(R.id.NavTraining, false);
-                    NcMain.navigate(R.id.NavRoutines);
-                    DlMain.closeDrawers();
-                    break;
-                case R.id.NavCalculator:
-                    NcMain.popBackStack(R.id.NavTraining, false);
-                    NcMain.navigate(R.id.NavCalculator);
-                    DlMain.closeDrawers();
-                    break;
-                case R.id.NavDietTips:
-                    NcMain.popBackStack(R.id.NavTraining, false);
-                    NcMain.navigate(R.id.NavDietTips);
-                    DlMain.closeDrawers();
-                    break;
-                case R.id.NavProfile:
-                    NcMain.popBackStack(R.id.NavTraining, false);
-                    NcMain.navigate(R.id.NavProfile);
-                    DlMain.closeDrawers();
-                    break;
-            }
-            return true;
-        });*/
     }
 
     @Override
@@ -141,5 +114,41 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     @Override
     public boolean onNavigationItemSelected(int i, long l) {
         return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        Dialog dialogExit = new Dialog(context);
+        dialogExit.setCancelable(false);
+        dialogExit.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialogExit.setContentView(R.layout.dialog_quit);
+        dialogExit.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        WindowManager.LayoutParams lp = dialogExit.getWindow().getAttributes();
+        Window window = dialogExit.getWindow();
+        lp.copyFrom(window.getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.CENTER;
+        window.setAttributes(lp);
+
+        TextView BtnDialogQuit = dialogExit.findViewById(R.id.BtnDialogQuit);
+        TextView BtnDialogExreciseExit = dialogExit.findViewById(R.id.BtnDialogExreciseExit);
+        TextView BtnDialogExreciseNo = dialogExit.findViewById(R.id.BtnDialogExreciseNo);
+        BtnDialogQuit.setText("Would you like to quit this application?");
+        BtnDialogExreciseExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        BtnDialogExreciseNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogExit.dismiss();
+            }
+        });
+
+        dialogExit.show();
     }
 }

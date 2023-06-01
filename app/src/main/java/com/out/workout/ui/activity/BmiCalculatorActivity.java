@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -8,6 +9,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -89,7 +92,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
 
     private void initActions() {
         TvTitle.setText(getString(R.string.bmi_title));
-        TvFTOrCMBMI.setText(R.string.centimeters);
+        TvFTOrCMBMI.setText(R.string.cm);
         LLHeightBMI.setVisibility(View.GONE);
         EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
         String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
@@ -180,21 +183,37 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
             ImageView IvWeightWomen = dialog.findViewById(R.id.IvWeightWomen);
             TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
             TextView TvDialogWeightBMIValue = dialog.findViewById(R.id.TvDialogWeightBMIValue);
-            Button BtnDialogResult = dialog.findViewById(R.id.BtnDialogResult);
+            TextView BtnDialogResult = dialog.findViewById(R.id.BtnDialogResult);
             ProgressBar PbBMI = dialog.findViewById(R.id.PbBMI);
+            CardView CardIdealWeight = dialog.findViewById(R.id.CardIdealWeight);
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+            TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_body_mass_index);
+            TvDialogName.setText(getResources().getString(R.string.bmi_title));
+            TvDialogDesc.setText(getResources().getString(R.string.bmi_desc));
+
+            CardIdealWeight.setVisibility(View.VISIBLE);
             TvDialogWeightValue.setVisibility(View.VISIBLE);
             PbBMI.setVisibility(View.VISIBLE);
             IvWeightWomen.setVisibility(View.VISIBLE);
             TvDialogWeightBMIValue.setVisibility(View.VISIBLE);
             BtnDialogResult.setVisibility(View.VISIBLE);
-            TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
             TvDialogWeightSubTitle.setText(getString(R.string.bmiis));
 
+            SpannableString content = new SpannableString(getString(R.string.understand_bmi));
+            content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+            BtnDialogResult.setText(content);
+
+            TvDialogWeightValue.setTextColor(getResources().getColor(R.color.black));
             TvDialogWeightBMIValue.setText(calculate_BMI);
             try {
                 int BMI_Int = (int) Double.valueOf(calculate_BMI).doubleValue();
@@ -242,7 +261,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 }
             });
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             e2.printStackTrace();
@@ -269,7 +288,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()){
+        switch (adapterView.getId()){
             case R.id.SpinnerHeightBMI:
                 String weight = (String) SpinnerHeightBMI.getSelectedItem().toString();
                 if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {

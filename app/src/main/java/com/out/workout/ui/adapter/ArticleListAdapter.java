@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.out.workout.R;
@@ -39,11 +40,12 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.TvDietName.setText(categories.get(position).getName());
-        holder.IvDietImg.setImageResource(R.drawable.cat_vegeterian);
+        holder.CardImg.setVisibility(View.GONE);
         holder.itemView.setOnClickListener(v -> {
             context.startActivity(new Intent(context, ArticleDetailsActivity.class)
                     .putExtra(Constants.DIET_SLUG, categories.get(position).getSlug())
-                    .putExtra(Constants.DIET_NAME, categories.get(position).getName()));
+                    .putExtra(Constants.DIET_NAME, categories.get(position).getName())
+                    .putExtra(Constants.DIET_IMG, categories.get(position).getIcon()));
         });
     }
 
@@ -54,11 +56,13 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private ImageView IvDietImg;
+        private CardView CardImg;
         private TextView TvDietName;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             IvDietImg = itemView.findViewById(R.id.IvDietImg);
+            CardImg = itemView.findViewById(R.id.CardImg);
             TvDietName = itemView.findViewById(R.id.TvDietName);
         }
     }

@@ -39,7 +39,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private ImageView IvBack, IvArticleImage;
     private TextView TvTitle, TvArticleDescr;
 
-    private String DietName, DietSlug;
+    private String DietName, DietSlug,DietImage;
 
     private Gson create;
     private ArrayList<DetailModel> categories = new ArrayList<>();
@@ -68,6 +68,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private void initIntents() {
         DietName = getIntent().getStringExtra(Constants.DIET_NAME);
         DietSlug = getIntent().getStringExtra(Constants.DIET_SLUG);
+        DietImage = getIntent().getStringExtra(Constants.DIET_IMG);
         System.out.println("----- DIet slug : "+DietSlug);
     }
 
@@ -76,6 +77,15 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     }
 
     private void initActions() {
+        try {
+            InputStream ims = context.getAssets().open("DietImg/" + DietImage);
+            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+            IvArticleImage.setImageBitmap(bitmap);
+            IvArticleImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        } catch (IOException ex) {
+            IvArticleImage.setVisibility(View.GONE);
+            System.out.println("----- catch : " + ex.getMessage());
+        }
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
         String AssetsFile = readAssetsFile(assets, "Diet/" + DietSlug + ".json");
@@ -92,20 +102,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
             JSONArray jsonArray = new JSONArray(mJsonObject.getString("details"));
             for (int j = 0; j < jsonArray.length(); j++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(j);
-                System.out.println("----- DIet slug Json: "+jsonObject.getString("image").equalsIgnoreCase(""));
-                if (isImage) {
-                    if (!jsonObject.getString("image").equalsIgnoreCase("")) {
-                        try {
-                            InputStream ims = context.getAssets().open("DietImg/" + jsonObject.getString("image"));
-                            Bitmap bitmap = BitmapFactory.decodeStream(ims);
-                            IvArticleImage.setImageBitmap(bitmap);
-                        } catch (IOException ex) {
-                            System.out.println("----- catch : " + ex.getMessage());
-                            return;
-                        }
-                        isImage = true;
-                    }
-                }
                 DetailModel detailModel1 = new DetailModel();
                 detailModel1.setHeader(jsonObject.getString("header"));
                 detailModel1.setFullDescription(jsonObject.getString("full_description"));

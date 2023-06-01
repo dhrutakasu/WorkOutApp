@@ -43,11 +43,6 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        if (position == exerciseModels.size() - 1) {
-            holder.View_divider.setVisibility(View.GONE);
-        } else {
-            holder.View_divider.setVisibility(View.VISIBLE);
-        }
         if (position < exerciseModels.size()) {
             holder.CvItem.setVisibility(View.VISIBLE);
             WorkoutExerciseModel exerciseModel = exerciseModels.get(position);
@@ -89,7 +84,6 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
         private final TextView TvExerciseRotate;
         private final ImageView IvExerciseAnimation;
         private final CardView CvItem;
-        private final View View_divider;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -98,7 +92,6 @@ public class WorkoutListAdapter extends RecyclerView.Adapter<WorkoutListAdapter.
             TvExerciseRotate = (TextView) itemView.findViewById(R.id.TvExerciseRotate);
             IvExerciseAnimation = (ImageView) itemView.findViewById(R.id.IvExerciseAnimation);
             CvItem = (CardView) itemView.findViewById(R.id.CvItem);
-            View_divider = (View) itemView.findViewById(R.id.View_divider);
         }
     }
 }

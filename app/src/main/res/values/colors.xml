@@ -8,10 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#D7DDFF</color>
-    <color name="lightmain">#9FADF8</color>
     <color name="transparent">#00000000</color>
     <color name="text_color">#80000000</color>
-    <color name="box_gray">#ececec</color>
     <color name="text_gray">#9CA3AF</color>
     <color name="bg_gray">#efefef</color>
     <color name="new_gray">#9CA3AF</color>

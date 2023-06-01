@@ -13,7 +13,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -24,6 +23,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -253,7 +253,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         NestedScrollView ScrollFitCalorie = dialog.findViewById(R.id.ScrollFitCalorie);
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         LinearLayout LlFitOtherResults = dialog.findViewById(R.id.LlFitOtherResults);
@@ -266,8 +266,9 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         TextView TvFitMildWeightGainCalorie = dialog.findViewById(R.id.TvFitMildWeightGainCalorie);
         TextView TvFitWeightGainCalorie = dialog.findViewById(R.id.TvFitWeightGainCalorie);
         TextView TvFitFastWeightGainCalorie = dialog.findViewById(R.id.TvFitFastWeightGainCalorie);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
-
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+        RlCardItem.setVisibility(View.GONE);
         double doub = parseFloat * 10.0f;
         int ValInt = (int) Math.rint((FlFatMale.isSelected() ? ((doub + (cm * 6.25d)) - (getAge() * 5)) + 5.0d : ((doub + (cm * 6.25d)) - (getAge() * 5)) - 161.0d) * getFactor());
         ValueAnimator animator = ValueAnimator.ofInt(Math.max(0, ValInt - 200), ValInt);
@@ -311,7 +312,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 
@@ -319,7 +320,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         if (getIntent().getBooleanExtra(Constants.BMR, false)) {
             return 1.0f;
         }
-        int intExtra = ((ExerciseAdapter) RvFatActivities.getAdapter()).getSelectedItemPosition();
+        int intExtra = ((ExerciseAdapter) RvFatActivities.getAdapter()).getItemPosition();
         if (intExtra == 1) {
             return 1.375f;
         }

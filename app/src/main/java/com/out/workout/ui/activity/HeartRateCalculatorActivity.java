@@ -158,13 +158,20 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             LinearLayout LlHeartRate = dialog.findViewById(R.id.LlHeartRate);
             TextView TvDialogMaxRateValue = dialog.findViewById(R.id.TvDialogMaxRateValue);
             TextView TvDialogTrainingRateValue = dialog.findViewById(R.id.TvDialogTrainingRateValue);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_heart_reate);
+            TvDialogName.setText(getResources().getString(R.string.heartrate));
+            TvDialogDesc.setText(getResources().getString(R.string.heart_desc));
             LlHeartRate.setVisibility(View.VISIBLE);
 
             TvDialogMaxRateValue.setText(str_Rate);
@@ -178,7 +185,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
                 }
             });
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());

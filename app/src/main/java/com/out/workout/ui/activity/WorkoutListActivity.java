@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,7 +18,6 @@ import com.out.workout.model.WorkoutExerciseModel;
 import com.out.workout.ui.adapter.WorkoutListAdapter;
 import com.out.workout.utils.Constants;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 public class WorkoutListActivity extends AppCompatActivity implements View.OnClickListener {
@@ -112,6 +110,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     }
 
     private ArrayList<WorkoutExerciseModel> getAllWorkoutDatas() {
+        System.out.println("------- Work : "+WorkoutType);
         if (WorkoutType.contains("Arm")) {
             CountDays = "Day 1";
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.arm), getResources().getString(R.string.desc_triceps_dips), getResources().obtainTypedArray(R.array.triceps_dips), getResources().getIntArray(R.array.buttock_cycles));
@@ -183,7 +182,7 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
                     helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
                 }
             }
-        } else if (WorkoutType.contains("Weight Loss")) {
+        } else if (WorkoutType.contains("Weight Lose")) {
 
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.lose), getResources().getString(R.string.desc_vertical_leg_crunches), getResources().obtainTypedArray(R.array.vertical_leg_crunches), getResources().getIntArray(R.array.weightloss_cycles));
             workoutExerciseModels.add(exerciseModel);
@@ -218,7 +217,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.lose15), getResources().getString(R.string.desc_leg_raise), getResources().obtainTypedArray(R.array.leg_raise), getResources().getIntArray(R.array.weightloss_cycles));
             workoutExerciseModels.add(exerciseModel);
             CountDays = "Day 2";
-
             if (helper.getExerciseCount() > 0) {
                 if (!helper.IsExistType(WorkoutType)) {
                     for (int i = 0; i < workoutExerciseModels.size(); i++) {
@@ -226,7 +224,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
                         for (int j = 0; j < workoutExerciseModels.get(i).getExerciseImg().length(); j++) {
                             getInts[j] = workoutExerciseModels.get(i).getExerciseImg().getResourceId(j, 0);
                         }
-
                         helper.insertExerciseCycles(WorkoutType, workoutExerciseModels.get(i).getExerciseName(), workoutExerciseModels.get(i).getExerciseDesc(), getInts, workoutExerciseModels.get(i).getExerciseType()[i] + "");
                     }
                 }
@@ -241,9 +238,9 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
             }
         } else if (WorkoutType.contains("Abs")) {
 
-            WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs), getResources().getString(R.string.v_crunch_desc), getResources().obtainTypedArray(R.array.abs_v_crunch), getResources().getIntArray(R.array.abs_cycles));
+            WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.str_abs), getResources().getString(R.string.v_crunch_desc), getResources().obtainTypedArray(R.array.abs_v_crunch), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
-            exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs1), getResources().getString(R.string.clapping_crunches_desc), getResources().obtainTypedArray(R.array.abs_clapping_crunches), getResources().getIntArray(R.array.abs_cycles));
+            exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.str_abs1), getResources().getString(R.string.clapping_crunches_desc), getResources().obtainTypedArray(R.array.abs_clapping_crunches), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);
             exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.abs2), getResources().getString(R.string.side_crunches_right_desc), getResources().obtainTypedArray(R.array.abs_flutter_kicks), getResources().getIntArray(R.array.abs_cycles));
             workoutExerciseModels.add(exerciseModel);

@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -156,19 +157,28 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
 
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
         TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
         TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+        CardView CardIdealWeight = dialog.findViewById(R.id.CardIdealWeight);
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
-        TvDialogWeightValue.setVisibility(View.VISIBLE);
+
+        ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+        TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+        TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+        IvDialogBanner.setImageResource(R.drawable.ic_breath_count);
+        TvDialogName.setText(getResources().getString(R.string.breath_count));
+        TvDialogDesc.setText(getResources().getString(R.string.breath_count_desc));
+        CardIdealWeight.setVisibility(View.VISIBLE);
 
         TvDialogWeightSubTitle.setText(getString(R.string.no_of_breath));
         TvDialogWeightValue.setText(String.valueOf(getBreathDate(calendar)));
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 

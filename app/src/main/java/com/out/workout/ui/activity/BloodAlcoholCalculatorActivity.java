@@ -196,11 +196,19 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
             LinearLayout LlBloodAlcohol = dialog.findViewById(R.id.LlBloodAlcohol);
             TextView TvDialogBloodAlcohol = dialog.findViewById(R.id.TvDialogBloodAlcohol);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_blood_alcohol);
+            TvDialogName.setText(getResources().getString(R.string.bloodalcohol));
+            TvDialogDesc.setText(getResources().getString(R.string.bloodalcohol_desc));
 
             LlBloodAlcohol.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.urbloodalcohol));
@@ -208,7 +216,6 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());
@@ -236,7 +243,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()) {
+        switch (adapterView.getId()) {
             case R.id.SpinnerGenderBloodAlcohol:
                 StrMale = SpinnerGenderBloodAlcohol.getSelectedItem().toString().equals(getResources().getString(R.string.male));
                 break;

@@ -1,6 +1,7 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -62,6 +63,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         context = this;
         IvBack = (ImageView) findViewById(R.id.IvBack);
         TvTitle = (TextView) findViewById(R.id.TvTitle);
+        TvFTOrCMIdealWeight = (TextView) findViewById(R.id.TvFTOrCMIdealWeight);
         EdtAgeCalculator = (EditText) findViewById(R.id.EdtAgeCalculator);
         SpinnerGenderIdealWeight = (Spinner) findViewById(R.id.SpinnerGenderIdealWeight);
         SpinnerHeightIdealWeight = (Spinner) findViewById(R.id.SpinnerHeightIdealWeight);
@@ -191,11 +193,21 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
+            CardView CardIdealWeight = dialog.findViewById(R.id.CardIdealWeight);
             TextView TvDialogWeightValue = dialog.findViewById(R.id.TvDialogWeightValue);
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
-            TvDialogWeightValue.setVisibility(View.VISIBLE);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_ideal_weight);
+            TvDialogName.setText(getResources().getString(R.string.idealweight));
+            TvDialogDesc.setText(getResources().getString(R.string.idealweight_desc));
+
+            CardIdealWeight.setVisibility(View.VISIBLE);
             TvDialogWeightSubTitle.setText(getString(R.string.uridealweight));
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -203,9 +215,9 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
                     dialog.dismiss();
                 }
             });
-            TvDialogWeightValue.setText(calculate_Kg + " / " + calculate_lbs);
+            TvDialogWeightValue.setText(calculate_Kg + "Kg / " + calculate_lbs+"lbs");
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             System.out.println("----- -- - - e22 come : " + e2.getMessage());
@@ -231,7 +243,8 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()) {
+        System.out.println("------- VALLL : "+adapterView.getId()+" - "+R.id.SpinnerHeightIdealWeight);
+        switch (adapterView.getId()) {
             case R.id.SpinnerHeightIdealWeight:
                 String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();
                 if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {

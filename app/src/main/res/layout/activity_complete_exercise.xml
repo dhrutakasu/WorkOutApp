@@ -54,7 +54,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/_15sdp"
                     android:fontFamily="@font/main_semibold"
                     android:gravity="center"
                     android:text="You Just Completed"
@@ -70,7 +69,7 @@
                     android:gravity="center"
                     android:text="congratulations !"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -92,7 +91,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_15sdp"
                         android:fontFamily="@font/main_semibold"
                         android:gravity="center"
                         android:text="Exercises"
@@ -133,7 +131,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_15sdp"
                                 android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Hours"
@@ -162,7 +159,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_15sdp"
                                 android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Minutes"
@@ -191,7 +187,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/_15sdp"
                                 android:fontFamily="@font/main_semibold"
                                 android:gravity="center"
                                 android:text="Seconds"

@@ -2,6 +2,7 @@ package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
 import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -260,8 +261,8 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
         lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
         lp.gravity = Gravity.CENTER;
         window.setAttributes(lp);
-        ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
-        Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+
+        TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
         if (b) {
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             TextView TvDialogWWeightCal = dialog.findViewById(R.id.TvDialogWWeightCal);
@@ -273,7 +274,15 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             TextView TvDialogWeightMessage = dialog.findViewById(R.id.TvDialognWeightMessage);
             LinearLayout LlDialogMoreResult = dialog.findViewById(R.id.LlDialogMoreResult);
             NestedScrollView ScrollIdealWeightCalorie = dialog.findViewById(R.id.ScrollIdealWeightCalorie);
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+            IvDialogBanner.setImageResource(R.drawable.ic_body_fat);
+            TvDialogName.setText(getResources().getString(R.string.bodyfat));
+            TvDialogDesc.setText(getResources().getString(R.string.bodyfat_desc));
 
+            CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+            RlCardItem.setVisibility(View.GONE);
             ScrollIdealWeightCalorie.setVisibility(View.VISIBLE);
 
             TvDialogWeightSubTitle.setText("Healthy BMI Range");
@@ -311,6 +320,8 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             TextView TvDialogBodyWeightMessage = dialog.findViewById(R.id.TvDialogBodyWeightMessage);
             TextView TvDialogBodyNote = dialog.findViewById(R.id.TvDialogBodyNote);
 
+            CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+            RlCardItem.setVisibility(View.GONE);
             if (getIntent().getBooleanExtra(Constants.BMR, false)) {
                 float[] floats = new float[2];
                 floats[0] = 0.0f;
@@ -335,7 +346,7 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
         }
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-        IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
         dialog.show();
     }
 

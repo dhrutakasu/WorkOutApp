@@ -22,10 +22,12 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.out.workout.R;
+import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
@@ -82,6 +84,13 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         TvFTOrCMBloodVolume.setText(getString(R.string.cm));
         LLHeightBloodVolume.setVisibility(View.GONE);
         EdtAgeBloodVolume.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
+        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
+        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        SpinnerGenderBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
+        SpinnerHeightBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
+        SpinnerWeightBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
+
     }
 
     @Override
@@ -162,11 +171,19 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
             lp.gravity = Gravity.CENTER;
             window.setAttributes(lp);
 
-            ImageView IvWeightClose = dialog.findViewById(R.id.IvWeightClose);
+
             TextView TvDialogWeightSubTitle = dialog.findViewById(R.id.TvDialogWeightSubTitle);
             TextView TvDialogBloodValue = dialog.findViewById(R.id.TvDialogBloodValue);
-            Button BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
+            TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
             LinearLayout LlBloodVolume = dialog.findViewById(R.id.LlBloodVolume);
+
+            ImageView IvDialogBanner = dialog.findViewById(R.id.IvDialogBanner);
+            TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
+            TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
+
+            IvDialogBanner.setImageResource(R.drawable.ic_blood_volume);
+            TvDialogName.setText(getResources().getString(R.string.bloodvol));
+            TvDialogDesc.setText(getResources().getString(R.string.bloodvol_desc));
 
             LlBloodVolume.setVisibility(View.VISIBLE);
 
@@ -175,7 +192,7 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
-            IvWeightClose.setOnClickListener(view -> dialog.dismiss());
+
             dialog.show();
         } catch (Resources.NotFoundException e2) {
             e2.printStackTrace();
@@ -197,7 +214,7 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        switch (view.getId()) {
+        switch (adapterView.getId()) {
             case R.id.SpinnerWeightBloodVolume:
                 String weight = (String) SpinnerWeightBloodVolume.getSelectedItem().toString();
                 if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {

@@ -3,18 +3,32 @@ package com.out.workout.ui.activity;
 import static com.out.workout.ui.activity.AddOrEditAlarmActivity.buildAddEditAlarmActivityIntent;
 import static com.out.workout.utils.Constants.ADD_ALARM;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.model.ReminderModel;
@@ -25,7 +39,7 @@ import com.out.workout.utils.DividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DayRemindersActivity extends AppCompatActivity implements View.OnClickListener{
+public class DayRemindersActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Context context;
     private ImageView IvBack;
@@ -91,10 +105,52 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
                 onBackPressed();
                 break;
             case R.id.IvAddReminder:
-                AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
-                final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
-                startActivity(i);
+                if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.TIRAMISU) {
+                    Dexter.withActivity(this)
+                            .withPermission(Manifest.permission.POST_NOTIFICATIONS)
+                            .withListener(new PermissionListener() {
+                                @Override
+                                public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                                    Toast.makeText(context, "The permission is   granted..", Toast.LENGTH_SHORT).show();
+
+                                    AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
+                                    final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
+                                    startActivity(i);
+                                }
+
+                                @Override
+                                public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                                    showSettingsDialog();
+                                }
+
+                                @Override
+                                public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                                    permissionToken.continuePermissionRequest();
+                                }
+                            }).withErrorListener(error -> {
+                            }).onSameThread().check();
+                }else {
+                    AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
+                    final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
+                    startActivity(i);
+                }
                 break;
         }
+    }
+    private void showSettingsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Need Permissions");
+        builder.setMessage("This app needs permission to use this feature. You can grant them in app settings.");
+        builder.setPositiveButton("GOTO SETTINGS", (dialog, which) -> {
+            dialog.cancel();
+            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            Uri uri = Uri.fromParts("package", getPackageName(), null);
+            intent.setData(uri);
+            startActivityForResult(intent, 101);
+        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+            dialog.cancel();
+        });
+        builder.show();
     }
 }

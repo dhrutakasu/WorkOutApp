@@ -54,7 +54,7 @@ public class FitnessCalculatorsActivity extends AppCompatActivity implements Vie
         list.add("Protein Calculator");
         list.add("Body Fat Calculator");
         list.add("Water Intake");
-        RvDietsFitness.setLayoutManager(new GridLayoutManager(context,2));
+        RvDietsFitness.setLayoutManager(new LinearLayoutManager(context));
         RvDietsFitness.setAdapter(new FitnessAdapter(context, list));
     }
 
