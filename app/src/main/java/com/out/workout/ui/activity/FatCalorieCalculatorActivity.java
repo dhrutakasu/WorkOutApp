@@ -2,9 +2,11 @@ package com.out.workout.ui.activity;
 
 import android.animation.ValueAnimator;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -20,16 +22,10 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.cardview.widget.CardView;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.ExerciseAdapter;
 import com.out.workout.ui.adapter.FitSliderAdapter;
@@ -39,6 +35,12 @@ import com.out.workout.utils.DecimalDigitsInputFilter;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class FatCalorieCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
@@ -129,7 +131,22 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
                 onBackPressed();
                 break;
             case R.id.BtnFatCalculate:
-                GotoFitCalculate();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(FatCalorieCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoFitCalculate();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.FlFatMale:
                 SelectGenderMale();
@@ -272,7 +289,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         TextView TvFitWeightGainCalorie = dialog.findViewById(R.id.TvFitWeightGainCalorie);
         TextView TvFitFastWeightGainCalorie = dialog.findViewById(R.id.TvFitFastWeightGainCalorie);
         TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
-        CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+        RelativeLayout  RlCardItem = dialog.findViewById(R.id.RlCardItem);
         RlCardItem.setVisibility(View.GONE);
         double doub = parseFloat * 10.0f;
         int ValInt = (int) Math.rint((FlFatMale.isSelected() ? ((doub + (cm * 6.25d)) - (getAge() * 5)) + 5.0d : ((doub + (cm * 6.25d)) - (getAge() * 5)) - 161.0d) * getFactor());
@@ -313,7 +330,7 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
             TvFitMaintainWeightMessage.setVisibility(View.GONE);
         }
         ScrollFitCalorie.setVisibility(View.VISIBLE);
-        TvDialogWeightSubTitle.setText(R.string.calories_to_maintain_weight);
+        TvDialogWeightSubTitle.setText(R.string.str_calories_to_maintain_weight);
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
 
@@ -348,7 +365,6 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         } else {
             str = RgFatHeightUnit.getCheckedRadioButtonId() == R.id.RbFatCm ? "Please input a valid Height(1cm - 250cm)" : "Please input a valid Height(1' - 8'2\")";
         }
-        Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
     }
 
     public final boolean isHeightValueValid() {

@@ -4,19 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 
 public class BloodPressureCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
@@ -48,13 +53,15 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
     }
 
     private void initListeners() {
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
         IvBack.setOnClickListener(this);
         BtnWeightBloodPressure.setOnClickListener(this);
         BtnResetBloodPressure.setOnClickListener(this);
     }
 
     private void initActions() {
-        TvTitle.setText(getString(R.string.blood_pressure));
+        TvTitle.setText(getString(R.string.str_blood_pressure));
     }
 
     @Override
@@ -64,7 +71,22 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
                 onBackPressed();
                 break;
             case R.id.BtnWeightBloodPressure:
-                GotoCalculationBloodPressure();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(BloodPressureCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculationBloodPressure();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetBloodPressure:
                 GotoResetBloodPressure();
@@ -75,24 +97,24 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
     private void GotoCalculationBloodPressure() {
         String CalculateBp;
         if (TextUtils.isEmpty(EdtSystolicBloodPressure.getText().toString())) {
-            EdtSystolicBloodPressure.setError(getResources().getString(R.string.valid));
+            EdtSystolicBloodPressure.setError(getResources().getString(R.string.str_valid));
         } else if (TextUtils.isEmpty(EdtDiastolicBloodPressure.getText().toString())) {
-            EdtDiastolicBloodPressure.setError(getResources().getString(R.string.valid));
+            EdtDiastolicBloodPressure.setError(getResources().getString(R.string.str_valid));
         } else {
             float FloatSystolic = Float.parseFloat(EdtSystolicBloodPressure.getText().toString());
             float FloatDiastolic = Float.parseFloat(EdtDiastolicBloodPressure.getText().toString());
             if (FloatSystolic > 180.0f || FloatDiastolic > 110.0f) {
-                CalculateBp = getResources().getString(R.string.hypertensive_crisis);
+                CalculateBp = getResources().getString(R.string.str_hypertensive_crisis);
             } else if (FloatSystolic >= 160.0f || FloatDiastolic >= 100.0f) {
-                CalculateBp = getResources().getString(R.string.high_bp_stage2);
+                CalculateBp = getResources().getString(R.string.str_high_bp_stage2);
             } else if (FloatSystolic > 140.0f || FloatDiastolic > 90.0f) {
-                CalculateBp = getResources().getString(R.string.high_bp_stage1);
+                CalculateBp = getResources().getString(R.string.str_high_bp_stage1);
             } else if (FloatSystolic > 120.0f || FloatDiastolic > 80.0f) {
-                CalculateBp = getResources().getString(R.string.prehypertension);
+                CalculateBp = getResources().getString(R.string.str_prehypertension);
             } else if (FloatSystolic <= 80.0f || FloatDiastolic <= 60.0f) {
-                CalculateBp = getResources().getString(R.string.low_bp);
+                CalculateBp = getResources().getString(R.string.str_low_bp);
             } else {
-                CalculateBp = getResources().getString(R.string.normal_bp);
+                CalculateBp = getResources().getString(R.string.str_normal_bp);
             }
 
             final Dialog dialog = new Dialog(context);
@@ -119,11 +141,11 @@ public class BloodPressureCalculatorActivity extends AppCompatActivity implement
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_blood_pressure);
-            TvDialogName.setText(getResources().getString(R.string.blood_pressure));
-            TvDialogDesc.setText(getResources().getString(R.string.calc_bp_val));
+            TvDialogName.setText(getResources().getString(R.string.str_blood_pressure));
+            TvDialogDesc.setText(getResources().getString(R.string.str_calc_bp_val));
             CardIdealWeight.setVisibility(View.VISIBLE);
 
-            TvDialogWeightSubTitle.setText(getString(R.string.your_bp));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_your_bp));
             TvDialogWeightValue.setText(String.valueOf(CalculateBp));
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());

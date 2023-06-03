@@ -1,39 +1,36 @@
 
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class BloodVolumeCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -83,18 +80,18 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
     }
 
     private void initActions() {
-        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.bloodvol));
-        TvFTOrCMBloodVolume.setText(getString(R.string.cm));
+        TvTitle.setText(getString(R.string.str_bloodvol));
+        TvFTOrCMBloodVolume.setText(getString(R.string.str_cm));
         LLHeightBloodVolume.setVisibility(View.GONE);
         EdtAgeBloodVolume.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
-        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
+        String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
         SpinnerGenderBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
         SpinnerHeightBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
         SpinnerWeightBloodVolume.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
     }
 
@@ -105,7 +102,22 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
                 onBackPressed();
                 break;
             case R.id.BtnWeightBloodVolume:
-                GotoCalculateWeight();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(BloodVolumeCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateWeight();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetBloodVolume:
                 GotoCalculateReset();
@@ -134,11 +146,10 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
                 DoubleInch = 0.0d;
             }
             if (check) {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 check = false;
                 return;
             }
-            if (rbWeight.equalsIgnoreCase(getString(R.string.centimeters))) {
+            if (rbWeight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                 DoubleHeight /= 100.0d;
             } else {
                 DoubleHeight *= 12.0d;
@@ -146,10 +157,10 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
                 DoubleHeight *= 2.54d;
                 DoubleHeight /= 100.0d;
             }
-            if (!weightBlood.equalsIgnoreCase(getString(R.string.kilograms))) {
+            if (!weightBlood.equalsIgnoreCase(getString(R.string.str_kilograms))) {
                 DoubleWeight *= 0.453592d;
             }
-            if (gender.equalsIgnoreCase(getString(R.string.male))) {
+            if (gender.equalsIgnoreCase(getString(R.string.str_male))) {
                 DoubleWeight *= 0.03219d;
                 DoubleWeight += 0.6041d;
                 DoubleHeight = DoubleHeight * DoubleHeight * DoubleHeight;
@@ -187,12 +198,12 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_blood_volume);
-            TvDialogName.setText(getResources().getString(R.string.bloodvol));
-            TvDialogDesc.setText(getResources().getString(R.string.bloodvol_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_bloodvol));
+            TvDialogDesc.setText(getResources().getString(R.string.str_bloodvol_desc));
 
             LlBloodVolume.setVisibility(View.VISIBLE);
 
-            TvDialogWeightSubTitle.setText(getString(R.string.urbloodvol));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_urbloodvol));
             TvDialogBloodValue.setText(StrBloodVolume);
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
@@ -213,7 +224,7 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         SpinnerWeightBloodVolume.setSelection(0);
         SpinnerGenderBloodVolume.setSelection(0);
         SpinnerHeightBloodVolume.setSelection(0);
-        TvFTOrCMBloodVolume.setText(getString(R.string.cm));
+        TvFTOrCMBloodVolume.setText(getString(R.string.str_cm));
         LLHeightBloodVolume.setVisibility(View.GONE);
     }
 
@@ -222,13 +233,13 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         switch (adapterView.getId()) {
             case R.id.SpinnerWeightBloodVolume:
                 String weight = (String) SpinnerWeightBloodVolume.getSelectedItem().toString();
-                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
-                    TvFTOrCMBloodVolume.setText(getString(R.string.cm));
+                if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
+                    TvFTOrCMBloodVolume.setText(getString(R.string.str_cm));
                     EdtHeightBloodVolume.setText("");
                     EdtInchBloodVolume.setText("");
                     LLHeightBloodVolume.setVisibility(View.GONE);
                 } else {
-                    TvFTOrCMBloodVolume.setText(getString(R.string.ft));
+                    TvFTOrCMBloodVolume.setText(getString(R.string.str_ft));
                     EdtHeightBloodVolume.setText("");
                     EdtInchBloodVolume.setText("");
                     LLHeightBloodVolume.setVisibility(View.VISIBLE);

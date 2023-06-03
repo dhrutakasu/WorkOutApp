@@ -1,9 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -15,21 +11,24 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
+import com.google.android.gms.ads.AdSize;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
-import com.out.workout.Ads.Ad_Native;
-import com.out.workout.Helper.ExerciseHelper;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExerciseRemindersActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -65,8 +64,8 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
     }
 
     private void initActions() {
-        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
-        TvTitle.setText(getString(R.string.exercise_time));
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+        TvTitle.setText(getString(R.string.str_exercise_time));
 
         System.out.println("---- : HR " + SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr));
         System.out.println("---- : MIN " + SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin));
@@ -95,7 +94,6 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
                     .withListener(new PermissionListener() {
                         @Override
                         public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                            Toast.makeText(context, "The permission is   granted..", Toast.LENGTH_SHORT).show();
                             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                                 IntHr = PickerSetReminders.getHour();
                                 IntMin = PickerSetReminders.getMinute();
@@ -103,7 +101,6 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
                                 IntHr = PickerSetReminders.getCurrentHour().intValue();
                                 IntMin = PickerSetReminders.getCurrentMinute().intValue();
                             }
-                            Toast.makeText(context, getResources().getString(R.string.time_saved), Toast.LENGTH_SHORT).show();
                             SharePreference.SetBoolean(context, Constants.ExerciseSetTime, true);
                             SharePreference.SetInt(context, Constants.NOTIFICATION_HOUR, IntHr);
                             SharePreference.SetInt(context, Constants.NOTIFICATION_MINUTES, IntMin);
@@ -132,7 +129,6 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
                 IntHr = PickerSetReminders.getCurrentHour().intValue();
                 IntMin = PickerSetReminders.getCurrentMinute().intValue();
             }
-            Toast.makeText(context, getResources().getString(R.string.time_saved), Toast.LENGTH_SHORT).show();
             SharePreference.SetBoolean(context, Constants.ExerciseSetTime, true);
             SharePreference.SetInt(context, Constants.NOTIFICATION_HOUR, IntHr);
             SharePreference.SetInt(context, Constants.NOTIFICATION_MINUTES, IntMin);

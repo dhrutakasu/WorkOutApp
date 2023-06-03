@@ -1,22 +1,19 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.android.gms.ads.AdSize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.ArticleModel;
-import com.out.workout.model.SubCategories;
 import com.out.workout.ui.adapter.ArticleListAdapter;
 import com.out.workout.utils.Constants;
 
@@ -28,6 +25,10 @@ import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ArticleActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -67,7 +68,9 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void initActions() {
-        TvTitle.setText(getString(R.string.shortcut3));
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
+
+        TvTitle.setText(getString(R.string.str_shortcut3));
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
         String AssetsFile = readAssetsFile(assets, "Diet/" + DietSlug + ".json");
@@ -84,7 +87,6 @@ public class ArticleActivity extends AppCompatActivity implements View.OnClickLi
                 categories.add(subCategories);
             }
         } catch (JSONException e) {
-            Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
         }
 
         RvArticleList.setLayoutManager(new LinearLayoutManager(context));

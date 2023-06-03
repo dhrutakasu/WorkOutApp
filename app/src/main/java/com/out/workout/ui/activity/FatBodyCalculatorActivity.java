@@ -1,16 +1,12 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.LinearLayoutCompat;
-import androidx.cardview.widget.CardView;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.animation.ValueAnimator;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -19,7 +15,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -27,10 +22,10 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.ExerciseAdapter;
 import com.out.workout.ui.adapter.FitSliderAdapter;
@@ -41,6 +36,12 @@ import com.out.workout.utils.DecimalDigitsInputFilter;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.LinearLayoutCompat;
+import androidx.cardview.widget.CardView;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class FatBodyCalculatorActivity extends AppCompatActivity implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
@@ -135,6 +136,24 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
                 break;
             case R.id.BtnFatCalculate:
                 GotoFitCalculate();
+
+//                ProgressDialog progressDialog = new ProgressDialog(context);
+//                progressDialog.setMessage("Load Ad....");
+//                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+//                progressDialog.show();
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        progressDialog.dismiss();
+//                        Ad_Interstitial.getInstance().showInter(FatBodyCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+//                            @Override
+//                            public void callbackCall() {
+//                                System.out.println("--- come : ");
+//
+//                            }
+//                        });
+//                    }
+//                }, 3000L);
                 break;
             case R.id.FlFatMale:
                 SelectGenderMale();
@@ -249,6 +268,7 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             if (RgFatWeightUnit.getCheckedRadioButtonId() != R.id.RbFatKg) {
                 parseFloat = Constants.toKg(parseFloat);
             }
+            System.out.println("--- - - -  ");
             showResultDialog(!getIntent().getBooleanExtra(Constants.BMR, false), FloatCm, getAge(), FlFatMale.isSelected(), parseFloat);
         }
     }
@@ -283,10 +303,10 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             TextView TvDialogName = dialog.findViewById(R.id.TvDialogName);
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
             IvDialogBanner.setImageResource(R.drawable.ic_body_fat);
-            TvDialogName.setText(getResources().getString(R.string.bodyfat));
-            TvDialogDesc.setText(getResources().getString(R.string.bodyfat_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_bodyfat));
+            TvDialogDesc.setText(getResources().getString(R.string.str_bodyfat_desc));
 
-            CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+            RelativeLayout  RlCardItem = dialog.findViewById(R.id.RlCardItem);
             RlCardItem.setVisibility(View.GONE);
             ScrollIdealWeightCalorie.setVisibility(View.VISIBLE);
 
@@ -325,7 +345,7 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             TextView TvDialogBodyWeightMessage = dialog.findViewById(R.id.TvDialogBodyWeightMessage);
             TextView TvDialogBodyNote = dialog.findViewById(R.id.TvDialogBodyNote);
 
-            CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+            RelativeLayout  RlCardItem = dialog.findViewById(R.id.RlCardItem);
             RlCardItem.setVisibility(View.GONE);
             if (getIntent().getBooleanExtra(Constants.BMR, false)) {
                 float[] floats = new float[2];
@@ -403,7 +423,6 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
         } else {
             str = RgFatHeightUnit.getCheckedRadioButtonId() == R.id.RbFatCm ? "Please input a valid Height(1cm - 250cm)" : "Please input a valid Height(1' - 8'2\")";
         }
-        Toast.makeText(context, str, Toast.LENGTH_SHORT).show();
     }
 
     public final boolean isHeightValueValid() {

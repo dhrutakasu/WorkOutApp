@@ -1,10 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.os.Bundle;
@@ -12,20 +7,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.reflect.TypeToken;
 import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
-import com.out.workout.model.Data;
-import com.out.workout.model.DietTipsCategory;
 import com.out.workout.model.SubCategories;
-import com.out.workout.ui.adapter.DietTipsAdapter;
 import com.out.workout.ui.adapter.SubDietTipsAdapter;
 import com.out.workout.utils.Constants;
 
@@ -36,9 +24,11 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class CategorySubItemListActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -98,7 +88,6 @@ public class CategorySubItemListActivity extends AppCompatActivity implements Vi
                 categories.add(subCategories);
             }
         } catch (JSONException e) {
-            Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
         }
 
         RvDietsSub.setLayoutManager(new GridLayoutManager(context,2));

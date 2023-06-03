@@ -1,33 +1,32 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WaterIntakeCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -75,10 +74,10 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
 
     private void initActions() {
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
-        TvTitle.setText(getString(R.string.waterintake));
+        TvTitle.setText(getString(R.string.str_waterintake));
         EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
         SpinnerGenderWater.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
         SpinnerWeightWater.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, WeightArr));
     }
@@ -90,7 +89,22 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
                 onBackPressed();
                 break;
             case R.id.BtnWeightWater:
-                GotoCalculateWeight();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(WaterIntakeCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateWeight();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetWater:
                 GotoCalculateReset();
@@ -116,11 +130,10 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
                 BoolCheck = true;
             }
             if (BoolCheck) {
-                Toast.makeText(context, getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 BoolCheck = false;
                 return;
             }
-            if (!WaterWeight.equalsIgnoreCase(getString(R.string.kilograms))) {
+            if (!WaterWeight.equalsIgnoreCase(getString(R.string.str_kilograms))) {
                 DoubleWeight /= 2.2d;
             }
             if (DoubleAge <= 30.0d) {
@@ -166,11 +179,11 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_water_intake);
-            TvDialogName.setText(getResources().getString(R.string.waterintake));
-            TvDialogDesc.setText(getResources().getString(R.string.waterintake_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_waterintake));
+            TvDialogDesc.setText(getResources().getString(R.string.str_waterintake_desc));
 
             LlWater.setVisibility(View.VISIBLE);
-            TvDialogWeightSubTitle.setText(getString(R.string.dailywaterreq));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_dailywaterreq));
             TvDialogWater.setText(calculate_glass);
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
@@ -193,6 +206,6 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     }
 
     private void GotoCalculateChart() {
-        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.waterintake)));
+        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.str_waterintake)));
     }
 }

@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.animation.ValueAnimator;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -23,6 +25,7 @@ import android.widget.TextView;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.FitSliderAdapter;
 import com.out.workout.ui.adapter.SliderLayoutManager;
@@ -96,7 +99,22 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
                 onBackPressed();
                 break;
             case R.id.BtnFatCalculate:
-                GotoFitCalculate();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(FatWaterIntakeCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoFitCalculate();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.FlFatMale:
                 SelectGenderMale();
@@ -153,6 +171,7 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
     public final ArrayList<String> getData() {
         return data;
     }
+
     public final void GotoFitCalculate() {
         final Dialog dialog = new Dialog(context);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -173,7 +192,7 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
         TextView TvDialogRequiredWater = dialog.findViewById(R.id.TvDialogRequiredWater);
         NestedScrollView ScrollWater = dialog.findViewById(R.id.ScrollWater);
 
-        CardView RlCardItem = dialog.findViewById(R.id.RlCardItem);
+        RelativeLayout  RlCardItem = dialog.findViewById(R.id.RlCardItem);
         RlCardItem.setVisibility(View.GONE);
         TvDialogWeightSubTitle.setText("Total water (incl. water in food):10≈");
         ScrollWater.setVisibility(View.VISIBLE);
@@ -189,29 +208,29 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
         dialog.show();
     }
 
-    private float getIntakeWater(int i, boolean z) {
-        boolean z2 = false;
-        if (z) {
-            if (1 > i || i > 3) {
-                if (4 > i || i > 8) {
-                    if (9 > i || i > 13) {
-                        if (14 <= i && i <= 18) {
-                            z2 = true;
+    private float getIntakeWater(int age, boolean IsMale) {
+        boolean Iswater = false;
+        if (IsMale) {
+            if (1 > age || age > 3) {
+                if (4 > age || age > 8) {
+                    if (9 > age || age > 13) {
+                        if (14 <= age && age <= 18) {
+                            Iswater = true;
                         }
-                        return z2 ? 3.3f : 3.7f;
+                        return Iswater ? 3.3f : 3.7f;
                     }
                     return 2.4f;
                 }
                 return 1.7f;
             }
             return 1.3f;
-        } else if (1 > i || i > 3) {
-            if (4 > i || i > 8) {
-                if (9 > i || i > 13) {
-                    if (14 <= i && i <= 18) {
-                        z2 = true;
+        } else if (1 > age || age > 3) {
+            if (4 > age || age > 8) {
+                if (9 > age || age > 13) {
+                    if (14 <= age && age <= 18) {
+                        Iswater = true;
                     }
-                    return z2 ? 2.3f : 2.7f;
+                    return Iswater ? 2.3f : 2.7f;
                 }
                 return 2.1f;
             }

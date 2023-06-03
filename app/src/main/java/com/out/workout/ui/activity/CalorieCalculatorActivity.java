@@ -1,38 +1,37 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CalorieCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -90,15 +89,15 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
     private void initActions() {
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.calories));
-        TvFTOrCMCalorie.setText(getString(R.string.cm));
+        TvTitle.setText(getString(R.string.str_calories));
+        TvFTOrCMCalorie.setText(getString(R.string.str_cm));
         LLHeightCalorie.setVisibility(View.GONE);
         EdtAgeCalorie.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
 
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
-        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
-        String[] ArrCalorie = {getResources().getString(R.string.sedentary), getResources().getString(R.string.lightly_active), getResources().getString(R.string.moderately_active), getResources().getString(R.string.very_active), getResources().getString(R.string.extremely_active)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
+        String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
+        String[] ArrCalorie = {getResources().getString(R.string.str_sedentary), getResources().getString(R.string.str_lightly_active), getResources().getString(R.string.str_moderately_active), getResources().getString(R.string.str_very_active), getResources().getString(R.string.str_extremely_active)};
         SpinnerCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrCalorie));
         SpinnerGenderCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
         SpinnerHeightCalorie.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, HeightArr));
@@ -112,7 +111,22 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 onBackPressed();
                 break;
             case R.id.BtnWeightCalorie:
-                GotoCalculateWeight();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(CalorieCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateWeight();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetCalorie:
                 GotoCalculateReset();
@@ -150,19 +164,18 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 DoubleInch = 0.0d;
             }
             if (check) {
-                Toast.makeText(context, getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 check = false;
                 return;
             }
-            if (!weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+            if (!weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                 DoubleHeight *= 12.0d;
                 DoubleHeight += DoubleInch;
                 DoubleHeight *= 2.54d;
             }
-            if (!CalorieWeight.equalsIgnoreCase(getString(R.string.kilograms))) {
+            if (!CalorieWeight.equalsIgnoreCase(getString(R.string.str_kilograms))) {
                 DoubleWeight *= 0.453592d;
             }
-            if (gender.equalsIgnoreCase(getString(R.string.male))) {
+            if (gender.equalsIgnoreCase(getString(R.string.str_male))) {
                 DoubleWeight *= 13.7d;
                 DoubleWeight += 66.0d;
                 DoubleHeight *= 5.0d;
@@ -208,11 +221,11 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_weight_loss_gain);
-            TvDialogName.setText(getResources().getString(R.string.calories));
-            TvDialogDesc.setText(getResources().getString(R.string.calorie_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_calories));
+            TvDialogDesc.setText(getResources().getString(R.string.str_calorie_desc));
 
             LlCalorie.setVisibility(View.VISIBLE);
-            TvDialogWeightSubTitle.setText(getString(R.string.urcal));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_urcal));
             TvDialogCalorie.setText(calculate_BMR);
 
             BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
@@ -236,12 +249,12 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         SpinnerGenderCalorie.setSelection(0);
         SpinnerHeightCalorie.setSelection(0);
         SpinnerWeightCalorie.setSelection(0);
-        TvFTOrCMCalorie.setText(getString(R.string.cm));
+        TvFTOrCMCalorie.setText(getString(R.string.str_cm));
         LLHeightCalorie.setVisibility(View.GONE);
     }
 
     private void GotoCalculateChart() {
-        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.caloriesval)));
+        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.str_caloriesval)));
     }
 
     @Override
@@ -249,13 +262,13 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         switch (adapterView.getId()) {
             case R.id.SpinnerCalorie:
                 String obj = SpinnerCalorie.getSelectedItem().toString();
-                if (obj.equals(getResources().getString(R.string.sedentary))) {
+                if (obj.equals(getResources().getString(R.string.str_sedentary))) {
                     DoubleCalorie = 1.2d;
-                } else if (obj.equals(getResources().getString(R.string.lightly_active))) {
+                } else if (obj.equals(getResources().getString(R.string.str_lightly_active))) {
                     DoubleCalorie = 1.375d;
-                } else if (obj.equals(getResources().getString(R.string.moderately_active))) {
+                } else if (obj.equals(getResources().getString(R.string.str_moderately_active))) {
                     DoubleCalorie = 1.55d;
-                } else if (obj.equals(getResources().getString(R.string.very_active))) {
+                } else if (obj.equals(getResources().getString(R.string.str_very_active))) {
                     DoubleCalorie = 1.725d;
                 } else {
                     DoubleCalorie = 1.9d;
@@ -263,13 +276,13 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 break;
             case R.id.SpinnerWeightCalorie:
                 String weight = SpinnerWeightCalorie.getSelectedItem().toString();
-                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
-                    TvFTOrCMCalorie.setText(getString(R.string.cm));
+                if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
+                    TvFTOrCMCalorie.setText(getString(R.string.str_cm));
                     EdtHeightCalorie.setText("");
                     EdtInchCalorie.setText("");
                     LLHeightCalorie.setVisibility(View.GONE);
                 } else {
-                    TvFTOrCMCalorie.setText(getString(R.string.ft));
+                    TvFTOrCMCalorie.setText(getString(R.string.str_ft));
                     EdtHeightCalorie.setText("");
                     EdtInchCalorie.setText("");
                     LLHeightCalorie.setVisibility(View.VISIBLE);

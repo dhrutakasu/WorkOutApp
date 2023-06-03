@@ -4,5 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_spash_screen"
-    tools:context=".ui.activity.SplashActivity"/>
+    android:background="@drawable/ic_spash_screen_bg"
+    tools:context=".ui.activity.SplashActivity">
+
+    <TextView
+        android:id="@+id/TvSplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/main_semibold"
+        android:text="Fit Today"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guide_top" />
+
+    <TextView
+        android:id="@+id/TvSplashMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/main_medium"
+        android:gravity="center"
+        android:text="Level up your fitness game and \nenjoy the spring."
+        android:textColor="@color/new_gray"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/guide_end"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvSplashTitle" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -219,4 +219,14 @@ public class ExerciseHelper extends SQLiteOpenHelper {
             if (cursor != null && !cursor.isClosed()) cursor.close();
         }
     }
+
+    //todo get count Exercise record
+    public int getReminderCount() {
+        String countQuery = "SELECT  * FROM " + REMINDER_TABLE_NAME;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        int count = cursor.getCount();
+        cursor.close();
+        return count;
+    }
 }

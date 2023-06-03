@@ -56,7 +56,7 @@
                     android:layout_height="80dp"
                     android:layout_marginEnd="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_gender_selection">
+                    android:background="@drawable/ic_gender_selection">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/LlFatGenderMale"
@@ -76,8 +76,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/male"
-                            android:textColor="@color/calculator_text_color_selector" />
+                            android:text="@string/str_male"
+                            android:textColor="@color/text_color_selector" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <ImageView
@@ -97,7 +97,7 @@
                     android:layout_height="80dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_gender_selection">
+                    android:background="@drawable/ic_gender_selection">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:id="@+id/LlFatGenderFemale"
@@ -117,8 +117,8 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/female"
-                            android:textColor="@color/calculator_text_color_selector" />
+                            android:text="@string/str_female"
+                            android:textColor="@color/text_color_selector" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
 
                     <ImageView
@@ -180,7 +180,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
-                        android:background="@drawable/bg_gender_selection_parent"
+                        android:background="@drawable/ic_gender_selection_parent"
                         android:checkedButton="@+id/RbFatKg"
                         android:orientation="horizontal">
 
@@ -189,11 +189,11 @@
                             android:layout_width="0dp"
                             android:layout_height="35dp"
                             android:layout_weight="1"
-                            android:background="@drawable/rb_bg_female"
+                            android:background="@drawable/ic_rb_bg_female"
                             android:button="@null"
                             android:gravity="center"
                             android:text="kg"
-                            android:textColor="@color/calculator_text_color_selector"
+                            android:textColor="@color/text_color_selector"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -202,11 +202,11 @@
                             android:layout_width="0dp"
                             android:layout_height="35dp"
                             android:layout_weight="1"
-                            android:background="@drawable/rb_bg_female"
+                            android:background="@drawable/ic_rb_bg_female"
                             android:button="@null"
                             android:gravity="center"
                             android:text="lb"
-                            android:textColor="@color/calculator_text_color_selector"
+                            android:textColor="@color/text_color_selector"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </RadioGroup>
@@ -378,7 +378,7 @@
                         android:id="@+id/RgFatHeightUnit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_gender_selection_parent"
+                        android:background="@drawable/ic_gender_selection_parent"
                         android:checkedButton="@+id/RbFatCm"
                         android:orientation="horizontal">
 
@@ -387,11 +387,11 @@
                             android:layout_width="0dp"
                             android:layout_height="35dp"
                             android:layout_weight="1"
-                            android:background="@drawable/rb_bg_female"
+                            android:background="@drawable/ic_rb_bg_female"
                             android:button="@null"
                             android:gravity="center"
                             android:text="ft•in"
-                            android:textColor="@color/calculator_text_color_selector"
+                            android:textColor="@color/text_color_selector"
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
@@ -400,11 +400,11 @@
                             android:layout_width="0dp"
                             android:layout_height="35dp"
                             android:layout_weight="1"
-                            android:background="@drawable/rb_bg_female"
+                            android:background="@drawable/ic_rb_bg_female"
                             android:button="@null"
                             android:gravity="center"
                             android:text="cm"
-                            android:textColor="@color/calculator_text_color_selector"
+                            android:textColor="@color/text_color_selector"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </RadioGroup>
@@ -418,7 +418,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="@string/enter_age"
+                android:text="@string/str_enter_age"
                 android:fontFamily="@font/main_semibold"
                 android:textSize="@dimen/_12sdp"
                 android:textColor="@color/purple_500"  />
@@ -475,7 +475,7 @@
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:fontFamily="@font/main_semibold"
-                android:text="@string/calculate"
+                android:text="@string/str_calculate"
                 android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -483,7 +483,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -493,7 +493,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>

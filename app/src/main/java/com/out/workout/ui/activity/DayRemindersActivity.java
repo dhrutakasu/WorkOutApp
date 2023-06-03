@@ -1,8 +1,5 @@
 package com.out.workout.ui.activity;
 
-import static com.out.workout.ui.activity.AddOrEditAlarmActivity.buildAddEditAlarmActivityIntent;
-import static com.out.workout.utils.Constants.ADD_ALARM;
-
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
@@ -14,22 +11,13 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.AdSize;
 import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.karumi.dexter.listener.single.PermissionListener;
 import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.Helper.ExerciseHelper;
@@ -37,10 +25,17 @@ import com.out.workout.R;
 import com.out.workout.model.ReminderModel;
 import com.out.workout.ui.adapter.RemindersAdapter;
 import com.out.workout.utils.AlarmUtils;
-import com.out.workout.utils.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import static com.out.workout.ui.activity.AddOrEditAlarmActivity.buildAddEditAlarmActivityIntent;
+import static com.out.workout.utils.Constants.ADD_ALARM;
 
 public class DayRemindersActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -81,7 +76,7 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
     private void initActions() {
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.Day_Planner_Reminder));
+        TvTitle.setText(getString(R.string.str_Day_Planner_Reminder));
         helper = new ExerciseHelper(context);
 
         RvAddReminderList.setLayoutManager(new LinearLayoutManager(context));
@@ -92,14 +87,20 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onResume() {
         super.onResume();
-        ReminderRecordsList = helper.getAlarms();
-        mAdapter.setAlarmItems(ReminderRecordsList);
-        if (ReminderRecordsList.size() > 0) {
-            RvAddReminderList.setVisibility(View.VISIBLE);
-            TvNoReminderFound.setVisibility(View.GONE);
-        } else {
-            RvAddReminderList.setVisibility(View.GONE);
-            TvNoReminderFound.setVisibility(View.VISIBLE);
+        try {
+            if (helper.getReminderCount()>0) {
+                ReminderRecordsList = helper.getAlarms();
+                mAdapter.setAlarmItems(ReminderRecordsList);
+                if (ReminderRecordsList.size() > 0) {
+                    RvAddReminderList.setVisibility(View.VISIBLE);
+                    TvNoReminderFound.setVisibility(View.GONE);
+                } else {
+                    RvAddReminderList.setVisibility(View.GONE);
+                    TvNoReminderFound.setVisibility(View.VISIBLE);
+                }
+            }
+        }catch (Exception e){
+
         }
     }
 
@@ -116,8 +117,6 @@ public class DayRemindersActivity extends AppCompatActivity implements View.OnCl
                             .withListener(new PermissionListener() {
                                 @Override
                                 public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                                    Toast.makeText(context, "The permission is   granted..", Toast.LENGTH_SHORT).show();
-
                                     AlarmUtils.checkAlarmPermissions(DayRemindersActivity.this);
                                     final Intent i = buildAddEditAlarmActivityIntent(context, ADD_ALARM);
                                     startActivity(i);

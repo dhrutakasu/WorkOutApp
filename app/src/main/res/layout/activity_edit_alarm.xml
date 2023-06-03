@@ -22,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:background="@drawable/dialog_bg"
+        android:background="@drawable/ic_dialog_bg"
         app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="@string/time"
+                        android:text="@string/str_time"
                         android:fontFamily="@font/main_semibold"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
@@ -63,7 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:background="@drawable/divider" />
+                        android:background="@drawable/ic_divider" />
 
                     <TimePicker
                         android:id="@+id/PickerTime"
@@ -77,7 +77,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:text="@string/days"
+                        android:text="@string/str_days"
                         android:fontFamily="@font/main_semibold"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp"
@@ -87,7 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:background="@drawable/divider" />
+                        android:background="@drawable/ic_divider" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
 
@@ -117,7 +117,7 @@
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
-                                android:text="@string/monday"
+                                android:text="@string/str_monday"
                                 tools:text="Monday" />
                         </RelativeLayout>
 
@@ -131,7 +131,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
 
@@ -141,7 +141,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/tu"
+                                android:text="@string/str_tu"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -157,7 +157,7 @@
                                 android:id="@+id/CbWed"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
@@ -168,7 +168,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/wed"
+                                android:text="@string/str_wed"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -185,7 +185,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
 
@@ -195,7 +195,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/thursday"
+                                android:text="@string/str_thursday"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -211,7 +211,7 @@
                                 android:id="@+id/CbFri"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
@@ -222,7 +222,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/fri"
+                                android:text="@string/str_fri"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -238,7 +238,7 @@
                                 android:id="@+id/CbSat"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
@@ -249,7 +249,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/sat"
+                                android:text="@string/str_sat"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -266,7 +266,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentEnd="true"
-                                android:buttonTint="@color/calculator_text_color_selector"
+                                android:buttonTint="@color/text_color_selector"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp" />
 
@@ -276,7 +276,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:text="@string/sun"
+                                android:text="@string/str_sun"
                                 android:fontFamily="@font/main_semibold"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/_12sdp"
@@ -291,7 +291,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -301,7 +301,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>

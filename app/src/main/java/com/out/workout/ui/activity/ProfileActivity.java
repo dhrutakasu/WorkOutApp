@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.BuildConfig;
 import com.out.workout.R;
@@ -73,7 +76,21 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
 
     private void initActions() {
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
-        Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Load Ad....");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.dismiss();
+        Ad_Interstitial.getInstance().showInter(ProfileActivity.this, new Ad_Interstitial.MyCallback() {
+                    @Override
+                    public void callbackCall() {
+                    }
+                });
+            }
+        }, 3000L);
         TvTitle.setText(getResources().getString(R.string.str_profile));
         IsCounter = SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10);
         IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);

@@ -75,7 +75,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/exercise_time"
+                        android:text="@string/str_exercise_time"
                         android:textColor="@color/black" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -109,7 +109,7 @@
                         android:layout_gravity="center"
                         android:layout_marginStart="@dimen/_10sdp"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/Day_Planner_Reminder"
+                        android:text="@string/str_Day_Planner_Reminder"
                         android:textColor="@color/black" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -147,7 +147,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.85"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/sound"
+                        android:text="@string/str_sound"
                         android:textColor="@color/black" />
 
                     <androidx.appcompat.widget.SwitchCompat
@@ -156,7 +156,7 @@
                         android:layout_height="@dimen/_20sdp"
                         android:layout_weight="0.15"
                         android:checked="true"
-                        android:thumb="@drawable/thumb_selector"
+                        android:thumb="@drawable/ic_thumb_selector"
                         app:track="@drawable/ic_track_selector" />
 
                 </LinearLayout>
@@ -194,7 +194,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.7"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/countdown_time"
+                        android:text="@string/str_countdown_time"
                         android:textColor="@color/black" />
 
                     <androidx.cardview.widget.CardView
@@ -277,7 +277,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.7"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/rest_time_str"
+                        android:text="@string/str_rest_time_str"
                         android:textColor="@color/black" />
 
                     <androidx.cardview.widget.CardView
@@ -359,7 +359,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.85"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/privacy_policy"
+                        android:text="@string/str_privacy_policy"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -396,7 +396,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.85"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/share_app"
+                        android:text="@string/str_share_app"
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -433,7 +433,7 @@
                         android:layout_marginStart="@dimen/_10sdp"
                         android:layout_weight="0.85"
                         android:fontFamily="@font/main_medium"
-                        android:text="@string/rate_us"
+                        android:text="@string/str_rate_us"
                         android:textColor="@color/black" />
 
                 </LinearLayout>

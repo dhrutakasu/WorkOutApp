@@ -19,10 +19,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.getkeepsafe.android.multistateanimation.MultiStateAnimation;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.material.navigation.NavigationView;
+import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.Application.App;
 import com.out.workout.R;
@@ -36,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     private AppBarConfiguration AcMain;
     private TextView TvTitleMain;
     private ImageView IvTraining, IvRoutines, IvDietTips, IvCalculator, IvProfile,IvNotification;
+    private View DialogQuit;
+    private TextView BtnDialogQuit,BtnDialogExreciseExit,BtnDialogExreciseNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +60,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         IvCalculator = findViewById(R.id.IvCalculator);
         IvProfile = findViewById(R.id.IvProfile);
         IvNotification = findViewById(R.id.IvNotification);
-
+        DialogQuit = findViewById(R.id.DialogQuit);
+        BtnDialogQuit = findViewById(R.id.BtnDialogQuit);
+        BtnDialogExreciseExit = findViewById(R.id.BtnDialogExreciseExit);
+        BtnDialogExreciseNo = findViewById(R.id.BtnDialogExreciseNo);
         NcMain = Navigation.findNavController(this, R.id.NcMain);
 
     }
@@ -99,7 +107,6 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         IvNotification.setOnClickListener(view -> {
             startActivity(new Intent(context, DayRemindersActivity.class));
         });
-
     }
 
     @Override
@@ -109,32 +116,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
     }
 
     private void initAction() {
-
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(int i, long l) {
-        return false;
-    }
-
-    @Override
-    public void onBackPressed() {
-        Dialog dialogExit = new Dialog(context);
-        dialogExit.setCancelable(false);
-        dialogExit.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialogExit.setContentView(R.layout.dialog_quit);
-        dialogExit.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-        WindowManager.LayoutParams lp = dialogExit.getWindow().getAttributes();
-        Window window = dialogExit.getWindow();
-        lp.copyFrom(window.getAttributes());
-        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        lp.gravity = Gravity.CENTER;
-        window.setAttributes(lp);
+        Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNativeExit));
-        TextView BtnDialogQuit = dialogExit.findViewById(R.id.BtnDialogQuit);
-        TextView BtnDialogExreciseExit = dialogExit.findViewById(R.id.BtnDialogExreciseExit);
-        TextView BtnDialogExreciseNo = dialogExit.findViewById(R.id.BtnDialogExreciseNo);
+
         BtnDialogQuit.setText("Would you like to quit this application?");
         BtnDialogExreciseExit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -146,10 +130,22 @@ public class MainActivity extends AppCompatActivity implements ActionBar.OnNavig
         BtnDialogExreciseNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialogExit.dismiss();
+                DialogQuit.setVisibility(View.GONE);
             }
         });
+    }
 
-        dialogExit.show();
+    @Override
+    public boolean onNavigationItemSelected(int i, long l) {
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (DialogQuit.getVisibility()==View.VISIBLE){
+            DialogQuit.setVisibility(View.GONE);
+        }else {
+            DialogQuit.setVisibility(View.VISIBLE);
+        }
     }
 }

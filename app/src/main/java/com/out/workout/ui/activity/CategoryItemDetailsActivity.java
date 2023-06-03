@@ -1,21 +1,19 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.model.NutritionalContent;
 import com.out.workout.model.ValueModel;
@@ -37,6 +35,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 public class CategoryItemDetailsActivity extends AppCompatActivity implements View.OnClickListener, NutrientAdapter.setClickItem {
 
     private Context context;
@@ -44,7 +46,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
     private String DietName, DietSlug, DietImg;
     private Gson create;
     private RecyclerView RvItemNutrients, RvItemProteins, RvItemVitamins, RvItemMinerals, RvItemPros, RvItemCons;
-    private TextView TvItemNutritionalTitle, TvItemNutritionalServing, TvItemSubDivTitle, TvItemVitaminsTitle, TvItemMineralsTitle;
+    private TextView TvItemImgName,TvItemNutritionalTitle, TvItemNutritionalServing, TvItemSubDivTitle, TvItemVitaminsTitle, TvItemMineralsTitle;
     private ImageView IvItemImg;
 
     @Override
@@ -68,6 +70,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
         RvItemPros = (RecyclerView) findViewById(R.id.RvItemPros);
         RvItemCons = (RecyclerView) findViewById(R.id.RvItemCons);
         IvItemImg = (ImageView) findViewById(R.id.IvItemImg);
+        TvItemImgName = (TextView) findViewById(R.id.TvItemImgName);
         TvItemNutritionalTitle = (TextView) findViewById(R.id.TvItemNutritionalTitle);
         TvItemNutritionalServing = (TextView) findViewById(R.id.TvItemNutritionalServing);
         TvItemSubDivTitle = (TextView) findViewById(R.id.TvItemSubDivTitle);
@@ -87,6 +90,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
             InputStream ims = context.getAssets().open("DietImg/" + DietImg);
             Bitmap bitmap = BitmapFactory.decodeStream(ims);
             IvItemImg.setImageBitmap(bitmap);
+            TvItemImgName.setText(DietName);
             ims.close();
         } catch (IOException ex) {
             IvItemImg.setVisibility(View.GONE);
@@ -129,7 +133,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
                     TvItemVitaminsTitle.setText(Detail.getString("heading"));
                     JSONArray array = new JSONArray(Detail.getString("values"));
                     List<ValueModel> valueModels = new ArrayList<>();
-                    for (int j = 0; j < array.length(); j++) {
+                    for (int j = 1; j < array.length(); j++) {
                         ValueModel valueModel = new ValueModel();
                         JSONObject DetailObject = array.getJSONObject(j);
                         valueModel.setAmount(DetailObject.getString("amount"));
@@ -145,7 +149,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
                     TvItemMineralsTitle.setText(Detail.getString("heading"));
                     JSONArray array = new JSONArray(Detail.getString("values"));
                     List<ValueModel> valueModels = new ArrayList<>();
-                    for (int j = 0; j < array.length(); j++) {
+                    for (int j = 1; j < array.length(); j++) {
                         ValueModel valueModel = new ValueModel();
                         JSONObject DetailObject = array.getJSONObject(j);
                         valueModel.setAmount(DetailObject.getString("amount"));
@@ -192,7 +196,6 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
             TvItemNutritionalServing.setText(serving.substring(serving.indexOf("per ") + 4));
 
         } catch (JSONException e) {
-            Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -244,5 +247,24 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
             TvItemSubDivTitle.setVisibility(View.GONE);
             RvItemProteins.setVisibility(View.GONE);
         }
+    }
+    @Override
+    public void onBackPressed() {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Load Ad....");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.dismiss();
+                Ad_Interstitial.getInstance().showInter(CategoryItemDetailsActivity.this, new Ad_Interstitial.MyCallback() {
+                    @Override
+                    public void callbackCall() {
+                        finish();
+                    }
+                });
+            }
+        }, 3000L);
     }
 }

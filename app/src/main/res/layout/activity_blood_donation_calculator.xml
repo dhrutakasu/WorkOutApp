@@ -21,7 +21,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:background="@drawable/dialog_bg"
+        android:background="@drawable/ic_dialog_bg"
         app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +48,7 @@
                 android:id="@+id/tvWeightBloodDonate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/enterblddon"
+                android:text="@string/str_enterblddon"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_14sdp" />
@@ -74,7 +74,7 @@
                         android:background="@color/transparent"
                         android:ems="10"
                         android:gravity="start|center_vertical"
-                        android:hint="@string/choosedate"
+                        android:hint="@string/str_choosedate"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textDirection="locale"
@@ -103,7 +103,7 @@
                 android:backgroundTint="@color/purple_500"
                 android:gravity="center"
                 android:fontFamily="@font/main_semibold"
-                android:text="@string/calculate"
+                android:text="@string/str_calculate"
                 android:textColor="@color/white" />
 
             <LinearLayout
@@ -123,7 +123,7 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="15dp"
                     android:layout_weight="1"
-                    android:text="@string/canidonate"
+                    android:text="@string/str_canidonate"
                     android:background="@drawable/ic_border_color"
                     android:backgroundTint="@color/purple_500"
                     android:gravity="center"
@@ -136,7 +136,7 @@
                     android:layout_weight="1"
                     android:layout_marginStart="15dp"
                     android:layout_height="match_parent"
-                    android:text="@string/eligibility_check"
+                    android:text="@string/str_eligibility_check"
                     android:layout_gravity="center"
                     android:background="@drawable/ic_border_color"
                     android:backgroundTint="@color/purple_500"

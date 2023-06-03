@@ -1,13 +1,12 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -15,8 +14,8 @@ import android.view.WindowManager;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 
@@ -24,6 +23,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class BreathCalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -65,7 +67,7 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
 
     private void initActions() {
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
-        TvTitle.setText(getString(R.string.breath_count));
+        TvTitle.setText(getString(R.string.str_breath_count));
         calendar = Calendar.getInstance();
         Fab = calendar.get(Calendar.YEAR);
         dateLong = calendar.get(Calendar.MONTH);
@@ -74,40 +76,40 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
         String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
         switch (Integer.parseInt(split[0])) {
             case 1:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jan) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jan) + " " + split[2]);
                 break;
             case 2:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.feb) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_feb) + " " + split[2]);
                 break;
             case 3:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.mar) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_mar) + " " + split[2]);
                 break;
             case 4:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.apr) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_apr) + " " + split[2]);
                 break;
             case 5:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.may) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_may) + " " + split[2]);
                 break;
             case 6:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jun) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jun) + " " + split[2]);
                 break;
             case 7:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jul) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jul) + " " + split[2]);
                 break;
             case 8:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.aug) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_aug) + " " + split[2]);
                 break;
             case 9:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.sep) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_sep) + " " + split[2]);
                 break;
             case 10:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.oct) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_oct) + " " + split[2]);
                 break;
             case 11:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.nov) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_nov) + " " + split[2]);
                 break;
             case 12:
-                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.dec) + " " + split[2]);
+                EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_dec) + " " + split[2]);
                 break;
         }
     }
@@ -123,7 +125,22 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
                 GotoChooseDate();
                 break;
             case R.id.BtnWeightBreathCount:
-                GotoCalculateBloodDonation();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(BreathCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateBloodDonation();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
         }
     }
@@ -139,7 +156,6 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
     private void GotoCalculateBloodDonation() {
         Calendar calendar2 = Calendar.getInstance();
         if (simpleDateFormat.format(calendar.getTime()).equals(simpleDateFormat.format(calendar2.getTime())) || calendar.getTime().after(calendar2.getTime())) {
-            Toast.makeText(context, getResources().getString(R.string.valid_date), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -169,11 +185,11 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
         TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
         IvDialogBanner.setImageResource(R.drawable.ic_breath_count);
-        TvDialogName.setText(getResources().getString(R.string.breath_count));
-        TvDialogDesc.setText(getResources().getString(R.string.breath_count_desc));
+        TvDialogName.setText(getResources().getString(R.string.str_breath_count));
+        TvDialogDesc.setText(getResources().getString(R.string.str_breath_count_desc));
         CardIdealWeight.setVisibility(View.VISIBLE);
 
-        TvDialogWeightSubTitle.setText(getString(R.string.no_of_breath));
+        TvDialogWeightSubTitle.setText(getString(R.string.str_no_of_breath));
         TvDialogWeightValue.setText(String.valueOf(getBreathDate(calendar)));
 
         BtnDialogWeight.setOnClickListener(view -> dialog.dismiss());
@@ -201,40 +217,40 @@ public class BreathCalculatorActivity extends AppCompatActivity implements View.
             String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
             switch (Integer.parseInt(split[0])) {
                 case 1:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jan) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jan) + " " + split[2]);
                     break;
                 case 2:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.feb) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_feb) + " " + split[2]);
                     break;
                 case 3:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.mar) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_mar) + " " + split[2]);
                     break;
                 case 4:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.apr) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_apr) + " " + split[2]);
                     break;
                 case 5:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.may) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_may) + " " + split[2]);
                     break;
                 case 6:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jun) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jun) + " " + split[2]);
                     break;
                 case 7:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.jul) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_jul) + " " + split[2]);
                     break;
                 case 8:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.aug) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_aug) + " " + split[2]);
                     break;
                 case 9:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.sep) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_sep) + " " + split[2]);
                     break;
                 case 10:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.oct) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_oct) + " " + split[2]);
                     break;
                 case 11:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.nov) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_nov) + " " + split[2]);
                     break;
                 case 12:
-                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.dec) + " " + split[2]);
+                    EdtDateBreathCount.setText(split[1] + " " + getResources().getString(R.string.str_dec) + " " + split[2]);
                     break;
             }
         }

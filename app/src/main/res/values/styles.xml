@@ -3,6 +3,6 @@
 
     <style name="Widget.App.Spinner" parent="@style/Widget.AppCompat.Spinner">
         <item name="overlapAnchor">true</item>
-        <item name="android:background">@drawable/spinner_background</item>
+        <item name="android:background">@drawable/ic_spinner_background</item>
     </style>
 </resources>

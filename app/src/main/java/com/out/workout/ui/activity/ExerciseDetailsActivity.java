@@ -1,7 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +13,8 @@ import com.out.workout.Ads.Ad_Native;
 import com.out.workout.Helper.ExerciseHelper;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ExerciseDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -120,7 +120,7 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
     @Override
     public void onBackPressed() {
         if (IsChangeCycles){
-            Toast.makeText(getApplicationContext(), R.string.exercise_cycles_are_updated, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.str_exercise_cycles_are_updated, Toast.LENGTH_SHORT).show();
         }
         System.out.println("------ exist : "+helper.IsExist(ExerciseName));
         if (helper.IsExist(ExerciseName)) {

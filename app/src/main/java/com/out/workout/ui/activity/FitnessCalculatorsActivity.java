@@ -1,7 +1,6 @@
 package com.out.workout.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,8 +15,6 @@ import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.FitnessAdapter;
-import com.out.workout.ui.adapter.SubDietTipsAdapter;
-import com.out.workout.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -51,7 +48,7 @@ public class FitnessCalculatorsActivity extends AppCompatActivity implements Vie
     private void initActions() {
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.title_activity_fitness_and_health_calculators));
+        TvTitle.setText(getString(R.string.str_title_activity_fitness_and_health_calculators));
         ArrayList<String> list = new ArrayList<>();
         list.add("BMR Calculator");
         list.add("Calorie Calculator");

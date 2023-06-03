@@ -1,36 +1,40 @@
 package com.out.workout.ui.activity;
 
-import static com.out.workout.utils.Constants.*;
-
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
+
+import com.google.android.gms.ads.AdSize;
+import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
+import com.out.workout.Helper.ExerciseHelper;
+import com.out.workout.R;
+import com.out.workout.Receiver.ReminderReceiver;
+import com.out.workout.model.ReminderModel;
+import com.out.workout.service.AlarmsService;
+import com.out.workout.utils.Constants;
+import com.out.workout.utils.ViewUtils;
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.util.Calendar;
 
 import androidx.annotation.IntDef;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdSize;
-import com.out.workout.Ads.Ad_Banner;
-import com.out.workout.model.ReminderModel;
-import com.out.workout.Receiver.ReminderReceiver;
-import com.out.workout.service.AlarmsService;
-import com.out.workout.utils.Constants;
-import com.out.workout.utils.ViewUtils;
-import com.out.workout.Helper.ExerciseHelper;
-import com.out.workout.R;
-
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.util.Calendar;
+import static com.out.workout.utils.Constants.ADD_ALARM;
+import static com.out.workout.utils.Constants.EDIT_ALARM;
+import static com.out.workout.utils.Constants.UNKNOWN;
 
 public class AddOrEditAlarmActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -151,8 +155,7 @@ public class AddOrEditAlarmActivity extends AppCompatActivity implements View.On
             AlarmsService.launchLoadAlarmsService(context);
         } else {
             final int rowsUpdated = helper.updateAlarm(reminderModel);
-            final int messageId = (rowsUpdated == 1) ? R.string.update_complete : R.string.update_failed;
-            Toast.makeText(context, messageId, Toast.LENGTH_SHORT).show();
+            final int messageId = (rowsUpdated == 1) ? R.string.str_update_complete : R.string.str_update_failed;
         }
         ReminderReceiver.setReminderAlarm(context, reminderModel);
         finish();
@@ -161,23 +164,21 @@ public class AddOrEditAlarmActivity extends AppCompatActivity implements View.On
     private void GotoDelete() {
         final ReminderModel reminderModel = getAlarm();
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(R.string.delete_dialog_title);
-        builder.setMessage(R.string.delete_dialog_content);
-        builder.setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+        builder.setTitle(R.string.str_delete_dialog_title);
+        builder.setMessage(R.string.str_delete_dialog_content);
+        builder.setPositiveButton(R.string.str_yes, (dialogInterface, i) -> {
             ReminderReceiver.cancelReminderAlarm(context, reminderModel);
             final int rowsDeleted =helper.deleteAlarm(reminderModel);
             int messageId;
             if (rowsDeleted == 1) {
-                messageId = R.string.delete_complete;
-                Toast.makeText(context, messageId, Toast.LENGTH_SHORT).show();
+                messageId = R.string.str_delete_complete;
                 AlarmsService.launchLoadAlarmsService(context);
                 finish();
             } else {
-                messageId = R.string.delete_failed;
-                Toast.makeText(context, messageId, Toast.LENGTH_SHORT).show();
+                messageId = R.string.str_delete_failed;
             }
         });
-        builder.setNegativeButton(R.string.no, null);
+        builder.setNegativeButton(R.string.str_no, null);
         builder.show();
     }
 
@@ -208,5 +209,25 @@ public class AddOrEditAlarmActivity extends AppCompatActivity implements View.On
         final Intent intent = new Intent(context, AddOrEditAlarmActivity.class);
         intent.putExtra(Constants.MODE_EXTRA, mode);
         return intent;
+    }
+
+    @Override
+    public void onBackPressed() {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Load Ad....");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.dismiss();
+                Ad_Interstitial.getInstance().showInter(AddOrEditAlarmActivity.this, new Ad_Interstitial.MyCallback() {
+                    @Override
+                    public void callbackCall() {
+                        finish();
+                    }
+                });
+            }
+        }, 3000L);
     }
 }

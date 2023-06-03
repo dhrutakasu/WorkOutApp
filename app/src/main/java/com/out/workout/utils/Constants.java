@@ -15,6 +15,7 @@ import android.util.Pair;
 import android.util.TypedValue;
 import android.view.WindowManager;
 
+import com.out.workout.Receiver.ExerciseAlarmReceiver;
 import com.out.workout.Receiver.ReminderReceiver;
 import com.out.workout.model.WorkoutExerciseModel;
 
@@ -54,6 +55,7 @@ public class Constants {
     public static final int ADD_ALARM = 2;
     public static final int UNKNOWN = 0;
     public static String BMR = "BMR";
+    public static String FIRST_LAUNCH="first_launch";
 
     public static String getCapsSentences(String tagName) {
         String[] splits = tagName.toLowerCase().split(" ");
@@ -76,7 +78,7 @@ public class Constants {
         calendar.set(Calendar.HOUR_OF_DAY, i);
         calendar.set(Calendar.MINUTE, i2);
         calendar.set(Calendar.SECOND, i3);
-        Intent intent = new Intent(context, ReminderReceiver.class);
+        Intent intent = new Intent(context, ExerciseAlarmReceiver.class);
         intent.getIntExtra("RequestCode", 100);
         PendingIntent pendingIntent;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -88,17 +90,23 @@ public class Constants {
         Log.d("Tag", "previous alarm canceled");
         Log.d("Tag", "new alarm sets");
         PendingIntent pendingintent;
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+//            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+//
+//        }else {
+//            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
+//        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
 
         }else {
-            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
-
+            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         }
 //        PendingIntent broadcast = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+
         if (alarmManager != null) {
-            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 86400000L, pendingintent);
+            alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingintent);
         }
     }
 

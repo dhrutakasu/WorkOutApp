@@ -1,28 +1,24 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
-import com.out.workout.model.ArticleDetailModel;
 import com.out.workout.model.DetailModel;
-import com.out.workout.model.SubCategories;
 import com.out.workout.ui.adapter.ArticleDetailAdapter;
 import com.out.workout.utils.Constants;
 
@@ -35,6 +31,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ArticleDetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -115,8 +115,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
             }
             categories.addAll(models);
         } catch (JSONException e) {
-            System.out.println("-------- detail : " + e.getMessage());
-            Toast.makeText(context, "Not Found", Toast.LENGTH_SHORT).show();
         }
         RvArticleDetails.setLayoutManager(new LinearLayoutManager(context));
         RvArticleDetails.setAdapter(new ArticleDetailAdapter(context, categories));
@@ -161,5 +159,25 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
                 onBackPressed();
                 break;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        ProgressDialog progressDialog = new ProgressDialog(context);
+        progressDialog.setMessage("Load Ad....");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.dismiss();
+                Ad_Interstitial.getInstance().showInter(ArticleDetailsActivity.this, new Ad_Interstitial.MyCallback() {
+                    @Override
+                    public void callbackCall() {
+                        finish();
+                    }
+                });
+            }
+        }, 3000L);
     }
 }

@@ -1,39 +1,38 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
 import java.text.NumberFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class WeightCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -90,12 +89,12 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
     private void initActions() {
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.idealweight));
-        TvFTOrCMIdealWeight.setText(getString(R.string.cm));
+        TvTitle.setText(getString(R.string.str_idealweight));
+        TvFTOrCMIdealWeight.setText(getString(R.string.str_cm));
         LLHeightCalculator.setVisibility(View.GONE);
         EdtAgeCalculator.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
         SpinnerGenderIdealWeight.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
         SpinnerHeightIdealWeight.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
 
@@ -108,7 +107,22 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
                 onBackPressed();
                 break;
             case R.id.BtnWeightCalculator:
-                GotoCalculateWeight();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(WeightCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateWeight();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetCalculator:
                 GotoCalculateReset();
@@ -146,20 +160,17 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             }
 
             if (check) {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 check = false;
                 return;
             }
 
-            if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+            if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                 if (DoubleHeight < 153.0d) {
-                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.entercm), Toast.LENGTH_SHORT).show();
                     return;
                 }
                 DoubleHeight *= 0.393701d;
                 DoubleHeight -= 60.0d;
             } else if (DoubleHeight < 5.0d) {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.enterfeet), Toast.LENGTH_SHORT).show();
                 return;
             } else {
                 DoubleHeight *= 12.0d;
@@ -167,7 +178,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
                 DoubleHeight -= 60.0d;
             }
 
-            if (gender.equalsIgnoreCase(getString(R.string.male))) {
+            if (gender.equalsIgnoreCase(getString(R.string.str_male))) {
                 calculate = (DoubleHeight * 1.9d) + 52.0d;
             } else {
                 calculate = (DoubleHeight * 1.7d) + 49.0d;
@@ -209,11 +220,11 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_ideal_weight);
-            TvDialogName.setText(getResources().getString(R.string.idealweight));
-            TvDialogDesc.setText(getResources().getString(R.string.idealweight_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_idealweight));
+            TvDialogDesc.setText(getResources().getString(R.string.str_idealweight_desc));
 
             CardIdealWeight.setVisibility(View.VISIBLE);
-            TvDialogWeightSubTitle.setText(getString(R.string.uridealweight));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_uridealweight));
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -236,14 +247,14 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         EdtInchCalculator.setText("");
         EdtAgeCalculator.requestFocus();
 
-        TvFTOrCMIdealWeight.setText(getString(R.string.cm));
+        TvFTOrCMIdealWeight.setText(getString(R.string.str_cm));
         SpinnerGenderIdealWeight.setSelection(0);
         SpinnerHeightIdealWeight.setSelection(0);
         LLHeightCalculator.setVisibility(View.GONE);
     }
 
     private void GotoCalculateChart() {
-        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.idealweight)));
+        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.str_idealweight)));
     }
 
     @Override
@@ -252,13 +263,13 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         switch (adapterView.getId()) {
             case R.id.SpinnerHeightIdealWeight:
                 String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();
-                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+                if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                     EdtHeightCalculator.setText("");
                     EdtInchCalculator.setText("");
-                    TvFTOrCMIdealWeight.setText(getString(R.string.cm));
+                    TvFTOrCMIdealWeight.setText(getString(R.string.str_cm));
                     LLHeightCalculator.setVisibility(View.GONE);
                 } else {
-                    TvFTOrCMIdealWeight.setText(getString(R.string.ft));
+                    TvFTOrCMIdealWeight.setText(getString(R.string.str_ft));
                     EdtHeightCalculator.setText("");
                     EdtInchCalculator.setText("");
                     LLHeightCalculator.setVisibility(View.VISIBLE);

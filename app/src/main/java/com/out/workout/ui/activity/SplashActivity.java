@@ -7,10 +7,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -22,7 +27,9 @@ import com.out.workout.Ads.AppOpenAdManager;
 import com.out.workout.Ads.SingleJsonPass;
 import com.out.workout.Application.App;
 import com.out.workout.R;
+import com.out.workout.utils.Constants;
 import com.out.workout.utils.Pref;
+import com.out.workout.utils.SharePreference;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -37,6 +44,11 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(Color.GRAY);
+        }
         setContentView(R.layout.activity_splash);
         context = this;
         createHandler(3);
@@ -118,6 +130,7 @@ public class SplashActivity extends AppCompatActivity {
                                     };
                             countDownTimer.start();
                         } catch (JSONException e) {
+                            Toast.makeText(context,"Please turn on your internet connection...",Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
 
@@ -126,14 +139,53 @@ public class SplashActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(context,"Please turn on your internet connection...",Toast.LENGTH_LONG).show();
+                        CountDownTimer countDownTimer = new CountDownTimer(seconds * 1000, 1000) {
+                                    @Override
+                                    public void onTick(long millisUntilFinished) {
+                                        secondsRemaining = ((millisUntilFinished / 1000) + 1);
+                                    }
+
+                                    @Override
+                                    public void onFinish() {
+                                        secondsRemaining = 0;
+                                        Application application = getApplication();
+
+                                        if (!(application instanceof App)) {
+                                            Log.e(LOG_TAG, "Failed to cast application to MyApplication.");
+                                            startMainActivity();
+                                            return;
+                                        }
+
+//                                            Ad_Interstitial.getInstance().showInter(SplashActivity.this, new Ad_Interstitial.MyCallback() {
+//                                        @Override
+//                                        public void callbackCall() {
+//                                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                                            finish();
+//                                        }
+//                                    });
+                                        ((App) application)
+                                                .showAdIfAvailable(
+                                                        SplashActivity.this,
+                                                        new App.OnShowAdCompleteListener() {
+                                                            @Override
+                                                            public void onShowAdComplete() {
+                                                                Log.d(LOG_TAG, "onShowAdComplete.");
+                                                                startMainActivity();
+                                                            }
+                                                        });
+                                    }
+                                };
+                        countDownTimer.start();
                     }
                 }) {
         };
         SingleJsonPass.getInstance(getApplicationContext()).addToRequestQueue(stringRequest);
     }
+
     public void startMainActivity() {
-        Log.d(LOG_TAG, "startMainActivity.");
-        startActivity(new Intent(this, MainActivity.class));
+        System.out.println("------- wal : " + new Pref(context).getBoolean(Constants.FIRST_LAUNCH, false));
+        startActivity(new Intent(this, WalkthroughActivity.class));
         finish();
     }
 }

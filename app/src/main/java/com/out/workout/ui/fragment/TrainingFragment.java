@@ -5,16 +5,12 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
-import com.google.android.gms.ads.AdSize;
-import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.WorkOutTypeModel;
 import com.out.workout.ui.activity.WorkoutListActivity;
@@ -57,13 +53,13 @@ public class TrainingFragment extends Fragment {
 
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.butocks), R.drawable.ic_arms);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.str_butocks), R.drawable.ic_arms);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.weight), R.drawable.ic_weight_los);
+        workOutModel = new WorkOutTypeModel(getString(R.string.str_weight), R.drawable.ic_weight_los);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.Abs), R.drawable.ic_abs);
+        workOutModel = new WorkOutTypeModel(getString(R.string.str_Abs), R.drawable.ic_abs);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.Fatbrn), R.drawable.ic_chest);
+        workOutModel = new WorkOutTypeModel(getString(R.string.str_Fatbrn), R.drawable.ic_chest);
         workOutModels.add(workOutModel);
         RvTraining.setLayoutManager(new GridLayoutManager(getContext(),2));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {

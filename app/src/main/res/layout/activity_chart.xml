@@ -25,7 +25,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:padding="5dp"
-        android:text="@string/iwc_header"
+        android:text="@string/str_iwc_header"
         android:fontFamily="@font/main_semibold"
         android:textColor="@color/purple_500"
         android:textSize="@dimen/_12sdp"
@@ -54,7 +54,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>

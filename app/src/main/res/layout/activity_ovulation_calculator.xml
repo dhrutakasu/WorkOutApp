@@ -22,7 +22,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:background="@drawable/dialog_bg"
+        android:background="@drawable/ic_dialog_bg"
         app:layout_constraintBottom_toTopOf="@id/FlNative"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
                     android:id="@+id/tvWeightOvulation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/enterpregdate"
+                    android:text="@string/str_enterpregdate"
                     android:textColor="@color/black"
                     android:fontFamily="@font/main_medium"
                     android:textSize="@dimen/_12sdp" />
@@ -75,7 +75,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/choosedate"
+                            android:hint="@string/str_choosedate"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -103,7 +103,7 @@
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:fontFamily="@font/main_semibold"
-                    android:text="@string/calculate"
+                    android:text="@string/str_calculate"
                     android:textColor="@color/white"/>
 
                     <TextView
@@ -116,7 +116,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="15dp"
                         android:fontFamily="@font/main_semibold"
-                        android:text="@string/chart_ovulation"
+                        android:text="@string/str_chart_ovulation"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:textColor="@color/white" />
 

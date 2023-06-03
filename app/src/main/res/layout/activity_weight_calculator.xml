@@ -47,6 +47,16 @@
                 android:layout_margin="10dp"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/main_semibold"
+                    android:text="@string/str_enter_age"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -68,7 +78,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/enter_age"
+                            android:hint="@string/str_enter_age"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -94,6 +104,33 @@
                     </RelativeLayout>
                 </LinearLayout>
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/ic_border">
+
+                    <Spinner
+                        android:id="@+id/SpinnerHeightIdealWeight"
+                        style="@style/Widget.App.Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="start"
+                        android:spinnerMode="dropdown" />
+
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_8ssp"
+                    android:layout_marginTop="@dimen/_8ssp"
+                    android:layout_marginBottom="@dimen/_3ssp"
+                    android:fontFamily="@font/main_semibold"
+                    android:text="@string/str_enter_value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -115,7 +152,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
+                            android:hint="@string/str_enter_value"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -130,7 +167,7 @@
                         android:layout_weight="0.15"
                         android:fontFamily="@font/main_semibold"
                         android:gravity="center_vertical"
-                        android:text="@string/ft"
+                        android:text="@string/str_ft"
                         android:textAllCaps="true"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
@@ -164,7 +201,7 @@
                                 android:background="@color/transparent"
                                 android:ems="10"
                                 android:gravity="start|center_vertical"
-                                android:hint="@string/enter_value"
+                                android:hint="@string/str_enter_value"
                                 android:inputType="number"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:textColor="@color/black"
@@ -179,22 +216,11 @@
                             android:layout_weight="0.15"
                             android:fontFamily="@font/main_semibold"
                             android:gravity="center_vertical"
-                            android:text="@string/in"
+                            android:text="@string/str_in"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="@dimen/_14sdp" />
                     </LinearLayout>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="@dimen/_8ssp"
-                        android:layout_marginTop="@dimen/_8ssp"
-                        android:layout_marginBottom="@dimen/_3ssp"
-                        android:fontFamily="@font/main_semibold"
-                        android:text="@string/enter_value"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_13sdp" />
 
                 </LinearLayout>
 
@@ -209,12 +235,16 @@
                     android:padding="0dp"
                     android:weightSum="2">
 
-                    <ImageView
-                        android:id="@+id/BtnChartCalculator"
+                    <TextView
+                        android:id="@+id/BtnResetCalculator"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.3"
-                        android:src="@drawable/ic_chart" />
+                        android:layout_weight="0.85"
+                        android:fontFamily="@font/main_semibold"
+                        android:gravity="center"
+                        android:text="@string/str_reset"
+                        android:textColor="@color/purple_500"
+                        android:textSize="@dimen/_12sdp" />
 
                     <TextView
                         android:id="@+id/BtnWeightCalculator"
@@ -226,60 +256,17 @@
                         android:backgroundTint="@color/purple_500"
                         android:fontFamily="@font/main_semibold"
                         android:gravity="center"
-                        android:text="@string/calculate"
+                        android:text="@string/str_calculate"
                         android:textColor="@color/white" />
 
-                    <TextView
-                        android:id="@+id/BtnResetCalculator"
+                    <ImageView
+                        android:id="@+id/BtnChartCalculator"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.85"
-                        android:fontFamily="@font/main_semibold"
-                        android:gravity="center"
-                        android:text="@string/reset"
-                        android:textColor="@color/purple_500"
-                        android:textSize="@dimen/_12sdp" />
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_chart" />
                 </LinearLayout>
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:background="@drawable/ic_border">
-
-                    <Spinner
-                        android:id="@+id/SpinnerHeightIdealWeight"
-                        style="@style/Widget.App.Spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="start"
-                        android:spinnerMode="dropdown" />
-
-                </RelativeLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_8ssp"
-                    android:layout_marginTop="@dimen/_8ssp"
-                    android:layout_marginBottom="@dimen/_3ssp"
-                    android:fontFamily="@font/main_semibold"
-                    android:text="@string/enter_value"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="@dimen/_8ssp"
-                    android:layout_marginTop="@dimen/_8ssp"
-                    android:layout_marginBottom="@dimen/_3ssp"
-                    android:fontFamily="@font/main_semibold"
-                    android:text="@string/enter_age"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_13sdp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </androidx.core.widget.NestedScrollView>

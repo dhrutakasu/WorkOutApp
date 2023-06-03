@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/underweight_header"
+                android:text="@string/str_underweight_header"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_semibold"
                 android:textSize="@dimen/_14sdp"/>
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/underweight_desc"
+                android:text="@string/str_underweight_desc"
                 android:textColor="@color/text_color"
                 android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_12sdp" />
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/healthy_weight_header"
+                android:text="@string/str_healthy_weight_header"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_semibold"
                 android:textSize="@dimen/_14sdp" />
@@ -75,7 +75,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/healthy_weight_desc"
+                android:text="@string/str_healthy_weight_desc"
                 android:textColor="@color/text_color"
                 android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_12sdp"/>
@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/overweight_header"
+                android:text="@string/str_overweight_header"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_semibold"
                 android:textSize="@dimen/_14sdp" />
@@ -99,7 +99,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/overweight_desc"
+                android:text="@string/str_overweight_desc"
                 android:textColor="@color/text_color"
                 android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_12sdp"/>
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/obese_header"
+                android:text="@string/str_obese_header"
                 android:textColor="@color/black"
                 android:fontFamily="@font/main_semibold"
                 android:textSize="@dimen/_14sdp" />
@@ -123,7 +123,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/obese_desc"
+                android:text="@string/str_obese_desc"
                 android:textColor="@color/text_color"
                 android:fontFamily="@font/main_medium"
                 android:textSize="@dimen/_12sdp"/>
@@ -133,7 +133,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -143,7 +143,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>

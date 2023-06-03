@@ -1,30 +1,29 @@
 package com.out.workout.ui.activity;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
@@ -84,10 +83,10 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
     private void initActions() {
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
-        TvTitle.setText(getString(R.string.heartrate));
+        TvTitle.setText(getString(R.string.str_heartrate));
         EdtAgeHeart.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] ArrHeartRate = {getResources().getString(R.string.moderate), getResources().getString(R.string.little_diff), getResources().getString(R.string.moderately_diff), getResources().getString(R.string.hard)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] ArrHeartRate = {getResources().getString(R.string.str_moderate), getResources().getString(R.string.str_little_diff), getResources().getString(R.string.str_moderately_diff), getResources().getString(R.string.str_hard)};
         SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrHeartRate));
         SpinnerGenderHeart.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
 
@@ -100,7 +99,22 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
                 onBackPressed();
                 break;
             case R.id.BtnHeartRate:
-                GotoCalculateHeartRate();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(HeartRateCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateHeartRate();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetHeart:
                 GotoCalculateReset();
@@ -127,11 +141,10 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
             }
             if (BoolCheck) {
                 System.out.println("----- -- - - e22 BoolCheck : " + BoolCheck);
-                Toast.makeText(context, getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 BoolCheck = false;
                 return;
             }
-            if (gender.equalsIgnoreCase(getString(R.string.male))) {
+            if (gender.equalsIgnoreCase(getString(R.string.str_male))) {
                 DoubleAge *= 0.8d;
                 DoubleRateMhr = 214.0d - DoubleAge;
             } else {
@@ -175,13 +188,13 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
             TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
             IvDialogBanner.setImageResource(R.drawable.ic_heart_reate);
-            TvDialogName.setText(getResources().getString(R.string.heartrate));
-            TvDialogDesc.setText(getResources().getString(R.string.heart_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_heartrate));
+            TvDialogDesc.setText(getResources().getString(R.string.str_heart_desc));
             LlHeartRate.setVisibility(View.VISIBLE);
 
             TvDialogMaxRateValue.setText(str_Rate);
             TvDialogTrainingRateValue.setText(str_RateMin + " - " + str_RateMax);
-            TvDialogWeightSubTitle.setText(getString(R.string.maxhrrate));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_maxhrrate));
 
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -207,19 +220,19 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
     }
 
     private void GotoCalculateChart() {
-        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.heartrate)));
+        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.str_heartrate)));
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String toString = SpinnerHeartRate.getSelectedItem().toString();
-        if (toString.equals(getResources().getString(R.string.moderate))) {
+        if (toString.equals(getResources().getString(R.string.str_moderate))) {
             StrRate = 0.6d;
             StrRateSec = 0.65d;
-        } else if (toString.equals(getResources().getString(R.string.little_diff))) {
+        } else if (toString.equals(getResources().getString(R.string.str_little_diff))) {
             StrRate = 0.65d;
             StrRateSec = 0.7d;
-        } else if (toString.equals(getResources().getString(R.string.moderately_diff))) {
+        } else if (toString.equals(getResources().getString(R.string.str_moderately_diff))) {
             StrRate = 0.7d;
             StrRateSec = 0.75d;
         } else {

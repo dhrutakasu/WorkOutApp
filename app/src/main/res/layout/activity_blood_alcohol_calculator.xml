@@ -51,7 +51,7 @@
                     android:layout_marginTop="@dimen/_8ssp"
                     android:layout_marginStart="@dimen/_8ssp"
                     android:layout_marginBottom="@dimen/_3ssp"
-                    android:text="@string/enter_age"
+                    android:text="@string/str_enter_age"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_13sdp" />
 
@@ -76,7 +76,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/enter_age"
+                            android:hint="@string/str_enter_age"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -108,7 +108,7 @@
                     android:layout_marginTop="@dimen/_8ssp"
                     android:layout_marginBottom="@dimen/_3ssp"
                     android:fontFamily="@font/main_semibold"
-                    android:text="@string/enter_value"
+                    android:text="@string/str_enter_value"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_13sdp" />
 
@@ -153,7 +153,7 @@
                         android:ems="10"
                         android:layout_marginStart="10dp"
                         android:gravity="start|center_vertical"
-                        android:hint="@string/enter_value"
+                        android:hint="@string/str_enter_value"
                         android:inputType="number"
                         android:textColor="@color/black"
                         android:textDirection="locale"
@@ -166,7 +166,7 @@
                     android:layout_marginTop="@dimen/_8ssp"
                     android:layout_marginBottom="@dimen/_3ssp"
                     android:fontFamily="@font/main_semibold"
-                    android:text="@string/enter_value"
+                    android:text="@string/str_enter_value"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_13sdp" />
 
@@ -191,7 +191,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
+                            android:hint="@string/str_enter_value"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -224,7 +224,7 @@
                     android:layout_marginTop="@dimen/_8ssp"
                     android:layout_marginBottom="@dimen/_3ssp"
                     android:fontFamily="@font/main_semibold"
-                    android:text="@string/enter_value"
+                    android:text="@string/str_enter_value"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_13sdp" />
 
@@ -250,7 +250,7 @@
                             android:background="@color/transparent"
                             android:ems="10"
                             android:gravity="start|center_vertical"
-                            android:hint="@string/enter_value"
+                            android:hint="@string/str_enter_value"
                             android:inputType="number"
                             android:textColor="@color/black"
                             android:textDirection="locale"
@@ -295,7 +295,7 @@
                         android:gravity="center"
                         android:fontFamily="@font/main_semibold"
                         android:textSize="@dimen/_12sdp"
-                        android:text="@string/reset"
+                        android:text="@string/str_reset"
                         android:textColor="@color/purple_500" />
 
                     <TextView
@@ -308,7 +308,7 @@
                         android:layout_weight="0.85"
                         android:gravity="center"
                         android:fontFamily="@font/main_semibold"
-                        android:text="@string/calculate"
+                        android:text="@string/str_calculate"
                         android:textColor="@color/white" />
 
                     <ImageView
@@ -325,7 +325,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -335,7 +335,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>

@@ -1,14 +1,13 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.Gravity;
@@ -16,28 +15,27 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.ads.AdSize;
 import com.out.workout.Ads.Ad_Banner;
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
 import com.out.workout.utils.SharePreference;
 
-import java.io.PrintStream;
 import java.text.NumberFormat;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class BmiCalculatorActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -96,13 +94,13 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initActions() {
-        TvTitle.setText(getString(R.string.bmi_title));
-        TvFTOrCMBMI.setText(R.string.cm);
+        TvTitle.setText(getString(R.string.str_bmi_title));
+        TvFTOrCMBMI.setText(R.string.str_cm);
         LLHeightBMI.setVisibility(View.GONE);
         EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
-        String[] GenderArr = {getResources().getString(R.string.male), getResources().getString(R.string.female)};
-        String[] HeightArr = {getResources().getString(R.string.centimeters), getResources().getString(R.string.feets)};
-        String[] WeightArr = {getResources().getString(R.string.kilograms), getResources().getString(R.string.pounds)};
+        String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
+        String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
+        String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
         SpinnerGenderBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
         SpinnerHeightBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, HeightArr));
         SpinnerWeightBMI.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, WeightArr));
@@ -115,7 +113,22 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 onBackPressed();
                 break;
             case R.id.BtnWeightBMI:
-                GotoCalculateBMI();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(BmiCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateBMI();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnResetBMI:
                 GotoBMIReset();
@@ -152,18 +165,17 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 DoubleInch = 0.0d;
             }
             if (check) {
-                Toast.makeText(context, getResources().getString(R.string.valid), Toast.LENGTH_SHORT).show();
                 check = false;
                 return;
             }
-            if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+            if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                 DoubleHeight /= 100.0d;
             } else {
                 DoubleHeight *= 12.0d;
                 DoubleHeight += DoubleInch;
                 DoubleHeight *= 0.0254d;
             }
-            if (!weightBMI.equalsIgnoreCase(getString(R.string.kilograms))) {
+            if (!weightBMI.equalsIgnoreCase(getString(R.string.str_kilograms))) {
                 DoubleWeight *= 0.453592d;
             }
             try {
@@ -202,8 +214,8 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
             TextView BtnDialogWeight = dialog.findViewById(R.id.BtnDialogWeight);
 
             IvDialogBanner.setImageResource(R.drawable.ic_body_mass_index);
-            TvDialogName.setText(getResources().getString(R.string.bmi_title));
-            TvDialogDesc.setText(getResources().getString(R.string.bmi_desc));
+            TvDialogName.setText(getResources().getString(R.string.str_bmi_title));
+            TvDialogDesc.setText(getResources().getString(R.string.str_bmi_desc));
 
             CardIdealWeight.setVisibility(View.VISIBLE);
             TvDialogWeightValue.setVisibility(View.VISIBLE);
@@ -212,9 +224,9 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
             TvDialogWeightBMIValue.setVisibility(View.VISIBLE);
             BtnDialogResult.setVisibility(View.VISIBLE);
 
-            TvDialogWeightSubTitle.setText(getString(R.string.bmiis));
+            TvDialogWeightSubTitle.setText(getString(R.string.str_bmiis));
 
-            SpannableString content = new SpannableString(getString(R.string.understand_bmi));
+            SpannableString content = new SpannableString(getString(R.string.str_understand_bmi));
             content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
             BtnDialogResult.setText(content);
 
@@ -225,32 +237,32 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 calculate_BMI_Int = BMI_Int;
                 if (BMI_Int < 16) {
                     calculate_BMI_Int = 1;
-                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.exunder));
+                    TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_exunder));
                 } else if (BMI_Int > 40) {
                     calculate_BMI_Int = 100;
-                    TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
+                    TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_morbid));
                 } else {
                     if (calculate >= 16.0d && calculate <= 18.5d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.underweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_underweight));
                     } else if (calculate > 18.5d && calculate <= 25.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.normalweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_normalweight));
                     } else if (calculate > 25.0d && calculate <= 30.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.overweight));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_overweight));
                     } else if (calculate > 30.0d && calculate <= 35.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.obeseone));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_obeseone));
                     } else if (calculate > 35.0d && calculate <= 40.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.obesetwo));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_obesetwo));
                     } else if (calculate < 16.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.exunder));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_exunder));
                     } else if (calculate > 40.0d) {
-                        TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
+                        TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_morbid));
                     }
                     calculate_BMI_Int = (calculate_BMI_Int - 15) * 4;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Could not parse " + e);
                 calculate_BMI_Int = 100;
-                TvDialogWeightValue.setText(getResources().getString(R.string.sixteenmin) + " " + getResources().getString(R.string.morbid));
+                TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_morbid));
             }
             PbBMI.setProgress(calculate_BMI_Int);
             BtnDialogWeight.setOnClickListener(new View.OnClickListener() {
@@ -280,7 +292,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         EdtWeightBMI.setText("");
         EdtAgeBMI.requestFocus();
 
-        TvFTOrCMBMI.setText(getString(R.string.cm));
+        TvFTOrCMBMI.setText(getString(R.string.str_cm));
         SpinnerGenderBMI.setSelection(0);
         SpinnerHeightBMI.setSelection(0);
         SpinnerWeightBMI.setSelection(0);
@@ -288,7 +300,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
     }
 
     private void GotoBMIChart() {
-        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.bmi_title)));
+        startActivity(new Intent(context, ChartActivity.class).putExtra(Constants.ChartType, getString(R.string.str_bmi_title)));
     }
 
     @Override
@@ -296,13 +308,13 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         switch (adapterView.getId()){
             case R.id.SpinnerHeightBMI:
                 String weight = (String) SpinnerHeightBMI.getSelectedItem().toString();
-                if (weight.equalsIgnoreCase(getString(R.string.centimeters))) {
+                if (weight.equalsIgnoreCase(getString(R.string.str_centimeters))) {
                     EdtHeightBMI.setText("");
                     EdtInchBMI.setText("");
-                    TvFTOrCMBMI.setText(getString(R.string.cm));
+                    TvFTOrCMBMI.setText(getString(R.string.str_cm));
                     LLHeightBMI.setVisibility(View.GONE);
                 } else {
-                    TvFTOrCMBMI.setText(getString(R.string.ft));
+                    TvFTOrCMBMI.setText(getString(R.string.str_ft));
                     EdtHeightBMI.setText("");
                     EdtInchBMI.setText("");
                     LLHeightBMI.setVisibility(View.VISIBLE);

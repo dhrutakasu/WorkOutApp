@@ -16,6 +16,7 @@ public class Pref {
     public static final String SHOW = "AdShow";
     public static final String CLICK = "CLICK";
     public static String openads;
+
     public Pref(Context context) {
         preferences = context.getSharedPreferences("work_out_pref", Context.MODE_PRIVATE);
     }
@@ -35,4 +36,13 @@ public class Pref {
     public void putInt(String key, int value) {
         preferences.edit().putInt(key, value).apply();
     }
+
+    public void putBoolean(String key, boolean value) {
+        preferences.edit().putBoolean(key, value).commit();
+    }
+
+    public boolean getBoolean(String str, boolean i) {
+        return preferences.getBoolean(str, i);
+    }
+
 }

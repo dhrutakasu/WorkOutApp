@@ -40,7 +40,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.4"
                     android:fontFamily="@font/main_medium"
-                    android:text="@string/workout"
+                    android:text="@string/str_workout"
                     android:textColor="@color/new_gray"
                     android:textSize="@dimen/_9sdp"
                     android:textStyle="bold" />
@@ -50,7 +50,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="0.6"
                     android:fontFamily="@font/main_semibold"
-                    android:text="@string/weight"
+                    android:text="@string/str_weight"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_12sdp"
                     android:textStyle="bold" />

@@ -4,20 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
@@ -69,7 +71,7 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
 
     private void initActions() {
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
-        TvTitle.setText(getString(R.string.pregnancy));
+        TvTitle.setText(getString(R.string.str_pregnancy));
         calendar = Calendar.getInstance();
         Fab = calendar.get(Calendar.YEAR);
         dateLong = calendar.get(Calendar.MONTH);
@@ -78,40 +80,40 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
         String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
         switch (Integer.parseInt(split[0])) {
             case 1:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jan) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jan) + " " + split[2]);
                 break;
             case 2:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.feb) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_feb) + " " + split[2]);
                 break;
             case 3:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.mar) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_mar) + " " + split[2]);
                 break;
             case 4:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.apr) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_apr) + " " + split[2]);
                 break;
             case 5:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.may) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_may) + " " + split[2]);
                 break;
             case 6:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jun) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jun) + " " + split[2]);
                 break;
             case 7:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jul) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jul) + " " + split[2]);
                 break;
             case 8:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.aug) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_aug) + " " + split[2]);
                 break;
             case 9:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.sep) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_sep) + " " + split[2]);
                 break;
             case 10:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.oct) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_oct) + " " + split[2]);
                 break;
             case 11:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.nov) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_nov) + " " + split[2]);
                 break;
             case 12:
-                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.dec) + " " + split[2]);
+                EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_dec) + " " + split[2]);
                 break;
         }
 
@@ -128,7 +130,22 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
                 GotoChooseDate();
                 break;
             case R.id.BtnWeightPregnancy:
-                GotoCalculateBloodDonation();
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(PregnancyCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoCalculateBloodDonation();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.BtnPregnancy:
                 GotoPregnancyChart();
@@ -178,51 +195,51 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
         TextView TvDialogDesc = dialog.findViewById(R.id.TvDialogDesc);
 
         IvDialogBanner.setImageResource(R.drawable.ic_pregncy_due_date);
-        TvDialogName.setText(getResources().getString(R.string.pregnancy));
-        TvDialogDesc.setText(getResources().getString(R.string.pregnancy_desc));
+        TvDialogName.setText(getResources().getString(R.string.str_pregnancy));
+        TvDialogDesc.setText(getResources().getString(R.string.str_pregnancy_desc));
 
         LlPregnancy.setVisibility(View.VISIBLE);
 
-        TvDialogWeightSubTitle.setText(getString(R.string.uredd));
+        TvDialogWeightSubTitle.setText(getString(R.string.str_uredd));
         TvDialogPregnancy.setText(format);
 
         String[] split = format.split("/");
         switch (Integer.parseInt(split[0])) {
             case 1:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.jan) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_jan) + " " + split[2]);
                 break;
             case 2:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.feb) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_feb) + " " + split[2]);
                 break;
             case 3:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.mar) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_mar) + " " + split[2]);
                 break;
             case 4:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.apr) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_apr) + " " + split[2]);
                 break;
             case 5:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.may) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_may) + " " + split[2]);
                 break;
             case 6:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.jun) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_jun) + " " + split[2]);
                 break;
             case 7:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.jul) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_jul) + " " + split[2]);
                 break;
             case 8:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.aug) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_aug) + " " + split[2]);
                 break;
             case 9:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.sep) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_sep) + " " + split[2]);
                 break;
             case 10:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.oct) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_oct) + " " + split[2]);
                 break;
             case 11:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.nov) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_nov) + " " + split[2]);
                 break;
             case 12:
-                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.dec) + " " + split[2]);
+                TvDialogPregnancyLong.setText(split[1] + " " + getResources().getString(R.string.str_dec) + " " + split[2]);
                 break;
         }
 
@@ -233,7 +250,7 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
     }
 
     private void GotoPregnancyChart() {
-        startActivity(new Intent(context,ChartActivity.class).putExtra(Constants.ChartType,getString(R.string.preg_chart)));
+        startActivity(new Intent(context,ChartActivity.class).putExtra(Constants.ChartType,getString(R.string.str_preg_chart)));
     }
 
     final DatePickerDialog.OnDateSetListener setListener = new DatePickerDialog.OnDateSetListener() {
@@ -245,40 +262,40 @@ public class PregnancyCalculatorActivity extends AppCompatActivity implements Vi
             String[] split = simpleDateFormat.format(calendar.getTime()).split("/");
             switch (Integer.parseInt(split[0])) {
                 case 1:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jan) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jan) + " " + split[2]);
                     break;
                 case 2:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.feb) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_feb) + " " + split[2]);
                     break;
                 case 3:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.mar) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_mar) + " " + split[2]);
                     break;
                 case 4:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.apr) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_apr) + " " + split[2]);
                     break;
                 case 5:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.may) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_may) + " " + split[2]);
                     break;
                 case 6:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jun) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jun) + " " + split[2]);
                     break;
                 case 7:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.jul) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_jul) + " " + split[2]);
                     break;
                 case 8:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.aug) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_aug) + " " + split[2]);
                     break;
                 case 9:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.sep) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_sep) + " " + split[2]);
                     break;
                 case 10:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.oct) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_oct) + " " + split[2]);
                     break;
                 case 11:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.nov) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_nov) + " " + split[2]);
                     break;
                 case 12:
-                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.dec) + " " + split[2]);
+                    EdtDatePregnancy.setText(split[1] + " " + getResources().getString(R.string.str_dec) + " " + split[2]);
                     break;
             }
             calendar.add(5, 282);

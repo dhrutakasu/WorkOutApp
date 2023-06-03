@@ -54,11 +54,33 @@
             </LinearLayout>
         </LinearLayout>
 
+        <RelativeLayout
+            android:id="@+id/RlAdViewMain"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom|center"
+            android:layout_above="@+id/LlBottomMain"
+            android:gravity="bottom|center">
+
+            <RelativeLayout
+                android:id="@+id/RlAdView"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center|bottom" />
+        </RelativeLayout>
         <include
             layout="@layout/app_bar_dashboard"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/LlBottomMain" />
+            android:layout_above="@+id/RlAdViewMain" />
+
+        <include
+            android:id="@+id/DialogQuit"
+            layout="@layout/dialog_quit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
 
     </RelativeLayout>
 

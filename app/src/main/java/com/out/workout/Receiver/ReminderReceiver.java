@@ -59,7 +59,7 @@ public class ReminderReceiver extends BroadcastReceiver {
         createNotificationChannel(context);
 
         String string = context.getString(R.string.app_name);
-        String string2 = context.getString(R.string.noti1);
+        String string2 = context.getString(R.string.str_noti1);
         NotificationCompat.Builder builder;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             builder = new NotificationCompat.Builder(context, CHANNEL_ID);
@@ -67,7 +67,7 @@ public class ReminderReceiver extends BroadcastReceiver {
             builder = new NotificationCompat.Builder(context);
         }
 //        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.ic_launcher_background);
+        builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setColor(ContextCompat.getColor(context, R.color.white));
         builder.setContentTitle(string);
         builder.setContentText(string2);

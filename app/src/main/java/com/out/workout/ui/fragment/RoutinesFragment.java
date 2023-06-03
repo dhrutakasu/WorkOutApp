@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 
-import com.google.android.gms.ads.AdSize;
-import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.model.WorkOutTypeModel;
 import com.out.workout.ui.activity.WorkoutListActivity;
@@ -57,9 +54,9 @@ public class RoutinesFragment extends Fragment {
     private void initActions() {
         ArrayList<WorkOutTypeModel> workOutModels = new ArrayList<>();
 
-        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.morning_title), R.drawable.ic_morning);
+        WorkOutTypeModel workOutModel = new WorkOutTypeModel(getString(R.string.str_morning_title), R.drawable.ic_morning);
         workOutModels.add(workOutModel);
-        workOutModel = new WorkOutTypeModel(getString(R.string.evening_title), R.drawable.ic_evening);
+        workOutModel = new WorkOutTypeModel(getString(R.string.str_evening_title), R.drawable.ic_evening);
         workOutModels.add(workOutModel);
         RvRoutines.setLayoutManager(new LinearLayoutManager(getContext()));
         TrainingAdapter trainingAdapter = new TrainingAdapter(getContext(), workOutModels, new TrainingAdapter.WorkoutInterface() {

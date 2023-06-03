@@ -26,8 +26,23 @@
             <ImageView
                 android:id="@+id/IvItemImg"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_180sdp"
-                android:scaleType="centerCrop" />
+                android:layout_marginTop="@dimen/_30ssp"
+                android:src="@drawable/vegeterian"
+                android:layout_height="@dimen/_180sdp" />
+
+
+            <TextView
+                android:id="@+id/TvItemImgName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_8ssp"
+                android:layout_marginTop="@dimen/_8ssp"
+                android:layout_marginBottom="@dimen/_3ssp"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/main_semibold"
+                android:text="@string/str_enter_age"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
 
             <ImageView
                 android:id="@+id/IvBack"

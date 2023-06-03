@@ -21,7 +21,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:background="@drawable/dialog_bg"
+        android:background="@drawable/ic_dialog_bg"
         app:layout_constraintBottom_toTopOf="@id/RlAdViewMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/should_not_donate"
+                android:text="@string/str_should_not_donate"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/should_not_donate_desc"
+                android:text="@string/str_should_not_donate_desc"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/may_not_give"
+                android:text="@string/str_may_not_give"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -76,7 +76,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/may_not_give_desc"
+                android:text="@string/str_may_not_give_desc"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/should_never_give"
+                android:text="@string/str_should_never_give"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -101,7 +101,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/should_never_give_desc"
+                android:text="@string/str_should_never_give_desc"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -111,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/should_never_give_12"
+                android:text="@string/str_should_never_give_12"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -126,7 +126,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/should_never_give__desc"
+                android:text="@string/str_should_never_give__desc"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -136,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:text="@string/pregnancy_header"
+                android:text="@string/str_pregnancy_header"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -151,7 +151,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/pregnancy_desc2"
+                android:text="@string/str_pregnancy_desc2"
                 android:textColor="#000000"
                 android:textDirection="locale"
                 android:textSize="@dimen/_15sdp" />
@@ -161,7 +161,7 @@
     <RelativeLayout
         android:id="@+id/RlAdViewMain"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="55dp"
         android:layout_gravity="bottom|center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -171,7 +171,7 @@
         <RelativeLayout
             android:id="@+id/RlAdView"
             android:layout_width="match_parent"
-            android:layout_height="105dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="0dp"
             android:gravity="center|bottom" />
     </RelativeLayout>
