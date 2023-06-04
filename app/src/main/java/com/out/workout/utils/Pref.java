@@ -6,6 +6,11 @@ import android.content.SharedPreferences;
 public class Pref {
     private SharedPreferences preferences;
 
+    public static String CALCULATOR_AGE = "CalculatorAge";
+    public static String COUNT_TIMER = "CounterTimer";
+    public static String REST_TIMER = "RestTimer";
+    public static String IS_SOUND = "IsSound";
+    public static int AGE = 25;
 
     public static final String AD_BACK = "AD_BACK";
     public static final String AD_BANNER = "AD_BANNER";

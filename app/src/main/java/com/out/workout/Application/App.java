@@ -39,6 +39,9 @@ import androidx.lifecycle.ProcessLifecycleOwner;
 //imge
 //https://d250cpfim6cf4j.cloudfront.net/cat_vegeterian.jpg
 
+//https://github.com/WrichikBasu/ShakeAlarmClock
+
+
 public class App extends Application implements DefaultLifecycleObserver, Application.ActivityLifecycleCallbacks {
 
     private AppOpenAdManager appOpenAdManager;

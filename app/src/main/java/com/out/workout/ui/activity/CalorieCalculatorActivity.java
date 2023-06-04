@@ -27,7 +27,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -92,7 +92,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         TvTitle.setText(getString(R.string.str_calories));
         TvFTOrCMCalorie.setText(getString(R.string.str_cm));
         LLHeightCalorie.setVisibility(View.GONE);
-        EdtAgeCalorie.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeCalorie.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
 
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
@@ -187,7 +187,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
                 DoubleAge *= 4.7d;
             }
             try {
-                SharePreference.setCalculatorAge(context, Integer.parseInt(EdtAgeCalorie.getText().toString()));
+                new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeCalorie.getText().toString()));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -240,7 +240,7 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
 
     private void GotoCalculateReset() {
         EdtHeightCalorie.setText("");
-        EdtAgeCalorie.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeCalorie.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtInchCalorie.setText("");
         EdtWeightCalorie.setText("");
         EdtAgeCalorie.requestFocus();

@@ -27,7 +27,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -88,7 +88,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
         TvTitle.setText(getString(R.string.str_bloodalcohol));
-        EdtAgeBloodAlcohol.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBloodAlcohol.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE, Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
         String[] TimeArr = {getResources().getString(R.string.str_hour), getResources().getString(R.string.str_minute), getResources().getString(R.string.str_day)};
@@ -242,7 +242,7 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
     }
 
     private void GotoCalculateReset() {
-        EdtAgeBloodAlcohol.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBloodAlcohol.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtWeightBloodAlcohol.setText("");
         EdtDrinkBloodAlcohol.setText("");
         EdtTimeBloodAlcohol.setText("");

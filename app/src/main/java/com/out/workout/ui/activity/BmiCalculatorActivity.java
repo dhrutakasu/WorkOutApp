@@ -30,7 +30,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -97,7 +97,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
         TvTitle.setText(getString(R.string.str_bmi_title));
         TvFTOrCMBMI.setText(R.string.str_cm);
         LLHeightBMI.setVisibility(View.GONE);
-        EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBMI.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
         String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
@@ -179,7 +179,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                 DoubleWeight *= 0.453592d;
             }
             try {
-                SharePreference.setCalculatorAge(context, Integer.parseInt(EdtAgeBMI.getText().toString()));
+                new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeBMI.getText().toString()));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -287,7 +287,7 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
 
     private void GotoBMIReset() {
         EdtHeightBMI.setText("");
-        EdtAgeBMI.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBMI.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtInchBMI.setText("");
         EdtWeightBMI.setText("");
         EdtAgeBMI.requestFocus();

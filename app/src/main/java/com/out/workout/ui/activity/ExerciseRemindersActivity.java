@@ -25,7 +25,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -67,11 +67,11 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
         TvTitle.setText(getString(R.string.str_exercise_time));
 
-        System.out.println("---- : HR " + SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr));
-        System.out.println("---- : MIN " + SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin));
+        System.out.println("---- : HR " + new Pref(context).getInt(Constants.NOTIFICATION_HOUR, IntHr));
+        System.out.println("---- : MIN " + new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            PickerSetReminders.setHour(SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr));
-            PickerSetReminders.setMinute(SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin));
+            PickerSetReminders.setHour(new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr));
+            PickerSetReminders.setMinute(new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin));
         }
     }
 
@@ -101,12 +101,12 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
                                 IntHr = PickerSetReminders.getCurrentHour().intValue();
                                 IntMin = PickerSetReminders.getCurrentMinute().intValue();
                             }
-                            SharePreference.SetBoolean(context, Constants.ExerciseSetTime, true);
-                            SharePreference.SetInt(context, Constants.NOTIFICATION_HOUR, IntHr);
-                            SharePreference.SetInt(context, Constants.NOTIFICATION_MINUTES, IntMin);
+                            new Pref(context).putBoolean( Constants.ExerciseSetTime, true);
+                            new Pref(context).putInt( Constants.NOTIFICATION_HOUR, IntHr);
+                            new Pref(context).putInt( Constants.NOTIFICATION_MINUTES, IntMin);
                             Log.d("ReminderCheck", "Reminder set in ExerciseFragment page");
-                            Log.d("ReminderCheck", "Reminder set in " + SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr) + ":" + SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin) + ":0");
-                            Constants.setAlarm(context, SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr), SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin), 0);
+                            Log.d("ReminderCheck", "Reminder set in " + new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr) + ":" + new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin) + ":0");
+                            Constants.setAlarm(context, new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr), new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin), 0);
                             onBackPressed();
                         }
 
@@ -129,12 +129,12 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
                 IntHr = PickerSetReminders.getCurrentHour().intValue();
                 IntMin = PickerSetReminders.getCurrentMinute().intValue();
             }
-            SharePreference.SetBoolean(context, Constants.ExerciseSetTime, true);
-            SharePreference.SetInt(context, Constants.NOTIFICATION_HOUR, IntHr);
-            SharePreference.SetInt(context, Constants.NOTIFICATION_MINUTES, IntMin);
+            new Pref(context).putBoolean( Constants.ExerciseSetTime, true);
+            new Pref(context).putInt( Constants.NOTIFICATION_HOUR, IntHr);
+            new Pref(context).putInt( Constants.NOTIFICATION_MINUTES, IntMin);
             Log.d("ReminderCheck", "Reminder set in ExerciseFragment page");
-            Log.d("ReminderCheck", "Reminder set in " + SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr) + ":" + SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin) + ":0");
-            Constants.setAlarm(context, SharePreference.getInt(context, Constants.NOTIFICATION_HOUR, IntHr), SharePreference.getInt(context, Constants.NOTIFICATION_MINUTES, IntMin), 0);
+            Log.d("ReminderCheck", "Reminder set in " + new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr) + ":" + new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin) + ":0");
+            Constants.setAlarm(context, new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr), new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin), 0);
             onBackPressed();
         }
     }

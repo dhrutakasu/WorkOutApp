@@ -27,7 +27,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -84,7 +84,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
 
         TvTitle.setText(getString(R.string.str_heartrate));
-        EdtAgeHeart.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeHeart.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] ArrHeartRate = {getResources().getString(R.string.str_moderate), getResources().getString(R.string.str_little_diff), getResources().getString(R.string.str_moderately_diff), getResources().getString(R.string.str_hard)};
         SpinnerHeartRate.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, ArrHeartRate));
@@ -152,7 +152,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
                 DoubleRateMhr = 209.0d - DoubleAge;
             }
             try {
-                SharePreference.setCalculatorAge(context, Integer.parseInt(EdtAgeHeart.getText().toString()));
+                new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeHeart.getText().toString()));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -213,7 +213,7 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
 
     private void GotoCalculateReset() {
         EdtHeartRate.setText("");
-        EdtAgeHeart.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeHeart.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtAgeHeart.requestFocus();
         SpinnerHeartRate.setSelection(0);
         SpinnerHeartRate.setSelection(0);

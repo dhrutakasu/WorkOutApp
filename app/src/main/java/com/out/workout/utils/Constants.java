@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.text.Html;
 import android.text.Spanned;
@@ -15,6 +17,7 @@ import android.util.Pair;
 import android.util.TypedValue;
 import android.view.WindowManager;
 
+import com.out.workout.Receiver.AlarmService;
 import com.out.workout.Receiver.ExerciseAlarmReceiver;
 import com.out.workout.Receiver.ReminderReceiver;
 import com.out.workout.model.WorkoutExerciseModel;
@@ -86,6 +89,12 @@ public class Constants {
         }else {
             pendingIntent = PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+//            pendingIntent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+//
+//        }else {
+//            pendingIntent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT);
+//        }
         alarmManager.cancel(pendingIntent);
         Log.d("Tag", "previous alarm canceled");
         Log.d("Tag", "new alarm sets");
@@ -102,6 +111,13 @@ public class Constants {
         }else {
             pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+//            pendingintent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+//
+//        }else {
+//            pendingintent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT);
+//        }
+        System.out.println("----- come : :create alarm : ");
 //        PendingIntent broadcast = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
@@ -185,5 +201,20 @@ public class Constants {
         }
         Spanned fromHtml2 = Html.fromHtml(s);
         return fromHtml2;
+    }
+
+    public static boolean isConnectingToInternet(Context con) {
+        ConnectivityManager connectivity = (ConnectivityManager) con.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connectivity != null) {
+            NetworkInfo[] info = connectivity.getAllNetworkInfo();
+            if (info != null) {
+                for (NetworkInfo state : info) {
+                    if (state.getState() == NetworkInfo.State.CONNECTED) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 }

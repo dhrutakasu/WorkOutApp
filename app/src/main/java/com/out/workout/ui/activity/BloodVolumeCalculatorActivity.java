@@ -26,7 +26,7 @@ import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -84,7 +84,7 @@ public class BloodVolumeCalculatorActivity extends AppCompatActivity implements 
         TvTitle.setText(getString(R.string.str_bloodvol));
         TvFTOrCMBloodVolume.setText(getString(R.string.str_cm));
         LLHeightBloodVolume.setVisibility(View.GONE);
-        EdtAgeBloodVolume.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBloodVolume.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
         String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};

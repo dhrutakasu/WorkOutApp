@@ -1,9 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
-import androidx.cardview.widget.CardView;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +13,11 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.Ads.Ad_Native;
 import com.out.workout.BuildConfig;
 import com.out.workout.R;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.cardview.widget.CardView;
 
 public class ProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private Context context;
@@ -92,9 +92,10 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
             }
         }, 3000L);
         TvTitle.setText(getResources().getString(R.string.str_profile));
-        IsCounter = SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10);
-        IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-        IsSound = SharePreference.getBoolean(context, SharePreference.IS_SOUND, true);
+
+        IsCounter =   new Pref(context).getInt(Pref.COUNT_TIMER,10);
+        IsRest = new Pref(context).getInt(Pref.REST_TIMER,25);
+        IsSound = new Pref(context).getBoolean(Pref.IS_SOUND,true);
         SwitchSound.setChecked(IsSound);
         TvCountDownTime.setText(String.valueOf(IsCounter));
         TvRestTime.setText(String.valueOf(IsRest).toString());
@@ -154,7 +155,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         } else {
             IsSound = true;
         }
-        SharePreference.SetBoolean(context, SharePreference.IS_SOUND, IsSound);
+        new Pref(context).putBoolean( Pref.IS_SOUND, IsSound);
         SwitchSound.setChecked(IsSound);
     }
 
@@ -162,7 +163,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (IsCounter > 5) {
             IsCounter--;
             TvCountDownTime.setText(String.valueOf(IsCounter));
-            SharePreference.SetInt(context, SharePreference.COUNT_TIMER, IsCounter);
+            new Pref(context).getInt(Pref.COUNT_TIMER, IsCounter);
         }
     }
 
@@ -170,7 +171,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (IsCounter < 65) {
             IsCounter++;
             TvCountDownTime.setText(String.valueOf(IsCounter));
-            SharePreference.SetInt(context, SharePreference.COUNT_TIMER, IsCounter);
+            new Pref(context).getInt(Pref.COUNT_TIMER, IsCounter);
         }
     }
 
@@ -178,7 +179,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (IsRest > 5) {
             IsRest--;
             TvRestTime.setText(String.valueOf(IsRest).toString());
-            SharePreference.SetInt(context, SharePreference.REST_TIMER, IsRest);
+            new Pref(context).putInt( Pref.REST_TIMER, IsRest);
         }
     }
 
@@ -186,7 +187,7 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
         if (IsRest < 65) {
             IsRest++;
             TvRestTime.setText(String.valueOf(IsRest));
-            SharePreference.SetInt(context, SharePreference.REST_TIMER, IsRest);
+            new Pref(context).putInt( Pref.REST_TIMER, IsRest);
         }
     }
     private void GotoPrivacy() {

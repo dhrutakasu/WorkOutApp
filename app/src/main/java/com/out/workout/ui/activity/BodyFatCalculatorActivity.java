@@ -27,7 +27,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -107,7 +107,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         TvTitle.setText(getString(R.string.str_bodyfat));
         TvFTOrCMBodyFat.setText(getString(R.string.str_cm));
         LLHeightBodyFate.setVisibility(View.GONE);
-        EdtAgeBodyFate.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBodyFate.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
 
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
@@ -357,7 +357,7 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
 
     private void GotoCalculateReset() {
         EdtHeightBodyFate.setText("");
-        EdtAgeBodyFate.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeBodyFate.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtInchBodyFate.setText("");
         EdtWeightBodyFate.setText("");
         EdtWaistBodyFate.setText("");

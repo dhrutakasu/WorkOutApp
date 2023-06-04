@@ -27,7 +27,7 @@ import com.out.workout.Ads.Ad_Interstitial;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.text.NumberFormat;
 
@@ -92,7 +92,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
         TvTitle.setText(getString(R.string.str_idealweight));
         TvFTOrCMIdealWeight.setText(getString(R.string.str_cm));
         LLHeightCalculator.setVisibility(View.GONE);
-        EdtAgeCalculator.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeCalculator.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] HeightArr = {getResources().getString(R.string.str_centimeters), getResources().getString(R.string.str_feets)};
         SpinnerGenderIdealWeight.setAdapter((SpinnerAdapter) new SpinnerAdapters(context, R.layout.item_spinner, GenderArr));
@@ -185,7 +185,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             }
 
             try {
-                SharePreference.setCalculatorAge(getApplicationContext(), Integer.parseInt(EdtAgeCalculator.getText().toString()));
+                new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeCalculator.getText().toString()));
             } catch (NumberFormatException e) {
                 System.out.println("----- -- - - e come : " + e.getMessage());
                 e.printStackTrace();
@@ -243,7 +243,7 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
 
     private void GotoCalculateReset() {
         EdtHeightCalculator.setText("");
-        EdtAgeCalculator.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeCalculator.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtInchCalculator.setText("");
         EdtAgeCalculator.requestFocus();
 

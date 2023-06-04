@@ -1,7 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -26,11 +24,12 @@ import com.out.workout.Application.App;
 import com.out.workout.R;
 import com.out.workout.model.WorkoutExerciseModel;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
+import androidx.appcompat.app.AppCompatActivity;
 import at.grabner.circleprogress.CircleProgressView;
 
 public class WorkOutExerciseActivity extends AppCompatActivity implements View.OnClickListener {
@@ -143,10 +142,10 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
         IvPlayReady.setImageResource(R.drawable.ic_pause);
 
-        ReadyCountDown = ((SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10) * 1000) + 2000);
+        ReadyCountDown = ((new Pref(context).getInt( Pref.COUNT_TIMER, 10) * 1000) + 2000);
         System.out.println("----valll : " + Float.valueOf((ReadyCountDown - 2000) / 1000));
         CVProgressReady.setMaxValue(Float.valueOf((ReadyCountDown - 2000) / 1000).floatValue());
-        CVProgressReady.setBlockCount((SharePreference.getInt(context, SharePreference.COUNT_TIMER, 10)));
+        CVProgressReady.setBlockCount((new Pref(context).getInt( Pref.COUNT_TIMER, 10)));
         if (CVProgressReady.getBlockCount() >= 30) {
             CVProgressReady.setBlockScale(0.2f);
             CVProgressReady.setBarStrokeCap(Paint.Cap.ROUND);
@@ -169,8 +168,8 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         CVProgressReady.setValue(Float.valueOf((ReadyCountDown - 2000) / 1000).floatValue());
         CVProgressReady.setText(String.valueOf((ReadyCountDown - 2000) / 1000));
 
-        IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
-        IsSound = SharePreference.getBoolean(context, SharePreference.IS_SOUND, true);
+        IsRest = new Pref(context).getInt(Pref.REST_TIMER, 25);
+        IsSound = new Pref(context).getBoolean( Pref.IS_SOUND, true);
 
         System.out.println("----valllrrr shortNum : " + IsSound+"--- :: "+App.textToSpeech);
         if (IsSound) {
@@ -288,7 +287,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                     } else {
                         TvWorkOutExerciseRestDesc.setText(WorkoutExerciseList.get((exCount + 1)).getExerciseType()[(exCount)] + " Sec");
                     }
-                    IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
+                    IsRest =  new Pref(context).getInt(  Pref.REST_TIMER, 25);
                     IntValRest = 0;
                     RestTimer();
                     ExerciseDownTimer.cancel();
@@ -302,7 +301,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private void RestTimer() {
         IvPlayRest.setImageResource(R.drawable.ic_pause);
         System.out.println("----- exCount IsRest : " + IsRest);
-        CVProgressRest.setBlockCount(SharePreference.getInt(context, SharePreference.REST_TIMER, 25));
+        CVProgressRest.setBlockCount( new Pref(context).getInt( Pref.REST_TIMER, 25));
         if (CVProgressRest.getBlockCount() >= 50) {
             CVProgressRest.setBlockScale(1f);
             CVProgressRest.setBarStrokeCap(Paint.Cap.BUTT);
@@ -328,7 +327,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
             CVProgressRest.setBlockScale(0.7f);
             CVProgressRest.setBarStrokeCap(Paint.Cap.ROUND);
         }
-        CVProgressRest.setMaxValue(Float.valueOf(SharePreference.getInt(context, SharePreference.REST_TIMER, 25)).floatValue());
+        CVProgressRest.setMaxValue(Float.valueOf( new Pref(context).getInt( Pref.REST_TIMER, 25)).floatValue());
         RestTimer = new CountDownTimer((IsRest + 1) * 1000L, 1000) {
 
             @Override
@@ -658,7 +657,7 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         } else {
             ExerciseDownTimer.cancel();
             ExerciseDownTimer.onFinish();
-            IsRest = SharePreference.getInt(context, SharePreference.REST_TIMER, 25);
+            IsRest =  new Pref(context).getInt( Pref.REST_TIMER, 25);
         }
     }
 }

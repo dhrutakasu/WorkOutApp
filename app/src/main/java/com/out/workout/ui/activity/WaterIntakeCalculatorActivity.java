@@ -24,7 +24,7 @@ import com.out.workout.Ads.Ad_Native;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.SpinnerAdapters;
 import com.out.workout.utils.Constants;
-import com.out.workout.utils.SharePreference;
+import com.out.workout.utils.Pref;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -75,7 +75,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
     private void initActions() {
         Ad_Native.getInstance().showNative250(this, findViewById(R.id.FlNative));
         TvTitle.setText(getString(R.string.str_waterintake));
-        EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeWater.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         String[] GenderArr = {getResources().getString(R.string.str_male), getResources().getString(R.string.str_female)};
         String[] WeightArr = {getResources().getString(R.string.str_kilograms), getResources().getString(R.string.str_pounds)};
         SpinnerGenderWater.setAdapter((SpinnerAdapter) new SpinnerAdapters(this, R.layout.item_spinner, GenderArr));
@@ -144,7 +144,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
                 DoubleWater = DoubleWeight * 35.0d;
             }
             try {
-                SharePreference.setCalculatorAge(context, Integer.parseInt(EdtAgeWater.getText().toString()));
+                new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeWater.getText().toString()));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -198,7 +198,7 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
 
     private void GotoCalculateReset() {
         EdtWeightWater.setText("");
-        EdtAgeWater.setText(String.valueOf(SharePreference.getCalculatorAge(context)));
+        EdtAgeWater.setText(String.valueOf(new Pref(context).getInt(Pref.CALCULATOR_AGE,Pref.AGE)));
         EdtAgeWater.requestFocus();
 
         SpinnerGenderWater.setSelection(0);

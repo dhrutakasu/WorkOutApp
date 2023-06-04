@@ -23,7 +23,7 @@ import androidx.core.content.ContextCompat;
 import com.out.workout.R;
 import com.out.workout.ui.activity.MainActivity;
 
-public class AlarmService extends Service {
+public class  AlarmService extends Service {
 
     private static String CHANNEL_ID = "alarm_channel";
     private Context context;
@@ -31,6 +31,7 @@ public class AlarmService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        System.out.println("----- come : :service : ");
         context=this;
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O)
             startMyOwnForeground();
@@ -54,8 +55,14 @@ public class AlarmService extends Service {
             builder = new NotificationCompat.Builder(context);
         }
         Intent contentIntent = new Intent(context, MainActivity.class);
-        PendingIntent contentPendingIntent = PendingIntent.getActivity
-                (context, 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent contentPendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            contentPendingIntent = PendingIntent.getBroadcast(context, 100, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+        }else {
+            contentPendingIntent = PendingIntent.getBroadcast(context, 100, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        }
+//        PendingIntent contentPendingIntent = PendingIntent.getActivity
+//                (context, 0, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 //        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setColor(ContextCompat.getColor(context, R.color.white));
@@ -96,7 +103,7 @@ public class AlarmService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-
+        System.out.println("----- come : :destroy service : ");
         Intent broadcastIntent = new Intent();
         broadcastIntent.setAction("restartservice");
         broadcastIntent.setClass(this, Restarter.class);
