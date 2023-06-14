@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/drawable/ic_bg.xml" value="0.1015" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_article.xml" value="0.2" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_article_details.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_blood_alcohol_calculator.xml" value="0.14537037037037037" />
@@ -40,6 +41,8 @@
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_weight_calculator.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_work_out_exercise.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/activity_workout_list.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/app_bar_dashboard.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/content_dashboard.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/dialog_quit.xml" value="0.2" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/dialog_weight.xml" value="0.1" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_calculator.xml" value="0.14537037037037037" />
@@ -47,6 +50,7 @@
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_routines.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/fragment_training.xml" value="0.14537037037037037" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_ad_unified.xml" value="0.14537037037037037" />
+        <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_pager_list.xml" value="0.2" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_spinner.xml" value="0.1" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/item_training.xml" value="0.1" />
         <entry key="..\:/Dhruta/Dhruta project/Client/Manish patel/WorkOutApp/WorkOutApp/app/src/main/res/layout/layout_header.xml" value="0.1" />

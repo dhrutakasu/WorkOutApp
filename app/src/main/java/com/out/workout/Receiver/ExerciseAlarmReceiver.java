@@ -28,8 +28,6 @@ public class ExerciseAlarmReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        System.out.println("----- come : :Exercise receiver : ");
-        System.out.println("---- alarm : " + intent.getIntExtra("RequestCode", 0));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             OneTimeWorkRequest request = new OneTimeWorkRequest.Builder(BackupWorker.class).addTag("BACKUP_WORKER_TAG").build();
             WorkManager.getInstance(context).enqueue(request);
@@ -38,33 +36,6 @@ public class ExerciseAlarmReceiver extends BroadcastReceiver {
         } else {
             context.startService(new Intent(context, AlarmService.class));
         }
-//        final NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-//        createNotificationChannel(context);
-//
-//        String string = context.getString(R.string.app_name);
-//        String string2 = context.getString(R.string.str_noti1);
-//        NotificationCompat.Builder builder;
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-//        } else {
-//            builder = new NotificationCompat.Builder(context);
-//        }
-//        Intent contentIntent = new Intent(context, MainActivity.class);
-//        PendingIntent contentPendingIntent = PendingIntent.getActivity
-//                (context, intent.getIntExtra("RequestCode",0), contentIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-////        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-//        builder.setSmallIcon(R.mipmap.ic_launcher);
-//        builder.setColor(ContextCompat.getColor(context, R.color.white));
-//        builder.setContentTitle(string);
-//        builder.setContentText(string2);
-//        builder.setVibrate(new long[]{1000, 500, 1000, 500, 1000, 500});
-//        builder.setContentIntent(contentPendingIntent);
-//        builder.setStyle(new NotificationCompat.BigPictureStyle()
-//                .bigPicture(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_notification_banner))
-//                .setBigContentTitle(string).setSummaryText(string2)).setAutoCancel(true);
-//        builder.setPriority(Notification.PRIORITY_HIGH);
-//
-//        manager.notify(intent.getIntExtra("RequestCode",0), builder.build());
     }
 
 

@@ -89,36 +89,16 @@ public class Constants {
         }else {
             pendingIntent = PendingIntent.getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT);
         }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-//            pendingIntent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
-//
-//        }else {
-//            pendingIntent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT);
-//        }
         alarmManager.cancel(pendingIntent);
         Log.d("Tag", "previous alarm canceled");
         Log.d("Tag", "new alarm sets");
         PendingIntent pendingintent;
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-//            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
-//
-//        }else {
-//            pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
-//        }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
 
         }else {
             pendingintent = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ExerciseAlarmReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         }
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-//            pendingintent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT|PendingIntent.FLAG_IMMUTABLE);
-//
-//        }else {
-//            pendingintent = PendingIntent.getService(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), AlarmService.class), PendingIntent.FLAG_UPDATE_CURRENT);
-//        }
-        System.out.println("----- come : :create alarm : ");
-//        PendingIntent broadcast = PendingIntent.getBroadcast(context.getApplicationContext(), 100, new Intent(context.getApplicationContext(), ReminderReceiver.class), PendingIntent.FLAG_UPDATE_CURRENT);
         AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 
         if (alarmManager != null) {

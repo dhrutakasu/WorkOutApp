@@ -41,7 +41,6 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        System.out.println("------ valueIcon  : "+categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")));
         holder.TvDietName.setText(categories.get(position).getName());
         holder.IvDietImg.setImageResource(context.getResources().getIdentifier(categories.get(position).getIcon().toString().substring(0,categories.get(position).getIcon().toString().lastIndexOf(".png")), "drawable", BuildConfig.APPLICATION_ID));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +64,7 @@ public class DietTipsAdapter extends RecyclerView.Adapter<DietTipsAdapter.MyView
             intentFit.putExtra(Constants.DIET_IMG, categories.getIcon());
             context.startActivity(intentFit);
         } else if (layoutType == 3) {
-//            Intent intent3 = new Intent(context, TipsActivity.class);
-//            intent3.putExtra(Constants.DIET_SLUG, categories.getSlug());
-//            context.startActivity(intent3);
         } else if (layoutType != 4) {
-//            showOutDatedAppPopup();
         } else {
             Intent intent4 = new Intent(context, ArticleActivity.class);
             intent4.putExtra(Constants.DIET_NAME, categories.getName());

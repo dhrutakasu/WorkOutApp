@@ -115,8 +115,6 @@ public class AddOrEditAlarmActivity extends AppCompatActivity implements View.On
             case EDIT_ALARM:
                 return getIntent().getParcelableExtra(Constants.ALARM_EXTRA);
             case ADD_ALARM:
-//                long id = helper.addAlarm();
-//                LoadAlarmsService.launchLoadAlarmsService(context);
                 return new ReminderModel(-1);
             case UNKNOWN:
             default:

@@ -164,7 +164,6 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
         String BodyFateArm = (String) SpinnerArmBodyFat.getSelectedItem().toString();
         String BodyFateWrist = (String) SpinnerWristBodyFat.getSelectedItem().toString();
         String BodyFateHip = (String) SpinnerHipBodyFat.getSelectedItem().toString();
-        System.out.println("-- --- --- come : ");
         try {
             if (gender.equalsIgnoreCase(getString(R.string.str_male))) {
                 try {
@@ -350,7 +349,6 @@ public class BodyFatCalculatorActivity extends AppCompatActivity implements View
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }

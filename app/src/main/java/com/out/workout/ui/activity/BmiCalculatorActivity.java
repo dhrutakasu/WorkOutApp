@@ -186,7 +186,6 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
 
             calculate = DoubleWeight / (DoubleHeight * DoubleHeight);
             calculate_BMI = NumberFormat.getInstance().format(calculate);
-            System.out.println("-------- BMI : " + calculate + " - - - " + calculate_BMI);
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
@@ -260,7 +259,6 @@ public class BmiCalculatorActivity extends AppCompatActivity implements View.OnC
                     calculate_BMI_Int = (calculate_BMI_Int - 15) * 4;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Could not parse " + e);
                 calculate_BMI_Int = 100;
                 TvDialogWeightValue.setText(getResources().getString(R.string.str_sixteenmin) + " " + getResources().getString(R.string.str_morbid));
             }

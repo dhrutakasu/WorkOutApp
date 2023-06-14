@@ -136,19 +136,16 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
     private void GotoCalculateWeight() {
         String gender = (String) SpinnerGenderIdealWeight.getSelectedItem().toString();
         String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();
-        System.out.println("-- --- --- come : ");
         try {
             try {
                 DoubleHeight = Double.parseDouble(EdtHeightCalculator.getText().toString());
             } catch (NumberFormatException unused) {
-                System.out.println("----- -- - - DoubleHeight come : " + unused.getMessage());
                 check = true;
             }
 
             try {
                 DoubleAge = Double.parseDouble(EdtAgeCalculator.getText().toString());
             } catch (NumberFormatException unused2) {
-                System.out.println("----- -- - - DoubleAge come : " + unused2.getMessage());
                 check = true;
             }
 
@@ -156,7 +153,6 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
                 DoubleInch = Double.parseDouble(EdtInchCalculator.getText().toString());
             } catch (NumberFormatException unused3) {
                 DoubleInch = 0.0d;
-                System.out.println("----- -- - - DoubleInch come : " + unused3.getMessage());
             }
 
             if (check) {
@@ -187,15 +183,12 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
             try {
                 new Pref(context).putInt(Pref.CALCULATOR_AGE,Integer.parseInt(EdtAgeCalculator.getText().toString()));
             } catch (NumberFormatException e) {
-                System.out.println("----- -- - - e come : " + e.getMessage());
                 e.printStackTrace();
             }
 
             calculate_Kg = NumberFormat.getInstance().format(calculate);
             calculate *= 2.20462d;
             calculate_lbs = NumberFormat.getInstance().format(calculate);
-            System.out.println("----- -- - - calculate_lbs come : " + calculate_lbs);
-            System.out.println("----- -- - - calculate_Kg come : " + calculate_Kg);
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
             dialog.setCancelable(false);
@@ -236,7 +229,6 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }
@@ -259,7 +251,6 @@ public class WeightCalculatorActivity extends AppCompatActivity implements View.
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        System.out.println("------- VALLL : "+adapterView.getId()+" - "+R.id.SpinnerHeightIdealWeight);
         switch (adapterView.getId()) {
             case R.id.SpinnerHeightIdealWeight:
                 String weight = (String) SpinnerHeightIdealWeight.getSelectedItem().toString();

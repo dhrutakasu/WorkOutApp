@@ -29,17 +29,6 @@ import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
-//sub_cat
-//https://khnknocklock.firebaseio.com/Sunflower.json
-
-//Utils
-
-//https://github.com/PPartisan/Simple-Alarms/tree/master
-
-//imge
-//https://d250cpfim6cf4j.cloudfront.net/cat_vegeterian.jpg
-
-//https://github.com/WrichikBasu/ShakeAlarmClock
 
 
 public class App extends Application implements DefaultLifecycleObserver, Application.ActivityLifecycleCallbacks {

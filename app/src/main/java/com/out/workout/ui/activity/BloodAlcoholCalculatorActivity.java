@@ -147,7 +147,6 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
         } else {
             DoubleNewAlcohol = 3;
         }
-        System.out.println("-- --- --- come : ");
         try {
             try {
                 DoubleAge = Double.parseDouble(EdtAgeBloodAlcohol.getText().toString());
@@ -236,7 +235,6 @@ public class BloodAlcoholCalculatorActivity extends AppCompatActivity implements
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }

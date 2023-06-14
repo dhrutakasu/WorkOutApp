@@ -133,7 +133,6 @@ public class WorkoutListActivity extends AppCompatActivity implements View.OnCli
     }
 
     private ArrayList<WorkoutExerciseModel> getAllWorkoutDatas() {
-        System.out.println("------- Work : "+WorkoutType);
         if (WorkoutType.contains("Arm")) {
             CountDays = "Day 1";
             WorkoutExerciseModel exerciseModel = new WorkoutExerciseModel(getResources().getString(R.string.str_arm), getResources().getString(R.string.str_desc_triceps_dips), getResources().obtainTypedArray(R.array.triceps_dips), getResources().getIntArray(R.array.buttock_cycles));

@@ -40,9 +40,7 @@ public class SubDivAdapter extends RecyclerView.Adapter<SubDivAdapter.MyViewHold
             String value2 = subDivModels.get(position).getAmount();
             String[] split = value2.split(" ");
             holder.tvValue.setText(split[0].toString());
-            System.out.println("---- --- value00 : " + split[0]);
             if (split.length > 1) {
-                System.out.println("---- --- value11 : " + split[1]);
                 holder.tvUnit.setText(split[1].toString());
             }
         }

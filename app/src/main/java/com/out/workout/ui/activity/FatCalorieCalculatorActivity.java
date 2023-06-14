@@ -111,7 +111,6 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
             arrayList.add(String.valueOf(number.intValue()));
         }
         data = arrayList;
-        System.out.println("----- arrrr : " + data.size());
         TvTitle.setText(getIntent().getBooleanExtra(Constants.BMR, false) ? "BMR Calculator" : "Calorie Calculator");
         if (getIntent().getBooleanExtra(Constants.BMR, false)) {
             RvFatActivities.setVisibility(View.GONE);
@@ -298,7 +297,6 @@ public class FatCalorieCalculatorActivity extends AppCompatActivity implements V
         animator.addUpdateListener(valueAnimator -> TvFitMaintainWWeightCal.setText(valueAnimator.getAnimatedValue()+""));
         animator.start();
         int BmR = ValInt - 250;
-        System.out.println("------- BMMMM : "+BmR);
         int cal = ValInt - 500;
         int Calroie = ValInt - 1000;
 

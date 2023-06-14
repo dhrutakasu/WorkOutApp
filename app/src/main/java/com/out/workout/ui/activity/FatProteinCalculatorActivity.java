@@ -111,7 +111,6 @@ public class FatProteinCalculatorActivity extends AppCompatActivity implements V
             arrayList.add(String.valueOf(number.intValue()));
         }
         data = arrayList;
-        System.out.println("----- arrrr : " + data.size());
         TvTitle.setText("Protein Calculator");
         setHorizontalSlider();
         FlFatMale.setSelected(true);

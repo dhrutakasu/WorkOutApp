@@ -31,7 +31,6 @@ public class  AlarmService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        System.out.println("----- come : :service : ");
         context=this;
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.O)
             startMyOwnForeground();
@@ -103,7 +102,6 @@ public class  AlarmService extends Service {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        System.out.println("----- come : :destroy service : ");
         Intent broadcastIntent = new Intent();
         broadcastIntent.setAction("restartservice");
         broadcastIntent.setClass(this, Restarter.class);

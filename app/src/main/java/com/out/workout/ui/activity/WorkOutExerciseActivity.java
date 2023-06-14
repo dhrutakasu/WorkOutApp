@@ -130,7 +130,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         TvWorkOutExerciseReadyDesc.setText(model.getExerciseDesc());
         TvTitle.setText(Constants.getCapsSentences(model.getExerciseName()));
 
-        System.out.println("------ modelll : " + model);
         MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
         for (int i = 0; i < model.getExerciseImg().length(); i++) {
             sectionBuilder.addFrame(model.getExerciseImg().getResourceId(i, 0));
@@ -143,7 +142,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         IvPlayReady.setImageResource(R.drawable.ic_pause);
 
         ReadyCountDown = ((new Pref(context).getInt( Pref.COUNT_TIMER, 10) * 1000) + 2000);
-        System.out.println("----valll : " + Float.valueOf((ReadyCountDown - 2000) / 1000));
         CVProgressReady.setMaxValue(Float.valueOf((ReadyCountDown - 2000) / 1000).floatValue());
         CVProgressReady.setBlockCount((new Pref(context).getInt( Pref.COUNT_TIMER, 10)));
         if (CVProgressReady.getBlockCount() >= 30) {
@@ -171,7 +169,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
         IsRest = new Pref(context).getInt(Pref.REST_TIMER, 25);
         IsSound = new Pref(context).getBoolean( Pref.IS_SOUND, true);
 
-        System.out.println("----valllrrr shortNum : " + IsSound+"--- :: "+App.textToSpeech);
         if (IsSound) {
             if (App.textToSpeech != null) {
                 App.textToSpeech.setSpeechRate(1.0f);
@@ -223,7 +220,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                 RlExerciseStart.setVisibility(View.VISIBLE);
                 IvHelp.setVisibility(View.VISIBLE);
                 TvWorkOutExerciseCount.setText((ExCount + 1) + " Of " + WorkoutExerciseList.size());
-                System.out.println("----- exCount Ready : " + (ExCount + 2));
                 WorkoutExerciseModel model = WorkoutExerciseList.get(ExCount);
                 MultiStateAnimation.SectionBuilder sectionBuilder = new MultiStateAnimation.SectionBuilder("pending");
                 for (int i = 0; i < model.getExerciseImg().length(); i++) {
@@ -247,23 +243,19 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     private void ExerciseTimer(WorkoutExerciseModel model, int exCount) {
         App.getInstance().addSpeaker();
 
-        System.out.println("----- long ExTimer : " + ExTimer);
         ExerciseDownTimer = new CountDownTimer((ExTimer + 1) * 1000L, 1000) {
             public void onTick(long millisUntilFinished) {
                 long shortNum = (millisUntilFinished - 1000) / 1000;
                 NotedExerciseTimer = shortNum;
                 App.getInstance().playSpeaker();
-                System.out.println("----- long : " + millisUntilFinished);
                 TvWorkOutExerciseTimer.setText(hmsTimeFormatter(millisUntilFinished));
             }
 
             public void onFinish() {
                 TvPauseExercise.setText(getString(R.string.str_play));
-                System.out.println("----- **** : " + exCount);
                 if ((exCount + 1) > 0) {
                     IvExercisePrevious.setVisibility(View.VISIBLE);
                 }
-                System.out.println("-----*** : " + exCount);
                 if ((exCount + 1) != WorkoutExerciseList.size()) {
                     IvHelp.setVisibility(View.GONE);
                     RlExerciseStart.setVisibility(View.GONE);
@@ -279,7 +271,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                     MultiStateAnimation stateAnimation = new MultiStateAnimation.Builder(IvAnimatedRestExercise).addSection(sectionBuilder).build(context);
                     stateAnimation.transitionNow("pending");
 
-                    System.out.println("----- exCount exer : " + (ExCount + 1));
                     TvTitle.setText(Constants.getCapsSentences("Next " + (ExCount + 2) + "/" + WorkoutExerciseList.size()));
                     TvRestWorkOutExercise.setText(Constants.getCapsSentences(WorkoutExerciseList.get((exCount + 1)).getExerciseName()));
                     if (WorkoutExerciseList.get((exCount + 1)).getExerciseImg().length() > 1) {
@@ -292,7 +283,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                     RestTimer();
                     ExerciseDownTimer.cancel();
                 } else {
-                    System.out.println("-----*** Welcome Come: " + exCount);
                 }
             }
         }.start();
@@ -300,7 +290,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
     private void RestTimer() {
         IvPlayRest.setImageResource(R.drawable.ic_pause);
-        System.out.println("----- exCount IsRest : " + IsRest);
         CVProgressRest.setBlockCount( new Pref(context).getInt( Pref.REST_TIMER, 25));
         if (CVProgressRest.getBlockCount() >= 50) {
             CVProgressRest.setBlockScale(1f);
@@ -332,10 +321,8 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
             @Override
             public void onTick(long millisUntilFinished) {
-                System.out.println("----millis shortNum : " + millisUntilFinished);
                 long shortNum = (millisUntilFinished - 1000) / 1000;
                 NotedRestTimer = shortNum;
-                System.out.println("----valllrrr shortNum : " + shortNum);
                 CVProgressRest.setValue(Float.valueOf(shortNum).floatValue());
 
                 CVProgressRest.setText(String.valueOf(shortNum));
@@ -387,7 +374,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
                 TvPauseExercise.setText(getString(R.string.str_pause));
                 TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
-                System.out.println("----- exCount Rest : " + ExCount);
 
                 ExTimer = model.getExerciseType()[ExCount];
                 IntValExercise = 0;
@@ -527,7 +513,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
     }
 
     private void GotoPlayPauseExercise() {
-        System.out.println("----- exCount IntValExercise : " + IntValExercise);
         if (IntValExercise % 2 == 0) {
             TvPauseExercise.setText(getString(R.string.str_play));
             BoolTimer = true;
@@ -568,7 +553,6 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
                 App.textToSpeech.shutdown();
             }
         }
-        System.out.println("----- InRest : " + IntValRest + " - " + IsRest);
         if (IntValRest % 2 == 0) {
             IvPlayRest.setImageResource(R.drawable.ic_play);
             BoolTimer = true;
@@ -618,17 +602,14 @@ public class WorkOutExerciseActivity extends AppCompatActivity implements View.O
 
         TvPauseExercise.setText(getString(R.string.str_pause));
         TvTitle.setText(Constants.getCapsSentences(WorkoutExerciseList.get((ExCount)).getExerciseName()));
-        System.out.println("----- exCount Rest : " + ExCount);
         ExTimer = model.getExerciseType()[ExCount];
 
-        System.out.println("-------- Excount : " + ExCount);
         ExerciseDownTimer.cancel();
         IntValExercise = 0;
         ExerciseTimer(model, ExCount);
     }
 
     private void GotoNextExercise() {
-        System.out.println("----- exCount InRest : " + (ExCount));
         if ((WorkoutExerciseList.size() - 1) == ExCount) {
 
             ExerciseDownTimer.cancel();

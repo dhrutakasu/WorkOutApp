@@ -114,7 +114,6 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             arrayList.add(String.valueOf(number.intValue()));
         }
         data = arrayList;
-        System.out.println("----- arrrr : " + data.size());
         TvTitle.setText(getIntent().getBooleanExtra(Constants.BMR, false) ? "Body Fat Calculator" : "Ideal Weight Calculator");
         RvFatActivities.setVisibility(View.GONE);
         TvFatWorkoutTitle.setVisibility(View.GONE);
@@ -135,25 +134,23 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
                 onBackPressed();
                 break;
             case R.id.BtnFatCalculate:
-                GotoFitCalculate();
 
-//                ProgressDialog progressDialog = new ProgressDialog(context);
-//                progressDialog.setMessage("Load Ad....");
-//                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-//                progressDialog.show();
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        progressDialog.dismiss();
-//                        Ad_Interstitial.getInstance().showInter(FatBodyCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
-//                            @Override
-//                            public void callbackCall() {
-//                                System.out.println("--- come : ");
-//
-//                            }
-//                        });
-//                    }
-//                }, 3000L);
+                ProgressDialog progressDialog = new ProgressDialog(context);
+                progressDialog.setMessage("Load Ad....");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                progressDialog.show();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        progressDialog.dismiss();
+                        Ad_Interstitial.getInstance().showInter(FatBodyCalculatorActivity.this, new Ad_Interstitial.MyCallback() {
+                            @Override
+                            public void callbackCall() {
+                                GotoFitCalculate();
+                            }
+                        });
+                    }
+                }, 3000L);
                 break;
             case R.id.FlFatMale:
                 SelectGenderMale();
@@ -268,7 +265,6 @@ public class FatBodyCalculatorActivity extends AppCompatActivity implements View
             if (RgFatWeightUnit.getCheckedRadioButtonId() != R.id.RbFatKg) {
                 parseFloat = Constants.toKg(parseFloat);
             }
-            System.out.println("--- - - -  ");
             showResultDialog(!getIntent().getBooleanExtra(Constants.BMR, false), FloatCm, getAge(), FlFatMale.isSelected(), parseFloat);
         }
     }

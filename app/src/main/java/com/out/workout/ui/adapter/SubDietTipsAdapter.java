@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.out.workout.R;
 import com.out.workout.model.SubCategories;
 import com.out.workout.ui.activity.CategoryItemDetailsActivity;
@@ -50,15 +51,19 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
         holder.RlDiet.setBackgroundColor(context.getResources().getColor(R.color.purple_500));
         holder.TvDietName.setTextColor(context.getResources().getColor(R.color.white));
         holder.TvDietName.setText(categories.get(position).getName());
-        try {
-            InputStream ims = context.getAssets().open("DietImg/" + categories.get(position).getIcon());
-            Bitmap bitmap = BitmapFactory.decodeStream(ims);
-            holder.IvDietImg.setImageBitmap(bitmap);
-            ims.close();
-        } catch (IOException ex) {
-            System.out.println("----- catch : " + ex.getMessage());
-            return;
-        }
+        Glide.with(context)
+                .load("https://7starinnovation.com/workimg/" + categories.get(position).getIcon())
+//                .placeholder(R.drawable.placeholder)
+//                .error(R.drawable.error)
+                .into(holder.IvDietImg);
+//        try {
+//              ims = context.getAssets().open("DietImg/" + categories.get(position).getIcon());
+//            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+//            holder.IvDietImg.setImageBitmap(bitmap);
+//            ims.close();
+//        } catch (IOException ex) {
+//            return;
+//        }
         holder.itemView.setOnClickListener(v -> startCategoryActivity(categories.get(position)));
     }
 
@@ -77,7 +82,7 @@ public class SubDietTipsAdapter extends RecyclerView.Adapter<SubDietTipsAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private final RelativeLayout RlDiet;
-        private ImageView IvDietImg,IvArrow;
+        private ImageView IvDietImg, IvArrow;
         private TextView TvDietName, TvDietTitle;
 
         public MyViewHolder(@NonNull View itemView) {

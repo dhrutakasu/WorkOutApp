@@ -117,7 +117,6 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
 
     private void GotoCalculateWeight() {
         String WaterWeight = (String) SpinnerWeightWater.getSelectedItem().toString();
-        System.out.println("-- --- --- come : ");
         try {
             try {
                 DoubleWeight = Double.parseDouble(EdtWeightWater.getText().toString());
@@ -191,7 +190,6 @@ public class WaterIntakeCalculatorActivity extends AppCompatActivity implements 
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }

@@ -67,8 +67,6 @@ public class ExerciseRemindersActivity extends AppCompatActivity implements View
         Ad_Banner.getInstance().showBanner(this, AdSize.LARGE_BANNER, (RelativeLayout) findViewById(R.id.RlAdView), (RelativeLayout) findViewById(R.id.RlAdViewMain));
         TvTitle.setText(getString(R.string.str_exercise_time));
 
-        System.out.println("---- : HR " + new Pref(context).getInt(Constants.NOTIFICATION_HOUR, IntHr));
-        System.out.println("---- : MIN " + new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PickerSetReminders.setHour(new Pref(context).getInt( Constants.NOTIFICATION_HOUR, IntHr));
             PickerSetReminders.setMinute(new Pref(context).getInt( Constants.NOTIFICATION_MINUTES, IntMin));

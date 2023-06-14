@@ -122,7 +122,6 @@ public class ExerciseDetailsActivity extends AppCompatActivity implements View.O
         if (IsChangeCycles){
             Toast.makeText(getApplicationContext(), R.string.str_exercise_cycles_are_updated, Toast.LENGTH_SHORT).show();
         }
-        System.out.println("------ exist : "+helper.IsExist(ExerciseName));
         if (helper.IsExist(ExerciseName)) {
             helper.updateExerciseCycles(helper.getExerciseRecord(ExerciseName),ExerciseName, ExerciseRotate[ExercisePos] + "");
         }

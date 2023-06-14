@@ -141,7 +141,6 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
         String gender = (String) SpinnerGenderCalorie.getSelectedItem().toString();
         String weight = (String) SpinnerHeightCalorie.getSelectedItem().toString();
         String CalorieWeight = (String) SpinnerWeightCalorie.getSelectedItem().toString();
-        System.out.println("-- --- --- come : ");
         try {
             try {
                 DoubleHeight = Double.parseDouble(EdtHeightCalorie.getText().toString());
@@ -194,7 +193,6 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
             DoubleBMR = (DoubleWeight + DoubleHeight) - DoubleAge;
             DoubleBMR *= DoubleCalorie;
             calculate_BMR = NumberFormat.getInstance().format(DoubleBMR);
-            System.out.println("--- -- callllllll : " + calculate_BMR);
 
             final Dialog dialog = new Dialog(context);
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -233,7 +231,6 @@ public class CalorieCalculatorActivity extends AppCompatActivity implements View
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }

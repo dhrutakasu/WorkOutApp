@@ -127,7 +127,6 @@ public class SplashActivity extends AppCompatActivity {
                                         };
                                 countDownTimer.start();
                             } catch (JSONException e) {
-//                                Toast.makeText(context, "Please turn on your internet connection...", Toast.LENGTH_LONG).show();
                                 e.printStackTrace();
                             }
 
@@ -147,7 +146,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void startMainActivity() {
-        System.out.println("------- wal : " + new Pref(context).getBoolean(Constants.FIRST_LAUNCH, false));
         startActivity(new Intent(this, WalkthroughActivity.class));
         finish();
     }

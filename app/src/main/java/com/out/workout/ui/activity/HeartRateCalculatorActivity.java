@@ -127,7 +127,6 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
 
     private void GotoCalculateHeartRate() {
         String gender = (String) SpinnerGenderHeart.getSelectedItem().toString();
-        System.out.println("-- --- --- come : ");
         try {
             try {
                 DoubleAge = Double.parseDouble(EdtAgeHeart.getText().toString());
@@ -140,7 +139,6 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
                 BoolCheck = true;
             }
             if (BoolCheck) {
-                System.out.println("----- -- - - e22 BoolCheck : " + BoolCheck);
                 BoolCheck = false;
                 return;
             }
@@ -206,7 +204,6 @@ public class HeartRateCalculatorActivity extends AppCompatActivity implements Vi
 
             dialog.show();
         } catch (Resources.NotFoundException e2) {
-            System.out.println("----- -- - - e22 come : " + e2.getMessage());
             e2.printStackTrace();
         }
     }

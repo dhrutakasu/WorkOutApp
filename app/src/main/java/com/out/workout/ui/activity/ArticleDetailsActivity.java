@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.ads.AdSize;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -42,7 +43,7 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     private ImageView IvBack, IvArticleImage;
     private TextView TvTitle, TvArticleDescr;
 
-    private String DietName, DietSlug,DietImage;
+    private String DietName, DietSlug, DietImage;
 
     private Gson create;
     private ArrayList<DetailModel> categories = new ArrayList<>();
@@ -74,7 +75,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
         DietName = getIntent().getStringExtra(Constants.DIET_NAME);
         DietSlug = getIntent().getStringExtra(Constants.DIET_SLUG);
         DietImage = getIntent().getStringExtra(Constants.DIET_IMG);
-        System.out.println("----- DIet slug : "+DietSlug);
     }
 
     private void initListeners() {
@@ -82,15 +82,19 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
     }
 
     private void initActions() {
-        try {
-            InputStream ims = context.getAssets().open("DietImg/" + DietImage);
-            Bitmap bitmap = BitmapFactory.decodeStream(ims);
-            IvArticleImage.setImageBitmap(bitmap);
-            IvArticleImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        } catch (IOException ex) {
-            IvArticleImage.setVisibility(View.GONE);
-            System.out.println("----- catch : " + ex.getMessage());
-        }
+        Glide.with(context)
+                .load("https://7starinnovation.com/workimg/" + DietImage)
+//                .placeholder(R.drawable.placeholder)
+//                .error(R.drawable.error)
+                .into(IvArticleImage);
+//        try {
+//            InputStream ims = context.getAssets().open("DietImg/" + DietImage);
+//            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+//            IvArticleImage.setImageBitmap(bitmap);
+//            IvArticleImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//        } catch (IOException ex) {
+//            IvArticleImage.setVisibility(View.GONE);
+//        }
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
         String AssetsFile = readAssetsFile(assets, "Diet/" + DietSlug + ".json");
@@ -134,7 +138,6 @@ public class ArticleDetailsActivity extends AppCompatActivity implements View.On
                 returnString.append(line);
             }
         } catch (Exception e) {
-            System.out.println("----catch inn : "+e.getMessage());
             e.getMessage();
         } finally {
             try {

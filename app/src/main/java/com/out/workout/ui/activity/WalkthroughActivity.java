@@ -1,8 +1,5 @@
 package com.out.workout.ui.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,8 +14,9 @@ import com.google.android.material.tabs.TabLayout;
 import com.out.workout.Ads.Ad_Banner;
 import com.out.workout.R;
 import com.out.workout.ui.adapter.WalkAdapter;
-import com.out.workout.utils.Constants;
-import com.out.workout.utils.Pref;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class WalkthroughActivity extends AppCompatActivity {
 

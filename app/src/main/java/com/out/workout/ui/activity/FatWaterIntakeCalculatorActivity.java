@@ -86,7 +86,6 @@ public class FatWaterIntakeCalculatorActivity extends AppCompatActivity implemen
             arrayList.add(String.valueOf(number.intValue()));
         }
         data = arrayList;
-        System.out.println("----- arrrr : " + data.size());
         TvTitle.setText("Water Intake Calculator");
         setHorizontalSlider();
         FlFatMale.setSelected(true);

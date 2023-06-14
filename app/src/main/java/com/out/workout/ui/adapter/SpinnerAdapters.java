@@ -27,7 +27,6 @@ public class SpinnerAdapters extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.item_spinner, viewGroup, false);
-        System.out.println("------- txtxt : "+getItem(position));
         ((TextView) inflate.findViewById(R.id.TvSpinnerText)).setText(getItem(position));
         return inflate;
     }

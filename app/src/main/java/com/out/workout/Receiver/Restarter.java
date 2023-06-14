@@ -9,7 +9,6 @@ public class Restarter extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        System.out.println("----- come : :receiver : ");
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(new Intent(context, AlarmService.class));
         } else {

@@ -68,7 +68,6 @@ public class DietTipsFragment extends Fragment {
         String AssetsFile = readAssetsFile(assets, "DietFile.json");
         create.fromJson(AssetsFile, Data.class);
         categories.addAll(((Data) create.fromJson(AssetsFile, Data.class)).getCategories());
-        System.out.println("---- dirt : "+categories.size());
 
         RvDiets.setLayoutManager(new LinearLayoutManager(getContext()));
         RvDiets.setAdapter(new DietTipsAdapter(getContext(), categories));

@@ -38,10 +38,6 @@ public class AlarmsService extends IntentService {
 
     public static void launchLoadAlarmsService(Context context) {
         Intent launchLoadAlarmsServiceIntent = new Intent(context, AlarmsService.class);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//            context.startForegroundService(launchLoadAlarmsServiceIntent);
-//        } else {
             context.startService(launchLoadAlarmsServiceIntent);
-//        }
     }
 }

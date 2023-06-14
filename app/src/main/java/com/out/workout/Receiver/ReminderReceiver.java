@@ -66,7 +66,6 @@ public class ReminderReceiver extends BroadcastReceiver {
         } else {
             builder = new NotificationCompat.Builder(context);
         }
-//        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setColor(ContextCompat.getColor(context, R.color.white));
         builder.setContentTitle(string);
@@ -89,7 +88,6 @@ public class ReminderReceiver extends BroadcastReceiver {
             cancelReminderAlarm(context, reminderModel);
             return;
         }
-        System.out.println("----- - - - : "+ reminderModel.toString());
         final Calendar nextAlarmTime = getTimeForNextAlarm(reminderModel);
         reminderModel.setTime(nextAlarmTime.getTimeInMillis());
 
@@ -110,13 +108,6 @@ public class ReminderReceiver extends BroadcastReceiver {
                     intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         }
-//        final PendingIntent pIntent = PendingIntent.getBroadcast(
-//                context,
-//                reminderModel.notificationId(),
-//                intent,
-//                FLAG_UPDATE_CURRENT
-//        );
-
         ScheduleAlarm.with(context).schedule(reminderModel, pIntent);
     }
 
@@ -149,12 +140,6 @@ public class ReminderReceiver extends BroadcastReceiver {
 
     public static void cancelReminderAlarm(Context context, ReminderModel reminderModel) {
         final Intent intent = new Intent(context, ReminderReceiver.class);
-//        final PendingIntent pIntent = PendingIntent.getBroadcast(
-//                context,
-//                reminderModel.notificationId(),
-//                intent,
-//                FLAG_UPDATE_CURRENT
-//        );
         PendingIntent pendingIntent;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             pendingIntent = PendingIntent.getBroadcast(
@@ -232,9 +217,6 @@ public class ReminderReceiver extends BroadcastReceiver {
                     ctx, reminderModel.notificationId(), launchIntent(ctx), FLAG_UPDATE_CURRENT);
 
         }
-//        return PendingIntent.getActivity(
-//                ctx, reminderModel.notificationId(), launchIntent(ctx), FLAG_UPDATE_CURRENT
-//        );
         return pendingIntent;
     }
 

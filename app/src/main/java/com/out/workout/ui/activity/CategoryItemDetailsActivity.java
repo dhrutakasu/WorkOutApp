@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.out.workout.Ads.Ad_Interstitial;
@@ -46,7 +47,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
     private String DietName, DietSlug, DietImg;
     private Gson create;
     private RecyclerView RvItemNutrients, RvItemProteins, RvItemVitamins, RvItemMinerals, RvItemPros, RvItemCons;
-    private TextView TvItemImgName,TvItemNutritionalTitle, TvItemNutritionalServing, TvItemSubDivTitle, TvItemVitaminsTitle, TvItemMineralsTitle;
+    private TextView TvItemImgName, TvItemNutritionalTitle, TvItemNutritionalServing, TvItemSubDivTitle, TvItemVitaminsTitle, TvItemMineralsTitle;
     private ImageView IvItemImg;
 
     @Override
@@ -86,16 +87,20 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
 
     private void initActions() {
         IvBack.setOnClickListener(v -> onBackPressed());
-        try {
-            InputStream ims = context.getAssets().open("DietImg/" + DietImg);
-            Bitmap bitmap = BitmapFactory.decodeStream(ims);
-            IvItemImg.setImageBitmap(bitmap);
-            TvItemImgName.setText(DietName);
-            ims.close();
-        } catch (IOException ex) {
-            IvItemImg.setVisibility(View.GONE);
-            System.out.println("----- catch : " + ex.getMessage());
-        }
+        Glide.with(context)
+                .load("https://7starinnovation.com/workimg/" + DietImg)
+//                .placeholder(R.drawable.placeholder)
+//                .error(R.drawable.error)
+                .into(IvItemImg);
+//        try {
+//            InputStream ims = context.getAssets().open("DietImg/" + DietImg);
+//            Bitmap bitmap = BitmapFactory.decodeStream(ims);
+//            IvItemImg.setImageBitmap(bitmap);
+//            TvItemImgName.setText(DietName);
+//            ims.close();
+//        } catch (IOException ex) {
+//            IvItemImg.setVisibility(View.GONE);
+//        }
         create = new GsonBuilder().create();
         AssetManager assets = context.getAssets();
         String AssetsFile = readFile(assets, "Diet/" + DietSlug + ".json");
@@ -248,6 +253,7 @@ public class CategoryItemDetailsActivity extends AppCompatActivity implements Vi
             RvItemProteins.setVisibility(View.GONE);
         }
     }
+
     @Override
     public void onBackPressed() {
         ProgressDialog progressDialog = new ProgressDialog(context);
